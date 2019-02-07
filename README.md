@@ -20,10 +20,10 @@ You can have more information on this link, how to install the dependencies befo
 https://docs.microsoft.com/pt-br/dotnet/core/tutorials/with-visual-studio-code<br />
 
 In VisualCode using the terminal <br />
-"dotNet run" command The following question will appear:<br />
-"Please enter the path of the Package.xml path"<br />
+<strong>"dotNet run"</strong> command The following question will appear:<br />
+<strong>"Please enter the path of the Package.xml path"</strong><br />
 Enter the directory where your package.xml is located | Example: C:\Documents\workspace\DEV05\package.xml<br />
-"Please enter the path of the repository where the files are:"<br />
+<strong>"Please enter the path of the repository where the files are:"</strong><br />
 Enter your directory path, where the files are located | C:\Documents\workspace\DEV05<br />
 <br />
 Result:<br />
