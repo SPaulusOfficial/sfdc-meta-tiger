@@ -10,6 +10,7 @@ namespace Salesforce_Package
 		public const string ApexPage = "ApexPage";
 		public const string CustomMetadata = "CustomMetadata";
 		public const string CustomObject = "CustomObject";
+		public const string CustomField = "CustomField";
 		public const string EmailTemplate = "EmailTemplate";
 		public const string Layout = "Layout";
 		public const string PermissionSet = "PermissionSet";
@@ -28,7 +29,8 @@ namespace Salesforce_Package
 				case PermissionSet: return "permissionsets";
 				case Profile: return "profiles";
 				case StaticResource: return "staticresources";
-				default: return "";
+				case CustomField: return "customfields";
+				default: throw new System.ArgumentException("Metadata not found", typeMetadata);
 			}
 		}
 		

@@ -7,7 +7,7 @@ namespace Salesforce_Package
 {
     class ManageDirectory {
         
-		public static void cretePackageDirectory(String path)
+		public void createPackageDirectory(String path)
         {
             try 
             {                 
@@ -23,9 +23,25 @@ namespace Salesforce_Package
             {
                 Console.WriteLine("The process failed: {0}", e.ToString());
             }             
+        }        
+
+        public List<IMetadata> buildDirectorys(Dictionary<string, List<string>> mapPackage, string pathDir)
+        {
+            List<IMetadata> metaDatas = new List<IMetadata>();
+            this.createPackageDirectory(pathDir);
+            foreach (var type in mapPackage)
+            {
+                String tempDirectory = pathDir + "\\" + DirectoryContants.renameDirectoryMetaData(type.Key);
+                this.createPackageDirectory(tempDirectory);
+                metaDatas.Add(metaDataFactory.getMetadata(type.Key));
+            }
+
+            return metaDatas;
         }
 		
 	}
+
+    
 
 
 	

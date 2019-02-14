@@ -13,7 +13,8 @@ namespace Salesforce_Package
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
 			String [] findFolderEmail = metaname.Split("/");
-			ManageDirectory.cretePackageDirectory(directoryTargetFilePath+"\\"+findFolderEmail[0]);   				
+			ManageDirectory manageDirectory = new ManageDirectory();
+			manageDirectory.createPackageDirectory(directoryTargetFilePath+"\\"+findFolderEmail[0]);   				
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".email");				
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".email-meta.xml");		
 		}

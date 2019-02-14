@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\B111925\\Desktop\\Salesforce Package\\Salesforce Package.csproj",
+      "projectUniqueName": "C:\\Users\\B111925\\Desktop\\salesforcegeneraterepositorypackage\\sfdc-packageGenerateFiles\\Salesforce Package.csproj",
       "projectName": "Salesforce Package",
-      "projectPath": "C:\\Users\\B111925\\Desktop\\Salesforce Package\\Salesforce Package.csproj",
+      "projectPath": "C:\\Users\\B111925\\Desktop\\salesforcegeneraterepositorypackage\\sfdc-packageGenerateFiles\\Salesforce Package.csproj",
       "packagesPath": "C:\\Users\\B111925\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\B111925\\Desktop\\Salesforce Package\\obj\\",
+      "outputPath": "C:\\Users\\B111925\\Desktop\\salesforcegeneraterepositorypackage\\sfdc-packageGenerateFiles\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
