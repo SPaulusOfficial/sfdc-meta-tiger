@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package
-{
+namespace Salesforce_Package.Metadata{
     class metaApexPage:metaBase {
         
 
@@ -18,7 +17,5 @@ namespace Salesforce_Package
 		}	
 		
 	}
-
-
 	
 }

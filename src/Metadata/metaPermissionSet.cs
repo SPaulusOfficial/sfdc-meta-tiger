@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package
+namespace Salesforce_Package.Metadata
 {
-    class metaCustomObject:metaBase {
+    class metaPermissionSet:metaBase {
         
-		public metaCustomObject(){
+		public metaPermissionSet(){
 			this.m_list = new List<String>();
-			this.m_metaName = DirectoryContants.CustomObject;
+			this.m_metaName = DirectoryContants.PermissionSet;
 		} 
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
-			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".object");				
+			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".permissionset");				
 		}
 		
 	}

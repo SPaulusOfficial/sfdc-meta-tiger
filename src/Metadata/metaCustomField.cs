@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using Salesforce_Package.XML;
 
-namespace Salesforce_Package
-{
+namespace Salesforce_Package.Metadata{
     class metaCustomField:metaBase,IMetadata {
         
 		String m_metaObject;
@@ -58,6 +57,4 @@ namespace Salesforce_Package
 		
 	}
 
-
-	
 }

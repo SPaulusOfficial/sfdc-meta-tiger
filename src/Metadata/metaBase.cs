@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package
-{
+namespace Salesforce_Package.Metadata{
     abstract class metaBase: IMetadata {
         
 		public List<String> m_list;    
@@ -29,7 +28,5 @@ namespace Salesforce_Package
 
 
     }
-
-
-	
+		
 }

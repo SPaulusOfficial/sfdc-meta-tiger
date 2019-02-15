@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
+using Salesforce_Package.Metadata;
 
 namespace Salesforce_Package
 {
@@ -23,7 +24,11 @@ namespace Salesforce_Package
             {
                 Console.WriteLine("The process failed: {0}", e.ToString());
             }             
-        }        
+        }      
+
+        public static Boolean validateDirectory(String path){
+            return (Directory.Exists(@path));            
+        }  
 
         public List<IMetadata> buildDirectorys(Dictionary<string, List<string>> mapPackage, string pathDir)
         {
@@ -31,9 +36,15 @@ namespace Salesforce_Package
             this.createPackageDirectory(pathDir);
             foreach (var type in mapPackage)
             {
-                String tempDirectory = pathDir + "\\" + DirectoryContants.renameDirectoryMetaData(type.Key);
-                this.createPackageDirectory(tempDirectory);
-                metaDatas.Add(metaDataFactory.getMetadata(type.Key));
+                try{
+                    String tempDirectory = pathDir + "\\" + DirectoryContants.renameDirectoryMetaData(type.Key);
+                    this.createPackageDirectory(tempDirectory);
+                    metaDatas.Add(metaDataFactory.getMetadata(type.Key));  
+                }catch (System.Exception e)
+                {
+                    Console.WriteLine("Error found:" + e.Message);               
+                }
+           
             }
 
             return metaDatas;

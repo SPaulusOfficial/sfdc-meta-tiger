@@ -7,6 +7,8 @@ namespace Salesforce_Package
     class DirectoryContants {
 
 		public const string ApexClass = "ApexClass";
+		public const string ApexTrigger = "ApexTrigger";
+		public const string ApexComponent = "ApexComponent";
 		public const string ApexPage = "ApexPage";
 		public const string CustomMetadata = "CustomMetadata";
 		public const string CustomObject = "CustomObject";
@@ -16,20 +18,24 @@ namespace Salesforce_Package
 		public const string PermissionSet = "PermissionSet";
 		public const string Profile = "Profile";
 		public const string StaticResource = "StaticResource";
+		public const string RemoteSiteSetting = "RemoteSiteSetting";
 		public static String renameDirectoryMetaData(String typeMetadata){
 			
 			switch (typeMetadata)
 			{
 				case ApexClass: return "classes";
+				case ApexTrigger: return "triggers";
+				case ApexComponent: return "components";
 				case ApexPage: return "pages";
 				case CustomMetadata: return "customMetadata";
 				case CustomObject: return "objects";
+				case CustomField: return "customfields";
 				case EmailTemplate: return "email";
 				case Layout: return "layouts";
 				case PermissionSet: return "permissionsets";
 				case Profile: return "profiles";
-				case StaticResource: return "staticresources";
-				case CustomField: return "customfields";
+				case StaticResource: return "staticresources";				
+				case RemoteSiteSetting: return "remoteSiteSettings";				
 				default: throw new System.ArgumentException("Metadata not found", typeMetadata);
 			}
 		}

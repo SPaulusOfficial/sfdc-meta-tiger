@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package
+namespace Salesforce_Package.Metadata
 {
     class metaDataFactory {
         
@@ -39,6 +39,16 @@ namespace Salesforce_Package
                     
             }  else if(metadata.Equals(DirectoryContants.CustomField)){
                 metaData =  new metaCustomField();                            
+            
+            } else if(metadata.Equals(DirectoryContants.ApexComponent)){
+                metaData =  new metaApexComponent();                            
+            
+            } else if(metadata.Equals(DirectoryContants.ApexTrigger)){
+                metaData =  new metaApexTrigger();                            
+            
+            } else if(metadata.Equals(DirectoryContants.RemoteSiteSetting)){
+                metaData =  new metaRemoteSiteSetting();                            
+            
             }            
             else if(metadata == null){                
                 throw new System.Exception("Metadata not found: " + metadata);                                
