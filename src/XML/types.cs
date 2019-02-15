@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package
+namespace Salesforce_Package.XML
 {
     [Serializable()]
     [XmlRoot(ElementName="types", Namespace="http://soap.sforce.com/2006/04/metadata")]

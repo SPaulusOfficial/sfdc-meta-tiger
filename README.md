@@ -5,6 +5,8 @@ is working with this metadata for now:
 
 ApexClass<br />
 ApexPage<br />
+ApexTrigger<br />
+ApexComponent<br />
 CustomMetadata<br />
 CustomObject<br />
 EmailTemplate<br />
@@ -12,6 +14,7 @@ Layout<br />
 PermissionSet<br />
 Profile<br />
 CustomField<br />
+RemoteSiteSetting<br />
 
 Install  Visual Studio Code.<br />
 Install SDK do .NET Core.<br />
