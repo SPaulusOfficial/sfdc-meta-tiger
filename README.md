@@ -11,6 +11,7 @@ EmailTemplate<br />
 Layout<br />
 PermissionSet<br />
 Profile<br />
+CustomField<br />
 
 Install  Visual Studio Code.<br />
 Install SDK do .NET Core.<br />
