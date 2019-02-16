@@ -8,7 +8,7 @@ namespace Salesforce_Package.Metadata{
 
 		public metaFlowDefinition(){
 			this.m_list = new List<String>();
-			this.m_metaName = DirectoryContants.Flows;
+			this.m_metaName = DirectoryContants.FlowDefinition;
 		} 
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){		
