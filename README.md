@@ -9,11 +9,11 @@ ApexTrigger<br />
 ApexComponent<br />
 CustomMetadata<br />
 CustomObject<br />
+CustomField<br />
 EmailTemplate<br />
 Layout<br />
 PermissionSet<br />
 Profile<br />
-CustomField<br />
 Flow<br />
 FlowDefinition<br />
 EntitlementProcess<br />
