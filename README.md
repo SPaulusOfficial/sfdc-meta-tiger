@@ -36,7 +36,6 @@ In VisualCode using the terminal <br />
 Enter the directory where your package.xml is located | Example: C:\Documents\workspace\DEV05\package.xml<br />
 <strong>"Please enter the path of the repository where the files are:"</strong><br />
 Enter your directory path, where the files are located | C:\Documents\workspace\DEV05<br />
-
 <br />
 Result:<br />
 <img src="https://github.com/brunoslribeiro/sfdc-package-repository-files/blob/master/assets/Result.PNG">
