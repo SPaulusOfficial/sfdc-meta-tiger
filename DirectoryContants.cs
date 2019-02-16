@@ -19,6 +19,9 @@ namespace Salesforce_Package
 		public const string Profile = "Profile";
 		public const string StaticResource = "StaticResource";
 		public const string RemoteSiteSetting = "RemoteSiteSetting";
+		public const string Flow = "Flow";
+		public const string FlowDefinition = "FlowDefinition";
+		public const string EntitlementProcess = "EntitlementProcess";
 		public static String renameDirectoryMetaData(String typeMetadata){
 			
 			switch (typeMetadata)
@@ -36,6 +39,9 @@ namespace Salesforce_Package
 				case Profile: return "profiles";
 				case StaticResource: return "staticresources";				
 				case RemoteSiteSetting: return "remoteSiteSettings";				
+				case EntitlementProcess: return "entitlementProcesses";				
+				case Flow: return "flows";				
+				case FlowDefinition: return "flowDefinitions";				
 				default: throw new System.ArgumentException("Metadata not found", typeMetadata);
 			}
 		}

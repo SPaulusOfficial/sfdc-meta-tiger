@@ -49,6 +49,14 @@ namespace Salesforce_Package.Metadata
             } else if(metadata.Equals(DirectoryContants.RemoteSiteSetting)){
                 metaData =  new metaRemoteSiteSetting();                            
             
+            } else if(metadata.Equals(DirectoryContants.EntitlementProcess)){
+                metaData =  new metaEntitlementProcess();                            
+            
+            } else if(metadata.Equals(DirectoryContants.Flow)){
+                metaData =  new metaFlow();                            
+            
+            } else if(metadata.Equals(DirectoryContants.FlowDefinition)){
+                metaData =  new metaFlowDefinition();
             }            
             else if(metadata == null){                
                 throw new System.Exception("Metadata not found: " + metadata);                                

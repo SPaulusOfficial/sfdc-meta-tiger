@@ -20,7 +20,7 @@ namespace Salesforce_Package
 			}
 			catch (System.IO.FileNotFoundException e)
 			{			  
-       		  Console.WriteLine("Not found file in directory:" + e.Message);
+       		  ConsoleHelper.WriteErrorLine("Not found file in directory:" + e.Message);
 			}			
 		}
 		

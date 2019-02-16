@@ -14,7 +14,7 @@ namespace Salesforce_Package
             {                 
                 if (Directory.Exists(@path)) 
                 {
-                    Console.WriteLine("That path exists already:" + path);
+                    ConsoleHelper.WriteWarningLine("That path exists already:" + path);
                     return;
                 }
                 
@@ -22,7 +22,8 @@ namespace Salesforce_Package
             } 
             catch (Exception e) 
             {
-                Console.WriteLine("The process failed: {0}", e.ToString());
+                String errorException = String.Format("The process failed: {0}",e.ToString());
+                ConsoleHelper.WriteErrorLine(errorException);
             }             
         }      
 
@@ -42,7 +43,7 @@ namespace Salesforce_Package
                     metaDatas.Add(metaDataFactory.getMetadata(type.Key));  
                 }catch (System.Exception e)
                 {
-                    Console.WriteLine("Error found:" + e.Message);               
+                    ConsoleHelper.WriteWarningLine("Error found:" + e.Message);               
                 }
            
             }

@@ -11,20 +11,23 @@ namespace Salesforce_Package
         static void Main(string[] args)
         {
             var mapPackage = new Dictionary<string, List<string>>();
-            Console.WriteLine("############################");
-            Console.WriteLine("#    PACKAGE MANIFEST      #");
-            Console.WriteLine("############################");
-
-            Console.WriteLine(">>> Please enter the path of the Package.xml path");
+            ConsoleHelper.WriteDocLine("###################################################");
+            ConsoleHelper.WriteDocLine("#   Salesforce - PACKAGE MANIFEST - Version 3.0   #");
+            ConsoleHelper.WriteDocLine("#           Generate files of Repository          #");
+            ConsoleHelper.WriteDocLine("#         Author:Bruno Smith Lopes Ribeiro        #");
+            ConsoleHelper.WriteDocLine("#        E-mail:bruno_smith10@hotmail.com         #");
+            ConsoleHelper.WriteDocLine("###################################################");
+            Console.WriteLine("");
+            ConsoleHelper.WriteQuestionLine(">>> Please enter the path of the Package.xml:");
             
             String path = Console.ReadLine();
 
-            Console.WriteLine(">>> Please enter the path of the repository where the files are:");
+            ConsoleHelper.WriteQuestionLine(">>> Please enter the path of the repository where the files are:");
 
             String pathFiles = Console.ReadLine();
 
             if(!ManageDirectory.validateDirectory(pathFiles)){
-                Console.WriteLine(">>> Path not found:" + pathFiles);
+                ConsoleHelper.WriteErrorLine(">>> Path not found:" + pathFiles);
                 return;
             }
 
@@ -38,19 +41,19 @@ namespace Salesforce_Package
             stageCopyMetadata(pathFiles, pathDir, metaDatas);
             stageCopyPackageFinal(path, pathDir);
 
-            Console.WriteLine(">> Finalize the process...");
+            ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
 
         private static void stageCopyPackageFinal(string path, string pathDir)
         {
-            Console.WriteLine(">> Copying package...");            
+            ConsoleHelper.WriteDoneLine(">> Copying package...");            
 
             ManageCopy.doCopy(path.Replace("package.xml", ""), pathDir, "package.xml");            
         }
 
         private static void stageCopyMetadata(string pathFiles, string pathDir, List<IMetadata> metaDatas)
         {
-            Console.WriteLine(">> Copying metadata...");
+            ConsoleHelper.WriteDoneLine(">> Copying metadata...");
             foreach (IMetadata m_metadata in metaDatas)
             {
                 m_metadata.doCopy(pathFiles, pathDir);
@@ -59,7 +62,7 @@ namespace Salesforce_Package
 
         private static void stageValidateMetadata(Dictionary<string, List<string>> mapPackage, List<IMetadata> metaDatas)
         {
-            Console.WriteLine(">> Validating metadata...");
+           ConsoleHelper.WriteDoneLine(">> Validating metadata...");
 
             foreach (var type in mapPackage)
             {
@@ -75,7 +78,7 @@ namespace Salesforce_Package
 
         private static List<IMetadata> stageCreateDirectorys(Dictionary<string, List<string>> mapPackage, string pathDir)
         {
-            Console.WriteLine(">> Creating directories...");
+            ConsoleHelper.WriteDoneLine(">> Creating directories...");
 
             ManageDirectory manageDirectory = new ManageDirectory();
             List<IMetadata> metaDatas = manageDirectory.buildDirectorys(mapPackage, pathDir);
