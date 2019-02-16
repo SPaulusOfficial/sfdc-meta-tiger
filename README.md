@@ -14,7 +14,10 @@ Layout<br />
 PermissionSet<br />
 Profile<br />
 CustomField<br />
-RemoteSiteSetting<br />
+Flow<br />
+FlowDefinition<br />
+EntitlementProcess<br />
+RemoteSiteSetting<br/>
 
 Install  Visual Studio Code.<br />
 Install SDK do .NET Core.<br />
