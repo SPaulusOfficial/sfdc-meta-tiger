@@ -4,32 +4,32 @@ using System.Xml.Serialization;
 using Salesforce_Package.XML;
 
 namespace Salesforce_Package.Metadata{
-    class metaCustomField:metaCustomObjectBase {
+    class metaValidationRule:metaCustomObjectBase {
         
-		public metaCustomField(){
+		public metaValidationRule(){
 			this.m_list = new List<String>();
-			this.m_metaName = DirectoryContants.CustomField;
+			this.m_metaName = DirectoryContants.ValidationRule;
 			this.m_mapMetaObject = new Dictionary<String,String>();
 		} 
 		
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){			
-			Dictionary<string, List<Fields>> dictionaryFields = this.buildMap(directoryPath+"\\"+metaname+".object",this.m_list,this.m_metaName);									
+			Dictionary<string, List<ValidationRules>> dictionaryFields = this.buildMap(directoryPath+"\\"+metaname+".object",this.m_list,this.m_metaName);									
 			CustomObject m_CustomObject_clean =  ManageXMLCustomObject.creteNewObject();			
-			m_CustomObject_clean.Fields = dictionaryFields[metaname];
+			m_CustomObject_clean.ValidationRules = dictionaryFields[metaname];
 			ManageXMLCustomObject.doWrite(m_CustomObject_clean,directoryTargetFilePath+"\\",metaname+".object");													
 		}
 
-		public Dictionary<string, List<Fields>> buildMap(String path,List<String> m_list,String metaname){         
-				Dictionary<string, List<Fields>> mapCustomMeta = new Dictionary<string, List<Fields>>();
+		public Dictionary<string, List<ValidationRules>> buildMap(String path,List<String> m_list,String metaname){         
+				Dictionary<string, List<ValidationRules>> mapCustomMeta = new Dictionary<string, List<ValidationRules>>();
 				CustomObject customObject = ManageXMLCustomObject.Deserialize(path);
 
 				foreach(String metafile in m_list){                
 						String [] customMetaSplit = metafile.Split("."); 
 						String m_nameObject = customMetaSplit[0];
 						String customInMeta = customMetaSplit[1];
-						foreach(Fields meta in customObject.Fields){                                                                                             
+						foreach(ValidationRules meta in customObject.ValidationRules){                                                                                             
 								if (!mapCustomMeta.ContainsKey(m_nameObject)){                        
-										mapCustomMeta.Add(m_nameObject, new List<Fields>());
+										mapCustomMeta.Add(m_nameObject, new List<ValidationRules>());
 								}           
 								if(meta.FullName==customInMeta){
 									mapCustomMeta[m_nameObject].Add(meta);                                       

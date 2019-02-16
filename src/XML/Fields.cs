@@ -16,7 +16,8 @@ namespace Salesforce_Package.XML
 		public string Label { get; set; }
 		[XmlElement(ElementName="trackFeedHistory", Namespace="http://soap.sforce.com/2006/04/metadata")]
 		public string TrackFeedHistory { get; set; }
-		[XmlElement(ElementName="trackHistory", Namespace="http://soap.sforce.com/2006/04/metadata")]
+
+        [XmlElement(ElementName="trackHistory", Namespace="http://soap.sforce.com/2006/04/metadata")]
 		public string TrackHistory { get; set; }
 		[XmlElement(ElementName="trackTrending", Namespace="http://soap.sforce.com/2006/04/metadata")]
 		public string TrackTrending { get; set; }

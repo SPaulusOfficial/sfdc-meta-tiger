@@ -57,6 +57,16 @@ namespace Salesforce_Package.Metadata
             
             } else if(metadata.Equals(DirectoryContants.FlowDefinition)){
                 metaData =  new metaFlowDefinition();
+
+            } else if(metadata.Equals(DirectoryContants.Settings)){
+                metaData =  new metaSettings();
+
+            } else if(metadata.Equals(DirectoryContants.ListView)){
+                metaData =  new metaListView();
+
+            } else if(metadata.Equals(DirectoryContants.ValidationRule)){
+                metaData =  new metaValidationRule();
+
             }            
             else if(metadata == null){                
                 throw new System.Exception("Metadata not found: " + metadata);                                

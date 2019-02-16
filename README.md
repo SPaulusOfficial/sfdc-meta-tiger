@@ -19,6 +19,9 @@ is working with this metadata for now:
   <li>FlowDefinition</li>
   <li>EntitlementProcess</li>
   <li>RemoteSiteSetting</li>
+  <li>ListView</li>
+  <li>Settings</li>
+  <li>ValidationRules</li>
 </ul>
 
 Install  Visual Studio Code.<br />

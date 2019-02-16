@@ -13,6 +13,7 @@ namespace Salesforce_Package
 		public const string CustomMetadata = "CustomMetadata";
 		public const string CustomObject = "CustomObject";
 		public const string CustomField = "CustomField";
+		public const string ListView = "ListView";
 		public const string EmailTemplate = "EmailTemplate";
 		public const string Layout = "Layout";
 		public const string PermissionSet = "PermissionSet";
@@ -21,6 +22,8 @@ namespace Salesforce_Package
 		public const string RemoteSiteSetting = "RemoteSiteSetting";
 		public const string Flow = "Flow";
 		public const string FlowDefinition = "FlowDefinition";
+		public const string Settings = "Settings";
+		public const string ValidationRule = "ValidationRule";
 		public const string EntitlementProcess = "EntitlementProcess";
 		public static String renameDirectoryMetaData(String typeMetadata){
 			
@@ -32,7 +35,7 @@ namespace Salesforce_Package
 				case ApexPage: return "pages";
 				case CustomMetadata: return "customMetadata";
 				case CustomObject: return "objects";
-				case CustomField: return "customfields";
+				case CustomField: return "_customfields";
 				case EmailTemplate: return "email";
 				case Layout: return "layouts";
 				case PermissionSet: return "permissionsets";
@@ -42,6 +45,9 @@ namespace Salesforce_Package
 				case EntitlementProcess: return "entitlementProcesses";				
 				case Flow: return "flows";				
 				case FlowDefinition: return "flowDefinitions";				
+				case Settings: return "settings";				
+				case ListView: return "_listviews";				
+				case ValidationRule: return "_validationrules";				
 				default: throw new System.ArgumentException("Metadata not found", typeMetadata);
 			}
 		}
