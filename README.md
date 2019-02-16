@@ -3,21 +3,23 @@
 Create structure of Package with Repository, 
 is working with this metadata for now:
 
-ApexClass<br />
-ApexPage<br />
-ApexTrigger<br />
-ApexComponent<br />
-CustomMetadata<br />
-CustomObject<br />
-CustomField<br />
-EmailTemplate<br />
-Layout<br />
-PermissionSet<br />
-Profile<br />
-Flow<br />
-FlowDefinition<br />
-EntitlementProcess<br />
-RemoteSiteSetting<br/>
+<ul>
+  <li>ApexClass</li>
+  <li>ApexPage</li>
+  <li>ApexTrigger</li>
+  <li>ApexComponent</li>
+  <li>CustomMetadata</li>
+  <li>CustomObject</li>
+  <li>CustomField</li>
+  <li>EmailTemplate</li>
+  <li>Layout</li>
+  <li>PermissionSet</li>
+  <li>Profile</li>
+  <li>Flow</li>
+  <li>FlowDefinition</li>
+  <li>EntitlementProcess</li>
+  <li>RemoteSiteSetting</li>
+</ul>
 
 Install  Visual Studio Code.<br />
 Install SDK do .NET Core.<br />
