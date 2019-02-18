@@ -1,4 +1,4 @@
-# sfdc-package-repository-files
+# Project Salesforce Package Repository Files
 
 Create structure of Package with Repository, 
 is working with this Metadata for now:
