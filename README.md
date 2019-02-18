@@ -19,7 +19,6 @@ is working with this Metadata for now:
     <td>PermissionSet</td>
     <td>Profile</td>
     <td>Flow</td>
-    <td>FlowDefinition</td>
   </tr>
   <tr>
     <td>ListView</td>
@@ -34,6 +33,7 @@ is working with this Metadata for now:
     <td>StandardValueSet</td>
     <td>MilestoneType</td>
     <td>RemoteSiteSetting</td>
+    <td>FlowDefinition</td>
   </tr>
 </table>
 
