@@ -11,16 +11,15 @@ is working with this Metadata for now:
     <td>ApexComponent</td>
     <td>CustomMetadata</td>
     <td>CustomObject</td>
-    <td>CustomField</td>
   </tr>
   <tr>
+    <td>CustomField</td>
     <td>EmailTemplate</td>
     <td>Layout</td>
     <td>PermissionSet</td>
     <td>Profile</td>
     <td>Flow</td>
     <td>FlowDefinition</td>
-    <td>RemoteSiteSetting</td>
   </tr>
   <tr>
     <td>ListView</td>
@@ -29,11 +28,12 @@ is working with this Metadata for now:
     <td>Workflow</td>
     <td>WorkflowRules</td>
     <td>Weblink</td>
-    <td>RecordTypes</td>
   </tr>
   <tr>
+    <td>RecordTypes</td>
     <td>StandardValueSet</td>
     <td>MilestoneType</td>
+    <td>RemoteSiteSetting</td>
   </tr>
 </table>
 
