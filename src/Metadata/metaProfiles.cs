@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Salesforce_Package.Manage;
 
 namespace Salesforce_Package.Metadata
 {
-    class metaProfiles:metaBase {        		
+    class MetaProfiles:MetaBase {        		
 
-		public metaProfiles(){
+		public MetaProfiles(){
 			this.m_list = new List<String>();
-			this.m_metaName = DirectoryContants.Profile;
+			this.m_metaname = MetaConstants.Profile;
 		} 
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){

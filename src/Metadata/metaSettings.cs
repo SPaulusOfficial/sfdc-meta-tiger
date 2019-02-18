@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Salesforce_Package.Manage;
 
 namespace Salesforce_Package.Metadata
 {
-    class metaSettings:metaBase {
+    class MetaSettings:MetaBase {
         
 
-		public metaSettings(){
+		public MetaSettings(){
 			this.m_list = new List<String>();
-			this.m_metaName = DirectoryContants.Settings;			
+			this.m_metaname = MetaConstants.Settings;			
 		} 
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){			

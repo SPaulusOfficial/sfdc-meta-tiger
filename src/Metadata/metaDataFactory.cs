@@ -4,83 +4,39 @@ using System.Xml.Serialization;
 
 namespace Salesforce_Package.Metadata
 {
-    class metaDataFactory {
+    class MetaDataFactory {
         
-        public static IMetadata getMetadata(String metadata){
+        public static IMetadata getMetadata(String Metadata){
             
-            IMetadata metaData  = null;
-
-            if(metadata.Equals(DirectoryContants.ApexClass)){
-                metaData =  new metaApexClass();                
-            
-            } else if(metadata.Equals(DirectoryContants.ApexPage)){
-                metaData =  new metaApexPage();                
-            
-            } else if(metadata.Equals(DirectoryContants.CustomMetadata)){
-                metaData =  new metaCustomMetadata();
-            
-            } else if(metadata.Equals(DirectoryContants.CustomObject)){
-                metaData =  new metaCustomObject();
-            
-            } else if(metadata.Equals(DirectoryContants.EmailTemplate)){
-                metaData =  new metaEmailTemplate();
-            
-            } else if(metadata.Equals(DirectoryContants.Layout)){
-                metaData =  new metaLayout();
-            
-            } else if(metadata.Equals(DirectoryContants.PermissionSet)){
-                metaData =  new metaPermissionSet();
-            
-            } else if(metadata.Equals(DirectoryContants.Profile)){
-                metaData =  new metaProfiles();
-            
-            } else if(metadata.Equals(DirectoryContants.StaticResource)){
-                metaData =  new metaStaticResource();        
-                    
-            }  else if(metadata.Equals(DirectoryContants.CustomField)){
-                metaData =  new metaCustomField();                            
-            
-            } else if(metadata.Equals(DirectoryContants.ApexComponent)){
-                metaData =  new metaApexComponent();                            
-            
-            } else if(metadata.Equals(DirectoryContants.ApexTrigger)){
-                metaData =  new metaApexTrigger();                            
-            
-            } else if(metadata.Equals(DirectoryContants.RemoteSiteSetting)){
-                metaData =  new metaRemoteSiteSetting();                            
-            
-            } else if(metadata.Equals(DirectoryContants.EntitlementProcess)){
-                metaData =  new metaEntitlementProcess();                            
-            
-            } else if(metadata.Equals(DirectoryContants.Flow)){
-                metaData =  new metaFlow();                            
-            
-            } else if(metadata.Equals(DirectoryContants.FlowDefinition)){
-                metaData =  new metaFlowDefinition();
-
-            } else if(metadata.Equals(DirectoryContants.Settings)){
-                metaData =  new metaSettings();
-
-            } else if(metadata.Equals(DirectoryContants.ListView)){
-                metaData =  new metaListView();
-
-            } else if(metadata.Equals(DirectoryContants.ValidationRule)){
-                metaData =  new metaValidationRule();
-
-            }            
-            else if(metadata == null){                
-                throw new System.Exception("Metadata not found: " + metadata);                                
-            }
-
-            return metaData;
-                       
-        }
-		
-      
-      
-		
+            switch (Metadata)
+			{
+				case MetaConstants.ApexClass: return new MetaApexClass();
+				case MetaConstants.ApexTrigger: return new MetaApexTrigger();
+				case MetaConstants.ApexComponent: return new MetaApexComponent();
+				case MetaConstants.ApexPage: return new MetaApexPage();
+				case MetaConstants.CustomMetadata: return new MetaCustomMetadata();
+				case MetaConstants.CustomObject: return new MetaCustomObject();
+				case MetaConstants.CustomField:return new MetaCustomField();
+				case MetaConstants.EmailTemplate: return new MetaEmailTemplate();
+				case MetaConstants.Layout: return new MetaLayout();
+				case MetaConstants.PermissionSet: return new MetaPermissionSet();
+				case MetaConstants.Profile: return new MetaProfiles();
+				case MetaConstants.StaticResource: return new MetaStaticResource();				
+				case MetaConstants.RemoteSiteSetting: return new MetaRemoteSiteSetting();				
+				case MetaConstants.EntitlementProcess:  return new MetaEntitlementProcess();				
+				case MetaConstants.Flow: return new MetaFlow();			
+				case MetaConstants.FlowDefinition:  return new MetaFlowDefinition();					
+				case MetaConstants.Settings: return new MetaSettings();			
+				case MetaConstants.ListView: return new MetaListView();					
+				case MetaConstants.ValidationRule: return new MetaValidationRule();					
+				case MetaConstants.RecordType: return new MetaRecordType();			
+				case MetaConstants.MilestoneType: return new MetaMilestoneType();				
+				case MetaConstants.WebLink:  return new MetaWebLink();			
+				case MetaConstants.Workflow: return new MetaWorkflow();
+				case MetaConstants.WorkflowRule:return new MetaWorkflowRule();
+				case MetaConstants.StandardValueSet: return new MetaStandardValueSet();
+				default: throw new System.ArgumentException("Metadata not found", Metadata);
+			}
+		}
 	}
-
-
-	
 }

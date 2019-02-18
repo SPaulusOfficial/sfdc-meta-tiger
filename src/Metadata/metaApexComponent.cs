@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Salesforce_Package.Manage;
 
 namespace Salesforce_Package.Metadata{
-    class metaApexComponent : metaBase {
+    class MetaApexComponent : MetaBase {
 
-		public metaApexComponent(){
+		public MetaApexComponent(){
 			this.m_list = new List<String>();
-			this.m_metaName = DirectoryContants.ApexComponent;
+			this.m_metaname = MetaConstants.ApexComponent;
 		}		
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
-			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".component");
-			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".component-meta.xml");
+			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".component"));
+			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".component-meta.xml"));
 		}	
 		
 	}

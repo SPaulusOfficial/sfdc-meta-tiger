@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Salesforce_Package.Manage;
 
 namespace Salesforce_Package.Metadata{
-    class metaFlowDefinition:metaBase {
+    class MetaFlowDefinition:MetaBase {
         
 
-		public metaFlowDefinition(){
+		public MetaFlowDefinition(){
 			this.m_list = new List<String>();
-			this.m_metaName = DirectoryContants.FlowDefinition;
+			this.m_metaname = MetaConstants.FlowDefinition;
 		} 
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){		

@@ -6,7 +6,7 @@ namespace Salesforce_Package.Metadata
 {
     interface IMetadata {		
     			        
-		void isValidThenAdd(String metaName,String metaFile);
+		void isValidThenAdd(String metaname,String MetaFile);
 
 		void doCopy(String sourcePath,String targetPath);
 

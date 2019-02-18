@@ -4,15 +4,15 @@ using System.Xml.Serialization;
 
 namespace Salesforce_Package.Metadata
 {
-    abstract class metaCustomObjectBase:metaBase,IMetadata {
+    abstract class MetaCustomObjectBase:MetaBase,IMetadata {
     
-			public String m_metaObject = DirectoryContants.CustomObject;
+			public String m_MetaObject = MetaConstants.CustomObject;
 			public Dictionary<String,String> m_mapMetaObject;
 
 			//Override methods
-			void IMetadata.isValidThenAdd(String metaName,String metaFile) 
+			void IMetadata.isValidThenAdd(String metaname,String MetaFile) 
 			{ 
-				this.isValidThenAdd(metaName,metaFile); 
+				this.isValidThenAdd(metaname,MetaFile); 
 			} 
 
 			void IMetadata.doCopy(String sourcePath,String targetPath){			
@@ -20,22 +20,22 @@ namespace Salesforce_Package.Metadata
 			}
 			//End Override methods
 
-			public new void isValidThenAdd(String metaName,String metaFile){
-				if(m_metaName.Equals(metaName)){
-					this.m_list.Add(metaFile);
-					String [] customMetaSplit = metaFile.Split("."); 
-					String metaObject = customMetaSplit[0];
-					if (!m_mapMetaObject.ContainsKey(metaObject)){
-							m_mapMetaObject.Add(metaObject, metaObject);
+			public new void isValidThenAdd(String metaname,String MetaFile){
+				if(m_metaname.Equals(metaname)){
+					this.m_list.Add(MetaFile);
+					String [] customMetaSplit = MetaFile.Split("."); 
+					String MetaObject = customMetaSplit[0];
+					if (!m_mapMetaObject.ContainsKey(MetaObject)){
+							m_mapMetaObject.Add(MetaObject, MetaObject);
 					}
 				}
 			}
 
 			public new void doCopy(String sourcePath,String targetPath){
-				String directoryPath = "\\"+DirectoryContants.renameDirectoryMetaData(m_metaObject);
-				String directoryPathMetaField = "\\"+DirectoryContants.renameDirectoryMetaData(this.m_metaName);
-				String directoryFilePath = (sourcePath+directoryPath);
-				String directoryTargetFilePath = (targetPath+directoryPathMetaField);						
+				String directoryPath = String.Concat("\\",MetaDirectory.getDirectory(m_MetaObject));
+				String directoryPathMetaField = String.Concat("\\",MetaDirectory.getDirectory(m_metaname));
+				String directoryFilePath = String.Concat(sourcePath,directoryPath);
+				String directoryTargetFilePath = String.Concat(targetPath,directoryPathMetaField);				
 				foreach(KeyValuePair<string, string> m_object in m_mapMetaObject){
 					this.buildCopy(m_object.Key,directoryFilePath,directoryTargetFilePath);
 				}

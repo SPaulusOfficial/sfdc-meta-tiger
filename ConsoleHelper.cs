@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Salesforce_Package.XML;
+using Salesforce_Package.Xml;
 
 namespace Salesforce_Package
 {

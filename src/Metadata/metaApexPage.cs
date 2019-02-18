@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Salesforce_Package.Manage;
 
 namespace Salesforce_Package.Metadata{
-    class metaApexPage:metaBase {
+    class MetaApexPage:MetaBase {
         
 
-		public metaApexPage(){
+		public MetaApexPage(){
 			this.m_list = new List<String>();
-			this.m_metaName = DirectoryContants.ApexPage;
+			this.m_metaname = MetaConstants.ApexPage;
 		} 
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){		
-			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".page");
-			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".page-meta.xml");
+			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".page"));
+			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".page-meta.xml"));
 		}	
 		
 	}

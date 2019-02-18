@@ -1,7 +1,7 @@
 # sfdc-package-repository-files
 
 Create structure of Package with Repository, 
-is working with this metadata for now:
+is working with this Metadata for now:
 
 <ul>
   <li>ApexClass</li>
@@ -22,6 +22,12 @@ is working with this metadata for now:
   <li>ListView</li>
   <li>Settings</li>
   <li>ValidationRules</li>
+  <li>Workflow</li>
+  <li>WorkflowRules</li>
+  <li>Weblink</li>
+  <li>RecordTypes</li>
+  <li>StandardValueSet</li>
+  <li>MilestoneType</li>
 </ul>
 
 Install  Visual Studio Code.<br />
