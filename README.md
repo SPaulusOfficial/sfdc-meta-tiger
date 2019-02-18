@@ -3,32 +3,39 @@
 Create structure of Package with Repository, 
 is working with this Metadata for now:
 
-<ul>
-  <li>ApexClass</li>
-  <li>ApexPage</li>
-  <li>ApexTrigger</li>
-  <li>ApexComponent</li>
-  <li>CustomMetadata</li>
-  <li>CustomObject</li>
-  <li>CustomField</li>
-  <li>EmailTemplate</li>
-  <li>Layout</li>
-  <li>PermissionSet</li>
-  <li>Profile</li>
-  <li>Flow</li>
-  <li>FlowDefinition</li>
-  <li>EntitlementProcess</li>
-  <li>RemoteSiteSetting</li>
-  <li>ListView</li>
-  <li>Settings</li>
-  <li>ValidationRules</li>
-  <li>Workflow</li>
-  <li>WorkflowRules</li>
-  <li>Weblink</li>
-  <li>RecordTypes</li>
-  <li>StandardValueSet</li>
-  <li>MilestoneType</li>
-</ul>
+<table>
+  <tr>
+    <td>ApexClass</td>
+    <td>ApexTrigger</td>
+    <td>ApexPage</td>
+    <td>ApexComponent</td>
+    <td>CustomMetadata</td>
+    <td>CustomObject</td>
+    <td>CustomField</td>
+  </tr>
+  <tr>
+    <td>EmailTemplate</td>
+    <td>Layout</td>
+    <td>PermissionSet</td>
+    <td>Profile</td>
+    <td>Flow</td>
+    <td>FlowDefinition</td>
+    <td>RemoteSiteSetting</td>
+  </tr>
+  <tr>
+    <td>ListView</td>
+    <td>Settings</td>
+    <td>ValidationRules</td>
+    <td>Workflow</td>
+    <td>WorkflowRules</td>
+    <td>Weblink</td>
+    <td>RecordTypes</td>
+  </tr>
+  <tr>
+    <td>StandardValueSet</td>
+    <td>MilestoneType</td>
+  </tr>
+</table>
 
 Install  Visual Studio Code.<br />
 Install SDK do .NET Core.<br />
