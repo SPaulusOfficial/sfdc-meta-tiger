@@ -5,35 +5,35 @@ is working with this Metadata for now:
 
 <table>
   <tr>
-    <td>ApexClass</td>
-    <td>ApexTrigger</td>
-    <td>ApexPage</td>
-    <td>ApexComponent</td>
-    <td>CustomMetadata</td>
-    <td>CustomObject</td>
+    <td><strong>ApexClass</strong></td>
+    <td><strong>ApexTrigger</strong></td>
+    <td><strong>ApexPage</strong></td>
+    <td><strong>ApexComponent</strong></td>
+    <td><strong>CustomMetadata</strong></td>
+    <td><strong>CustomObject</strong></td>
   </tr>
   <tr>
-    <td>CustomField</td>
-    <td>EmailTemplate</td>
-    <td>Layout</td>
-    <td>PermissionSet</td>
-    <td>Profile</td>
-    <td>Flow</td>
+    <td><strong>CustomField</strong></td>
+    <td><strong>EmailTemplate</strong></td>
+    <td><strong>Layout</strong></td>
+    <td><strong>PermissionSet</strong></td>
+    <td><strong>Profile</strong></td>
+    <td><strong>Flow</strong></td>
   </tr>
   <tr>
-    <td>ListView</td>
-    <td>Settings</td>
-    <td>ValidationRules</td>
-    <td>Workflow</td>
-    <td>WorkflowRules</td>
-    <td>Weblink</td>
+    <td><strong>ListView</strong></td>
+    <td><strong>Settings</strong></td>
+    <td><strong>ValidationRules</strong></td>
+    <td><strong>Workflow</strong></td>
+    <td><strong>WorkflowRules</strong></td>
+    <td><strong>Weblink</strong></td>
   </tr>
   <tr>
-    <td>RecordTypes</td>
-    <td>StandardValueSet</td>
-    <td>MilestoneType</td>
-    <td>RemoteSiteSetting</td>
-    <td>FlowDefinition</td>
+    <td><strong>RecordTypes</strong></td>
+    <td><strong>StandardValueSet</strong></td>
+    <td><strong>MilestoneType</strong></td>
+    <td><strong>RemoteSiteSetting</strong></td>
+    <td><strong>FlowDefinition</strong></td>
   </tr>
 </table>
 
