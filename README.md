@@ -1,6 +1,6 @@
 # Project Salesforce Package Repository Files
 
-Create structure of Package with Repository, 
+Creating a Salesforce file tree through the Repository using package.xml, 
 is working with this Metadata for now:
 
 <table>
