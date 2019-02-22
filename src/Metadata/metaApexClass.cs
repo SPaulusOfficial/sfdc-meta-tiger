@@ -15,6 +15,8 @@ namespace Salesforce_Package.Metadata{
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cls"));
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cls-meta.xml"));
 		}	
+
+		public override void doMerge(){}
 		
 	}
 

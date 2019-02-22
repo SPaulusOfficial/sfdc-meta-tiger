@@ -7,7 +7,7 @@ using Salesforce_Package.Xml.CustomObject;
 namespace Salesforce_Package.ManageXML
 {
     class ManageXMLCustomObject {
-                       
+                   
         public static CustomObject Deserialize(String path)
         {
             CustomObject customobject = null;
@@ -20,7 +20,7 @@ namespace Salesforce_Package.ManageXML
             }                       
         }
 
-        public static CustomObject creteNewObject(){
+        public static CustomObject createNewObject(){
 			return new CustomObject();
 		}
 
@@ -40,6 +40,7 @@ namespace Salesforce_Package.ManageXML
        		  Console.WriteLine("Could not create file:" + e.Message);
 			}			
 		}
+
 	}
 
 

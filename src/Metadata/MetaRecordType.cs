@@ -15,7 +15,7 @@ namespace Salesforce_Package.Metadata{
 		
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){			
 			Dictionary<string, List<RecordTypes>> dictionaryFields = this.buildMap(directoryPath+"\\"+metaname+".object",this.m_list,this.m_metaname);									
-			CustomObject m_CustomObject_clean =  ManageXMLCustomObject.creteNewObject();			
+			CustomObject m_CustomObject_clean =  ManageXMLCustomObject.createNewObject();			
 			m_CustomObject_clean.RecordTypes = dictionaryFields[metaname];
 			ManageXMLCustomObject.doWrite(m_CustomObject_clean,directoryTargetFilePath+"\\",metaname+".object");													
 		}
@@ -44,6 +44,8 @@ namespace Salesforce_Package.Metadata{
 
 				return mapCustomMeta;
 		}
+
+		public override void doMerge(){}
 		
 	}
 

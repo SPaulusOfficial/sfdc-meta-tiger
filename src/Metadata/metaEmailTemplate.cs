@@ -19,6 +19,8 @@ namespace Salesforce_Package.Metadata
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".email");				
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".email-meta.xml");		
 		}
+
+		public override void doMerge(){}
 	}
 
 

@@ -40,7 +40,8 @@ namespace Salesforce_Package.Metadata
 					this.buildCopy(m_object.Key,directoryFilePath,directoryTargetFilePath);
 				}
 			}
-		
+
+			public override void doMerge(){}
 	}
 
 

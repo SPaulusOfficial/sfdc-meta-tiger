@@ -16,7 +16,7 @@ namespace Salesforce_Package.Metadata{
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){			
 			String pathDirectoryFileCustomObject = String.Concat(directoryPath,"\\",metaname,".workflow");
 			Dictionary<string, List<Rules>> dictionaryMeta = this.buildMap(pathDirectoryFileCustomObject,this.m_list,this.m_metaname);									
-			Workflow m_CustomObject_clean =  ManageXMLWorkflow.creteNewObject();			
+			Workflow m_CustomObject_clean =  ManageXMLWorkflow.createNewObject();			
 			m_CustomObject_clean.Rules = dictionaryMeta[metaname];
 			ManageXMLWorkflow.doWrite(m_CustomObject_clean,String.Concat(directoryTargetFilePath,"\\"),String.Concat(metaname,".workflow"));													
 		}
@@ -45,6 +45,8 @@ namespace Salesforce_Package.Metadata{
 
 				return mapCustomMeta;
 		}
+
+			public override void doMerge(){}
 		
 	}
 

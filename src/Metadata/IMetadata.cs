@@ -11,6 +11,8 @@ namespace Salesforce_Package.Metadata
 		void doCopy(String sourcePath,String targetPath);
 
 		void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath);
+
+		void doMerge();
 		
 	}
 	

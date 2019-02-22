@@ -38,7 +38,7 @@ is working with this Metadata for now:
 </table>
 
 Install  Visual Studio Code.<br />
-Install SDK do .NET Core.<br />
+Install SDK do .NET Core 2.2 <a href="https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.104-windows-x64-installer">Download</a> <br />
 Install the C # extension for the Visual Studio Code. To learn more about installing extensions in Visual Studio Code, check out the VS Code Extension Marketplace.<br />
 
 You can have more information on this link, how to install the dependencies before running the program:

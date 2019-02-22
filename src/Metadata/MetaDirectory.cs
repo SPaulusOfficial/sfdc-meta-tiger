@@ -35,6 +35,7 @@ namespace Salesforce_Package
 				case MetaConstants.Workflow: return "workflows";
 				case MetaConstants.WorkflowRule: return "_workflowrule";
 				case MetaConstants.StandardValueSet: return "standardValueSets";
+				case MetaConstants.CustomTab: return "tabs";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}

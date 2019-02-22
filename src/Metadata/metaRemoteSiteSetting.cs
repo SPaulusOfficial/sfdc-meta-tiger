@@ -15,6 +15,8 @@ namespace Salesforce_Package.Metadata
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".remoteSite");			
 		}	
+
+			public override void doMerge(){}
 		
 	}
 

@@ -15,7 +15,7 @@ namespace Salesforce_Package
             var mapPackage = new Dictionary<string, List<string>>();
             Console.WriteLine("");
             ConsoleHelper.WriteDocLine("###################################################");
-            ConsoleHelper.WriteDocLine("#   Salesforce - PACKAGE MANIFEST - Version 3.0   #");
+            ConsoleHelper.WriteDocLine("#   Salesforce - PACKAGE MANIFEST - Version 4.0   #");
             ConsoleHelper.WriteDocLine("#           Generate files of Repository          #");
             ConsoleHelper.WriteDocLine("#         Author:Bruno Smith Lopes Ribeiro        #");
             ConsoleHelper.WriteDocLine("#        E-mail:bruno_smith10@hotmail.com         #");
@@ -42,9 +42,21 @@ namespace Salesforce_Package
             List<IMetadata> MetaDatas = stageCreateDirectorys(mapPackage, pathDir);
             stageValidateMetadata(mapPackage, MetaDatas);
             stageCopyMetadata(pathFiles, pathDir, MetaDatas);
+            stageMergeMetadata(pathDir,MetaDatas);
             stageCopyPackageFinal(path, pathDir);
 
             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
+        }
+
+        private static void stageMergeMetadata(string pathDir, List<IMetadata> MetaDatas)
+        {
+            ConsoleHelper.WriteDoneLine(">> Merging Metadata...");
+            foreach (IMetadata m_Metadata in MetaDatas)
+            {
+                m_Metadata.doMerge();
+            }
+            ManageXMLCustomObjectMerge merge = ManageXMLCustomObjectMerge.getInstance();
+            merge.writeAllInstances(pathDir);
         }
 
         private static void stageCopyPackageFinal(string path, string pathDir)

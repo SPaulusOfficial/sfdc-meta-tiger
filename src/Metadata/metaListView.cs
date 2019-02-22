@@ -6,22 +6,24 @@ using Salesforce_Package.ManageXML;
 
 namespace Salesforce_Package.Metadata{
     class MetaListView:MetaCustomObjectBase {
-        
+
+		Dictionary<string, List<_ListViews>> m_dictionaryObject;
+
 		public MetaListView(){
 			this.m_list = new List<String>();
 			this.m_metaname = MetaConstants.ListView;
 			this.m_mapMetaObject = new Dictionary<String,String>();
+			this.m_dictionaryObject = new Dictionary<string, List<_ListViews>>();
 		} 
 		
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){			
-			Dictionary<string, List<_ListViews>> dictionaryFields = this.buildMap(directoryPath+"\\"+metaname+".object",this.m_list,this.m_metaname);									
-			CustomObject m_CustomObject_clean =  ManageXMLCustomObject.creteNewObject();			
-			m_CustomObject_clean.ListViews = dictionaryFields[metaname];
+			this.buildMap(directoryPath+"\\"+metaname+".object",this.m_list,this.m_metaname);									
+			CustomObject m_CustomObject_clean =  ManageXMLCustomObject.createNewObject();			
+			m_CustomObject_clean.ListViews = m_dictionaryObject[metaname];
 			ManageXMLCustomObject.doWrite(m_CustomObject_clean,directoryTargetFilePath+"\\",metaname+".object");													
 		}
 
-		public Dictionary<string, List<_ListViews>> buildMap(String path,List<String> m_list,String metaname){         
-				Dictionary<string, List<_ListViews>> mapCustomMeta = new Dictionary<string, List<_ListViews>>();
+		public void buildMap(String path,List<String> m_list,String metaname){         
 				CustomObject customObject = ManageXMLCustomObject.Deserialize(path);
 
 				foreach(String Metafile in m_list){                
@@ -29,20 +31,28 @@ namespace Salesforce_Package.Metadata{
 						String m_nameObject = customMetaSplit[0];
 						String customInMeta = customMetaSplit[1];
 						foreach(_ListViews Meta in customObject.ListViews){                                                                                             
-								if (!mapCustomMeta.ContainsKey(m_nameObject)){                        
-										mapCustomMeta.Add(m_nameObject, new List<_ListViews>());
+								if (!m_dictionaryObject.ContainsKey(m_nameObject)){                        
+										m_dictionaryObject.Add(m_nameObject, new List<_ListViews>());
 								}           
 								if(Meta.FullName==customInMeta){
-									mapCustomMeta[m_nameObject].Add(Meta);                                       
+									m_dictionaryObject[m_nameObject].Add(Meta);                                       
 								}                      
 						}
 				} 
 
-				if(mapCustomMeta.Count==0){
+				if(m_dictionaryObject.Count==0){
 						throw new Exception("Erro não foi encontrado nenhum valor");
 				}
 
-				return mapCustomMeta;
+		}
+
+		public override void doMerge(){
+			foreach(KeyValuePair<string, List<_ListViews>> dictionaryObject in m_dictionaryObject)
+			{
+				 ManageXMLCustomObjectMerge m_merge = ManageXMLCustomObjectMerge.getInstance();
+				 CustomObject m_mergeObject = m_merge.getInstanceObject(dictionaryObject.Key);
+				 m_mergeObject.ListViews = dictionaryObject.Value;
+			}
 		}
 		
 	}

@@ -20,7 +20,7 @@ namespace Salesforce_Package.ManageXML
             }                       
         }
 
-        public static Workflow creteNewObject(){
+        public static Workflow createNewObject(){
 			return new Workflow();
 		}
 

@@ -31,6 +31,7 @@ namespace Salesforce_Package
 		public const string Workflow = "Workflow";
 		public const string WorkflowRule = "WorkflowRule";
 		public const string StandardValueSet = "StandardValueSet";
+		public const string CustomTab = "CustomTab";
 			
 	}
 }

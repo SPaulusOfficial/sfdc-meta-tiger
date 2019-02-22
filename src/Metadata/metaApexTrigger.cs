@@ -15,6 +15,8 @@ namespace Salesforce_Package.Metadata{
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".trigger"));
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".trigger-meta.xml"));
 		}	
+
+		public override void doMerge(){}
 		
 	}
 	

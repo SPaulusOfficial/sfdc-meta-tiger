@@ -16,7 +16,8 @@ namespace Salesforce_Package.Metadata
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".profile");											
 		}
 
-	}
+		public override void doMerge(){}
 
+	}
 	
 }

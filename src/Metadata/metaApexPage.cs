@@ -16,6 +16,8 @@ namespace Salesforce_Package.Metadata{
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".page"));
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".page-meta.xml"));
 		}	
+
+		public override void doMerge(){}
 		
 	}
 	

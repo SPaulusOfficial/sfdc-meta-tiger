@@ -14,7 +14,9 @@ namespace Salesforce_Package.Metadata{
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".component"));
 			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".component-meta.xml"));
-		}	
+		}
+
+		public override void doMerge(){}	
 		
 	}
 	
