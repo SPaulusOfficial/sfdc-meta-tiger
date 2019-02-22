@@ -62,6 +62,6 @@ For now I'm adding a folder called package on drive C: / <br />
 <br />
 I hope it's useful!<br />
 
-Progress:
-More CustomLabel - Begin 23/02/2019 - Final:23/02/2019
-Auto Merge for CustomObject - Begin 21/02/2019 - Final:???
+Progress:</br>
+More CustomLabel - Begin 23/02/2019 - Final:23/02/2019 </br>
+Auto Merge for CustomObject - Begin 21/02/2019 - Final:??? </br>
