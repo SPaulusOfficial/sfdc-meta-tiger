@@ -34,6 +34,7 @@ is working with this Metadata for now:
     <td><strong>MilestoneType</strong></td>
     <td><strong>RemoteSiteSetting</strong></td>
     <td><strong>FlowDefinition</strong></td>
+    <td><strong>CustomTab</strong></td>
   </tr>
 </table>
 
