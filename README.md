@@ -61,3 +61,7 @@ At the end it will copy the files that are needed in the package.xml, with the a
 For now I'm adding a folder called package on drive C: / <br />
 <br />
 I hope it's useful!<br />
+
+# Progress:
+<strong>More metadatas</strong>
+<strong>Auto Merge for CustomObject</strong>
