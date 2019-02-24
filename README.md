@@ -58,8 +58,6 @@ Result:<br />
 <img src="https://github.com/brunoslribeiro/sfdc-package-repository-files/blob/master/assets/Result.PNG">
 At the end it will copy the files that are needed in the package.xml, with the appropriate folders already addressed.<br />
 <br />
-For now I'm adding a folder called package on drive C: / <br />
-<br />
 I hope it's useful!<br />
 
 News:</br>
