@@ -7,21 +7,23 @@ using Salesforce_Package.ManageXML;
 namespace Salesforce_Package.Metadata{
     class MetaRecordType:MetaCustomObjectBase {
         
+		Dictionary<string, List<RecordTypes>> m_dictionaryObject;
+
 		public MetaRecordType(){
 			this.m_list = new List<String>();
 			this.m_metaname = MetaConstants.RecordType;
 			this.m_mapMetaObject = new Dictionary<String,String>();
+			this.m_dictionaryObject = new Dictionary<string, List<RecordTypes>>();
 		} 
 		
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){			
-			Dictionary<string, List<RecordTypes>> dictionaryFields = this.buildMap(directoryPath+"\\"+metaname+".object",this.m_list,this.m_metaname);									
+			this.buildMap(directoryPath+"\\"+metaname+".object",this.m_list,this.m_metaname);									
 			CustomObject m_CustomObject_clean =  ManageXMLCustomObject.createNewObject();			
-			m_CustomObject_clean.RecordTypes = dictionaryFields[metaname];
+			m_CustomObject_clean.RecordTypes = m_dictionaryObject[metaname];
 			ManageXMLCustomObject.doWrite(m_CustomObject_clean,directoryTargetFilePath+"\\",metaname+".object");													
 		}
 
-		public Dictionary<string, List<RecordTypes>> buildMap(String path,List<String> m_list,String metaname){         
-				Dictionary<string, List<RecordTypes>> mapCustomMeta = new Dictionary<string, List<RecordTypes>>();
+		public void buildMap(String path,List<String> m_list,String metaname){         
 				CustomObject customObject = ManageXMLCustomObject.Deserialize(path);
 
 				foreach(String Metafile in m_list){                
@@ -29,23 +31,28 @@ namespace Salesforce_Package.Metadata{
 						String m_nameObject = customMetaSplit[0];
 						String customInMeta = customMetaSplit[1];
 						foreach(RecordTypes Meta in customObject.RecordTypes){                                                                                             
-								if (!mapCustomMeta.ContainsKey(m_nameObject)){                        
-										mapCustomMeta.Add(m_nameObject, new List<RecordTypes>());
+								if (!m_dictionaryObject.ContainsKey(m_nameObject)){                        
+										m_dictionaryObject.Add(m_nameObject, new List<RecordTypes>());
 								}           
 								if(Meta.FullName==customInMeta){
-									mapCustomMeta[m_nameObject].Add(Meta);                                       
+									m_dictionaryObject[m_nameObject].Add(Meta);                                       
 								}                      
 						}
 				} 
 
-				if(mapCustomMeta.Count==0){
+				if(m_dictionaryObject.Count==0){
 						throw new Exception("Erro não foi encontrado nenhum valor");
 				}
-
-				return mapCustomMeta;
 		}
 
-		public override void doMerge(){}
+		public override void doMerge(){
+			foreach(KeyValuePair<string, List<RecordTypes>> dictionaryObject in m_dictionaryObject)
+			{
+				 ManageXMLCustomObjectMerge m_merge = ManageXMLCustomObjectMerge.getInstance();
+				 CustomObject m_mergeObject = m_merge.getInstanceObject(dictionaryObject.Key);
+				 m_mergeObject.RecordTypes = dictionaryObject.Value;
+			}
+		}
 		
 	}
 

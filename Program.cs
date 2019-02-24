@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 using Salesforce_Package.Metadata;
 using Salesforce_Package.Manage;
 using Salesforce_Package.ManageXML;
+using Salesforce_Package.Xml.Config;
 
 namespace Salesforce_Package
 {
@@ -21,31 +22,89 @@ namespace Salesforce_Package
             ConsoleHelper.WriteDocLine("#        E-mail:bruno_smith10@hotmail.com         #");
             ConsoleHelper.WriteDocLine("###################################################");
             Console.WriteLine("");
-            ConsoleHelper.WriteQuestionLine(">>> Please enter the path of the Package.xml:");
+
+            String pathPackage = null;
+            String pathRepository = null;
+            String pathTarget = null;
+
+            ManageXMLConfig manageXmlConfig = new ManageXMLConfig();
+
+            Config m_config = manageXmlConfig.config;
             
-            String path = Console.ReadLine();
+            if(m_config.PackageManifest.Count>0){
+            PackageManifest packageManifest = chooseCodePackageManifest();
 
-            ConsoleHelper.WriteQuestionLine(">>> Please enter the path of the repository where the files are:");
+            pathPackage = packageManifest.PackageFile;
+            pathRepository = packageManifest.RepositorySource;
+            pathTarget = packageManifest.DirectoryTarget!=null ? packageManifest.DirectoryTarget : m_config.GeneralDirectoryTarget;
+            }
 
-            String pathFiles = Console.ReadLine();
+            if(pathPackage==null || pathRepository==null || pathTarget==null){
 
-            if(!ManageDirectory.validateDirectory(pathFiles)){
-                ConsoleHelper.WriteErrorLine(">>> Path not found:" + pathFiles);
+                ConsoleHelper.WriteQuestionLine(">>> Please enter the path of the Package.xml:");
+                
+                pathPackage = Console.ReadLine();
+
+                ConsoleHelper.WriteQuestionLine(">>> Please enter the path of the repository where the files are:");
+
+                pathRepository = Console.ReadLine();
+
+            }
+
+            if(!ManageDirectory.validateDirectory(pathRepository)){
+                ConsoleHelper.WriteErrorLine(">>> Path not found:" + pathRepository);
                 return;
             }
 
-            mapPackage = ManageXMLPackage.buildMap(path);
+            mapPackage = ManageXMLPackage.buildMap(pathPackage);
             
-            String pathDir = "C:\\";
-            pathDir = pathDir + "\\package";            
+            //String pathDir = "C:\\";
+            //pathDir = pathDir + "\\package";            
 
-            List<IMetadata> MetaDatas = stageCreateDirectorys(mapPackage, pathDir);
+            List<IMetadata> MetaDatas = stageCreateDirectorys(mapPackage, pathTarget);
             stageValidateMetadata(mapPackage, MetaDatas);
-            stageCopyMetadata(pathFiles, pathDir, MetaDatas);
-            stageMergeMetadata(pathDir,MetaDatas);
-            stageCopyPackageFinal(path, pathDir);
+            stageCopyMetadata(pathRepository, pathTarget, MetaDatas);
+            stageMergeMetadata(pathTarget,MetaDatas);
+            stageCopyPackageFinal(pathPackage, pathTarget);
 
             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
+        }
+
+        public static PackageManifest chooseCodePackageManifest(){
+            ConsoleHelper.WriteQuestionLine(">>> Choose code package manifest save in Config:");
+            Config m_config = ManageXMLConfig.Deserialize();
+            Dictionary<int,PackageManifest> m_packages = new Dictionary<int,PackageManifest>();
+            if(m_config.PackageManifest.Count>0){
+              ConsoleHelper.WriteDocLine("Name | Package | RepositoryPath | DirectoryTarget");
+              foreach (var item in m_config.PackageManifest)
+                {
+                    m_packages.Add(item.Id,item);
+                    String namePackage = String.Concat(item.Id," | ");
+                    String packageFilePath = String.Concat(item.PackageFile," | ");
+                    String RepositoryPath = String.Concat(item.RepositorySource," | ");
+                    String DirectoryTarget = String.Concat(item.DirectoryTarget," ");
+                    Console.WriteLine(String.Concat(namePackage,packageFilePath,RepositoryPath,DirectoryTarget));
+                }
+            }
+
+            try
+            {
+               int id = Int32.Parse(Console.ReadLine());
+
+               if(m_packages.ContainsKey(id)){
+                   return (m_packages[id]);
+               }else{
+                   ConsoleHelper.WriteWarningLine("Not Found PackageManifest");
+                   return new PackageManifest();
+               }
+            }
+            catch (System.Exception)
+            { 
+                return new PackageManifest();
+                throw;
+            }
+
+            
         }
 
         private static void stageMergeMetadata(string pathDir, List<IMetadata> MetaDatas)
