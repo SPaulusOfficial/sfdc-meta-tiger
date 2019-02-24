@@ -62,6 +62,9 @@ For now I'm adding a folder called package on drive C: / <br />
 <br />
 I hope it's useful!<br />
 
+News:</br>
+<u>Add Config Xml for Path Package | DirectoryTarget | Repository</u>
+
 Progress:</br>
 <u> More CustomLabel - Begin 23/02/2019 - Final:23/02/2019 </u></br>
 <u> Auto Merge for CustomObject - Begin 21/02/2019 - Final:??? </u></br>
