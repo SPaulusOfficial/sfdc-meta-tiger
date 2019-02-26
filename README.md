@@ -36,6 +36,9 @@ is working with this Metadata for now:
     <td><strong>FlowDefinition</strong></td>
     <td><strong>CustomTab</strong></td>
   </tr>
+  <tr>
+    <td><strong>EntitlementProcess</strong></td>
+  </tr>
 </table>
 
 Install  Visual Studio Code.<br />
