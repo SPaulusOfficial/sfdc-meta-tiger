@@ -31,12 +31,14 @@ namespace Salesforce_Package
 
             Config m_config = manageXmlConfig.config;
             
-            if(m_config.PackageManifest.Count>0){
-            PackageManifest packageManifest = chooseCodePackageManifest();
+            if(m_config.PackageManifest.Count>0){                
+                PackageManifest packageManifest = chooseCodePackageManifest();
 
-            pathPackage = packageManifest.PackageFile;
-            pathRepository = packageManifest.RepositorySource;
-            pathTarget = packageManifest.DirectoryTarget!=null ? packageManifest.DirectoryTarget : m_config.GeneralDirectoryTarget;
+                pathPackage = packageManifest.PackageFile;
+                pathRepository = packageManifest.RepositorySource;
+                pathTarget = packageManifest.DirectoryTarget!=null ? packageManifest.DirectoryTarget : m_config.GeneralDirectoryTarget;
+            }else{
+                pathTarget = m_config.GeneralDirectoryTarget;
             }
 
             if(pathPackage==null || pathRepository==null || pathTarget==null){
@@ -64,7 +66,7 @@ namespace Salesforce_Package
             List<IMetadata> MetaDatas = stageCreateDirectorys(mapPackage, pathTarget);
             stageValidateMetadata(mapPackage, MetaDatas);
             stageCopyMetadata(pathRepository, pathTarget, MetaDatas);
-            stageMergeMetadata(pathTarget,MetaDatas);
+            stageMergeMetadata(pathRepository,pathTarget,MetaDatas);
             stageCopyPackageFinal(pathPackage, pathTarget);
 
             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
@@ -89,6 +91,7 @@ namespace Salesforce_Package
 
             try
             {
+               ConsoleHelper.WriteQuestionLine(">>> Code Package:"); 
                int id = Int32.Parse(Console.ReadLine());
 
                if(m_packages.ContainsKey(id)){
@@ -107,7 +110,7 @@ namespace Salesforce_Package
             
         }
 
-        private static void stageMergeMetadata(string pathDir, List<IMetadata> MetaDatas)
+        private static void stageMergeMetadata(string pathSource,string pathDir, List<IMetadata> MetaDatas)
         {
             ConsoleHelper.WriteDoneLine(">> Merging Metadata...");
             foreach (IMetadata m_Metadata in MetaDatas)
@@ -115,6 +118,7 @@ namespace Salesforce_Package
                 m_Metadata.doMerge();
             }
             ManageXMLCustomObjectMerge merge = ManageXMLCustomObjectMerge.getInstance();
+            merge.defaultParameters(pathSource);
             merge.writeAllInstances(pathDir);
         }
 

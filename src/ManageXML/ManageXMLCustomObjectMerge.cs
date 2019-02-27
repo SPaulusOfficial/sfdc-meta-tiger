@@ -32,6 +32,23 @@ namespace Salesforce_Package.ManageXML
             return m_customObjects[metaObject];
         }
 
+        public void defaultParameters(string sourcePath){
+            String mergeDirectory = String.Concat(sourcePath,"\\",MetaDirectory.getDirectory(MetaConstants.CustomObject));
+            foreach(KeyValuePair<string, CustomObject> m_object in m_customObjects)
+            {    
+              String filename = String.Concat(m_object.Key,".object");
+              CustomObject customObject =  ManageXMLCustomObject.Deserialize(String.Concat(mergeDirectory,"\\",filename));
+              m_object.Value.Label = customObject.Label;
+              m_object.Value.PluralLabel = customObject.PluralLabel;
+              m_object.Value.NameField = customObject.NameField;
+              m_object.Value.Gender = customObject.Gender;
+              m_object.Value.DeploymentStatus = customObject.DeploymentStatus;
+              m_object.Value.DeploymentStatus = customObject.DeploymentStatus;
+              m_object.Value.SharingModel = customObject.SharingModel;
+              m_object.Value.ExternalSharingModel = customObject.ExternalSharingModel;
+            }  
+        }
+
         public void writeAllInstances(String targetPath){
             String mergeDirectory = String.Concat(targetPath,"\\","_",MetaDirectory.getDirectory(MetaConstants.CustomObject));
             ManageDirectory.createPackageDirectory(mergeDirectory);

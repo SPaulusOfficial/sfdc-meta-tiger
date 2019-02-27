@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Config>
   <GeneralDirectoryTarget>C:\\package</GeneralDirectoryTarget>
-  <!--<PackageManifest>
-	    <Id>?</Id>
-      <DirectoryTarget>Example:C:\\package</DirectoryTarget>
-      <RepositorySource>Example:C:\\repositorio</RepositorySource>
-      <PackageFile>Example:C:\\repositorio\\package.xml</PackageFile>
-  </PackageManifest>-->
+  <PackageManifest>
+	    <Id>1</Id>
+      <DirectoryTarget>C:\\package</DirectoryTarget>
+      <RepositorySource>C:\\CI</RepositorySource>
+      <PackageFile>C:\\CI\\package.xml</PackageFile>
+  </PackageManifest>
   <VersionNumber>4.0</VersionNumber>
 </Config>
