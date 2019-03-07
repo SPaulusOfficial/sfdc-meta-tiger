@@ -36,6 +36,7 @@ namespace Salesforce_Package.Metadata
 				case MetaConstants.WorkflowRule:return new MetaWorkflowRule();
 				case MetaConstants.StandardValueSet: return new MetaStandardValueSet();
 				case MetaConstants.CustomTab: return new MetaCustomTab();
+				case MetaConstants.AssignmentRules: return new metaAssignmentRules();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
