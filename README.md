@@ -66,6 +66,9 @@ I hope it's useful!<br />
 
 News:</br>
 <u>Add Config Xml for Path Package | DirectoryTarget | Repository</u>
+
+Create directory Config/config.xml file with code below:
+
 ```xml
 <?xml version="1.0"?>
 <Config>
