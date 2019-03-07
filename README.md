@@ -38,7 +38,6 @@ is working with this Metadata for now:
   </tr>
   <tr>
     <td><strong>EntitlementProcess</strong></td>
-    <td><strong>AssignmentRules</strong></td>
   </tr>
 </table>
 
