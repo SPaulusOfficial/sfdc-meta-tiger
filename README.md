@@ -66,6 +66,19 @@ I hope it's useful!<br />
 
 News:</br>
 <u>Add Config Xml for Path Package | DirectoryTarget | Repository</u>
+```xml
+<?xml version="1.0"?>
+<Config>
+  <GeneralDirectoryTarget>C:\\package</GeneralDirectoryTarget>
+  <PackageManifest>
+	    <Id>1</Id>
+      <DirectoryTarget>C:\\package</DirectoryTarget>
+      <RepositorySource>C:\\CI</RepositorySource>
+      <PackageFile>C:\\CI\\package.xml</PackageFile>  
+  </PackageManifest>
+  <VersionNumber>4.0</VersionNumber>
+</Config>
+```
 
 Progress:</br>
 <u> More CustomLabel - Begin 23/02/2019 - Final:23/02/2019 </u></br>
