@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using Salesforce_Package.Xml.Config;
+using Salesforce_Package.Manage;
 
 namespace Salesforce_Package.ManageXML
 {
@@ -16,19 +17,50 @@ namespace Salesforce_Package.ManageXML
 
         public static Config Deserialize()
         {
-            String path = Environment.CurrentDirectory+"\\Config\\config.xml";
+            String path = Environment.CurrentDirectory+"\\config\\config.xml";
 
-            Config m_config = null;
+            Config m_config = new Config();
+            m_config.PackageManifest = new List<PackageManifest>();
+            m_config.GeneralDirectoryTarget = "C:\\package";
             
             XmlSerializer serializer = new XmlSerializer(typeof(Config));
-            
-            using(StreamReader reader = new StreamReader(@path))
+            try
             {
-                m_config = (Config)serializer.Deserialize(reader);
+                using(StreamReader reader = new StreamReader(@path))
+                {
+                    m_config = (Config)serializer.Deserialize(reader);
+                }
             }
-            
+            catch (System.Exception)
+            {
+                doWrite(m_config);
+                return m_config;
+            }
+
             return m_config;
         }
+
+        public static void doWrite(Config myObject){			
+			
+            ManageDirectory.createPackageDirectory(Environment.CurrentDirectory+"\\config");
+            String targetPath = Environment.CurrentDirectory+"\\config\\";
+            String fileName = "config.xml";
+            
+            try{
+				 				                
+                System.Xml.Serialization.XmlSerializer writer = 
+                new System.Xml.Serialization.XmlSerializer(typeof(Config));  
+						
+				System.IO.FileStream file = System.IO.File.Create(targetPath+fileName);  
+                
+				writer.Serialize(file, myObject);  
+				file.Close();  
+			}
+			catch (Exception e)
+			{			  
+       		  Console.WriteLine("Could not create file:" + e.Message);
+			}			
+		}
 	}
 
 

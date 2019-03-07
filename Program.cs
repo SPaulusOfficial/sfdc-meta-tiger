@@ -51,6 +51,15 @@ namespace Salesforce_Package
 
                 pathRepository = Console.ReadLine();
 
+                PackageManifest myManifest = new PackageManifest(){
+                    PackageFile = pathPackage,
+                    RepositorySource = pathRepository,
+                    Id = m_config.PackageManifest.Count + 1
+                };
+
+                m_config.PackageManifest.Add(myManifest);
+
+                ManageXMLConfig.doWrite(m_config);
             }
 
             if(!ManageDirectory.validateDirectory(pathRepository)){
@@ -58,10 +67,7 @@ namespace Salesforce_Package
                 return;
             }
 
-            mapPackage = ManageXMLPackage.buildMap(pathPackage);
-            
-            //String pathDir = "C:\\";
-            //pathDir = pathDir + "\\package";            
+            mapPackage = ManageXMLPackage.buildMap(pathPackage);    
 
             List<IMetadata> MetaDatas = stageCreateDirectorys(mapPackage, pathTarget);
             stageValidateMetadata(mapPackage, MetaDatas);
@@ -77,7 +83,7 @@ namespace Salesforce_Package
             Config m_config = ManageXMLConfig.Deserialize();
             Dictionary<int,PackageManifest> m_packages = new Dictionary<int,PackageManifest>();
             if(m_config.PackageManifest.Count>0){
-              ConsoleHelper.WriteDocLine("Name | Package | RepositoryPath | DirectoryTarget");
+              ConsoleHelper.WriteDocLine("Id | Package | RepositoryPath | DirectoryTarget");
               foreach (var item in m_config.PackageManifest)
                 {
                     m_packages.Add(item.Id,item);
