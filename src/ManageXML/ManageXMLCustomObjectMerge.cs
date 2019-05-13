@@ -50,13 +50,17 @@ namespace Salesforce_Package.ManageXML
         }
 
         public void writeAllInstances(String targetPath){
-            String mergeDirectory = String.Concat(targetPath,"\\","_",MetaDirectory.getDirectory(MetaConstants.CustomObject));
-            ManageDirectory.createPackageDirectory(mergeDirectory);
-            foreach(KeyValuePair<string, CustomObject> m_object in m_customObjects)
-            {
-                String filename = String.Concat(m_object.Key,".object");
-                ManageXMLCustomObject.doWrite(m_object.Value,String.Concat(mergeDirectory,"\\"),filename);
-            } 
+            Boolean isHaveObjectInPackageXml = m_customObjects.Count>0;
+            
+            if(isHaveObjectInPackageXml){
+                String mergeDirectory = String.Concat(targetPath,"\\","_",MetaDirectory.getDirectory(MetaConstants.CustomObject));
+                ManageDirectory.createPackageDirectory(mergeDirectory);
+                foreach(KeyValuePair<string, CustomObject> m_object in m_customObjects)
+                {
+                    String filename = String.Concat(m_object.Key,".object");
+                    ManageXMLCustomObject.doWrite(m_object.Value,String.Concat(mergeDirectory,"\\"),filename);
+                } 
+            }
         }
     }	
 }
