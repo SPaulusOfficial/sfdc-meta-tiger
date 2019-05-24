@@ -1,0 +1,15 @@
+{
+  "providerId": "Microsoft.Tools.ServiceModel.Svcutil",
+  "version": "2.0.0",
+  "options": {
+    "inputs": [
+      "../../../WSDLSALESFORCE/wsdl.jsp.xml"
+    ],
+    "namespaceMappings": [
+      "*, SFDC.Partner"
+    ],
+    "outputFile": "Reference.cs",
+    "targetFramework": "netcoreapp2.2",
+    "typeReuseMode": "All"
+  }
+}
