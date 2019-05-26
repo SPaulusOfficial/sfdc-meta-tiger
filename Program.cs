@@ -6,33 +6,12 @@ using Salesforce_Package.Metadata;
 using Salesforce_Package.Manage;
 using Salesforce_Package.ManageXML;
 using Salesforce_Package.Xml.Config;
-using SFDC.Partner;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using SFDC.MetadataService;
-using System.ServiceModel;
+using Salesforce_Package.MetadataApi;
 
 namespace Salesforce_Package
 {
     class Program
     {
-
-        static string userName = "bruno_smith10@hotmail.com";
-        static string password = "Netero40#####";
-        static string securityToken = "wPC63Ccnu6hKydagrwkXT0Rax";
-        static string metadataServerUrl;
-        static SoapClient sc;
-        static MetadataPortTypeClient mc;
-        static loginResponse lresp;
-        static LoginResult lres;
-        static LoginScopeHeader lsr = null;
-        static string serverUrl;
-        static string sessionId;
-        static string userId;
 
         static void Main(string[] args)
         {
@@ -45,71 +24,10 @@ namespace Salesforce_Package
             ConsoleHelper.WriteDocLine("#        E-mail:bruno_smith10@hotmail.com         #");
             ConsoleHelper.WriteDocLine("###################################################");
             Console.WriteLine("");
-
-            sc = new SoapClient();
+            
+            MetadataService.listMetadata();
            
-            Run().Wait();
-
-            List<String> strNames = new List<String>{"*"};
-
-            // end point
-            //SFDC.MetadataService.MetadataPortTypeClient.EndpointConfiguration endpoint = new SFDC.MetadataService.MetadataPortTypeClient.EndpointConfiguration(metadataServerUrl);
-
-            var binding = new BasicHttpBinding() {
-                Name = "metadata"
-            };
-            binding.Security.Mode = BasicHttpSecurityMode.Transport;
-
-            var endpoint = new EndpointAddress(metadataServerUrl);
-
-            mc = new MetadataPortTypeClient(binding,endpoint);
-            ListMetadataQuery().Wait();
-            
-
-         
-
-            //generatePackageWithFilesofRepository();
         }
-
-        static async System.Threading.Tasks.Task Run()
-        {
-            lresp = await SfLogin();
-            lres = lresp.result;
-            serverUrl = lres.serverUrl;
-            sessionId = lres.sessionId;
-            userId = lres.userId;
-            metadataServerUrl = lres.metadataServerUrl;
-            ConsoleHelper.WriteQuestionLine(sessionId);
-            ConsoleHelper.WriteQuestionLine("Break");
-        }
-
-        static async Task<loginResponse> SfLogin()
-        {
-            loginResponse lr = await sc.loginAsync(null,null, userName, password + securityToken);
-            return lr;
-        }
-
-
-        static async Task<SFDC.MetadataService.listMetadataResponse> ListMetadataQuery()
-        {
-            SFDC.MetadataService.SessionHeader sessionHeader = new SFDC.MetadataService.SessionHeader { sessionId = sessionId };
-
-            SFDC.MetadataService.CallOptions callOptions = new SFDC.MetadataService.CallOptions();
-            callOptions.client  = userId;
-
-            SFDC.MetadataService.ListMetadataQuery q = new SFDC.MetadataService.ListMetadataQuery();
-            q.type = "CustomObject";
-            SFDC.MetadataService.listMetadataResponse lstMetaResponse =  await mc.listMetadataAsync(sessionHeader, callOptions, new []{ q} , 45.0);
-            foreach (FileProperties f in lstMetaResponse.result)
-            {
-                Console.WriteLine("response with message: " + f.fileName);
-                Console.WriteLine("response with message: " + f.fullName);
-            }
-            
-            return lstMetaResponse;
-        }
-
-        
 
         public static void generatePackageWithFilesofRepository(){
             var mapPackage = new Dictionary<string, List<string>>();
