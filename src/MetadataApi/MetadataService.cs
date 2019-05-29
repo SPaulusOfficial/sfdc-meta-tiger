@@ -44,7 +44,10 @@ namespace Salesforce_Package.MetadataApi{
 
             foreach (var response in metadataResponse)
             {
-               package.Types.Add(generatePackageOFTypes(response));
+               Types types =  generatePackageOFTypes(response);
+               if(types.Members.Count>0){
+                  package.Types.Add(generatePackageOFTypes(response));
+               }
             }
 
             ManageXMLPackage.doWrite(package);
