@@ -1,9 +1,15 @@
-using SFDC.MetadataService;
+using System;
+using System.Collections.Generic;
+using SFDC.Metadata;
+using Salesforce_Package.ManageXML;
 using Salesforce_Package.PartnerApi;
+using Salesforce_Package.Xml;
+using Salesforce_Package.Xml.Config;
+using Salesforce_Package.Xml.Package;
 
 namespace Salesforce_Package.MetadataApi{
 
-    public class MetadataService{
+    public class MetadataService {
         
         private static MetadataClientResponse getMetadataClient(MetadataClientRequest request){
              PartnerLoginRequest requestPattern = new PartnerLoginRequest{
@@ -15,14 +21,56 @@ namespace Salesforce_Package.MetadataApi{
             return MetadataClientService.getMetadataClient(responsePartner.UserId,responsePartner.SessionId,responsePartner.ServerUrl); 
         }
 
-        public static void listMetadata(){
+        public static void getAllPackage(Organization Organization){
              MetadataClientRequest request = new MetadataClientRequest();
-             request.Username = "bruno_smith10@hotmail.com";
-             request.Password ="Netero40#####";
-             request.SecurityToken = "wPC63Ccnu6hKydagrwkXT0Rax";
+             request.Username = Organization.Username;
+             request.Password = Organization.Password;
+             request.SecurityToken = Organization.SecurityToken;
              MetadataClientResponse response  = getMetadataClient(request);
-             MetadataListMetadataService.listMetadata(response.Metadataclient);
+             List<listMetadataResponse> metadataResponse = new List<listMetadataResponse>();
+            
+             foreach(string strType in MetaConstants.metas){
+                ConsoleHelper.WriteDocLine(strType);
+                listMetadataResponse responseMeta = MetadataListMetadataService.listMetadata(response.Metadataclient,strType);
+                metadataResponse.Add(responseMeta);
+             }
+             
+             writePackageXml(metadataResponse);
         } 
+
+        public static void writePackageXml(List<listMetadataResponse> metadataResponse){
+            Salesforce_Package.Xml.Package.Package package = new Salesforce_Package.Xml.Package.Package();
+            package.Types = new List<Types>();
+
+            foreach (var response in metadataResponse)
+            {
+               package.Types.Add(generatePackageOFTypes(response));
+            }
+
+            ManageXMLPackage.doWrite(package);
+        }
+
+        public static Types generatePackageOFTypes(listMetadataResponse response){
+            ConsoleHelper.WriteDocLine("generatePackageOFTypes");
+            Types type = new Types();
+            type.Members = new List<String>();
+            Boolean isHaveResponse = response != null;
+            if(isHaveResponse){
+                ConsoleHelper.WriteDocLine("Entrou Response");
+                Boolean isHaveResult = response.result != null;
+                if(isHaveResult){
+                    ConsoleHelper.WriteDocLine("Entrou Result");
+                    foreach (FileProperties f in response.result)
+                    {
+                        ConsoleHelper.WriteDocLine(f.type + f.fullName);
+                        type.Name = f.type;
+                        type.Members.Add(f.fullName);
+                    }
+                }  
+            }
+          
+            return type;
+        }
 
     }
 

@@ -1,4 +1,4 @@
-using SFDC.MetadataService;
+using SFDC.Metadata;
 
 namespace Salesforce_Package.MetadataApi{
 

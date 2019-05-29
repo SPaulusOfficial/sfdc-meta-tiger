@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using Salesforce_Package.Xml.Package;
+using Salesforce_Package.Manage;
 
 namespace Salesforce_Package.ManageXML
 {
@@ -35,6 +36,29 @@ namespace Salesforce_Package.ManageXML
             
             return package;
         }
+
+        public static void doWrite(Package myObject){			
+			
+            ManageDirectory.createPackageDirectory(Environment.CurrentDirectory+"\\Package");
+            String targetPath = Environment.CurrentDirectory+"\\Package\\";
+            String fileName = "Package.xml";
+            
+            try{
+				 				                
+                System.Xml.Serialization.XmlSerializer writer = 
+                new System.Xml.Serialization.XmlSerializer(typeof(Package));  
+						
+				System.IO.FileStream file = System.IO.File.Create(targetPath+fileName);  
+                
+				writer.Serialize(file, myObject);  
+				file.Close();  
+			}
+			catch (Exception e)
+			{			  
+       		  Console.WriteLine("Could not create file:" + e.Message);
+			}			
+		}
+
 	}
 
 

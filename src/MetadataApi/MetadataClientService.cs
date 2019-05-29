@@ -1,4 +1,4 @@
-using SFDC.MetadataService;
+using SFDC.Metadata;
 using System.Web;
 using System.ServiceModel;
 
@@ -14,6 +14,7 @@ namespace Salesforce_Package.MetadataApi{
             };
             
             binding.Security.Mode = BasicHttpSecurityMode.Transport;
+            binding.MaxReceivedMessageSize = 20000000;
 
             EndpointAddress endpoint = new EndpointAddress(ServerUrl);
             SessionHeader sessionHeader = new SessionHeader { sessionId = sessionId };    

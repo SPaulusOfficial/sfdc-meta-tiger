@@ -7,89 +7,89 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SFDC.MetadataService
+namespace SFDC.Metadata
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", ConfigurationName="SFDC.MetadataService.MetadataPortType")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", ConfigurationName="SFDC.Metadata.MetadataPortType")]
     public interface MetadataPortType
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.cancelDeployResponse> cancelDeployAsync(SFDC.MetadataService.cancelDeployRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.cancelDeployResponse> cancelDeployAsync(SFDC.Metadata.cancelDeployRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.checkDeployStatusResponse> checkDeployStatusAsync(SFDC.MetadataService.checkDeployStatusRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.checkDeployStatusResponse> checkDeployStatusAsync(SFDC.Metadata.checkDeployStatusRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.checkRetrieveStatusResponse> checkRetrieveStatusAsync(SFDC.MetadataService.checkRetrieveStatusRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.checkRetrieveStatusResponse> checkRetrieveStatusAsync(SFDC.Metadata.checkRetrieveStatusRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.createMetadataResponse> createMetadataAsync(SFDC.MetadataService.createMetadataRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.createMetadataResponse> createMetadataAsync(SFDC.Metadata.createMetadataRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.deleteMetadataResponse> deleteMetadataAsync(SFDC.MetadataService.deleteMetadataRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.deleteMetadataResponse> deleteMetadataAsync(SFDC.Metadata.deleteMetadataRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.deployResponse> deployAsync(SFDC.MetadataService.deployRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.deployResponse> deployAsync(SFDC.Metadata.deployRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.deployRecentValidationResponse> deployRecentValidationAsync(SFDC.MetadataService.deployRecentValidationRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.deployRecentValidationResponse> deployRecentValidationAsync(SFDC.Metadata.deployRecentValidationRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.describeMetadataResponse> describeMetadataAsync(SFDC.MetadataService.describeMetadataRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.describeMetadataResponse> describeMetadataAsync(SFDC.Metadata.describeMetadataRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.describeValueTypeResponse> describeValueTypeAsync(SFDC.MetadataService.describeValueTypeRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.describeValueTypeResponse> describeValueTypeAsync(SFDC.Metadata.describeValueTypeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.listMetadataResponse> listMetadataAsync(SFDC.MetadataService.listMetadataRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.listMetadataResponse> listMetadataAsync(SFDC.Metadata.listMetadataRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.readMetadataResponse> readMetadataAsync(SFDC.MetadataService.readMetadataRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.readMetadataResponse> readMetadataAsync(SFDC.Metadata.readMetadataRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.renameMetadataResponse> renameMetadataAsync(SFDC.MetadataService.renameMetadataRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.renameMetadataResponse> renameMetadataAsync(SFDC.Metadata.renameMetadataRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.retrieveResponse> retrieveAsync(SFDC.MetadataService.retrieveRequest1 request);
+        System.Threading.Tasks.Task<SFDC.Metadata.retrieveResponse> retrieveAsync(SFDC.Metadata.retrieveRequest1 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.updateMetadataResponse> updateMetadataAsync(SFDC.MetadataService.updateMetadataRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.updateMetadataResponse> updateMetadataAsync(SFDC.Metadata.updateMetadataRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StrategyNodeBase))]
-        System.Threading.Tasks.Task<SFDC.MetadataService.upsertMetadataResponse> upsertMetadataAsync(SFDC.MetadataService.upsertMetadataRequest request);
+        System.Threading.Tasks.Task<SFDC.Metadata.upsertMetadataResponse> upsertMetadataAsync(SFDC.Metadata.upsertMetadataRequest request);
     }
     
     /// <remarks/>
@@ -88808,10 +88808,10 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         public string String;
@@ -88820,7 +88820,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public cancelDeployRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string String)
+        public cancelDeployRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string String)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -88836,13 +88836,13 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
-        public SFDC.MetadataService.CancelDeployResult result;
+        public SFDC.Metadata.CancelDeployResult result;
         
         public cancelDeployResponse()
         {
         }
         
-        public cancelDeployResponse(SFDC.MetadataService.CancelDeployResult result)
+        public cancelDeployResponse(SFDC.Metadata.CancelDeployResult result)
         {
             this.result = result;
         }
@@ -88880,10 +88880,10 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         public string asyncProcessId;
@@ -88895,7 +88895,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public checkDeployStatusRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string asyncProcessId, bool includeDetails)
+        public checkDeployStatusRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string asyncProcessId, bool includeDetails)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -88912,16 +88912,16 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.DebuggingInfo DebuggingInfo;
+        public SFDC.Metadata.DebuggingInfo DebuggingInfo;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
-        public SFDC.MetadataService.DeployResult result;
+        public SFDC.Metadata.DeployResult result;
         
         public checkDeployStatusResponse()
         {
         }
         
-        public checkDeployStatusResponse(SFDC.MetadataService.DebuggingInfo DebuggingInfo, SFDC.MetadataService.DeployResult result)
+        public checkDeployStatusResponse(SFDC.Metadata.DebuggingInfo DebuggingInfo, SFDC.Metadata.DeployResult result)
         {
             this.DebuggingInfo = DebuggingInfo;
             this.result = result;
@@ -88936,10 +88936,10 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         public string asyncProcessId;
@@ -88951,7 +88951,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public checkRetrieveStatusRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string asyncProcessId, bool includeZip)
+        public checkRetrieveStatusRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string asyncProcessId, bool includeZip)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -88968,13 +88968,13 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
-        public SFDC.MetadataService.RetrieveResult result;
+        public SFDC.Metadata.RetrieveResult result;
         
         public checkRetrieveStatusResponse()
         {
         }
         
-        public checkRetrieveStatusResponse(SFDC.MetadataService.RetrieveResult result)
+        public checkRetrieveStatusResponse(SFDC.Metadata.RetrieveResult result)
         {
             this.result = result;
         }
@@ -89012,23 +89012,23 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader;
+        public SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("metadata")]
-        public SFDC.MetadataService.Metadata[] metadata;
+        public SFDC.Metadata.Metadata[] metadata;
         
         public createMetadataRequest()
         {
         }
         
-        public createMetadataRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader, SFDC.MetadataService.Metadata[] metadata)
+        public createMetadataRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader, SFDC.Metadata.Metadata[] metadata)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -89046,13 +89046,13 @@ namespace SFDC.MetadataService
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("result")]
-        public SFDC.MetadataService.SaveResult[] result;
+        public SFDC.Metadata.SaveResult[] result;
         
         public createMetadataResponse()
         {
         }
         
-        public createMetadataResponse(SFDC.MetadataService.SaveResult[] result)
+        public createMetadataResponse(SFDC.Metadata.SaveResult[] result)
         {
             this.result = result;
         }
@@ -89066,13 +89066,13 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader;
+        public SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         public string type;
@@ -89085,7 +89085,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public deleteMetadataRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader, string type, string[] fullNames)
+        public deleteMetadataRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader, string type, string[] fullNames)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -89104,13 +89104,13 @@ namespace SFDC.MetadataService
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("result")]
-        public SFDC.MetadataService.DeleteResult[] result;
+        public SFDC.Metadata.DeleteResult[] result;
         
         public deleteMetadataResponse()
         {
         }
         
-        public deleteMetadataResponse(SFDC.MetadataService.DeleteResult[] result)
+        public deleteMetadataResponse(SFDC.Metadata.DeleteResult[] result)
         {
             this.result = result;
         }
@@ -89189,26 +89189,26 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.DebuggingHeader DebuggingHeader;
+        public SFDC.Metadata.DebuggingHeader DebuggingHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
         public byte[] ZipFile;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=1)]
-        public SFDC.MetadataService.DeployOptions DeployOptions;
+        public SFDC.Metadata.DeployOptions DeployOptions;
         
         public deployRequest()
         {
         }
         
-        public deployRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.DebuggingHeader DebuggingHeader, SFDC.MetadataService.CallOptions CallOptions, byte[] ZipFile, SFDC.MetadataService.DeployOptions DeployOptions)
+        public deployRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.DebuggingHeader DebuggingHeader, SFDC.Metadata.CallOptions CallOptions, byte[] ZipFile, SFDC.Metadata.DeployOptions DeployOptions)
         {
             this.SessionHeader = SessionHeader;
             this.DebuggingHeader = DebuggingHeader;
@@ -89226,13 +89226,13 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
-        public SFDC.MetadataService.AsyncResult result;
+        public SFDC.Metadata.AsyncResult result;
         
         public deployResponse()
         {
         }
         
-        public deployResponse(SFDC.MetadataService.AsyncResult result)
+        public deployResponse(SFDC.Metadata.AsyncResult result)
         {
             this.result = result;
         }
@@ -89246,13 +89246,13 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.DebuggingHeader DebuggingHeader;
+        public SFDC.Metadata.DebuggingHeader DebuggingHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         public string validationId;
@@ -89261,7 +89261,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public deployRecentValidationRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.DebuggingHeader DebuggingHeader, SFDC.MetadataService.CallOptions CallOptions, string validationId)
+        public deployRecentValidationRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.DebuggingHeader DebuggingHeader, SFDC.Metadata.CallOptions CallOptions, string validationId)
         {
             this.SessionHeader = SessionHeader;
             this.DebuggingHeader = DebuggingHeader;
@@ -89298,10 +89298,10 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         public double asOfVersion;
@@ -89310,7 +89310,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public describeMetadataRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, double asOfVersion)
+        public describeMetadataRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, double asOfVersion)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -89326,13 +89326,13 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
-        public SFDC.MetadataService.DescribeMetadataResult result;
+        public SFDC.Metadata.DescribeMetadataResult result;
         
         public describeMetadataResponse()
         {
         }
         
-        public describeMetadataResponse(SFDC.MetadataService.DescribeMetadataResult result)
+        public describeMetadataResponse(SFDC.Metadata.DescribeMetadataResult result)
         {
             this.result = result;
         }
@@ -89346,7 +89346,7 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         public string type;
@@ -89355,7 +89355,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public describeValueTypeRequest(SFDC.MetadataService.SessionHeader SessionHeader, string type)
+        public describeValueTypeRequest(SFDC.Metadata.SessionHeader SessionHeader, string type)
         {
             this.SessionHeader = SessionHeader;
             this.type = type;
@@ -89370,13 +89370,13 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
-        public SFDC.MetadataService.DescribeValueTypeResult result;
+        public SFDC.Metadata.DescribeValueTypeResult result;
         
         public describeValueTypeResponse()
         {
         }
         
-        public describeValueTypeResponse(SFDC.MetadataService.DescribeValueTypeResult result)
+        public describeValueTypeResponse(SFDC.Metadata.DescribeValueTypeResult result)
         {
             this.result = result;
         }
@@ -89390,14 +89390,14 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queries")]
-        public SFDC.MetadataService.ListMetadataQuery[] queries;
+        public SFDC.Metadata.ListMetadataQuery[] queries;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=1)]
         public double asOfVersion;
@@ -89406,7 +89406,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public listMetadataRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.ListMetadataQuery[] queries, double asOfVersion)
+        public listMetadataRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.ListMetadataQuery[] queries, double asOfVersion)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -89424,13 +89424,13 @@ namespace SFDC.MetadataService
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("result")]
-        public SFDC.MetadataService.FileProperties[] result;
+        public SFDC.Metadata.FileProperties[] result;
         
         public listMetadataResponse()
         {
         }
         
-        public listMetadataResponse(SFDC.MetadataService.FileProperties[] result)
+        public listMetadataResponse(SFDC.Metadata.FileProperties[] result)
         {
             this.result = result;
         }
@@ -89444,10 +89444,10 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         public string type;
@@ -89460,7 +89460,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public readMetadataRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string type, string[] fullNames)
+        public readMetadataRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string type, string[] fullNames)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -89478,13 +89478,13 @@ namespace SFDC.MetadataService
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("records", IsNullable=false)]
-        public SFDC.MetadataService.Metadata[] result;
+        public SFDC.Metadata.Metadata[] result;
         
         public readMetadataResponse()
         {
         }
         
-        public readMetadataResponse(SFDC.MetadataService.Metadata[] result)
+        public readMetadataResponse(SFDC.Metadata.Metadata[] result)
         {
             this.result = result;
         }
@@ -89498,10 +89498,10 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         public string type;
@@ -89516,7 +89516,7 @@ namespace SFDC.MetadataService
         {
         }
         
-        public renameMetadataRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string type, string oldFullName, string newFullName)
+        public renameMetadataRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string type, string oldFullName, string newFullName)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -89534,13 +89534,13 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
-        public SFDC.MetadataService.SaveResult result;
+        public SFDC.Metadata.SaveResult result;
         
         public renameMetadataResponse()
         {
         }
         
-        public renameMetadataResponse(SFDC.MetadataService.SaveResult result)
+        public renameMetadataResponse(SFDC.Metadata.SaveResult result)
         {
             this.result = result;
         }
@@ -89554,19 +89554,19 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
-        public SFDC.MetadataService.RetrieveRequest retrieveRequest;
+        public SFDC.Metadata.RetrieveRequest retrieveRequest;
         
         public retrieveRequest1()
         {
         }
         
-        public retrieveRequest1(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.RetrieveRequest retrieveRequest)
+        public retrieveRequest1(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.RetrieveRequest retrieveRequest)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -89582,13 +89582,13 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
-        public SFDC.MetadataService.AsyncResult result;
+        public SFDC.Metadata.AsyncResult result;
         
         public retrieveResponse()
         {
         }
         
-        public retrieveResponse(SFDC.MetadataService.AsyncResult result)
+        public retrieveResponse(SFDC.Metadata.AsyncResult result)
         {
             this.result = result;
         }
@@ -89602,23 +89602,23 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader;
+        public SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("metadata")]
-        public SFDC.MetadataService.Metadata[] metadata;
+        public SFDC.Metadata.Metadata[] metadata;
         
         public updateMetadataRequest()
         {
         }
         
-        public updateMetadataRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader, SFDC.MetadataService.Metadata[] metadata)
+        public updateMetadataRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader, SFDC.Metadata.Metadata[] metadata)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -89636,13 +89636,13 @@ namespace SFDC.MetadataService
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("result")]
-        public SFDC.MetadataService.SaveResult[] result;
+        public SFDC.Metadata.SaveResult[] result;
         
         public updateMetadataResponse()
         {
         }
         
-        public updateMetadataResponse(SFDC.MetadataService.SaveResult[] result)
+        public updateMetadataResponse(SFDC.Metadata.SaveResult[] result)
         {
             this.result = result;
         }
@@ -89656,23 +89656,23 @@ namespace SFDC.MetadataService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.SessionHeader SessionHeader;
+        public SFDC.Metadata.SessionHeader SessionHeader;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.CallOptions CallOptions;
+        public SFDC.Metadata.CallOptions CallOptions;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://soap.sforce.com/2006/04/metadata")]
-        public SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader;
+        public SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("metadata")]
-        public SFDC.MetadataService.Metadata[] metadata;
+        public SFDC.Metadata.Metadata[] metadata;
         
         public upsertMetadataRequest()
         {
         }
         
-        public upsertMetadataRequest(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader, SFDC.MetadataService.Metadata[] metadata)
+        public upsertMetadataRequest(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader, SFDC.Metadata.Metadata[] metadata)
         {
             this.SessionHeader = SessionHeader;
             this.CallOptions = CallOptions;
@@ -89690,26 +89690,26 @@ namespace SFDC.MetadataService
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://soap.sforce.com/2006/04/metadata", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("result")]
-        public SFDC.MetadataService.UpsertResult[] result;
+        public SFDC.Metadata.UpsertResult[] result;
         
         public upsertMetadataResponse()
         {
         }
         
-        public upsertMetadataResponse(SFDC.MetadataService.UpsertResult[] result)
+        public upsertMetadataResponse(SFDC.Metadata.UpsertResult[] result)
         {
             this.result = result;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.0")]
-    public interface MetadataPortTypeChannel : SFDC.MetadataService.MetadataPortType, System.ServiceModel.IClientChannel
+    public interface MetadataPortTypeChannel : SFDC.Metadata.MetadataPortType, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.0")]
-    public partial class MetadataPortTypeClient : System.ServiceModel.ClientBase<SFDC.MetadataService.MetadataPortType>, SFDC.MetadataService.MetadataPortType
+    public partial class MetadataPortTypeClient : System.ServiceModel.ClientBase<SFDC.Metadata.MetadataPortType>, SFDC.Metadata.MetadataPortType
     {
         
         /// <summary>
@@ -89753,241 +89753,241 @@ namespace SFDC.MetadataService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.cancelDeployResponse> SFDC.MetadataService.MetadataPortType.cancelDeployAsync(SFDC.MetadataService.cancelDeployRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.cancelDeployResponse> SFDC.Metadata.MetadataPortType.cancelDeployAsync(SFDC.Metadata.cancelDeployRequest request)
         {
             return base.Channel.cancelDeployAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.cancelDeployResponse> cancelDeployAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string String)
+        public System.Threading.Tasks.Task<SFDC.Metadata.cancelDeployResponse> cancelDeployAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string String)
         {
-            SFDC.MetadataService.cancelDeployRequest inValue = new SFDC.MetadataService.cancelDeployRequest();
+            SFDC.Metadata.cancelDeployRequest inValue = new SFDC.Metadata.cancelDeployRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.String = String;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).cancelDeployAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).cancelDeployAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.checkDeployStatusResponse> SFDC.MetadataService.MetadataPortType.checkDeployStatusAsync(SFDC.MetadataService.checkDeployStatusRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.checkDeployStatusResponse> SFDC.Metadata.MetadataPortType.checkDeployStatusAsync(SFDC.Metadata.checkDeployStatusRequest request)
         {
             return base.Channel.checkDeployStatusAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.checkDeployStatusResponse> checkDeployStatusAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string asyncProcessId, bool includeDetails)
+        public System.Threading.Tasks.Task<SFDC.Metadata.checkDeployStatusResponse> checkDeployStatusAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string asyncProcessId, bool includeDetails)
         {
-            SFDC.MetadataService.checkDeployStatusRequest inValue = new SFDC.MetadataService.checkDeployStatusRequest();
+            SFDC.Metadata.checkDeployStatusRequest inValue = new SFDC.Metadata.checkDeployStatusRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.asyncProcessId = asyncProcessId;
             inValue.includeDetails = includeDetails;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).checkDeployStatusAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).checkDeployStatusAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.checkRetrieveStatusResponse> SFDC.MetadataService.MetadataPortType.checkRetrieveStatusAsync(SFDC.MetadataService.checkRetrieveStatusRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.checkRetrieveStatusResponse> SFDC.Metadata.MetadataPortType.checkRetrieveStatusAsync(SFDC.Metadata.checkRetrieveStatusRequest request)
         {
             return base.Channel.checkRetrieveStatusAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.checkRetrieveStatusResponse> checkRetrieveStatusAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string asyncProcessId, bool includeZip)
+        public System.Threading.Tasks.Task<SFDC.Metadata.checkRetrieveStatusResponse> checkRetrieveStatusAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string asyncProcessId, bool includeZip)
         {
-            SFDC.MetadataService.checkRetrieveStatusRequest inValue = new SFDC.MetadataService.checkRetrieveStatusRequest();
+            SFDC.Metadata.checkRetrieveStatusRequest inValue = new SFDC.Metadata.checkRetrieveStatusRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.asyncProcessId = asyncProcessId;
             inValue.includeZip = includeZip;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).checkRetrieveStatusAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).checkRetrieveStatusAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.createMetadataResponse> SFDC.MetadataService.MetadataPortType.createMetadataAsync(SFDC.MetadataService.createMetadataRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.createMetadataResponse> SFDC.Metadata.MetadataPortType.createMetadataAsync(SFDC.Metadata.createMetadataRequest request)
         {
             return base.Channel.createMetadataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.createMetadataResponse> createMetadataAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader, SFDC.MetadataService.Metadata[] metadata)
+        public System.Threading.Tasks.Task<SFDC.Metadata.createMetadataResponse> createMetadataAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader, SFDC.Metadata.Metadata[] metadata)
         {
-            SFDC.MetadataService.createMetadataRequest inValue = new SFDC.MetadataService.createMetadataRequest();
+            SFDC.Metadata.createMetadataRequest inValue = new SFDC.Metadata.createMetadataRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.AllOrNoneHeader = AllOrNoneHeader;
             inValue.metadata = metadata;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).createMetadataAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).createMetadataAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.deleteMetadataResponse> SFDC.MetadataService.MetadataPortType.deleteMetadataAsync(SFDC.MetadataService.deleteMetadataRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.deleteMetadataResponse> SFDC.Metadata.MetadataPortType.deleteMetadataAsync(SFDC.Metadata.deleteMetadataRequest request)
         {
             return base.Channel.deleteMetadataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.deleteMetadataResponse> deleteMetadataAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader, string type, string[] fullNames)
+        public System.Threading.Tasks.Task<SFDC.Metadata.deleteMetadataResponse> deleteMetadataAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader, string type, string[] fullNames)
         {
-            SFDC.MetadataService.deleteMetadataRequest inValue = new SFDC.MetadataService.deleteMetadataRequest();
+            SFDC.Metadata.deleteMetadataRequest inValue = new SFDC.Metadata.deleteMetadataRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.AllOrNoneHeader = AllOrNoneHeader;
             inValue.type = type;
             inValue.fullNames = fullNames;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).deleteMetadataAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).deleteMetadataAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.deployResponse> SFDC.MetadataService.MetadataPortType.deployAsync(SFDC.MetadataService.deployRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.deployResponse> SFDC.Metadata.MetadataPortType.deployAsync(SFDC.Metadata.deployRequest request)
         {
             return base.Channel.deployAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.deployResponse> deployAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.DebuggingHeader DebuggingHeader, SFDC.MetadataService.CallOptions CallOptions, byte[] ZipFile, SFDC.MetadataService.DeployOptions DeployOptions)
+        public System.Threading.Tasks.Task<SFDC.Metadata.deployResponse> deployAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.DebuggingHeader DebuggingHeader, SFDC.Metadata.CallOptions CallOptions, byte[] ZipFile, SFDC.Metadata.DeployOptions DeployOptions)
         {
-            SFDC.MetadataService.deployRequest inValue = new SFDC.MetadataService.deployRequest();
+            SFDC.Metadata.deployRequest inValue = new SFDC.Metadata.deployRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.DebuggingHeader = DebuggingHeader;
             inValue.CallOptions = CallOptions;
             inValue.ZipFile = ZipFile;
             inValue.DeployOptions = DeployOptions;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).deployAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).deployAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.deployRecentValidationResponse> SFDC.MetadataService.MetadataPortType.deployRecentValidationAsync(SFDC.MetadataService.deployRecentValidationRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.deployRecentValidationResponse> SFDC.Metadata.MetadataPortType.deployRecentValidationAsync(SFDC.Metadata.deployRecentValidationRequest request)
         {
             return base.Channel.deployRecentValidationAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.deployRecentValidationResponse> deployRecentValidationAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.DebuggingHeader DebuggingHeader, SFDC.MetadataService.CallOptions CallOptions, string validationId)
+        public System.Threading.Tasks.Task<SFDC.Metadata.deployRecentValidationResponse> deployRecentValidationAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.DebuggingHeader DebuggingHeader, SFDC.Metadata.CallOptions CallOptions, string validationId)
         {
-            SFDC.MetadataService.deployRecentValidationRequest inValue = new SFDC.MetadataService.deployRecentValidationRequest();
+            SFDC.Metadata.deployRecentValidationRequest inValue = new SFDC.Metadata.deployRecentValidationRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.DebuggingHeader = DebuggingHeader;
             inValue.CallOptions = CallOptions;
             inValue.validationId = validationId;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).deployRecentValidationAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).deployRecentValidationAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.describeMetadataResponse> SFDC.MetadataService.MetadataPortType.describeMetadataAsync(SFDC.MetadataService.describeMetadataRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.describeMetadataResponse> SFDC.Metadata.MetadataPortType.describeMetadataAsync(SFDC.Metadata.describeMetadataRequest request)
         {
             return base.Channel.describeMetadataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.describeMetadataResponse> describeMetadataAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, double asOfVersion)
+        public System.Threading.Tasks.Task<SFDC.Metadata.describeMetadataResponse> describeMetadataAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, double asOfVersion)
         {
-            SFDC.MetadataService.describeMetadataRequest inValue = new SFDC.MetadataService.describeMetadataRequest();
+            SFDC.Metadata.describeMetadataRequest inValue = new SFDC.Metadata.describeMetadataRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.asOfVersion = asOfVersion;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).describeMetadataAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).describeMetadataAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.describeValueTypeResponse> SFDC.MetadataService.MetadataPortType.describeValueTypeAsync(SFDC.MetadataService.describeValueTypeRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.describeValueTypeResponse> SFDC.Metadata.MetadataPortType.describeValueTypeAsync(SFDC.Metadata.describeValueTypeRequest request)
         {
             return base.Channel.describeValueTypeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.describeValueTypeResponse> describeValueTypeAsync(SFDC.MetadataService.SessionHeader SessionHeader, string type)
+        public System.Threading.Tasks.Task<SFDC.Metadata.describeValueTypeResponse> describeValueTypeAsync(SFDC.Metadata.SessionHeader SessionHeader, string type)
         {
-            SFDC.MetadataService.describeValueTypeRequest inValue = new SFDC.MetadataService.describeValueTypeRequest();
+            SFDC.Metadata.describeValueTypeRequest inValue = new SFDC.Metadata.describeValueTypeRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.type = type;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).describeValueTypeAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).describeValueTypeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.listMetadataResponse> SFDC.MetadataService.MetadataPortType.listMetadataAsync(SFDC.MetadataService.listMetadataRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.listMetadataResponse> SFDC.Metadata.MetadataPortType.listMetadataAsync(SFDC.Metadata.listMetadataRequest request)
         {
             return base.Channel.listMetadataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.listMetadataResponse> listMetadataAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.ListMetadataQuery[] queries, double asOfVersion)
+        public System.Threading.Tasks.Task<SFDC.Metadata.listMetadataResponse> listMetadataAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.ListMetadataQuery[] queries, double asOfVersion)
         {
-            SFDC.MetadataService.listMetadataRequest inValue = new SFDC.MetadataService.listMetadataRequest();
+            SFDC.Metadata.listMetadataRequest inValue = new SFDC.Metadata.listMetadataRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.queries = queries;
             inValue.asOfVersion = asOfVersion;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).listMetadataAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).listMetadataAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.readMetadataResponse> SFDC.MetadataService.MetadataPortType.readMetadataAsync(SFDC.MetadataService.readMetadataRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.readMetadataResponse> SFDC.Metadata.MetadataPortType.readMetadataAsync(SFDC.Metadata.readMetadataRequest request)
         {
             return base.Channel.readMetadataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.readMetadataResponse> readMetadataAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string type, string[] fullNames)
+        public System.Threading.Tasks.Task<SFDC.Metadata.readMetadataResponse> readMetadataAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string type, string[] fullNames)
         {
-            SFDC.MetadataService.readMetadataRequest inValue = new SFDC.MetadataService.readMetadataRequest();
+            SFDC.Metadata.readMetadataRequest inValue = new SFDC.Metadata.readMetadataRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.type = type;
             inValue.fullNames = fullNames;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).readMetadataAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).readMetadataAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.renameMetadataResponse> SFDC.MetadataService.MetadataPortType.renameMetadataAsync(SFDC.MetadataService.renameMetadataRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.renameMetadataResponse> SFDC.Metadata.MetadataPortType.renameMetadataAsync(SFDC.Metadata.renameMetadataRequest request)
         {
             return base.Channel.renameMetadataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.renameMetadataResponse> renameMetadataAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, string type, string oldFullName, string newFullName)
+        public System.Threading.Tasks.Task<SFDC.Metadata.renameMetadataResponse> renameMetadataAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, string type, string oldFullName, string newFullName)
         {
-            SFDC.MetadataService.renameMetadataRequest inValue = new SFDC.MetadataService.renameMetadataRequest();
+            SFDC.Metadata.renameMetadataRequest inValue = new SFDC.Metadata.renameMetadataRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.type = type;
             inValue.oldFullName = oldFullName;
             inValue.newFullName = newFullName;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).renameMetadataAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).renameMetadataAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.retrieveResponse> SFDC.MetadataService.MetadataPortType.retrieveAsync(SFDC.MetadataService.retrieveRequest1 request)
+        System.Threading.Tasks.Task<SFDC.Metadata.retrieveResponse> SFDC.Metadata.MetadataPortType.retrieveAsync(SFDC.Metadata.retrieveRequest1 request)
         {
             return base.Channel.retrieveAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.retrieveResponse> retrieveAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.RetrieveRequest retrieveRequest)
+        public System.Threading.Tasks.Task<SFDC.Metadata.retrieveResponse> retrieveAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.RetrieveRequest retrieveRequest)
         {
-            SFDC.MetadataService.retrieveRequest1 inValue = new SFDC.MetadataService.retrieveRequest1();
+            SFDC.Metadata.retrieveRequest1 inValue = new SFDC.Metadata.retrieveRequest1();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.retrieveRequest = retrieveRequest;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).retrieveAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).retrieveAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.updateMetadataResponse> SFDC.MetadataService.MetadataPortType.updateMetadataAsync(SFDC.MetadataService.updateMetadataRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.updateMetadataResponse> SFDC.Metadata.MetadataPortType.updateMetadataAsync(SFDC.Metadata.updateMetadataRequest request)
         {
             return base.Channel.updateMetadataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.updateMetadataResponse> updateMetadataAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader, SFDC.MetadataService.Metadata[] metadata)
+        public System.Threading.Tasks.Task<SFDC.Metadata.updateMetadataResponse> updateMetadataAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader, SFDC.Metadata.Metadata[] metadata)
         {
-            SFDC.MetadataService.updateMetadataRequest inValue = new SFDC.MetadataService.updateMetadataRequest();
+            SFDC.Metadata.updateMetadataRequest inValue = new SFDC.Metadata.updateMetadataRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.AllOrNoneHeader = AllOrNoneHeader;
             inValue.metadata = metadata;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).updateMetadataAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).updateMetadataAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SFDC.MetadataService.upsertMetadataResponse> SFDC.MetadataService.MetadataPortType.upsertMetadataAsync(SFDC.MetadataService.upsertMetadataRequest request)
+        System.Threading.Tasks.Task<SFDC.Metadata.upsertMetadataResponse> SFDC.Metadata.MetadataPortType.upsertMetadataAsync(SFDC.Metadata.upsertMetadataRequest request)
         {
             return base.Channel.upsertMetadataAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SFDC.MetadataService.upsertMetadataResponse> upsertMetadataAsync(SFDC.MetadataService.SessionHeader SessionHeader, SFDC.MetadataService.CallOptions CallOptions, SFDC.MetadataService.AllOrNoneHeader AllOrNoneHeader, SFDC.MetadataService.Metadata[] metadata)
+        public System.Threading.Tasks.Task<SFDC.Metadata.upsertMetadataResponse> upsertMetadataAsync(SFDC.Metadata.SessionHeader SessionHeader, SFDC.Metadata.CallOptions CallOptions, SFDC.Metadata.AllOrNoneHeader AllOrNoneHeader, SFDC.Metadata.Metadata[] metadata)
         {
-            SFDC.MetadataService.upsertMetadataRequest inValue = new SFDC.MetadataService.upsertMetadataRequest();
+            SFDC.Metadata.upsertMetadataRequest inValue = new SFDC.Metadata.upsertMetadataRequest();
             inValue.SessionHeader = SessionHeader;
             inValue.CallOptions = CallOptions;
             inValue.AllOrNoneHeader = AllOrNoneHeader;
             inValue.metadata = metadata;
-            return ((SFDC.MetadataService.MetadataPortType)(this)).upsertMetadataAsync(inValue);
+            return ((SFDC.Metadata.MetadataPortType)(this)).upsertMetadataAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

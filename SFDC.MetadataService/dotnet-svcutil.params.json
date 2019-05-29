@@ -6,7 +6,7 @@
       "../../../WSDLSALESFORCE/metadata.xml"
     ],
     "namespaceMappings": [
-      "*, SFDC.MetadataService"
+      "*, SFDC.Metadata"
     ],
     "outputFile": "Reference.cs",
     "targetFramework": "netcoreapp2.2",

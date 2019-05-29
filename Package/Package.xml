@@ -1,0 +1,1270 @@
+<?xml version="1.0"?>
+<Package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <members>fflib_Answer</members>
+    <members>CampingListController</members>
+    <members>StringArrayTest</members>
+    <members>SiteRegisterController</members>
+    <members>RegionRepository</members>
+    <members>fflib_SystemTest</members>
+    <members>WarehouseSyncSchedule</members>
+    <members>fflib_MethodReturnValueRecorder</members>
+    <members>PlanViewCal__CABaseUserSecurity</members>
+    <members>PlanViewCal__CAPlannerViewController</members>
+    <members>AnimalsCalloutsTest</members>
+    <members>s1m_community_files_test</members>
+    <members>CommunitiesLandingControllerTest</members>
+    <members>ContactController</members>
+    <members>PlanViewCal__CAPostInstallTest</members>
+    <members>PropertyPagedResult</members>
+    <members>PlanViewCal__CADropDownWithCheckBoxController</members>
+    <members>PlanViewCal__CAPostInstall</members>
+    <members>fflib_ApexMocks</members>
+    <members>fflib_Inheritor</members>
+    <members>CalloutUtilsTst</members>
+    <members>JWTBearerFlow</members>
+    <members>ContriesService</members>
+    <members>PlanViewCal__CAViewManager</members>
+    <members>BotRecord</members>
+    <members>BotTest</members>
+    <members>fflib_SObjectUnitOfWork</members>
+    <members>PushPriceChangeNotification</members>
+    <members>Opportunity_Ctrl</members>
+    <members>StoreRepository</members>
+    <members>fflib_ApexMocksUtils</members>
+    <members>HttpFormBuilder</members>
+    <members>PlanViewCal__CAMainControllerTest</members>
+    <members>fflib_InOrderTest</members>
+    <members>ForgotPasswordControllerTest</members>
+    <members>fflib_MethodReturnValue</members>
+    <members>V_Create_Vor_ObjetoPai_Service</members>
+    <members>fflib_QualifiedMethodTest</members>
+    <members>fflib_ApplicationTest</members>
+    <members>LeadProcessor</members>
+    <members>LightningSelfRegisterControllerTest</members>
+    <members>HandlerFindContact</members>
+    <members>EinsteinVisionController</members>
+    <members>fflib_SObjectMocks</members>
+    <members>TestController</members>
+    <members>CasosChange</members>
+    <members>CommunitiesLoginController</members>
+    <members>ParkLocator</members>
+    <members>fflib_SObjectUnitOfWorkTest</members>
+    <members>s1m_scout_test</members>
+    <members>AnimalLocatorTest</members>
+    <members>fflib_StringBuilder</members>
+    <members>ParkLocatorTest</members>
+    <members>BrandRepository</members>
+    <members>CommunitiesSelfRegConfirmController</members>
+    <members>LabelService</members>
+    <members>fflib_ISObjectDomain</members>
+    <members>PlanViewCal__CADataManager</members>
+    <members>fflib_VerificationMode</members>
+    <members>LightningLoginFormControllerTest</members>
+    <members>AngularForceAccountService</members>
+    <members>fflib_SObjectDescribeTest</members>
+    <members>V_Create_Vor_ObjetoPai_DomainException</members>
+    <members>AnimalModel</members>
+    <members>TowerMapControllerClass</members>
+    <members>LightningForgotPasswordController</members>
+    <members>recaptchaController</members>
+    <members>PlanViewCal__CAMainController</members>
+    <members>RejectDuplicateFavoriteTest</members>
+    <members>fflib_ArgumentCaptor</members>
+    <members>CommunitiesLandingController</members>
+    <members>fflib_ApexMocksUtilsTest</members>
+    <members>s1m_metro_news</members>
+    <members>EinsteinVisionControllerTest</members>
+    <members>AnimalLocatorMock</members>
+    <members>fflib_QualifiedMethodAndArgValues</members>
+    <members>fflib_IDGeneratorTest</members>
+    <members>ContriesRepository</members>
+    <members>s1m_scout</members>
+    <members>AccountManagerTest</members>
+    <members>WarehouseCalloutServiceMock</members>
+    <members>MyProfilePageControllerTest</members>
+    <members>BotHandler</members>
+    <members>s1m_postboy_test</members>
+    <members>FileController</members>
+    <members>s1m_corp_services_test</members>
+    <members>calculatorServices</members>
+    <members>s1m_deal_fuel</members>
+    <members>fflib_SecurityUtilsTest</members>
+    <members>PlanViewCal__CAMainPageController</members>
+    <members>SiteLoginControllerTest</members>
+    <members>fflib_AnyOrderTest</members>
+    <members>AccountProcessorTest</members>
+    <members>fflib_ArgumentCaptorTest</members>
+    <members>PlanViewCal__CAAssignObjectsController</members>
+    <members>V_Create_Vor_ObjetoPai_Domain</members>
+    <members>ParkService</members>
+    <members>EmailManager</members>
+    <members>fflib_InheritorTest</members>
+    <members>fflib_MethodCountRecorder</members>
+    <members>PlanViewCal__CAAdminController</members>
+    <members>fflib_QualifiedMethod</members>
+    <members>HandlerEmployeeId</members>
+    <members>AngularForceAccountRepository</members>
+    <members>fflib_StringBuilderTest</members>
+    <members>ExpensesController</members>
+    <members>BotMessageButton</members>
+    <members>V_Create_Vor_ctr_ViewModel</members>
+    <members>s1m_explain_quizzer</members>
+    <members>BotController</members>
+    <members>s1m_explain_presenter</members>
+    <members>AnimalLocator</members>
+    <members>InstallationTests</members>
+    <members>PesquisarContas_crl</members>
+    <members>LIFXController</members>
+    <members>UtilIpAddress</members>
+    <members>ForgotPasswordController</members>
+    <members>WarehouseCalloutService</members>
+    <members>CalloutUtilsMock</members>
+    <members>BrandService</members>
+    <members>PlanViewCal__CAAssignUsersController</members>
+    <members>ParkServiceMock</members>
+    <members>fflib_ISObjectSelector</members>
+    <members>fflib_MethodVerifier</members>
+    <members>fflib_MatcherDefinitionsTest</members>
+    <members>AccountRemote</members>
+    <members>V_Create_Vor_ObjetoPai_Repositorio</members>
+    <members>TestTranslation</members>
+    <members>CreateTaskEmailExample</members>
+    <members>HandlerFileUpload</members>
+    <members>AccountController</members>
+    <members>PlanViewCal__CAMainSelectWrapper</members>
+    <members>PlanViewCal__CAUtil</members>
+    <members>CommunitiesSelfRegConfirmControllerTest</members>
+    <members>LightningForgotPasswordControllerTest</members>
+    <members>PlanViewCal__CAGeoMapViewController</members>
+    <members>HeaderService</members>
+    <members>s1m_explain_presenter_test</members>
+    <members>HandlerSOQL</members>
+    <members>V_Create_Vor_ctr</members>
+    <members>PlanViewCal__CAResourceViewController</members>
+    <members>WarehouseCalloutServiceTest</members>
+    <members>SiteLoginController</members>
+    <members>TestLightningConnectQuickstart</members>
+    <members>LIFXControllerTest</members>
+    <members>PlanViewCal__CASetUpController</members>
+    <members>PlanViewCal__CAPackageSubscription</members>
+    <members>HandlerImageBasedSearch</members>
+    <members>fflib_AnyOrder</members>
+    <members>fflib_SecurityUtils</members>
+    <members>fflib_IMatcher</members>
+    <members>CommunitiesLoginControllerTest</members>
+    <members>s1m_corp_services</members>
+    <members>PlanViewCal__CAConst</members>
+    <members>Translation</members>
+    <members>BotItem</members>
+    <members>fflib_QueryFactoryTest</members>
+    <members>BotField</members>
+    <members>AngularAppController</members>
+    <members>DreamHouseSampleDataController</members>
+    <members>PlanViewCal__CAMultiSelectController</members>
+    <members>SlackOpportunityPublisher</members>
+    <members>Opportunity_Repository</members>
+    <members>fflib_SObjectSelectorTest</members>
+    <members>HandlerHello</members>
+    <members>AnimalsCallouts</members>
+    <members>s1m_postboy</members>
+    <members>LightningConnectQuickstart</members>
+    <members>fflib_MatchersReturnValue</members>
+    <members>AccountProcessor</members>
+    <members>s1m_community_files</members>
+    <members>HandlerHelp</members>
+    <members>Opportunity_ProductItens_service</members>
+    <members>s1m_deal_fuel_test</members>
+    <members>PropertyController</members>
+    <members>fflib_System</members>
+    <members>RegionService</members>
+    <members>CommunitiesSelfRegController</members>
+    <members>ChangePasswordControllerTest</members>
+    <members>PlanViewCal__CAActionsController</members>
+    <members>BotResponse</members>
+    <members>HandlerTravelApproval</members>
+    <members>MaintenanceRequestHelper</members>
+    <members>UtilityClass</members>
+    <members>HandlerMyOpenCases</members>
+    <members>fflib_Application</members>
+    <members>HandlerCostCenter</members>
+    <members>fflib_MatchTest</members>
+    <members>MyProfilePageController</members>
+    <members>Opportunity_ProductItens_ctrl</members>
+    <members>Opportunity_ProductItens_Repository</members>
+    <members>fflib_MyList</members>
+    <members>HandlerTopOpportunities</members>
+    <members>AsyncParkService</members>
+    <members>AnimalsHttpCalloutMock</members>
+    <members>fflib_ISObjectUnitOfWork</members>
+    <members>PushPriceChangeNotificationTest</members>
+    <members>HeaderDutyFreeDufryCtrl</members>
+    <members>PostPriceChangeToSlackTest</members>
+    <members>Animal</members>
+    <members>fflib_AnswerTest</members>
+    <members>PlanViewCal__CASubscriptionMockTest</members>
+    <members>fflib_SObjectSelector</members>
+    <members>AccountManager</members>
+    <members>fflib_Mocks</members>
+    <members>LightningLoginFormController</members>
+    <members>s1m_metro_news_test</members>
+    <members>HandlerQuarter</members>
+    <members>ChangeValueCase</members>
+    <members>SalesTranslateCustomSettings</members>
+    <members>HandlerPipeline</members>
+    <members>OptionKeyValue</members>
+    <members>JsonToAnimal</members>
+    <members>PlanViewCal__CABaseView</members>
+    <members>LeadProcessorTest</members>
+    <members>StoreService</members>
+    <members>BotMessage</members>
+    <members>HandlerFindAccount</members>
+    <members>SiteRegisterControllerTest</members>
+    <members>HeaderController</members>
+    <members>AsyncCalculatorServices</members>
+    <members>fflib_SObjectDomainTest</members>
+    <members>PlanViewCal__CACalendarViewController</members>
+    <members>AddPrimaryContactTest</members>
+    <members>fflib_Match</members>
+    <members>PostPriceChangeToSlack</members>
+    <members>AnimalJson</members>
+    <members>CommunitiesSelfRegControllerTest</members>
+    <members>PlanViewCal__CAAdminControllerTest</members>
+    <members>s1m_explain_quizzer_test</members>
+    <members>fflib_QueryFactory</members>
+    <members>fflib_InvocationOnMock</members>
+    <members>DailyLeadProcessor</members>
+    <members>fflib_MethodArgValues</members>
+    <members>HandlerFindPropertiesByBedrooms</members>
+    <members>AngularForceController</members>
+    <members>LightningSelfRegisterController</members>
+    <members>DailyLeadProcessorTest</members>
+    <members>BrandsService</members>
+    <members>ChangePasswordController</members>
+    <members>fflib_MethodArgValuesTest</members>
+    <members>fflib_SObjectDescribe</members>
+    <members>PesquisarContas_cls</members>
+    <members>ComponenteLojaController</members>
+    <members>fflib_SObjectDomain</members>
+    <members>PropertyControllerTest</members>
+    <members>SlackOpportunityPublisherTest</members>
+    <members>fflib_IDGenerator</members>
+    <members>HandlerHelpTopic</members>
+    <members>fflib_InOrder</members>
+    <members>fflib_MatcherDefinitions</members>
+    <members>AccountProcessorMock</members>
+    <members>HandlerFindProperties</members>
+    <members>AddPrimaryContact</members>
+    <members>HandlerNext</members>
+    <members>PlanViewCal__CAException</members>
+    <members>HandlerAddTwoNumbers</members>
+    <members>CalloutUtils</members>
+    <members>Animal_Test</members>
+    <members>JWT</members>
+    <members>fflib_ApexMocksTest</members>
+    <name>ApexClass</name>
+  </types>
+  <types>
+    <members>PushNotificationTrigger</members>
+    <members>PlanViewCal__CAPublishPreventerTrigger</members>
+    <members>PlanViewCal__CATablePreventerTrigger</members>
+    <members>CasosChange</members>
+    <members>RejectDuplicateFavorite</members>
+    <members>MaintenanceRequest</members>
+    <name>ApexTrigger</name>
+  </types>
+  <types>
+    <members>PlanViewCal__calAllAssignObjects</members>
+    <members>HelloWorld</members>
+    <members>SiteFooter</members>
+    <members>PlanViewCal__calAllFetchResources</members>
+    <members>PlanViewCal__calAllAssignUsers</members>
+    <members>SitePoweredBy</members>
+    <members>PlanViewCal__calAllActions</members>
+    <members>Opportunity_ProductsItens_vfc</members>
+    <members>ChatComponent</members>
+    <members>PlanViewCal__calAllComp</members>
+    <members>SiteLogin</members>
+    <members>PlanViewCal__calAllSelectWithCheckBox</members>
+    <members>PlanViewCal__calAllGeoMapView</members>
+    <members>PlanViewCal__calAllPlannerView</members>
+    <members>PlanViewCal__calAllResourceView</members>
+    <members>PlanViewCal__calAllCalendarView</members>
+    <members>PlanViewCal__calAllAdmin</members>
+    <members>SiteHeader</members>
+    <members>PlanViewCal__calAllMultiSelect</members>
+    <name>ApexComponent</name>
+  </types>
+  <types>
+    <members>SiteLogin</members>
+    <members>SiteRegisterConfirm</members>
+    <members>AccountRemotePage</members>
+    <members>ForgotPasswordConfirm</members>
+    <members>MyProfilePage</members>
+    <members>s1m_scout_map</members>
+    <members>ApplicationView</members>
+    <members>AnswersHome</members>
+    <members>IdeasHome</members>
+    <members>Chat</members>
+    <members>V_Create_Vor</members>
+    <members>s1m_scout</members>
+    <members>AngularForce</members>
+    <members>LightningConnectQuickstart</members>
+    <members>PesquisarContas</members>
+    <members>PlanViewCal__calAllCSS</members>
+    <members>ChangePassword</members>
+    <members>InMaintenance</members>
+    <members>myvfpage</members>
+    <members>AngularApp</members>
+    <members>editaccout</members>
+    <members>BandwidthExceeded</members>
+    <members>CommunitiesLogin</members>
+    <members>UnderConstruction</members>
+    <members>ForgotPassword</members>
+    <members>CommunitiesLanding</members>
+    <members>helloworld</members>
+    <members>CommunitiesTemplate</members>
+    <members>s1m_explain_quizzer</members>
+    <members>StdExceptionTemplate</members>
+    <members>SiteTemplate</members>
+    <members>CommunitiesSelfRegConfirm</members>
+    <members>HeatMap</members>
+    <members>s1m_postboy</members>
+    <members>DreamHouseSampleData</members>
+    <members>s1m_corp_services_geocode</members>
+    <members>s1m_lead_geolocate</members>
+    <members>s1m_account_geolocate</members>
+    <members>SiteRegister</members>
+    <members>Unauthorized</members>
+    <members>s1m_session</members>
+    <members>s1m_corp_services</members>
+    <members>TestRemote</members>
+    <members>s1m_metro_news_overview</members>
+    <members>FileNotFound</members>
+    <members>Opportunity_vf</members>
+    <members>s1m_community_files</members>
+    <members>s1m_explain_presenter</members>
+    <members>PlanViewCal__calAllMain</members>
+    <members>AccountsPage</members>
+    <members>Ajuda_Candidato_Cargo</members>
+    <members>PlanViewCal__CalAllSetUp</members>
+    <members>Exception</members>
+    <members>s1m_metro_news</members>
+    <members>tabbedCase</members>
+    <members>PlanViewCal__calAllPersonalization</members>
+    <members>CommunitiesSelfReg</members>
+    <members>PlanViewCal__calAllPostInstallNotes</members>
+    <members>HeatMapMock</members>
+    <members>Trailhead_SLDS_Contacts</members>
+    <members>s1m_deal_fuel</members>
+    <name>ApexPage</name>
+  </types>
+  <types>
+    <members>Threat_Tier.Silver_Option_A</members>
+    <members>Threat_Tier.Bronze_Option_B</members>
+    <members>Threat_Tier.Bronze_Option_A</members>
+    <members>Threat_Tier.Gold_Option_B</members>
+    <members>Threat_Tier.Gold_Option_A</members>
+    <members>Threat_Tier.Silver_Option_B</members>
+    <name>CustomMetadata</name>
+  </types>
+  <types>
+    <members>TopicAssignment</members>
+    <members>Solution</members>
+    <members>Topic</members>
+    <members>OpportunityLineItem</members>
+    <members>S1M_Corporate_Office__c</members>
+    <members>ChatterActivity</members>
+    <members>S1M_Class_Material__c</members>
+    <members>DuplicateRecordItem</members>
+    <members>Asset</members>
+    <members>Contact</members>
+    <members>Territory2</members>
+    <members>Order</members>
+    <members>UserProvisioningRequest</members>
+    <members>S1M_Corp_Services__c</members>
+    <members>Arrecada_o_de_fundos__c</members>
+    <members>Territory2Model</members>
+    <members>phone__x</members>
+    <members>StreamingChannel</members>
+    <members>LBLCOMUNITY__c</members>
+    <members>ScorecardAssociation</members>
+    <members>PlanViewCal__All_in_One_Publish__c</members>
+    <members>AssistantProgress</members>
+    <members>DuplicateRecordSet</members>
+    <members>EmailMessage</members>
+    <members>Region__c</members>
+    <members>ObjAr__c</members>
+    <members>LiveChatTranscriptSkill</members>
+    <members>ScorecardMetric</members>
+    <members>ContactRequest</members>
+    <members>Tower__c</members>
+    <members>NetworkMember</members>
+    <members>S1M_Class_Badge__c</members>
+    <members>S1M_User_Badges__c</members>
+    <members>ForecastingCategoryMapping</members>
+    <members>LeadCleanInfo</members>
+    <members>AccountCleanInfo</members>
+    <members>User</members>
+    <members>Camping_Item__c</members>
+    <members>Energy_Audit__c</members>
+    <members>Bot_Command__c</members>
+    <members>Event</members>
+    <members>Store__c</members>
+    <members>S1M_Community_Collateral_Share__c</members>
+    <members>S1M_Explain_Item__c</members>
+    <members>Task</members>
+    <members>Scorecard</members>
+    <members>CollaborationGroupMember</members>
+    <members>Trail__c</members>
+    <members>Campaign</members>
+    <members>PricebookEntry</members>
+    <members>JobPosting__c</members>
+    <members>MacroInstruction</members>
+    <members>OpportunityTeamMember</members>
+    <members>Broker__c</members>
+    <members>ContractContactRole</members>
+    <members>CaseContactRole</members>
+    <members>Activity</members>
+    <members>FeedItem</members>
+    <members>Idea</members>
+    <members>PlanViewCal__Calendar_Table__c</members>
+    <members>LiveAgentSession</members>
+    <members>Case</members>
+    <members>ChannelProgram</members>
+    <members>AssetRelationship</members>
+    <members>CampaignMember</members>
+    <members>ChannelProgramLevel</members>
+    <members>Expense__c</members>
+    <members>Pricebook2</members>
+    <members>Work_Part__c</members>
+    <members>ChannelProgramMember</members>
+    <members>PartnerMarketingBudget</members>
+    <members>PartnerRole</members>
+    <members>Image</members>
+    <members>ContactCleanInfo</members>
+    <members>QuickText</members>
+    <members>Macro</members>
+    <members>S1M_Class__c</members>
+    <members>OpportunityCompetitor</members>
+    <members>OrderItem</members>
+    <members>Property__c</members>
+    <members>Clientes_VIP__c</members>
+    <members>OpportunityContactRole</members>
+    <members>OrgDeleteRequest</members>
+    <members>ObjetoPai__c</members>
+    <members>Opportunity</members>
+    <members>Contry__c</members>
+    <members>Site</members>
+    <members>LiveChatTranscript</members>
+    <members>Candidate__c</members>
+    <members>Dreamhouse_Settings__c</members>
+    <members>AccountContactRole</members>
+    <members>AccountBrand</members>
+    <members>Position__c</members>
+    <members>SocialPersona</members>
+    <members>PartnerFundAllocation</members>
+    <members>LiveChatTranscriptEvent</members>
+    <members>UserTerritory2Association</members>
+    <members>S1M_Explain_Collection__c</members>
+    <members>RecordAction</members>
+    <members>Review__c</members>
+    <members>LiveChatVisitor</members>
+    <members>Product2</members>
+    <members>Vehicle__c</members>
+    <members>ExchangeUserMapping</members>
+    <members>Favorite__c</members>
+    <members>PartnerFundRequest</members>
+    <members>S1M_Product_Badge__c</members>
+    <members>Threat_Tier__mdt</members>
+    <members>Job_Application__c</members>
+    <members>Script_de_Atendiemtn__c</members>
+    <members>Anexos__c</members>
+    <members>S1M_Google_API_Keys__c</members>
+    <members>Recommendation</members>
+    <members>S1M_Badge__c</members>
+    <members>Lightning_Map__c</members>
+    <members>S1M_Heroku_Services__c</members>
+    <members>Lead</members>
+    <members>DandBCompany</members>
+    <members>Contract</members>
+    <members>CollaborationGroup</members>
+    <members>PlanViewCal__CalAll_Settings__c</members>
+    <members>PartnerFundClaim</members>
+    <members>MacroAction</members>
+    <members>Account</members>
+    <members>Brands__c</members>
+    <members>ContentVersion</members>
+    <members>phone_plan__x</members>
+    <name>CustomObject</name>
+  </types>
+  <types>
+    <members>Expense__c.Reimbursed__c</members>
+    <members>Bot_Command__c.Pattern__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Resource_Items__c</members>
+    <members>Property__c.Date_Closed__c</members>
+    <members>S1M_Class_Material__c.Class__c</members>
+    <members>Lead.DB_Created_Date_without_Time__c</members>
+    <members>Property__c.Days_On_Market__c</members>
+    <members>S1M_User_Badges__c.Badge__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Hide_Standard_ListViews__c</members>
+    <members>Brands__c.CommunityPage__c</members>
+    <members>S1M_Explain_Item__c.S1M_Explain_Collection__c</members>
+    <members>S1M_Corp_Services__c.S1M_Corporate_Office__c</members>
+    <members>Energy_Audit__c.Account__c</members>
+    <members>Dreamhouse_Settings__c.LIFX_URL__c</members>
+    <members>Broker__c.Phone__c</members>
+    <members>Opportunity.Nome_da_Conta__c</members>
+    <members>S1M_Corp_Services__c.S1M_Description__c</members>
+    <members>Property__c.Status__c</members>
+    <members>Trail__c.Distance__c</members>
+    <members>Account.S1M_Twitter_Account__c</members>
+    <members>Opportunity.DB_Competitor__c</members>
+    <members>phone__x.PhoneNumber__c</members>
+    <members>Dreamhouse_Settings__c.Slack_Property_Webhook_URL__c</members>
+    <members>Vehicle__c.Make__c</members>
+    <members>PlanViewCal__All_In_One_SetUp__c.PlanViewCal__User_Removed__c</members>
+    <members>PlanViewCal__Package_Security__c.PlanViewCal__Installation_UserId__c</members>
+    <members>Lead.S1M_Location__c</members>
+    <members>Activity.Data_Quality_Description__c</members>
+    <members>Lead.Data_Quality_Description__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__Branding_Color__c</members>
+    <members>PlanViewCal__All_In_One_SetUp__c.PlanViewCal__User_Selected_4__c</members>
+    <members>S1M_Google_API_Keys__c.S1M_Google_MAP_API_Key__c</members>
+    <members>Property__c.Address__c</members>
+    <members>Account.Data_Quality_Description__c</members>
+    <members>Activity.Data_Quality_Score__c</members>
+    <members>Trail__c.Description__c</members>
+    <members>Contact.Languages__c</members>
+    <members>Lead.SICCode__c</members>
+    <members>Product2.Cost__c</members>
+    <members>S1M_Explain_Item__c.Name__c</members>
+    <members>Dreamhouse_Settings__c.Slack_Opportunity_Webhook_URL__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Redirect_Record_Calendar_Layout__c</members>
+    <members>Vehicle__c.Roof_Mounted_Antenna__c</members>
+    <members>Property__c.Zip__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Fields_Information__c</members>
+    <members>S1M_Class_Badge__c.Class__c</members>
+    <members>Vehicle__c.Bathroom_Hookup__c</members>
+    <members>S1M_Corp_Services__c.S1M_City__c</members>
+    <members>PlanViewCal__All_In_One_SetUp__c.PlanViewCal__User_Selected_1__c</members>
+    <members>Property__c.City__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__End_Date_Field__c</members>
+    <members>phone__x.Brand__c</members>
+    <members>Contact.Data_Quality_Description__c</members>
+    <members>Case.Orientacao__c</members>
+    <members>Product2.Replacement_Part__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Object_FieldSet_Name__c</members>
+    <members>Account.Data_Quality_Score__c</members>
+    <members>PlanViewCal__Package_Security__c.PlanViewCal__Subscription_Name__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__Page_Title__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__Item_Redirect_URL__c</members>
+    <members>Threat_Tier__mdt.Account_Tier__c</members>
+    <members>Vehicle__c.Fancy_Sound_System__c</members>
+    <members>Opportunity.DeliveryInstallationStatus__c</members>
+    <members>Product2.Warehouse_SKU__c</members>
+    <members>PlanViewCal__All_In_One_SetUp__c.PlanViewCal__IsUser__c</members>
+    <members>Account.CustomerPriority__c</members>
+    <members>Goal.OrigGoalId__c</members>
+    <members>Lead.Data_Quality_Score__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Parent_Object__c</members>
+    <members>Account.Customer_ID__c</members>
+    <members>Work_Part__c.Equipment__c</members>
+    <members>S1M_Badge__c.Icon__c</members>
+    <members>Broker__c.Picture__c</members>
+    <members>Vehicle__c.Bathrooms__c</members>
+    <members>Opportunity.MainCompetitors__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Is_Resource__c</members>
+    <members>Property__c.Baths__c</members>
+    <members>Case.SLAViolation__c</members>
+    <members>Account.CPF__c</members>
+    <members>Expense__c.Date__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Redirect_URL__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Setting_Type__c</members>
+    <members>Tower__c.Tower_Location__c</members>
+    <members>Position__c.Gerente_de_contrata_o__c</members>
+    <members>Metric.OrigMetricId__c</members>
+    <members>LBLCOMUNITY__c.AGL__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Show_Config_Panel__c</members>
+    <members>Contract.Data_Quality_Description__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Color__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__Instruction_Text__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__SObject_Config__c</members>
+    <members>User.Account_Type__c</members>
+    <members>Lead.ProductInterest__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Show_Mini_layout_In_Classic__c</members>
+    <members>Product2.Current_Inventory__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Calendar_Default_View__c</members>
+    <members>PlanViewCal__Package_Security__c.PlanViewCal__Package_Security_API__c</members>
+    <members>Anexos__c.SubjectEmail__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Resource_Default_View__c</members>
+    <members>Property__c.Beds__c</members>
+    <members>Account.S1M_Mapping_Status__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Resource_GroupBy__c</members>
+    <members>Vehicle__c.Shower__c</members>
+    <members>Case.Equipment__c</members>
+    <members>Opportunity.Data_Quality_Description__c</members>
+    <members>Camping_Item__c.Price__c</members>
+    <members>Campaign.Data_Quality_Description__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Calendar_Swap_Color_Scheme__c</members>
+    <members>Property__c.Location__c</members>
+    <members>Dreamhouse_Settings__c.Push_Server_URL__c</members>
+    <members>ObjetoPai__c.ObjAr__c</members>
+    <members>Opportunity.CurrentGenerators__c</members>
+    <members>Case.EngineeringReqNumber__c</members>
+    <members>phone_plan__x.Id__c</members>
+    <members>Brands__c.Contry__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Hover_View__c</members>
+    <members>S1M_Explain_Collection__c.Opener_Link__c</members>
+    <members>S1M_Corp_Services__c.S1M_Mapping_Status__c</members>
+    <members>Property__c.Picture__c</members>
+    <members>Energy_Audit__c.Audit_Notes__c</members>
+    <members>Case.Vehicle__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Calendar_Agenda_View__c</members>
+    <members>Campaign.Data_Quality_Score__c</members>
+    <members>Store__c.ImgLogo__c</members>
+    <members>Campaign.DB_Campaign_Tactic__c</members>
+    <members>Threat_Tier__mdt.Vacation__c</members>
+    <members>Script_de_Atendiemtn__c.Tipo__c</members>
+    <members>Case.PotentialLiability__c</members>
+    <members>phone_plan__x.Name__c</members>
+    <members>Lead.DB_Lead_Age__c</members>
+    <members>Account.Active__c</members>
+    <members>Property__c.Broker__c</members>
+    <members>S1M_Class_Material__c.Study_Material__c</members>
+    <members>User.PlanViewCal__All_In_One_Calendar_User__c</members>
+    <members>Opportunity.TrackingNumber__c</members>
+    <members>Bot_Command__c.Active__c</members>
+    <members>PlanViewCal__Package_Security__c.PlanViewCal__Trial_Subscription__c</members>
+    <members>Broker__c.Picture_IMG__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Filter_Criteria__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Start_Date_Field__c</members>
+    <members>Property__c.Price__c</members>
+    <members>LBLCOMUNITY__c.Valor__c</members>
+    <members>S1M_Corp_Services__c.S1M_Phone__c</members>
+    <members>S1M_User_Badges__c.User__c</members>
+    <members>Account.SLAExpirationDate__c</members>
+    <members>Campaign.PlanViewCal__AT_PlanView_Exclude__c</members>
+    <members>Property__c.Title__c</members>
+    <members>phone__x.ID__c</members>
+    <members>Vehicle__c.Tub__c</members>
+    <members>S1M_Class_Badge__c.Badge__c</members>
+    <members>S1M_Explain_Collection__c.Description__c</members>
+    <members>Work_Part__c.Quantity__c</members>
+    <members>Product2.Lifespan_Months__c</members>
+    <members>Contract.Data_Quality_Score__c</members>
+    <members>Tower__c.State__c</members>
+    <members>Property__c.Date_Listed__c</members>
+    <members>Energy_Audit__c.Annual_Energy_Usage_kWh__c</members>
+    <members>S1M_Explain_Item__c.Body_Text__c</members>
+    <members>Vehicle__c.Air_Conditioner__c</members>
+    <members>Vehicle__c.Generator__c</members>
+    <members>Store__c.Brands__c</members>
+    <members>Property__c.Date_Agreement__c</members>
+    <members>Vehicle__c.VIN_Number__c</members>
+    <members>phone_plan__x.Text_Limit__c</members>
+    <members>phone_plan__x.Data_Limit__c</members>
+    <members>Vehicle__c.Bedrooms__c</members>
+    <members>Vehicle__c.Power__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Set_Default__c</members>
+    <members>Case.Date_Due__c</members>
+    <members>Dreamhouse_Settings__c.LIFX_Token__c</members>
+    <members>Product2.Maintenance_Cycle__c</members>
+    <members>S1M_Corp_Services__c.S1M_Person__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Allow_User_Settings__c</members>
+    <members>Property__c.State__c</members>
+    <members>Case.Grupo_de_Aprovacao__c</members>
+    <members>Property__c.Date_Contracted__c</members>
+    <members>Opportunity.Data_Quality_Score__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__All_In_One_Setting__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Sort_Order__c</members>
+    <members>Account.Number_of_Contacts__c</members>
+    <members>Lead.CurrentGenerators__c</members>
+    <members>Review__c.Job_Application__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Location_Field__c</members>
+    <members>Camping_Item__c.Packed__c</members>
+    <members>PlanViewCal__Package_Security__c.PlanViewCal__Allowed_User__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__Branding_Header__c</members>
+    <members>PlanViewCal__All_In_One_SetUp__c.PlanViewCal__User_Selected_2__c</members>
+    <members>S1M_Corp_Services__c.S1M_Address__c</members>
+    <members>S1M_Corp_Services__c.S1M_Location__c</members>
+    <members>Contact.Location__c</members>
+    <members>S1M_Explain_Item__c.Order__c</members>
+    <members>Property__c.Date_Pre_Market__c</members>
+    <members>phone_plan__x.Cost__c</members>
+    <members>Vehicle__c.Backup_Camera_Monitor__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__Is_Active__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Color_Code_Field__c</members>
+    <members>Case.Product__c</members>
+    <members>Broker__c.Email__c</members>
+    <members>Script_de_Atendiemtn__c.Grupo_Manifesta_o__c</members>
+    <members>Case.Procedimento__c</members>
+    <members>Trail__c.Last_Inspection_Date__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Records_Filter_Type__c</members>
+    <members>Script_de_Atendiemtn__c.Orienta_o__c</members>
+    <members>Contact.Level__c</members>
+    <members>Vehicle__c.Propane_Tank__c</members>
+    <members>Opportunity.NOME_DA_CONTA_2222__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Enable_Developer_Mode__c</members>
+    <members>Candidate__c.Propesct_Rating__c</members>
+    <members>S1M_Product_Badge__c.Badge__c</members>
+    <members>Contact.Data_Quality_Score__c</members>
+    <members>Contry__c.KeyTranslate__c</members>
+    <members>Camping_Item__c.Quantity__c</members>
+    <members>S1M_Corp_Services__c.S1M_Country__c</members>
+    <members>Property__c.Thumbnail_IMG__c</members>
+    <members>Case.Data_Quality_Description__c</members>
+    <members>Case.Date_Reported__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Object_Name__c</members>
+    <members>PlanViewCal__Package_Security__c.PlanViewCal__Package_Validity__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__Layout__c</members>
+    <members>Script_de_Atendiemtn__c.Procedimento__c</members>
+    <members>Property__c.Picture_IMG__c</members>
+    <members>Account.UpsellOpportunity__c</members>
+    <members>Expense__c.Amount__c</members>
+    <members>S1M_Heroku_Services__c.S1M_Heroku_App_URL__c</members>
+    <members>S1M_Explain_Collection__c.Type__c</members>
+    <members>Account.S1M_Location__c</members>
+    <members>Broker__c.Title__c</members>
+    <members>Property__c.Assessed_Value__c</members>
+    <members>Account.NumberofLocations__c</members>
+    <members>S1M_Explain_Collection__c.Time_to_Complete__c</members>
+    <members>PlanViewCal__All_In_One_SetUp__c.PlanViewCal__User_Selected_3__c</members>
+    <members>Bot_Command__c.Sample_Utterance__c</members>
+    <members>Bot_Command__c.Apex_Class__c</members>
+    <members>Vehicle__c.License_Plate__c</members>
+    <members>Broker__c.Mobile_Phone__c</members>
+    <members>Property__c.Tags__c</members>
+    <members>Opportunity.OrderNumber__c</members>
+    <members>LBLCOMUNITY__c.language__c</members>
+    <members>Activity.DB_Activity_Type__c</members>
+    <members>S1M_Corp_Services__c.S1M_Postal_Code__c</members>
+    <members>PlanViewCal__Package_Security__c.PlanViewCal__Org_Access_Allowed__c</members>
+    <members>User.Phone_UUID__c</members>
+    <members>User.DB_Region__c</members>
+    <members>S1M_Corp_Services__c.S1M_Contact_Not_User__c</members>
+    <members>PlanViewCal__Package_Security__c.PlanViewCal__Subscription_Renew_URL__c</members>
+    <members>S1M_Corp_Services__c.S1M_Service_Region__c</members>
+    <members>Account.SLASerialNumber__c</members>
+    <members>S1M_Community_Collateral_Share__c.Contact__c</members>
+    <members>S1M_Corp_Services__c.S1M_Provider__c</members>
+    <members>Region__c.Contry__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Is_Deleted__c</members>
+    <members>S1M_Corp_Services__c.S1M_State__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__List_View__c</members>
+    <members>PlanViewCal__Package_Security__c.PlanViewCal__Allowed_Object__c</members>
+    <members>Vehicle__c.Awning__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__Branding_Footer__c</members>
+    <members>Vehicle__c.Type__c</members>
+    <members>Favorite__c.Property__c</members>
+    <members>Favorite__c.User__c</members>
+    <members>Property__c.Record_Link__c</members>
+    <members>LBLCOMUNITY__c.keyname__c</members>
+    <members>Dreamhouse_Settings__c.Einstein_Vision_Email__c</members>
+    <members>S1M_Corp_Services__c.S1M_Type__c</members>
+    <members>Vehicle__c.Levelers__c</members>
+    <members>Property__c.Description__c</members>
+    <members>Account.SLA__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Resource_Limit__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Record_Display_Name__c</members>
+    <members>phone__x.UUID__c</members>
+    <members>Vehicle__c.Recommended_Passengers__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__ByPass_Sobject_Security__c</members>
+    <members>Vehicle__c.Model__c</members>
+    <members>Store__c.Region__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Google_Map_API_Key__c</members>
+    <members>Lead.NumberofLocations__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__Color_Code_Details__c</members>
+    <members>Lead.Primary__c</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__All_in_One_Configuration__c</members>
+    <members>Expense__c.Client__c</members>
+    <members>Work_Part__c.Maintenance_Request__c</members>
+    <members>S1M_Product_Badge__c.Product__c</members>
+    <members>S1M_Explain_Collection__c.Title__c</members>
+    <members>Case.Data_Quality_Score__c</members>
+    <members>Energy_Audit__c.Type_of_Installation__c</members>
+    <members>Property__c.Thumbnail__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__Calendar_Basic_View__c</members>
+    <members>Lead.S1M_Mapping_Status__c</members>
+    <members>S1M_Corporate_Office__c.S1M_Location__c</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__OrderBy_Field__c</members>
+    <members>S1M_Explain_Item__c.Quiz_Card_Answer__c</members>
+    <members>Dreamhouse_Settings__c.Light_Service_URL__c</members>
+    <members>Energy_Audit__c.Average_Annual_Electric_Cost__c</members>
+    <members>PlanViewCal__CalAll_Settings__c.PlanViewCal__App_Theme_Color__c</members>
+    <name>CustomField</name>
+  </types>
+  <types>
+    <members>Task.TodaysTasks</members>
+    <members>Task.RecurringTasks</members>
+    <members>Contry__c.All</members>
+    <members>ChannelProgramLevel.My_Channel_Program_Levels</members>
+    <members>Contract.AllContracts</members>
+    <members>Activity.TodaysTasks</members>
+    <members>Broker__c.All</members>
+    <members>Arrecada_o_de_fundos__c.All</members>
+    <members>Brands__c.All</members>
+    <members>PartnerFundRequest.All_Partner_Fund_Requests</members>
+    <members>Case.MyCases</members>
+    <members>Contract.AllActivatedContracts</members>
+    <members>User.ActiveUsers</members>
+    <members>WorkFeedbackRequest.AboutTopics</members>
+    <members>S1M_Class_Badge__c.All</members>
+    <members>PlanViewCal__Calendar_Table__c.PlanViewCal__All</members>
+    <members>Account.AllAccounts</members>
+    <members>User.AllUsers</members>
+    <members>Lead.ViewCustom2</members>
+    <members>Script_de_Atendiemtn__c.All</members>
+    <members>Contract.MyDraftContracts</members>
+    <members>Account.MyAccounts</members>
+    <members>Contact.MyContacts</members>
+    <members>S1M_Class__c.All</members>
+    <members>Expense__c.All</members>
+    <members>ObjAr__c.All</members>
+    <members>S1M_User_Badges__c.All</members>
+    <members>Activity.AllActivities</members>
+    <members>Idea.Ideas_Last_7_Days</members>
+    <members>User.AdminUsers</members>
+    <members>Solution.AllReviewedSolutions</members>
+    <members>PartnerFundClaim.All_Partner_Fund_Claims</members>
+    <members>Order.AllDraftOrders</members>
+    <members>Product2.AllProducts</members>
+    <members>Bot_Command__c.All</members>
+    <members>Lead.AllOpenLeads</members>
+    <members>S1M_Corporate_Office__c.All</members>
+    <members>Task.CompletedTasks</members>
+    <members>Task.DelegatedTasks</members>
+    <members>Opportunity.Private</members>
+    <members>S1M_Explain_Collection__c.All</members>
+    <members>ChannelProgram.All_Channel_Programs</members>
+    <members>Account.NewLastWeek</members>
+    <members>Lead.ViewCustom1</members>
+    <members>PartnerMarketingBudget.My_Partner_Marketing_Budgets</members>
+    <members>Opportunity.HighProbabilityOpportunities</members>
+    <members>Contract.AllInApprovalContracts</members>
+    <members>Solution.AllUnreviewedSolutions</members>
+    <members>Contact.NewThisWeek</members>
+    <members>Opportunity.Default_Opportunity_Pipeline</members>
+    <members>Energy_Audit__c.All</members>
+    <members>ObjetoPai__c.All</members>
+    <members>Task.UnscheduledTasks</members>
+    <members>ChannelProgramLevel.All_Channel_Program_Levels</members>
+    <members>Vehicle__c.All</members>
+    <members>PartnerFundAllocation.All_Partner_Fund_Allocations</members>
+    <members>ContactRequest.My_ContactRequests</members>
+    <members>AccountBrand.All_Account_Brands</members>
+    <members>Lightning_Map__c.All</members>
+    <members>Contract.AllDraftContracts</members>
+    <members>Activity.MyActivities</members>
+    <members>S1M_Badge__c.All</members>
+    <members>Order.AllActivatedOrders</members>
+    <members>Contract.MyActivatedContracts</members>
+    <members>Scorecard.AllScorecards</members>
+    <members>Tower__c.All</members>
+    <members>Case.MyOpenCases</members>
+    <members>PartnerFundRequest.My_Partner_Fund_Requests</members>
+    <members>Contact.BirthdaysThisMonth</members>
+    <members>Task.OpenTasks</members>
+    <members>Property__c.All</members>
+    <members>Anexos__c.All</members>
+    <members>Contact.NewLastWeek</members>
+    <members>Contact.AllContacts</members>
+    <members>Candidate__c.All</members>
+    <members>ChannelProgram.My_Channel_Programs</members>
+    <members>Opportunity.ClosingNextMonth</members>
+    <members>Opportunity.ClosingThisMonth</members>
+    <members>Store__c.All</members>
+    <members>Case.AllOpenCases</members>
+    <members>Order.AllOrders</members>
+    <members>Opportunity.NewThisWeek</members>
+    <members>Contract.MyInApprovalContracts</members>
+    <members>Region__c.All</members>
+    <members>PartnerFundClaim.My_Partner_Fund_Claims</members>
+    <members>PartnerMarketingBudget.All_Partner_Marketing_Budgets</members>
+    <members>Lead.TodaysLeads</members>
+    <members>Campaign.MyActiveCampaigns</members>
+    <members>Opportunity.AllOpportunities</members>
+    <members>Asset.AllAssets</members>
+    <members>Scorecard.MyScorecards</members>
+    <members>S1M_Product_Badge__c.All</members>
+    <members>S1M_Community_Collateral_Share__c.All</members>
+    <members>Opportunity.NewLastWeek</members>
+    <members>Account.NewThisWeek</members>
+    <members>Favorite__c.All</members>
+    <members>Opportunity.Won</members>
+    <members>Campaign.AllActiveCampaigns</members>
+    <members>WorkFeedbackTemplate.All</members>
+    <members>PartnerFundAllocation.My_Partner_Fund_Allocations</members>
+    <members>CollaborationGroup.All_ChatterGroups</members>
+    <members>S1M_Corp_Services__c.All</members>
+    <members>Account.PlatinumandGoldSLACustomers</members>
+    <members>Task.OverdueTasks</members>
+    <members>Case.AllClosedCases</members>
+    <members>PlanViewCal__All_in_One_Publish__c.PlanViewCal__All</members>
+    <members>Activity.UpcomingEvents</members>
+    <members>Lead.MyUnreadLeads</members>
+    <members>Opportunity.MyOpportunities</members>
+    <members>WorkFeedbackRequest.All</members>
+    <name>ListView</name>
+  </types>
+  <types />
+  <types>
+    <members>PlanViewCal__Calendar_Table__c-Calendar Table Layout</members>
+    <members>Favorite__c-Favorite Layout</members>
+    <members>Pricebook2-Price Book Layout</members>
+    <members>AccountBrand-Account BrandLayout</members>
+    <members>Case-Case %28Marketing%29 Layout</members>
+    <members>Job_Application__c-Layout de Job Application</members>
+    <members>LiveChatTranscript-Live Chat Transcript Layout</members>
+    <members>EmailMessage-Email Message Layout</members>
+    <members>S1M_Explain_Item__c-Explain Item Layout</members>
+    <members>Contact-Contact Layout</members>
+    <members>Lead-Lead %28Sales%29 Layout</members>
+    <members>Work_Part__c-Work Part Layout</members>
+    <members>Scorecard-Scorecard Layout</members>
+    <members>Broker__c-Broker Layout</members>
+    <members>Position__c-Layout de Position</members>
+    <members>Territory2Model-Territory Model Layout</members>
+    <members>S1M_Corporate_Office__c-Corporate Office Layout</members>
+    <members>S1M_Badge__c-Badge Layout</members>
+    <members>S1M_Class__c-Class Layout</members>
+    <members>CollaborationGroup-Layout de Grupo</members>
+    <members>Opportunity-Opportunity %28Support%29 Layout</members>
+    <members>Idea-Idea Layout</members>
+    <members>Product2-Product %28HowWeRoll%29 Layout</members>
+    <members>Order-Order Layout</members>
+    <members>Lightning_Map__c-Lightning Map Layout</members>
+    <members>LiveChatTranscriptActive-Live Chat Transcript %28In Progress%29 Layout</members>
+    <members>OpportunityLineItem-Opportunity Product Layout</members>
+    <members>Task-Task Layout</members>
+    <members>Tower__c-Tower Layout</members>
+    <members>CaseClose-Close Case Layout</members>
+    <members>SocialPost-Social Post Layout</members>
+    <members>User-User Layout</members>
+    <members>LiveAgentSession-Live Agent Session Layout</members>
+    <members>ContentVersion-Content Version Layout</members>
+    <members>DandBCompany-D%26B Company Layout</members>
+    <members>PlanViewCal__All_in_One_Publish__c-All-in-One Publish Layout</members>
+    <members>Camping_Item__c-Camping Item Layout</members>
+    <members>PartnerFundClaim-Partner Fund Claim Layout</members>
+    <members>Asset-Asset Layout</members>
+    <members>LiveChatTranscriptEvent-Live Chat Transcript Event Layout</members>
+    <members>Script_de_Atendiemtn__c-Script de Atendimento Layout</members>
+    <members>CampaignMember-Campaign Member Page Layout</members>
+    <members>UserProvAccount-User Provisioning Account Layout</members>
+    <members>ChannelProgramLevel-Channel Program Level Layout</members>
+    <members>Brands__c-Brand Layout</members>
+    <members>LiveChatVisitor-Live Chat Visitor Layout</members>
+    <members>Review__c-Layout de Review</members>
+    <members>Contact-Contact %28Sales%29 Layout</members>
+    <members>Candidate__c-Layout de Candidate</members>
+    <members>Product2-Product Layout</members>
+    <members>Energy_Audit__c-Energy Audit Layout</members>
+    <members>Threat_Tier__mdt-Threat Tier Layout</members>
+    <members>S1M_Explain_Collection__c-Explain Collection Layout</members>
+    <members>Case-Case %28HowWeRoll%29 Layout</members>
+    <members>phone_plan__x-phone_plans Layout</members>
+    <members>Property__c-Property Layout</members>
+    <members>Territory2-Territory Layout</members>
+    <members>Contact-Contact %28Marketing%29 Layout</members>
+    <members>S1M_Class_Badge__c-Class Badge Layout</members>
+    <members>Solution-Solution Layout</members>
+    <members>OrderItem-Order Product Layout</members>
+    <members>Trail__c-Layout de Trail</members>
+    <members>Case-Case %28Sales%29 Layout</members>
+    <members>PartnerFundAllocation-Partner Fund Allocation Layout</members>
+    <members>PartnerFundRequest-Partner Fund Request Layout</members>
+    <members>Arrecada_o_de_fundos__c-Layout de Arrecadação de fundos</members>
+    <members>Opportunity-Opportunity Layout</members>
+    <members>Store__c-Store Layout</members>
+    <members>Account-Account Layout</members>
+    <members>UserProvisioningRequest-User Provisioning Request Layout</members>
+    <members>SocialPersona-Social Persona Layout</members>
+    <members>Contract-Contract Layout</members>
+    <members>Contact-Contact %28Support%29 Layout</members>
+    <members>Event-Event Layout</members>
+    <members>Opportunity-Opportunity %28Sales%29 Layout</members>
+    <members>Region__c-Region Layout</members>
+    <members>ObjectTerritory2AssignmentRule-Object Territory Assignment Rule Layout</members>
+    <members>Case-Case %28Support%29 Layout</members>
+    <members>Anexos__c-AnexoEmail Layout</members>
+    <members>QuickText-Quick Text Layout</members>
+    <members>Global-Global Layout</members>
+    <members>LiveChatTranscriptWaiting-Live Chat Transcript %28Waiting%29 Layout</members>
+    <members>Bot_Command__c-Bot Action Layout</members>
+    <members>JobPosting__c-Layout de JobPosting</members>
+    <members>PartnerMarketingBudget-Partner Marketing Budget Layout</members>
+    <members>Account-Account %28Sales%29 Layout</members>
+    <members>ScorecardAssociation-Scorecard Association Layout</members>
+    <members>ChannelProgram-Channel Program Layout</members>
+    <members>Vehicle__c-Vehicle Layout</members>
+    <members>DuplicateRecordSet-Duplicate Record Set Layout</members>
+    <members>ObjAr__c-ObjAr Layout</members>
+    <members>S1M_User_Badges__c-User Badge Layout</members>
+    <members>Contry__c-Contry Layout</members>
+    <members>Lead-Lead %28Support%29 Layout</members>
+    <members>Account-Account %28Support%29 Layout</members>
+    <members>ObjetoPai__c-Vor Layout</members>
+    <members>Lead-Lead Layout</members>
+    <members>Opportunity-Opportunity %28Marketing%29 Layout</members>
+    <members>FeedItem-Layout de Item do feed</members>
+    <members>Macro-Macro Layout</members>
+    <members>UserProvisioningLog-User Provisioning Log Layout</members>
+    <members>CommunityMemberLayout-Community Member Layout</members>
+    <members>OpportunityTeamMember-Layout de Membro da equipe da oportunidade</members>
+    <members>Territory2Type-Territory Type Layout</members>
+    <members>Expense__c-Expense Layout</members>
+    <members>S1M_Community_Collateral_Share__c-Community Collateral Share Layout</members>
+    <members>S1M_Corp_Services__c-Place Layout</members>
+    <members>PricebookEntry-Price Book Entry Layout</members>
+    <members>S1M_Class_Material__c-Class Material Layout</members>
+    <members>ChannelProgramMember-Channel Program Member Layout</members>
+    <members>Campaign-Campaign Layout</members>
+    <members>Case-Case Layout</members>
+    <members>Account-Account %28Marketing%29 Layout</members>
+    <members>ScorecardMetric-Scorecard Metric Layout</members>
+    <members>UserAlt-User Profile Layout</members>
+    <members>Clientes_VIP__c-Layout de Cliente VIP</members>
+    <members>phone__x-phones Layout</members>
+    <members>S1M_Product_Badge__c-Product Badge Layout</members>
+    <members>Lead-Lead %28Marketing%29 Layout</members>
+    <name>Layout</name>
+  </types>
+  <types>
+    <members>Customer_Community_Content_Access</members>
+    <members>Analitycs</members>
+    <members>PlanViewCal__AppOhm_All_In_One_Calendar_User</members>
+    <members>Beneficiente_Developer</members>
+    <members>Lightning_Map_Developer</members>
+    <members>Analitycs2</members>
+    <members>Garage_Developer</members>
+    <members>Trailhead</members>
+    <name>PermissionSet</name>
+  </types>
+  <types>
+    <members>Customer Portal Manager Custom</members>
+    <members>Customer Community Plus Login User</members>
+    <members>Customer Community User</members>
+    <members>StandardAul</members>
+    <members>comunidade2 Profile</members>
+    <members>Customer Community Plus User</members>
+    <members>Analytics Cloud Security User</members>
+    <members>High Volume Customer Portal User</members>
+    <members>Partner Community User</members>
+    <members>Authenticated Website</members>
+    <members>ReadOnly</members>
+    <members>SolutionManager</members>
+    <members>Customer Community Login User</members>
+    <members>Admin</members>
+    <members>Partner App Subscription User</members>
+    <members>MarketingProfile</members>
+    <members>Chatter Moderator User</members>
+    <members>Gold Partner User</members>
+    <members>HighVolumePortal</members>
+    <members>Force%2Ecom - Free User</members>
+    <members>Analytics Cloud Integration User</members>
+    <members>Read Only Clone</members>
+    <members>Work%2Ecom Only User</members>
+    <members>ContractManager</members>
+    <members>Guest</members>
+    <members>Marca 1 Profile</members>
+    <members>comunidadebase Profile</members>
+    <members>Custom%3A Marketing Profile</members>
+    <members>Silver Partner User</members>
+    <members>Standard</members>
+    <members>Custom%3A Support Profile</members>
+    <members>Cross Org Data Proxy User</members>
+    <members>Chatter Free User</members>
+    <members>comunidade1 Profile</members>
+    <members>Partner Community Login User</members>
+    <members>PlatformPortal</members>
+    <members>Force%2Ecom - App Subscription User</members>
+    <members>Identity User</members>
+    <members>comunidade3 Profile</members>
+    <members>External Identity User</members>
+    <members>Custom%3A Sales Profile</members>
+    <members>Customer Portal Manager Standard</members>
+    <members>Chatter External User</members>
+    <name>Profile</name>
+  </types>
+  <types>
+    <members>app</members>
+    <members>PlanViewCal__companyLogo</members>
+    <members>PlanViewCal__fullCal</members>
+    <members>SiteSamples</members>
+    <members>AppAngular1</members>
+    <members>buttononline</members>
+    <members>nouislider</members>
+    <members>leaflet1</members>
+    <members>PlanViewCal__aioNotes</members>
+    <members>PlanViewCal__aioMobile</members>
+    <members>leaflet</members>
+    <members>PlanViewCal__markerCluster</members>
+    <members>PlanViewCal__SLDS_Icons</members>
+    <members>PlanViewCal__scheduler</members>
+    <members>presentation</members>
+    <members>stylepack</members>
+    <members>recaptcha</members>
+    <members>heatmap</members>
+    <members>PlanViewCal__paymentPlan</members>
+    <members>PlanViewCal__stickyRows</members>
+    <members>GetAnimalResource</members>
+    <members>AngularApp</members>
+    <members>angular</members>
+    <members>PlanViewCal__SLDS_v102</members>
+    <members>buttondown</members>
+    <members>NodeModules</members>
+    <members>PlanViewCal__dropDownCheckBox</members>
+    <members>heatmapmock</members>
+    <members>PlanViewCal__iconsDB</members>
+    <members>PlanViewCal__AutoComplete</members>
+    <members>BridgeUploadIcon</members>
+    <members>PlanViewCal__colorPicker</members>
+    <members>PlanViewCal__aioAsset</members>
+    <members>countup7</members>
+    <members>PlanViewCal__jQuery</members>
+    <members>libraryfrontend</members>
+    <members>PlanViewCal__monthPicker</members>
+    <name>StaticResource</name>
+  </types>
+  <types>
+    <members>ApexDevNet</members>
+    <members>soaptrailhead</members>
+    <members>reCaptcha</members>
+    <members>LIFX</members>
+    <members>Einstein_Vision</members>
+    <members>OrgMetaAPI_AllinOne</members>
+    <members>Slack</members>
+    <members>PushServer</members>
+    <members>BankService</members>
+    <members>Animals</members>
+    <name>RemoteSiteSetting</name>
+  </types>
+  <types>
+    <members>Price_Change_Push_Notification</members>
+    <members>Employee_Bank_Record</members>
+    <members>Advertise_New_Property</members>
+    <members>Post_Price_Changes_to_Slack</members>
+    <members>Opportunity_Status_Change</members>
+    <name>Flow</name>
+  </types>
+  <types>
+    <members>Advertise_New_Property</members>
+    <members>Price_Change_Push_Notification</members>
+    <members>Opportunity_Status_Change</members>
+    <members>Post_Price_Changes_to_Slack</members>
+    <members>Employee_Bank_Record</members>
+    <name>FlowDefinition</name>
+  </types>
+  <types>
+    <members>Activities</members>
+    <members>Knowledge</members>
+    <members>Name</members>
+    <members>Address</members>
+    <members>Company</members>
+    <members>Territory2</members>
+    <members>Account</members>
+    <members>OrgPreference</members>
+    <members>LiveAgent</members>
+    <members>IoT</members>
+    <members>PathAssistant</members>
+    <members>Contract</members>
+    <members>BusinessHours</members>
+    <members>FileUploadAndDownloadSecurity</members>
+    <members>Opportunity</members>
+    <members>Forecasting</members>
+    <members>Security</members>
+    <members>FieldService</members>
+    <members>Order</members>
+    <members>Ideas</members>
+    <members>Product</members>
+    <members>Case</members>
+    <members>Mobile</members>
+    <members>Quote</members>
+    <members>Entitlement</members>
+    <members>Macro</members>
+    <members>OmniChannel</members>
+    <members>Search</members>
+    <name>Settings</name>
+  </types>
+  <types />
+  <types />
+  <types>
+    <members>Metric.Progress</members>
+    <members>Opportunity.Capitaliza_o_Promo</members>
+    <members>S1M_Explain_Item__c.Quiz_Card</members>
+    <members>Metric.Completion</members>
+    <name>RecordType</name>
+  </types>
+  <types>
+    <members>Metric.Progress</members>
+    <members>Opportunity.Capitaliza_o_Promo</members>
+    <members>S1M_Explain_Item__c.Quiz_Card</members>
+    <members>Metric.Completion</members>
+    <name>RecordType</name>
+  </types>
+  <types>
+    <members>Account.Billing</members>
+    <members>Contact.Google_Info</members>
+    <members>Campaign.ViewCampaignInfluenceReport</members>
+    <members>Case.UpsellCrosssellOpportunity</members>
+    <members>Opportunity.DeliveryStatus</members>
+    <name>WebLink</name>
+  </types>
+  <types />
+  <types />
+  <types />
+  <types>
+    <members>Case</members>
+    <members>Lead</members>
+    <name>AssignmentRules</name>
+  </types>
+  <types>
+    <members>S1M_Corp_Services__c</members>
+    <members>S1M_Explain_Collection__c</members>
+    <members>Property__c</members>
+    <members>Einstein_Vision</members>
+    <members>Heat_Map_Mock</members>
+    <members>S1M_Corporate_Office__c</members>
+    <members>Energy_Audit__c</members>
+    <members>Store__c</members>
+    <members>Region__c</members>
+    <members>S1M_Badge__c</members>
+    <members>Lightning_Map__c</members>
+    <members>Brands__c</members>
+    <members>Deal_Fuel</members>
+    <members>Magellan</members>
+    <members>ObjAr__c</members>
+    <members>House_Explorer</members>
+    <members>Arrecada_o_de_fundos__c</members>
+    <members>Candidate__c</members>
+    <members>Anexos__c</members>
+    <members>ObjetoPai__c</members>
+    <members>Community_Files</members>
+    <members>S1M_Product_Badge__c</members>
+    <members>Bot_Command__c</members>
+    <members>S1M_Community_Collateral_Share__c</members>
+    <members>Property_Explorer1</members>
+    <members>Command_Center</members>
+    <members>Contry__c</members>
+    <members>Account_Page</members>
+    <members>PlanViewCal__PlanView_Cal</members>
+    <members>Tower__c</members>
+    <members>PlanViewCal__All_In_One_SetUp</members>
+    <members>S1M_User_Badges__c</members>
+    <members>Gist</members>
+    <members>S1M_Class__c</members>
+    <members>Kokua</members>
+    <members>Sample_Data_Import</members>
+    <members>Heat_Map</members>
+    <members>Scout</members>
+    <members>Expense__c</members>
+    <members>S1M_Class_Badge__c</members>
+    <members>PlanViewCal__All_In_One</members>
+    <members>My_Record_Page</members>
+    <members>Broker__c</members>
+    <members>Script_de_Atendiemtn__c</members>
+    <members>Quickstart</members>
+    <name>CustomTab</name>
+  </types>
+</Package>

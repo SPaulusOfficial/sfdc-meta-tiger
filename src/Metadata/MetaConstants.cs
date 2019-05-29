@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 
 namespace Salesforce_Package
@@ -33,6 +34,14 @@ namespace Salesforce_Package
 		public const string StandardValueSet = "StandardValueSet";
 		public const string AssignmentRules = "AssignmentRules";
 		public const string CustomTab = "CustomTab";
+
+		public static readonly IList<String> metas = new ReadOnlyCollection<string>
+    (new List<String> { 
+        ApexClass,ApexTrigger,ApexComponent,ApexPage,CustomMetadata,CustomObject,CustomField,ListView,
+				EmailTemplate,Layout,PermissionSet,Profile,StaticResource,RemoteSiteSetting,Flow,FlowDefinition,
+				Settings,ValidationRule,EntitlementProcess,RecordType,MilestoneType,WebLink,Workflow,WorkflowRule,
+				StandardValueSet,AssignmentRules,CustomTab
+				});
 			
 	}
 }

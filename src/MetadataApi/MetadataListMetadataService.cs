@@ -5,30 +5,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using SFDC.MetadataService;
+using SFDC.Metadata;
+using Salesforce_Package;
 
 namespace Salesforce_Package.MetadataApi{
 
     public class MetadataListMetadataService{
+
+        public static listMetadataResponse response;
         
-        public static void listMetadata(MetadataClient metadataClient){
-          ListMetadataQuery(metadataClient).Wait();
+        public static listMetadataResponse listMetadata(MetadataClient metadataClient,String strType){
+          ListMetadataQuery(metadataClient,strType).Wait();
+          return response;
         }
 
-        static async Task<SFDC.MetadataService.listMetadataResponse> ListMetadataQuery(MetadataClient metadataClient)
+        static async Task<SFDC.Metadata.listMetadataResponse> ListMetadataQuery(MetadataClient metadataClient,String strType)
         {
             var client = metadataClient.Client;
             var sessionHeader = metadataClient.SessionHeader;
             var callOptions = metadataClient.CallOptions;
+            listMetadataResponse lstMetaResponse = new listMetadataResponse();
             ListMetadataQuery q = new ListMetadataQuery();
-            q.type = "CustomObject";
-            listMetadataResponse lstMetaResponse =  await client.listMetadataAsync(sessionHeader, callOptions, new []{ q} , 45.0);
-            foreach (FileProperties f in lstMetaResponse.result)
-            {
-                Console.WriteLine("response with message: " + f.fileName);
-                Console.WriteLine("response with message: " + f.fullName);
-            }
+            q.type = strType;
             
+            try{
+                response =  await client.listMetadataAsync(sessionHeader, callOptions, new []{ q} , 45);
+            }
+            catch (Exception e)
+            {
+              ConsoleHelper.WriteErrorLine(e.Message);
+            }
+
             return lstMetaResponse;
         }
 
