@@ -9,7 +9,7 @@ using Salesforce_Package.Xml.Package;
 
 namespace Salesforce_Package.MetadataApi{
 
-    public class MetadataService {
+    public class MetadataApiService {
         
         private static MetadataClientResponse getMetadataClient(MetadataClientRequest request){
              PartnerLoginRequest requestPattern = new PartnerLoginRequest{
@@ -17,7 +17,7 @@ namespace Salesforce_Package.MetadataApi{
                 Password = request.Password,
                 SecurityToken = request.SecurityToken,
             };
-            PartnerLoginResponse responsePartner = PartnerService.login(requestPattern);
+            PartnerLoginResponse responsePartner = PartnerApiService.login(requestPattern);
             return MetadataClientService.getMetadataClient(responsePartner.UserId,responsePartner.SessionId,responsePartner.ServerUrl); 
         }
 
@@ -31,7 +31,7 @@ namespace Salesforce_Package.MetadataApi{
             
              foreach(string strType in MetaConstants.metas){
                 ConsoleHelper.WriteDocLine(strType);
-                listMetadataResponse responseMeta = MetadataListMetadataService.listMetadata(response.Metadataclient,strType);
+                listMetadataResponse responseMeta = MetadataListMetadataApiService.listMetadata(response.Metadataclient,strType);
                 metadataResponse.Add(responseMeta);
              }
              

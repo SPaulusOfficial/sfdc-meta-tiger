@@ -10,7 +10,7 @@ using Salesforce_Package;
 
 namespace Salesforce_Package.MetadataApi{
 
-    public class MetadataListMetadataService{
+    public class MetadataListMetadataApiService{
 
         public static listMetadataResponse response;
         
