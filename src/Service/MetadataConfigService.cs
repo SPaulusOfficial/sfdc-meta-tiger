@@ -15,10 +15,49 @@ namespace Salesforce_Package.Metadata{
             return ReadConfig();
         }
 
+        public static Organization chooseCodeOrganization(){
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG);
+            Config m_config = ManageXMLConfig.Deserialize();
+            Dictionary<int,Organization> m_organizations = new Dictionary<int,Organization>();
+            if(m_config.PackageManifest.Count>0){
+              String rowTitle = getRowForScreen(Constants.propertiesOrganization);
+              ConsoleHelper.WriteDocLine(rowTitle);
+              foreach (var item in m_config.Organization)
+                {
+                    m_organizations.Add(item.Id,item);
+                    String nameOrganization = viewBarInConsoleForScreen(item.Id.ToString());
+                    String Username = viewBarInConsoleForScreen(item.Username);
+                    String Password = viewBarInConsoleForScreen(item.Password); 
+                    String SecurityToken = String.Concat(item.SecurityToken," ");
+                    Console.WriteLine(String.Concat(nameOrganization,Username,Password,SecurityToken));
+                }
+            }
+
+            try
+            {
+               ConsoleHelper.WriteQuestionLine(">>> Code Organization:"); 
+               int id = Int32.Parse(Console.ReadLine());
+
+               if(m_organizations.ContainsKey(id)){
+                   return (m_organizations[id]);
+               }else{
+                   ConsoleHelper.WriteWarningLine("Not Found Organization");
+                   return new Organization();
+               }
+            }
+            catch (System.Exception)
+            { 
+                 ConsoleHelper.WriteErrorLine("Not Found Organization");
+                return generateOrganizationManifest();
+            }
+
+            
+        }
+
         public static PackageManifest chooseCodePackageManifest(){
             Dictionary<int, PackageManifest> m_packages;
 
-            ConsoleHelper.WriteQuestionLine(">>> Choose code package manifest save in Config:");
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG);
 
             Config m_config = ReadConfig();
             m_packages = viewPackageManifestInConfig(m_config);
@@ -34,10 +73,10 @@ namespace Salesforce_Package.Metadata{
         }
 
         private static PackageManifest generatePackageManifest(){
-            ConsoleHelper.WriteQuestionLine(">>> Please enter the path of the Package.xml:");
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPATHPACKAGE);
             String pathPackage = Console.ReadLine();
 
-            ConsoleHelper.WriteQuestionLine(">>> Please enter the path of the repository where the files are:");
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPATHREPOSITORY);
             String pathRepository = Console.ReadLine();
 
             Config m_config = getConfig();
@@ -49,6 +88,38 @@ namespace Salesforce_Package.Metadata{
             ManageXMLConfig.doWrite(m_config);
 
             return myManifest;
+        }
+
+        private static Organization generateOrganizationManifest(){
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERUSERNAME);
+            String username = Console.ReadLine();
+
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPASSWORD);
+            String password = Console.ReadLine();
+
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERTOKEN);
+            String token = Console.ReadLine();
+
+            Config m_config = getConfig();
+            
+            Organization vaOrganization = createOrganization(username, password,token, m_config);
+
+            m_config.Organization.Add(vaOrganization);
+
+            ManageXMLConfig.doWrite(m_config);
+
+            return vaOrganization;
+        }
+
+         private static Organization createOrganization(string userName, string password,string token, Config m_config)
+        {
+            return new Organization()
+            {
+                Username = userName,
+                Password = password,
+                SecurityToken = token,
+                Id = m_config.Organization.Count + 1,
+            };
         }
 
         private static PackageManifest createPackageManifest(string pathPackage, string pathRepository, Config m_config)
@@ -64,7 +135,7 @@ namespace Salesforce_Package.Metadata{
 
         private static PackageManifest selectedCodePackageManifest(Dictionary<int, PackageManifest> m_packages,Config m_config)
         {
-            ConsoleHelper.WriteQuestionLine(">>> Code Package:");
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_CODEPACKAGE);
             int id = Int32.Parse(Console.ReadLine());
 
             Boolean isHaveKey = m_packages.ContainsKey(id);
@@ -74,7 +145,7 @@ namespace Salesforce_Package.Metadata{
                 selectedManifest.DirectoryTarget = selectedManifest.DirectoryTarget!=null ? selectedManifest.DirectoryTarget : m_config.GeneralDirectoryTarget;
                 return (selectedManifest);
             }else{
-                ConsoleHelper.WriteWarningLine("Not Found PackageManifest");
+                ConsoleHelper.WriteWarningLine(Constants.LANG_NOTFOUNDPACKAGEMANIFEST);
                 throw new Exception();
             }
         }
@@ -97,43 +168,48 @@ namespace Salesforce_Package.Metadata{
 
         private static void viewRowsPackageManifest(Config m_config, Dictionary<int, PackageManifest> m_packages)
         {
-            string rowTitle = getRowTitle();
+            string rowTitle = getRowForScreen(Constants.propertiesPackageManifest);
             ConsoleHelper.WriteDocLine(rowTitle);
 
             foreach (var item in m_config.PackageManifest)
             {
                 m_packages.Add(item.Id, item);
 
-                string rowLine = getRowLine(item);
+                string rowLine = getRowLinePackageForScreen(item);
 
                 Console.WriteLine(rowLine);
             }
         }
 
-        private static string getRowTitle(){
+        private static string getRowForScreen(List<String> listFieldsForTitle){
             List<String> rowPropertiesTitle = new List<String>();
-            rowPropertiesTitle.Add(viewBarInConsole("Id"));
-            rowPropertiesTitle.Add(viewBarInConsole("Package"));
-            rowPropertiesTitle.Add(viewBarInConsole("RepositoryPath"));
-            rowPropertiesTitle.Add(String.Concat("DirectoryTarget", " "));
+
+            var lastField = listFieldsForTitle[listFieldsForTitle.Count - 1];
+
+            foreach(String fieldTitle in listFieldsForTitle){
+               
+               Boolean isLastField = lastField!=fieldTitle;
+
+               if(isLastField){
+                  rowPropertiesTitle.Add(viewBarInConsoleForScreen(fieldTitle));
+               }else{
+                  rowPropertiesTitle.Add(fieldTitle);
+               }
+            }
             String rowTitle = String.Concat(rowPropertiesTitle);
             return rowTitle;
         }
 
-        private static string getRowLine(PackageManifest item)
+        private static string getRowLinePackageForScreen(PackageManifest item)
         {
             List<String> rowPropertiesLine = new List<String>();
-            rowPropertiesLine.Add(viewBarInConsole(item.Id.ToString()));
-            rowPropertiesLine.Add(viewBarInConsole(item.PackageFile));
-            rowPropertiesLine.Add(viewBarInConsole(item.RepositorySource));
-            rowPropertiesLine.Add(String.Concat(item.DirectoryTarget, " "));
-
-            String rowLine = String.Concat(rowPropertiesLine);
+            string rowLine = getRowForScreen(new List<String> {item.Id.ToString(),item.PackageFile,
+            item.RepositorySource,item.DirectoryTarget});
             return rowLine;
         }
 
-        public static String viewBarInConsole(String paStr){
-           return String.Concat(paStr," | ");
+        public static String viewBarInConsoleForScreen(String paStr){
+           return String.Concat(paStr,Constants.separateColumnsInConsole);
        }
 
     }

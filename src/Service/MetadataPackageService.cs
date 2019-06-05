@@ -11,6 +11,13 @@ using Salesforce_Package.MetadataApi;
 namespace Salesforce_Package.Metadata{
     class MetadataPackageService {
         
+
+        public static void getAllPackage(){
+             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
+             MetadataApiService.getAllPackage(m_organization);
+             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
+        }
+
          public static void generatePackageRepository(){
             Dictionary<string, List<string>> mapPackage = new Dictionary<string, List<string>>();
         

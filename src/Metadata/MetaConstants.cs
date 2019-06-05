@@ -8,6 +8,9 @@ namespace Salesforce_Package
     class MetaConstants {
 
 		public const string ApexClass = "ApexClass";
+
+		public const string AuraDefinitionBundle = "AuraDefinitionBundle";
+
 		public const string ApexTrigger = "ApexTrigger";
 		public const string ApexComponent = "ApexComponent";
 		public const string ApexPage = "ApexPage";
@@ -37,7 +40,7 @@ namespace Salesforce_Package
 
 		public static readonly IList<String> metas = new ReadOnlyCollection<string>
     (new List<String> { 
-        ApexClass,ApexTrigger,ApexComponent,ApexPage,CustomMetadata,CustomObject,CustomField,ListView,
+        AuraDefinitionBundle,ApexClass,ApexTrigger,ApexComponent,ApexPage,CustomMetadata,CustomObject,CustomField,ListView,
 				EmailTemplate,Layout,PermissionSet,Profile,StaticResource,RemoteSiteSetting,Flow,FlowDefinition,
 				Settings,ValidationRule,EntitlementProcess,RecordType,MilestoneType,WebLink,Workflow,WorkflowRule,
 				StandardValueSet,AssignmentRules,CustomTab
