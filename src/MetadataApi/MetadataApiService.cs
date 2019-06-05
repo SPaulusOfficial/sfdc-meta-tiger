@@ -46,7 +46,7 @@ namespace Salesforce_Package.MetadataApi{
             {
                Types types =  generatePackageOFTypes(response);
                if(types.Members.Count>0){
-                  package.Types.Add(generatePackageOFTypes(response));
+                  package.Types.Add(types);
                }
             }
 
@@ -54,23 +54,21 @@ namespace Salesforce_Package.MetadataApi{
         }
 
         public static Types generatePackageOFTypes(listMetadataResponse response){
-            ConsoleHelper.WriteDocLine("generatePackageOFTypes");
             Types type = new Types();
             type.Members = new List<String>();
             Boolean isHaveResponse = response != null;
             if(isHaveResponse){
-                ConsoleHelper.WriteDocLine("Entrou Response");
                 Boolean isHaveResult = response.result != null;
                 if(isHaveResult){
-                    ConsoleHelper.WriteDocLine("Entrou Result");
                     foreach (FileProperties f in response.result)
                     {
-                        ConsoleHelper.WriteDocLine(f.type + f.fullName);
                         type.Name = f.type;
                         type.Members.Add(f.fullName);
                     }
                 }  
             }
+
+            type.Members.Sort((a, b) => a.CompareTo(b));
           
             return type;
         }
