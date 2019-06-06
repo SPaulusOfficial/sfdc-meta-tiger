@@ -31,8 +31,16 @@ namespace Salesforce_Package.MetadataApi{
             
              foreach(string strType in MetaConstants.metas){
                 ConsoleHelper.WriteDocLine(strType);
-                listMetadataResponse responseMeta = MetadataListMetadataApiService.listMetadata(response.Metadataclient,strType);
-                metadataResponse.Add(responseMeta);
+                
+                try{
+                  listMetadataResponse responseMeta = MetadataListMetadataApiService.listMetadata(response.Metadataclient,strType);
+                  metadataResponse.Add(responseMeta);
+                }
+                catch (Exception e)
+                {
+                 ConsoleHelper.WriteErrorLine(e.Message);
+                }
+               
              }
              
              writePackageXml(metadataResponse);

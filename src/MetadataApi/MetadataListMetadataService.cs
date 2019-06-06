@@ -28,14 +28,8 @@ namespace Salesforce_Package.MetadataApi{
             ListMetadataQuery q = new ListMetadataQuery();
             q.type = strType;
             
-            try{
-                response =  await client.listMetadataAsync(sessionHeader, callOptions, new []{ q} , 45);
-            }
-            catch (Exception e)
-            {
-              ConsoleHelper.WriteErrorLine(e.Message);
-            }
-
+            response =  await client.listMetadataAsync(sessionHeader, callOptions, new []{ q} , 45);
+            
             return lstMetaResponse;
         }
 
