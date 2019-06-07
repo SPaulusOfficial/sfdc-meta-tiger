@@ -1,10 +1,13 @@
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using SFDC.Partner;
+using System.ServiceModel;
+using System;
 
 namespace Salesforce_Package.PartnerApi{
 
@@ -14,7 +17,14 @@ namespace Salesforce_Package.PartnerApi{
         static PartnerLoginResponse response;
 
         public static PartnerLoginResponse login(PartnerLoginRequest request){
-            sc = new SoapClient();
+            
+            string typeEnviroment = request.Production ? "login" : "test";
+
+            string endPointService = String.Concat("https://",typeEnviroment,".salesforce.com/services/Soap/u/45.0");
+            
+            EndpointAddress apiAddress = new EndpointAddress(endPointService);
+            sc = new SoapClient(SFDC.Partner.SoapClient.EndpointConfiguration.Soap, apiAddress);
+            //sc = new SoapClient();
             run(request).Wait();
             return response;
         }

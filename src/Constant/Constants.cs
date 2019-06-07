@@ -8,7 +8,7 @@ public class Constants{
     (new List<String> {"Id","Package","RepositoryPath","DirectoryTarget" });
 
     public static readonly List<String> propertiesOrganization = new List<string>
-    (new List<String> {"Id","UserName","Password","SecurityToken" });
+    (new List<String> {"Id","UserName","Password","SecurityToken","Production"});
 
     public static readonly String separateColumnsInConsole = " | ";
 
@@ -29,5 +29,6 @@ public class Constants{
 
     public static readonly String LANG_PLEASEENTERTOKEN = ">>> Please enter ther token of organization or sandbox:"; 
    
+    public static readonly String LANG_PLEASEENTERPRODUCTION = ">>> Please enter ther type of organization or production/sandbox: (y/n)"; 
 
 }

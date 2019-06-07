@@ -100,9 +100,13 @@ namespace Salesforce_Package.Metadata{
             ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERTOKEN);
             String token = Console.ReadLine();
 
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPRODUCTION);
+            
+            bool production = Console.ReadLine()=="y";
+
             Config m_config = getConfig();
             
-            Organization vaOrganization = createOrganization(username, password,token, m_config);
+            Organization vaOrganization = createOrganization(username, password,token,production, m_config);
 
             m_config.Organization.Add(vaOrganization);
 
@@ -111,13 +115,14 @@ namespace Salesforce_Package.Metadata{
             return vaOrganization;
         }
 
-         private static Organization createOrganization(string userName, string password,string token, Config m_config)
+         private static Organization createOrganization(string userName, string password,string token,bool production, Config m_config)
         {
             return new Organization()
             {
                 Username = userName,
                 Password = password,
                 SecurityToken = token,
+                Production = production,
                 Id = m_config.Organization.Count + 1,
             };
         }
