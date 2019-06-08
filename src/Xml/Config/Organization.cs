@@ -16,7 +16,7 @@ namespace Salesforce_Package.Xml.Config
 		public string SecurityToken { get; set; }
 
 		[XmlElement(ElementName="Production")]
-		public bool Production { get; set; }
+		public string Production { get; set; }
 	}
 
 }

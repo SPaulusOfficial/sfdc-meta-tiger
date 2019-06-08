@@ -17,14 +17,12 @@ namespace Salesforce_Package.PartnerApi{
         static PartnerLoginResponse response;
 
         public static PartnerLoginResponse login(PartnerLoginRequest request){
-            
             string typeEnviroment = request.Production ? "login" : "test";
-
             string endPointService = String.Concat("https://",typeEnviroment,".salesforce.com/services/Soap/u/45.0");
-            
+            ConsoleHelper.WriteWarningLine(endPointService);
             EndpointAddress apiAddress = new EndpointAddress(endPointService);
             sc = new SoapClient(SFDC.Partner.SoapClient.EndpointConfiguration.Soap, apiAddress);
-            //sc = new SoapClient();
+            sc = new SoapClient();
             run(request).Wait();
             return response;
         }

@@ -37,6 +37,33 @@ namespace Salesforce_Package.ManageXML
             return package;
         }
 
+        public static SFDC.Metadata.Package DeserializePackageApi(String path)
+        {
+            SFDC.Metadata.Package package = null;
+            
+            Dictionary<string, List<string>> m_dictionary = buildMap(path);
+
+            package = new SFDC.Metadata.Package();
+
+            List<SFDC.Metadata.PackageTypeMembers> lstPackageTypeMembers = new List<SFDC.Metadata.PackageTypeMembers>();
+
+            foreach(String type in m_dictionary.Keys){
+                SFDC.Metadata.PackageTypeMembers m_type = new SFDC.Metadata.PackageTypeMembers(){
+                    name = type
+                };
+                lstPackageTypeMembers.Add(m_type);
+            }
+
+            package.types = lstPackageTypeMembers.ToArray();
+
+            foreach(SFDC.Metadata.PackageTypeMembers packageTypeMember in package.types){
+                String[] members = m_dictionary[packageTypeMember.name].ToArray();
+                packageTypeMember.members = members;
+            }
+            
+            return package;
+        }
+
         public static void doWrite(Package myObject){			
 			
             ManageDirectory.createPackageDirectory(Environment.CurrentDirectory+"\\Package");

@@ -29,7 +29,8 @@ namespace Salesforce_Package.Metadata{
                     String Username = viewBarInConsoleForScreen(item.Username);
                     String Password = viewBarInConsoleForScreen(item.Password); 
                     String SecurityToken = String.Concat(item.SecurityToken," ");
-                    Console.WriteLine(String.Concat(nameOrganization,Username,Password,SecurityToken));
+                    String production = String.Concat(item.Production," ");
+                    Console.WriteLine(String.Concat(nameOrganization,Username,Password,SecurityToken,production));
                 }
             }
 
@@ -102,7 +103,7 @@ namespace Salesforce_Package.Metadata{
 
             ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPRODUCTION);
             
-            bool production = Console.ReadLine()=="y";
+            string production = (Console.ReadLine()=="y") ? "true" : "false";
 
             Config m_config = getConfig();
             
@@ -115,7 +116,7 @@ namespace Salesforce_Package.Metadata{
             return vaOrganization;
         }
 
-         private static Organization createOrganization(string userName, string password,string token,bool production, Config m_config)
+         private static Organization createOrganization(string userName, string password,string token,string production, Config m_config)
         {
             return new Organization()
             {

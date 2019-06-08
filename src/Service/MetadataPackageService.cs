@@ -18,6 +18,15 @@ namespace Salesforce_Package.Metadata{
              ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
 
+        public static void retrieveAllPackage(){
+             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
+             //PackageManifest package = MetadataConfigService.chooseCodePackageManifest();
+             ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPATHPACKAGE);
+             string pathPackage = Console.ReadLine();
+             MetadataApiService.retrieveMetadata(m_organization, pathPackage);
+             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
+        }
+
          public static void generatePackageRepository(){
             Dictionary<string, List<string>> mapPackage = new Dictionary<string, List<string>>();
         

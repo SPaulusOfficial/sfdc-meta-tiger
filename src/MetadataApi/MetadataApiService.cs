@@ -6,6 +6,9 @@ using Salesforce_Package.PartnerApi;
 using Salesforce_Package.Xml;
 using Salesforce_Package.Xml.Config;
 using Salesforce_Package.Xml.Package;
+using System.Threading;
+using System.IO;
+using System.IO.Compression;
 
 namespace Salesforce_Package.MetadataApi{
 
@@ -16,6 +19,7 @@ namespace Salesforce_Package.MetadataApi{
                 Username = request.Username,
                 Password = request.Password,
                 SecurityToken = request.SecurityToken,
+                Production = request.Production
             };
             PartnerLoginResponse responsePartner = PartnerApiService.login(requestPattern);
             return MetadataClientService.getMetadataClient(responsePartner.UserId,responsePartner.SessionId,responsePartner.ServerUrl); 
@@ -26,6 +30,7 @@ namespace Salesforce_Package.MetadataApi{
              request.Username = Organization.Username;
              request.Password = Organization.Password;
              request.SecurityToken = Organization.SecurityToken;
+             request.Production = (Organization.Production=="true") ? true : false ;
              MetadataClientResponse response  = getMetadataClient(request);
              List<listMetadataResponse> metadataResponse = new List<listMetadataResponse>();
             
@@ -44,6 +49,52 @@ namespace Salesforce_Package.MetadataApi{
              }
              
              writePackageXml(metadataResponse);
+        }
+
+        public static void retrieveMetadata(Organization Organization,string pathPackage){
+            MetadataClientRequest request = new MetadataClientRequest();
+            request.Username = Organization.Username;
+            request.Password = Organization.Password;
+            request.SecurityToken = Organization.SecurityToken;
+            request.Production = (Organization.Production=="true") ? true : false ;
+            MetadataClientResponse response  = getMetadataClient(request);
+            SFDC.Metadata.Package package = ManageXMLPackage.DeserializePackageApi(pathPackage);
+            
+            checkRetrieveStatusResponse responseCheck;
+            RetrieveResult result;
+
+            String asyncId = MetadataRetrieveService.retrieve(response.Metadataclient,package);
+    
+           try{
+                do
+                {
+                  responseCheck = MetadataCheckRetrieveService.checkRetrieveStatus(response.Metadataclient,asyncId);
+                  result = responseCheck.result;
+                  Thread.Sleep(2000);
+                  ConsoleHelper.WriteDocLine(result.done.ToString());
+                } while (!result.done);
+
+                if(result.status == RetrieveStatus.Failed){
+                    ConsoleHelper.WriteErrorLine(result.errorMessage);
+                }else if(result.status == RetrieveStatus.Succeeded){
+                    if(result.messages != null){
+                        foreach(RetrieveMessage rm in result.messages) {
+                            ConsoleHelper.WriteWarningLine(rm.fileName + " " + rm.problem);
+                        }
+                    }
+
+                    String path = Environment.CurrentDirectory+"\\package\\zip\\package.zip";
+                    File.WriteAllBytes(path,result.zipFile);
+                    
+                }
+        
+            }
+            catch (Exception e)
+            {
+              ConsoleHelper.WriteErrorLine(e.Message);
+            } 
+            
+           
         } 
 
         public static void writePackageXml(List<listMetadataResponse> metadataResponse){

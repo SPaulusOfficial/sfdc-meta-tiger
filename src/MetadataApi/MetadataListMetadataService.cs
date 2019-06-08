@@ -15,11 +15,11 @@ namespace Salesforce_Package.MetadataApi{
         public static listMetadataResponse response;
         
         public static listMetadataResponse listMetadata(MetadataClient metadataClient,String strType){
-          ListMetadataQuery(metadataClient,strType).Wait();
+          run(metadataClient,strType).Wait();
           return response;
         }
 
-        static async Task<SFDC.Metadata.listMetadataResponse> ListMetadataQuery(MetadataClient metadataClient,String strType)
+        static async Task<SFDC.Metadata.listMetadataResponse> run(MetadataClient metadataClient,String strType)
         {
             var client = metadataClient.Client;
             var sessionHeader = metadataClient.SessionHeader;

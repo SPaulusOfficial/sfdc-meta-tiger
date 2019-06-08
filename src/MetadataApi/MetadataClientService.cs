@@ -14,7 +14,7 @@ namespace Salesforce_Package.MetadataApi{
             };
             
             binding.Security.Mode = BasicHttpSecurityMode.Transport;
-            binding.MaxReceivedMessageSize = 20000000;
+            binding.MaxReceivedMessageSize = 500000000;
 
             EndpointAddress endpoint = new EndpointAddress(ServerUrl);
             SessionHeader sessionHeader = new SessionHeader { sessionId = sessionId };    
