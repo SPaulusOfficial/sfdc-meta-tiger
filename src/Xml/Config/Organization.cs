@@ -1,7 +1,7 @@
 using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-namespace Salesforce_Package.Xml.Config
+namespace MetaTiger.Xml.Config
 {
 	[Serializable()]
 	[XmlRoot(ElementName="Organization")]

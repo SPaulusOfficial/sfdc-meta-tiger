@@ -6,20 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using SFDC.Metadata;
-using Salesforce_Package;
+using MetaTiger;
 
-namespace Salesforce_Package.MetadataApi{
+namespace MetaTiger.Api.Metadata{
 
-    public class MetadataListMetadataApiService{
+    public class MetadataApiListMetadataService{
 
         public static listMetadataResponse response;
         
-        public static listMetadataResponse listMetadata(MetadataClient metadataClient,String strType){
+        public static listMetadataResponse listMetadata(MetadataApiClient metadataClient,String strType){
           run(metadataClient,strType).Wait();
           return response;
         }
 
-        static async Task<SFDC.Metadata.listMetadataResponse> run(MetadataClient metadataClient,String strType)
+        static async Task<SFDC.Metadata.listMetadataResponse> run(MetadataApiClient metadataClient,String strType)
         {
             var client = metadataClient.Client;
             var sessionHeader = metadataClient.SessionHeader;

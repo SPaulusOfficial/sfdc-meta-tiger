@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Salesforce_Package.Metadata;
-using Salesforce_Package.Manage;
-using Salesforce_Package.ManageXML;
-using Salesforce_Package.Xml.Config;
-using Salesforce_Package.MetadataApi;
+using MetaTiger.Metadata;
+using MetaTiger.ManageFile;
+using MetaTiger.ManageFileXML;
+using MetaTiger.Xml.Config;
+using MetaTiger.Api.Metadata;
+using MetaTiger.Helper;
 
-namespace Salesforce_Package.Metadata{
+namespace MetaTiger.Metadata{
     class MetadataService {
         public static void validate(Dictionary<string, List<string>> mapPackage, List<IMetadata> MetaDatas)
         {
@@ -41,7 +42,7 @@ namespace Salesforce_Package.Metadata{
         public static void copyPackage(string path, string pathDir)
         {
             ConsoleHelper.WriteDoneLine(">> Copying package...");   
-            ManageCopy.doCopy(path.Replace("package.xml", ""), pathDir, "package.xml");            
+            ManageFileCopy.doCopy(path.Replace("package.xml", ""), pathDir, "package.xml");            
         }
 
         public static void copy(string pathFiles, string pathDir, List<IMetadata> MetaDatas)
@@ -56,7 +57,7 @@ namespace Salesforce_Package.Metadata{
         public static List<IMetadata> createDirectory(Dictionary<string, List<string>> mapPackage, string pathDir)
         {
             ConsoleHelper.WriteDoneLine(">> Creating directories...");
-            List<IMetadata> MetaDatas = ManageDirectory.buildDirectorys(mapPackage, pathDir);
+            List<IMetadata> MetaDatas = ManageFileDirectory.buildDirectorys(mapPackage, pathDir);
             return MetaDatas;
         }
 

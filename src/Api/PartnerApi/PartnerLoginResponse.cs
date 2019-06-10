@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Salesforce_Package.PartnerApi{
+namespace MetaTiger.PartnerApi{
 
     public class PartnerLoginResponse{
         

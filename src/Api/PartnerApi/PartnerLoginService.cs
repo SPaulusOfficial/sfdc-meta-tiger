@@ -8,8 +8,9 @@ using System.Web;
 using SFDC.Partner;
 using System.ServiceModel;
 using System;
+using MetaTiger.Helper;
 
-namespace Salesforce_Package.PartnerApi{
+namespace MetaTiger.PartnerApi{
 
     public class PartnerLoginService{
         

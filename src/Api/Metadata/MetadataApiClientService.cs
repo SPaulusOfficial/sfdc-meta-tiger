@@ -2,11 +2,11 @@ using SFDC.Metadata;
 using System.Web;
 using System.ServiceModel;
 
-namespace Salesforce_Package.MetadataApi{
+namespace MetaTiger.Api.Metadata{
 
-    public class MetadataClientService{
+    public class MetadataApiClientService{
         
-        public static MetadataClientResponse getMetadataClient(string userId,string sessionId,string ServerUrl){
+        public static MetadataApiClientResponse getMetadataClient(string userId,string sessionId,string ServerUrl){
           
             
             BasicHttpBinding binding = new BasicHttpBinding{
@@ -20,12 +20,12 @@ namespace Salesforce_Package.MetadataApi{
             SessionHeader sessionHeader = new SessionHeader { sessionId = sessionId };    
             CallOptions callOptions = new CallOptions{client = userId};
 
-            MetadataClient mdclient = new MetadataClient();
+            MetadataApiClient mdclient = new MetadataApiClient();
             mdclient.Client = new MetadataPortTypeClient(binding,endpoint);
             mdclient.SessionHeader = sessionHeader;
             mdclient.CallOptions = callOptions;
 
-            return new MetadataClientResponse{Metadataclient = mdclient};;
+            return new MetadataApiClientResponse{Metadataclient = mdclient};
         }
 
     }

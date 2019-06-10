@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using MetaTiger.Helper;
 
-namespace Salesforce_Package.Manage
+namespace MetaTiger.ManageFile
 {
-    class ManageCopy {
+    class ManageFileCopy {
         
 		public static void doCopy(String sourcePath, String targetPath, String fileName){			
 			try{

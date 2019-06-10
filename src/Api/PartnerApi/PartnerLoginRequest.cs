@@ -1,13 +1,20 @@
-using SFDC.Metadata;
+using SFDC.Partner;
+using System.Data;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+using System;
 
-namespace Salesforce_Package.MetadataApi{
+namespace MetaTiger.PartnerApi{
 
-    public class MetadataClientRequest{
+    public class PartnerLoginRequest{
         
         private string username;
         private string password;
         private string securityToken;
-        private bool production;
+        private bool production; 
 
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }

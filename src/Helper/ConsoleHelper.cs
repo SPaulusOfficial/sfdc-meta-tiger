@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Salesforce_Package.Xml;
+using MetaTiger.Xml;
 
-namespace Salesforce_Package
+namespace MetaTiger.Helper
 {
     class ConsoleHelper{
 

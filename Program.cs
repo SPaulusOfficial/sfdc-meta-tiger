@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml.Serialization;
-using Salesforce_Package.Metadata;
-using Salesforce_Package.Manage;
-using Salesforce_Package.ManageXML;
-using Salesforce_Package.Xml.Config;
-using Salesforce_Package.MetadataApi;
+using MetaTiger.Metadata;
+using MetaTiger.Helper;
 
-namespace Salesforce_Package
+namespace MetaTiger
 {
     class Program
     {
@@ -18,14 +14,15 @@ namespace Salesforce_Package
            
             Console.WriteLine("");
             ConsoleHelper.WriteDocLine("###################################################");
-            ConsoleHelper.WriteDocLine("#                ALEX STORM                       #");
-            ConsoleHelper.WriteDocLine("#                Version 4.0                      #");
+            ConsoleHelper.WriteDocLine("#                META-TIGER                       #");
+            ConsoleHelper.WriteDocLine("#                Version 5.0                      #");
             ConsoleHelper.WriteDocLine("#       Author:Bruno Smith Lopes Ribeiro          #");
             ConsoleHelper.WriteDocLine("#       E-mail:bruno_smith10@hotmail.com          #");
             ConsoleHelper.WriteDocLine("###################################################");
             ConsoleHelper.WriteQuestionLine("1 - Get All Package.xml");
             ConsoleHelper.WriteQuestionLine("2 - Generate Package With Files of Repository");
             ConsoleHelper.WriteQuestionLine("3 - Retrieve Files in Package");
+            ConsoleHelper.WriteQuestionLine("Please choose option:");
             int strAction = Convert.ToInt32(Console.ReadLine());
 
             switch (strAction)

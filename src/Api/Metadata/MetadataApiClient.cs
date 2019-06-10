@@ -1,8 +1,8 @@
 using SFDC.Metadata;
 
-namespace Salesforce_Package.MetadataApi{
+namespace MetaTiger.Api.Metadata{
 
-    public class MetadataClient{
+    public class MetadataApiClient{
 
       private MetadataPortTypeClient client;
     

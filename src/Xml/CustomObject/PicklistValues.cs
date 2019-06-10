@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-namespace Salesforce_Package.Xml.CustomObject
+namespace MetaTiger.Xml.CustomObject
 {
 	[Serializable()]
 	[XmlRoot(ElementName="picklistValues", Namespace="http://soap.sforce.com/2006/04/metadata")]

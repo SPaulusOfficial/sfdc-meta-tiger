@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Salesforce_Package.Metadata;
+using MetaTiger.Metadata;
+using MetaTiger.Helper;
 
-namespace Salesforce_Package.Manage
+namespace MetaTiger.ManageFile
 {
-    class ManageDirectory {
+    class ManageFileDirectory {
         
 		public static void createPackageDirectory(String path)
         {

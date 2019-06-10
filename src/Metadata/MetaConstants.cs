@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package
+namespace MetaTiger
 {
     class MetaConstants {
 

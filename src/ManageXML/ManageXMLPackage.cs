@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Salesforce_Package.Xml.Package;
-using Salesforce_Package.Manage;
+using MetaTiger.Xml.Package;
+using MetaTiger.ManageFile;
 
-namespace Salesforce_Package.ManageXML
+namespace MetaTiger.ManageFileXML
 {
     class ManageXMLPackage{
                        
@@ -66,7 +66,7 @@ namespace Salesforce_Package.ManageXML
 
         public static void doWrite(Package myObject){			
 			
-            ManageDirectory.createPackageDirectory(Environment.CurrentDirectory+"\\Package");
+            ManageFileDirectory.createPackageDirectory(Environment.CurrentDirectory+"\\Package");
             String targetPath = Environment.CurrentDirectory+"\\Package\\";
             String fileName = "Package.xml";
             

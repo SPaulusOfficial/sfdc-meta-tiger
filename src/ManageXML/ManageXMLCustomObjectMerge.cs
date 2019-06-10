@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Salesforce_Package.Xml.CustomObject;
-using Salesforce_Package.Manage;
+using MetaTiger.Xml.CustomObject;
+using MetaTiger.ManageFile;
 
-namespace Salesforce_Package.ManageXML
+namespace MetaTiger.ManageFileXML
 {
     public class ManageXMLCustomObjectMerge 
     {
@@ -54,7 +54,7 @@ namespace Salesforce_Package.ManageXML
             
             if(isHaveObjectInPackageXml){
                 String mergeDirectory = String.Concat(targetPath,"\\","_",MetaDirectory.getDirectory(MetaConstants.CustomObject));
-                ManageDirectory.createPackageDirectory(mergeDirectory);
+                ManageFileDirectory.createPackageDirectory(mergeDirectory);
                 foreach(KeyValuePair<string, CustomObject> m_object in m_customObjects)
                 {
                     String filename = String.Concat(m_object.Key,".object");

@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Salesforce_Package.Metadata;
-using Salesforce_Package.Manage;
-using Salesforce_Package.ManageXML;
-using Salesforce_Package.Xml.Config;
-using Salesforce_Package.MetadataApi;
+using MetaTiger.Metadata;
+using MetaTiger.ManageFile;
+using MetaTiger.ManageFileXML;
+using MetaTiger.Xml.Config;
+using MetaTiger.Api.Metadata;
+using MetaTiger.Helper;
 
-namespace Salesforce_Package.Metadata{
+namespace MetaTiger.Metadata{
     class MetadataConfigService {
         
         public static Config getConfig(){

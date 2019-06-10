@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package
+namespace MetaTiger
 {
     class MetaDirectory {
 

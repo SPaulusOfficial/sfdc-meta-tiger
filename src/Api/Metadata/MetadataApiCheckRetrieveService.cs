@@ -6,21 +6,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using SFDC.Metadata;
-using Salesforce_Package;
-using Salesforce_Package.ManageXML;
+using MetaTiger;
+using MetaTiger.ManageFileXML;
 
-namespace Salesforce_Package.MetadataApi{
+namespace MetaTiger.Api.Metadata{
 
-    public class MetadataCheckRetrieveService{
+    public class MetadataApiCheckRetrieveService{
 
         public static checkRetrieveStatusResponse response;
         
-        public static checkRetrieveStatusResponse checkRetrieveStatus(MetadataClient metadataClient,String asyncResultId){
+        public static checkRetrieveStatusResponse checkRetrieveStatus(MetadataApiClient metadataClient,String asyncResultId){
           run(metadataClient,asyncResultId).Wait();
           return response;
         }
 
-        static async Task<checkRetrieveStatusResponse> run(MetadataClient metadataClient,String asyncResultId){
+        static async Task<checkRetrieveStatusResponse> run(MetadataApiClient metadataClient,String asyncResultId){
             var client = metadataClient.Client;
             var sessionHeader = metadataClient.SessionHeader;
             var callOptions = metadataClient.CallOptions;

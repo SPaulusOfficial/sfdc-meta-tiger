@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Salesforce_Package.Xml.Workflow;
-using Salesforce_Package.ManageXML;
+using MetaTiger.Xml.Workflow;
+using MetaTiger.ManageFileXML;
 
-namespace Salesforce_Package.Metadata{
+namespace MetaTiger.Metadata{
     class MetaWorkflowRule:MetaWorkflowBase {
         
 		public MetaWorkflowRule(){

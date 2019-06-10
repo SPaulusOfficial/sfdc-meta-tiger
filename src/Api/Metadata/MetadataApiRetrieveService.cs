@@ -6,37 +6,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using SFDC.Metadata;
-using Salesforce_Package;
-using Salesforce_Package.ManageXML;
+using MetaTiger;
+using MetaTiger.ManageFileXML;
 
-namespace Salesforce_Package.MetadataApi{
+namespace MetaTiger.Api.Metadata{
 
-    public class MetadataRetrieveService{
+    public class MetadataApiRetrieveService{
 
         public static String asyncId;
         
-        public static String retrieve(MetadataClient metadataClient,Package package){
+        public static String retrieve(MetadataApiClient metadataClient,Package package){
           run(metadataClient,package).Wait();
           return asyncId;
         }
 
-        static async Task<String> run(MetadataClient metadataClient,Package package)
+        static async Task<String> run(MetadataApiClient metadataClient,Package package)
         {
             var client = metadataClient.Client;
             var sessionHeader = metadataClient.SessionHeader;
             var callOptions = metadataClient.CallOptions;
             RetrieveRequest request = new RetrieveRequest();
-
-            ConsoleHelper.WriteDocLine("##########lalala############");
-            foreach(PackageTypeMembers mtype in package.types){
-              ConsoleHelper.WriteDocLine(mtype.name);
-              foreach(String member in mtype.members){
-                ConsoleHelper.WriteDocLine(member);
-              }
-            }
-            ConsoleHelper.WriteDocLine("######################");
-          
-
             request.unpackaged = package;
             retrieveResponse resultResponse =  await client.retrieveAsync(sessionHeader, callOptions, request);
             asyncId = resultResponse.result.id;
