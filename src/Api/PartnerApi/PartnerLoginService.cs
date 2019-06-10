@@ -23,7 +23,6 @@ namespace MetaTiger.PartnerApi{
             ConsoleHelper.WriteWarningLine(endPointService);
             EndpointAddress apiAddress = new EndpointAddress(endPointService);
             sc = new SoapClient(SFDC.Partner.SoapClient.EndpointConfiguration.Soap, apiAddress);
-            sc = new SoapClient();
             run(request).Wait();
             return response;
         }
