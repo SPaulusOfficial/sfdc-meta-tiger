@@ -37,6 +37,11 @@ namespace MetaTiger
 				case MetaConstants.StandardValueSet: return "standardValueSets";
 				case MetaConstants.CustomTab: return "tabs";
 				case MetaConstants.AssignmentRules: return "assignmentRules";
+				case MetaConstants.AuraDefinitionBundle: return "aura";
+				case MetaConstants.CompactLayout: return "_compactlayout";
+				case MetaConstants.CustomApplication: return "applications";
+				case MetaConstants.FlexiPage: return "flexipages";
+				case MetaConstants.Territory2Type: return "territory2Types";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}

@@ -37,6 +37,11 @@ namespace MetaTiger.Metadata
 				case MetaConstants.StandardValueSet: return new MetaStandardValueSet();
 				case MetaConstants.CustomTab: return new MetaCustomTab();
 				case MetaConstants.AssignmentRules: return new metaAssignmentRules();
+				case MetaConstants.AuraDefinitionBundle: return new metaAuraDefinitionBundle();
+				case MetaConstants.CompactLayout: return new metaCompactLayout();
+				case MetaConstants.CustomApplication: return new metaCustomApplication();
+				case MetaConstants.FlexiPage: return new metaFlexiPage();
+				case MetaConstants.Territory2Type: return new metaTerritory2Type();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}

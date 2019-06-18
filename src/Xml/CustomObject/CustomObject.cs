@@ -40,6 +40,8 @@ namespace MetaTiger.Xml.CustomObject
 		public string Gender { get; set; }
 		[XmlElement(ElementName="label", Namespace="http://soap.sforce.com/2006/04/metadata")]
 		public string Label { get; set; }
+		[XmlElement(ElementName="compactLayouts", Namespace="http://soap.sforce.com/2006/04/metadata")]
+		public List<_CompactLayouts> CompactLayouts { get; set; }
 		[XmlElement(ElementName="listViews", Namespace="http://soap.sforce.com/2006/04/metadata")]
 		public List<_ListViews> ListViews { get; set; }
 		[XmlElement(ElementName="nameField", Namespace="http://soap.sforce.com/2006/04/metadata")]
