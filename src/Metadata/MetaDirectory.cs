@@ -42,6 +42,8 @@ namespace MetaTiger
 				case MetaConstants.CustomApplication: return "applications";
 				case MetaConstants.FlexiPage: return "flexipages";
 				case MetaConstants.Territory2Type: return "territory2Types";
+				case MetaConstants.Territory2: return "territory2Models";
+				case MetaConstants.Territory2Model: return "territory2Models";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}
