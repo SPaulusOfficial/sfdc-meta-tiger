@@ -9,7 +9,7 @@ namespace MetaTiger.Metadata{
 		
 		public String m_metaname;
 		
-    public void isValidThenAdd(String metaname,String MetaFile){
+    	public void isValidThenAdd(String metaname,String MetaFile){
 			if(m_metaname.Equals(metaname)){
 				m_list.Add(MetaFile);
 			}

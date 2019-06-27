@@ -46,6 +46,7 @@ namespace MetaTiger.ManageFileXML
               m_object.Value.DeploymentStatus = customObject.DeploymentStatus;
               m_object.Value.SharingModel = customObject.SharingModel;
               m_object.Value.ExternalSharingModel = customObject.ExternalSharingModel;
+              m_object.Value.CompactLayoutAssignment = customObject.CompactLayoutAssignment;
             }  
         }
 

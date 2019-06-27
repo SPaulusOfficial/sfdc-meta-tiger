@@ -19,9 +19,60 @@ namespace MetaTiger.Metadata{
              ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
 
+        public static void getAllPackageWithNameLastModified(){
+             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
+             List<string> nameuserList;
+             
+             nameuserList = getNamesForUsers();
+
+             if(isHaveUsers(nameuserList)){
+               MetadataApiService.getAllPackageLastModifiedByName(m_organization,nameuserList);
+               ConsoleHelper.WriteDoneLine(">> Finalize the process..."); 
+             }
+        }
+        
+        public static void getAllPackageWithNameCreated(){
+             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
+             List<string> nameuserList;
+             
+             nameuserList = getNamesForUsers();
+
+             if(isHaveUsers(nameuserList)){
+               MetadataApiService.getAllPackageCreatedByName(m_organization,nameuserList);
+               ConsoleHelper.WriteDoneLine(">> Finalize the process..."); 
+             }
+        }
+
+        public static bool isHaveUsers(List<string> nameuserList){
+            bool isHaveUsers = (nameuserList.Count > 0);
+            
+            if(!isHaveUsers){
+               ConsoleHelper.WriteErrorLine(">> Not found users..."); 
+            }
+
+            return isHaveUsers;
+        }
+
+        public static List<string> getNamesForUsers(){
+            List<string> nameForUsers = new List<string>();
+            string nameuser;
+            bool isHaveName;
+
+            do{
+               ConsoleHelper.WriteQuestionLine(">> Enter with name user...");
+               nameuser = Console.ReadLine();  
+               isHaveName = (nameuser!=null && nameuser!= "");
+               if(isHaveName)
+               nameForUsers.Add(nameuser);
+             }while (isHaveName);
+
+             return nameForUsers;
+        }
+
+       
+
         public static void retrieveAllPackage(){
              Organization m_organization = MetadataConfigService.chooseCodeOrganization();
-             //PackageManifest package = MetadataConfigService.chooseCodePackageManifest();
              ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPATHPACKAGE);
              string pathPackage = Console.ReadLine();
              MetadataApiService.retrieveMetadata(m_organization, pathPackage);

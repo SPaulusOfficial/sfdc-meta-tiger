@@ -19,6 +19,8 @@ public class Constants{
 
     public static readonly String LANG_PLEASEENTERPATHREPOSITORY = ">>> Please enter the path of the repository where the files are:"; 
 
+    public static readonly String LANG_PLEASEENTERTARGETPATH = ">>> Please enter the path of the target files:"; 
+
     public static readonly String LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG = ">>> Choose code package manifest save in Config:"; 
 
     public static readonly String LANG_CHOOSECODEORGANIZATIONSAVEINCONFIG = ">>> Choose code organization save in Config:";
