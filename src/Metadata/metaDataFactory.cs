@@ -44,6 +44,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.Territory2Type: return new metaTerritory2Type();
 				case MetaConstants.Territory2: return new metaTerritory2();
 				case MetaConstants.Territory2Model: return new metaTerritory2Model();
+				case MetaConstants.ContentAsset: return new metaContentAsset();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}

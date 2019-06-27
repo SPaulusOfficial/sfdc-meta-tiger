@@ -44,6 +44,7 @@ namespace MetaTiger
 				case MetaConstants.Territory2Type: return "territory2Types";
 				case MetaConstants.Territory2: return "territory2Models";
 				case MetaConstants.Territory2Model: return "territory2Models";
+				case MetaConstants.ContentAsset: return "contentassets";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}
