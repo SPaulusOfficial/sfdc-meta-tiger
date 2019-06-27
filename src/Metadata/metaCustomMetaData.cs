@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Salesforce_Package.Manage;
+using MetaTiger.ManageFile;
 
-namespace Salesforce_Package.Metadata{
+namespace MetaTiger.Metadata{
     class MetaCustomMetadata:MetaBase {
         
 		public MetaCustomMetadata(){
@@ -12,7 +12,7 @@ namespace Salesforce_Package.Metadata{
 		} 
 		
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
-			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".md"));				
+			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".md"));				
 		}
 
 		public override void doMerge(){}

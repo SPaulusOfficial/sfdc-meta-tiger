@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Salesforce_Package.Xml.CustomObject;
-using Salesforce_Package.ManageXML;
+using MetaTiger.Xml.CustomObject;
+using MetaTiger.ManageFileXML;
 
-namespace Salesforce_Package.Metadata{
+namespace MetaTiger.Metadata{
     class MetaCustomField:MetaCustomObjectBase {
 
 		Dictionary<string, List<Fields>> m_dictionaryObject;

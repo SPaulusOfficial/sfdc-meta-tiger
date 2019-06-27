@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package.Metadata
+namespace MetaTiger.Metadata
 {
     abstract class MetaWorkflowBase:MetaBase,IMetadata {
     

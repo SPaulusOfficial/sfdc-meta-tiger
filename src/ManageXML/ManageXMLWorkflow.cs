@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Salesforce_Package.Xml.Workflow;
+using MetaTiger.Xml.Workflow;
 
-namespace Salesforce_Package.ManageXML
+namespace MetaTiger.ManageFileXML
 {
     class ManageXMLWorkflow {
                        

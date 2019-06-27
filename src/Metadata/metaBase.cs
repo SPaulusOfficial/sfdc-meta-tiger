@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package.Metadata{
+namespace MetaTiger.Metadata{
     abstract class MetaBase: IMetadata {
         
 		public List<String> m_list;    
 		
 		public String m_metaname;
 		
-    public void isValidThenAdd(String metaname,String MetaFile){
+    	public void isValidThenAdd(String metaname,String MetaFile){
 			if(m_metaname.Equals(metaname)){
 				m_list.Add(MetaFile);
 			}

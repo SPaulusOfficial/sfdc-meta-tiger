@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using Salesforce_Package.Manage;
+using MetaTiger.ManageFile;
 
-namespace Salesforce_Package.Metadata{
+namespace MetaTiger.Metadata{
     class MetaApexClass : MetaBase {
 
 		public MetaApexClass(){
@@ -12,8 +12,8 @@ namespace Salesforce_Package.Metadata{
 		}		
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
-			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cls"));
-			ManageCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cls-meta.xml"));
+			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cls"));
+			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cls-meta.xml"));
 		}	
 
 		public override void doMerge(){}

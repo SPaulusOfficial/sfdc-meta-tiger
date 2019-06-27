@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Salesforce_Package.Xml.Config;
-using Salesforce_Package.Manage;
+using MetaTiger.Xml.Config;
+using MetaTiger.ManageFile;
 
-namespace Salesforce_Package.ManageXML
+namespace MetaTiger.ManageFileXML
 {
     class ManageXMLConfig{
 
@@ -42,7 +42,7 @@ namespace Salesforce_Package.ManageXML
 
         public static void doWrite(Config myObject){			
 			
-            ManageDirectory.createPackageDirectory(Environment.CurrentDirectory+"\\config");
+            ManageFileDirectory.createPackageDirectory(Environment.CurrentDirectory+"\\config");
             String targetPath = Environment.CurrentDirectory+"\\config\\";
             String fileName = "config.xml";
             
@@ -61,7 +61,8 @@ namespace Salesforce_Package.ManageXML
        		  Console.WriteLine("Could not create file:" + e.Message);
 			}			
 		}
-	}
+        
+    }
 
 
 	

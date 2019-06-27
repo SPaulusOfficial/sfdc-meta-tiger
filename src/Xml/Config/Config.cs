@@ -2,7 +2,7 @@
 using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-namespace Salesforce_Package.Xml.Config
+namespace MetaTiger.Xml.Config
 {
 	[Serializable()]
 	[XmlRoot(ElementName="Config")]
@@ -11,6 +11,8 @@ namespace Salesforce_Package.Xml.Config
 		public string GeneralDirectoryTarget { get; set; }
 		[XmlElement(ElementName="PackageManifest")]
 		public List<PackageManifest> PackageManifest { get; set; }
+		[XmlElement(ElementName="Organization")]
+		public List<Organization> Organization { get; set; }
 		[XmlElement(ElementName="VersionNumber")]
 		public string VersionNumber { get; set; }
 	}

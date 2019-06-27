@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package
+namespace MetaTiger
 {
     class MetaDirectory {
 
@@ -37,6 +37,13 @@ namespace Salesforce_Package
 				case MetaConstants.StandardValueSet: return "standardValueSets";
 				case MetaConstants.CustomTab: return "tabs";
 				case MetaConstants.AssignmentRules: return "assignmentRules";
+				case MetaConstants.AuraDefinitionBundle: return "aura";
+				case MetaConstants.CompactLayout: return "_compactlayout";
+				case MetaConstants.CustomApplication: return "applications";
+				case MetaConstants.FlexiPage: return "flexipages";
+				case MetaConstants.Territory2Type: return "territory2Types";
+				case MetaConstants.Territory2: return "territory2Models";
+				case MetaConstants.Territory2Model: return "territory2Models";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}

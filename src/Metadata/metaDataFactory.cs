@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Salesforce_Package.Metadata
+namespace MetaTiger.Metadata
 {
     class MetaDataFactory {
         
@@ -37,6 +37,13 @@ namespace Salesforce_Package.Metadata
 				case MetaConstants.StandardValueSet: return new MetaStandardValueSet();
 				case MetaConstants.CustomTab: return new MetaCustomTab();
 				case MetaConstants.AssignmentRules: return new metaAssignmentRules();
+				case MetaConstants.AuraDefinitionBundle: return new metaAuraDefinitionBundle();
+				case MetaConstants.CompactLayout: return new metaCompactLayout();
+				case MetaConstants.CustomApplication: return new metaCustomApplication();
+				case MetaConstants.FlexiPage: return new metaFlexiPage();
+				case MetaConstants.Territory2Type: return new metaTerritory2Type();
+				case MetaConstants.Territory2: return new metaTerritory2();
+				case MetaConstants.Territory2Model: return new metaTerritory2Model();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
