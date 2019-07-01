@@ -31,7 +31,6 @@ is working with this Metadata for now:
     <td><strong>MilestoneType</strong></td>
     <td><strong>RemoteSiteSetting</strong></td>
     <td><strong>FlowDefinition</strong></td>
-    <td><strong>CustomTab</strong></td>
   </tr>
   <tr>
     <td><strong>EntitlementProcess</strong></td>
@@ -39,6 +38,9 @@ is working with this Metadata for now:
     <td><strong>CustomObject</strong></td>
     <td><strong>Flow</strong></td>
     <td><strong>Weblink</strong></td>
+  </tr> 
+  <tr>
+     <td><strong>CustomTab</strong></td>
   </tr>
 </table>
 
