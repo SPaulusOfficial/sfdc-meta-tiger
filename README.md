@@ -10,7 +10,6 @@ is working with this Metadata for now:
     <td><strong>ApexPage</strong></td>
     <td><strong>ApexComponent</strong></td>
     <td><strong>CustomMetadata</strong></td>
-    <td><strong>CustomObject</strong></td>
   </tr>
   <tr>
     <td><strong>CustomField</strong></td>
@@ -18,7 +17,6 @@ is working with this Metadata for now:
     <td><strong>Layout</strong></td>
     <td><strong>PermissionSet</strong></td>
     <td><strong>Profile</strong></td>
-    <td><strong>Flow</strong></td>
   </tr>
   <tr>
     <td><strong>ListView</strong></td>
@@ -26,7 +24,6 @@ is working with this Metadata for now:
     <td><strong>ValidationRules</strong></td>
     <td><strong>Workflow</strong></td>
     <td><strong>WorkflowRules</strong></td>
-    <td><strong>Weblink</strong></td>
   </tr>
   <tr>
     <td><strong>RecordTypes</strong></td>
@@ -39,6 +36,9 @@ is working with this Metadata for now:
   <tr>
     <td><strong>EntitlementProcess</strong></td>
     <td><strong>AssignmentRules</strong></td>
+    <td><strong>CustomObject</strong></td>
+    <td><strong>Flow</strong></td>
+    <td><strong>Weblink</strong></td>
   </tr>
 </table>
 
