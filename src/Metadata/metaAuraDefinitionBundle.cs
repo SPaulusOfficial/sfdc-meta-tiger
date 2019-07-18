@@ -24,6 +24,8 @@ namespace MetaTiger.Metadata{
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,"Controller.js"));
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,"Helper.js"));
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,"Renderer.js"));
+			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".evt"));
+			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".evt-meta.xml"));
 		}	
 
 		public override void doMerge(){}
