@@ -31,16 +31,16 @@ namespace MetaTiger.Api.Metadata{
             MetadataApiPackageService.getAllPackage(Organization, response);
         }
 
-        public static void getAllPackageLastModifiedByName(Organization Organization,List<string> nameuser)
+        public static void getAllPackageLastModifiedByName(Organization Organization,List<string> nameuser,List<String> dates)
         {
             MetadataApiClientResponse response = generateClientResponse(Organization);
-            MetadataApiPackageService.getAllPackageOfUserLastModifiedByName(Organization, response,nameuser);
+            MetadataApiPackageService.getAllPackageOfUserLastModifiedByName(Organization, response,nameuser,dates);
         }
 
-        public static void getAllPackageCreatedByName(Organization Organization,List<string> nameuser)
+        public static void getAllPackageCreatedByName(Organization Organization,List<string> nameuser,List<String> dates)
         {
             MetadataApiClientResponse response = generateClientResponse(Organization);
-            MetadataApiPackageService.getAllPackageCreatedByName(Organization, response,nameuser);
+            MetadataApiPackageService.getAllPackageCreatedByName(Organization, response,nameuser,dates);
         }
 
         private static MetadataApiClientResponse generateClientResponse(Organization Organization)

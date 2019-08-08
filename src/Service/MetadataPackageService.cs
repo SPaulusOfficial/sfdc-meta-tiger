@@ -21,12 +21,14 @@ namespace MetaTiger.Metadata{
 
         public static void getAllPackageWithNameLastModified(){
              Organization m_organization = MetadataConfigService.chooseCodeOrganization();
-             List<string> nameuserList;
+             List<string> nameuserList,dates;
              
              nameuserList = getNamesForUsers();
 
+             dates = getRangeDate();
+
              if(isHaveUsers(nameuserList)){
-               MetadataApiService.getAllPackageLastModifiedByName(m_organization,nameuserList);
+               MetadataApiService.getAllPackageLastModifiedByName(m_organization,nameuserList,dates);
                ConsoleHelper.WriteDoneLine(">> Finalize the process..."); 
              }
         }
@@ -34,23 +36,31 @@ namespace MetaTiger.Metadata{
         public static void getAllPackageWithNameCreated(){
              Organization m_organization = MetadataConfigService.chooseCodeOrganization();
              List<string> nameuserList;
+             List<string> dates;
              
              nameuserList = getNamesForUsers();
+             dates = getRangeDate();
 
-             if(isHaveUsers(nameuserList)){
-               MetadataApiService.getAllPackageCreatedByName(m_organization,nameuserList);
+             if(isHaveUsers(nameuserList) && isHaveDates(dates)){
+               MetadataApiService.getAllPackageCreatedByName(m_organization,nameuserList,dates);
                ConsoleHelper.WriteDoneLine(">> Finalize the process..."); 
              }
         }
 
-        public static bool isHaveUsers(List<string> nameuserList){
-            bool isHaveUsers = (nameuserList.Count > 0);
-            
-            if(!isHaveUsers){
-               ConsoleHelper.WriteErrorLine(">> Not found users..."); 
+        public static bool isHaveStringInArray(List<String> arrayString,String message){
+           bool isHave = (arrayString.Count > 0);
+            if(!isHave){
+               ConsoleHelper.WriteErrorLine(message); 
             }
+           return isHave;
+        }
 
-            return isHaveUsers;
+        public static bool isHaveUsers(List<string> nameuserList){
+            return isHaveStringInArray(nameuserList,">> Not found users...");           
+        }
+
+        public static bool isHaveDates(List<string> dates){
+            return isHaveStringInArray(dates,">> Not found dates...");
         }
 
         public static List<string> getNamesForUsers(){
@@ -69,7 +79,25 @@ namespace MetaTiger.Metadata{
              return nameForUsers;
         }
 
-       
+        public static List<string> getRangeDate(){
+            List<string> dates = new List<string>();
+            string beginDate,endDate;
+            bool isHaveBeginDate,isHaveEndDate;
+
+            ConsoleHelper.WriteQuestionLine(">> Enter begin date...");
+            beginDate = Console.ReadLine(); 
+            isHaveBeginDate = (beginDate!=null && beginDate!= "");
+            if(isHaveBeginDate)
+            dates.Add(beginDate);
+
+            ConsoleHelper.WriteQuestionLine(">> Enter end date...");
+            endDate = Console.ReadLine();  
+            isHaveEndDate = (endDate!=null && endDate!= "");
+            if(isHaveEndDate)
+            dates.Add(endDate);
+
+            return dates;
+        }
 
         public static void retrieveAllPackage(){
              Organization m_organization = MetadataConfigService.chooseCodeOrganization();
