@@ -39,7 +39,7 @@ namespace MetaTiger.Api.Metadata{
            bool isMyUserLastModifiedByName = myusers.Contains(f.lastModifiedByName);
            bool isMyUserCreatedByName = myusers.Contains(f.createdByName);
            bool isNot1970 = f.lastModifiedDate!=dt1970;
-           bool isSelected = isNot1970 && (isMyUserLastModifiedByName || isMyUserCreatedByName) && (isSelectedCreatedDate || isSelectedLastModifiedDate);
+           bool isSelected = isNot1970 && ((isMyUserLastModifiedByName && isSelectedLastModifiedDate) || (isSelectedCreatedDate && isMyUserCreatedByName));
           
            return isSelected ; 
         }
