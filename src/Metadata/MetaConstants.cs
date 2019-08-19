@@ -6,7 +6,6 @@ using System.Xml.Serialization;
 namespace MetaTiger
 {
     class MetaConstants {
-
 			public const string AccessControlPolicy="AccessControlPolicy";
 			public const string AccountRelationshipShareRule="AccountRelationshipShareRule";
 			public const string AccountSettings="AccountSettings";

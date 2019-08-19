@@ -10,14 +10,18 @@ namespace MetaTiger
 			
 			switch (typeMetadata)
 			{
+				case MetaConstants.AppMenu: return "appMenus";
 				case MetaConstants.ApexClass: return "classes";
 				case MetaConstants.ApexTrigger: return "triggers";
 				case MetaConstants.ApexComponent: return "components";
 				case MetaConstants.ApexPage: return "pages";
 				case MetaConstants.CustomMetadata: return "customMetadata";
+				case MetaConstants.CustomLabels: return "labels";
 				case MetaConstants.CustomObject: return "objects";
 				case MetaConstants.CustomField: return "_customfield";
 				case MetaConstants.EmailTemplate: return "email";
+				case MetaConstants.CustomObjectTranslation: return "objectTranslations";
+				case MetaConstants.DelegateGroup: return "delegateGroups";
 				case MetaConstants.Layout: return "layouts";
 				case MetaConstants.PermissionSet: return "permissionsets";
 				case MetaConstants.Profile: return "profiles";
@@ -44,6 +48,8 @@ namespace MetaTiger
 				case MetaConstants.Territory2Type: return "territory2Types";
 				case MetaConstants.Territory2: return "territory2Models";
 				case MetaConstants.Territory2Model: return "territory2Models";
+				case MetaConstants.ContentAsset: return "contentassets";
+				case MetaConstants.SharingRules: return "sharingRules";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}

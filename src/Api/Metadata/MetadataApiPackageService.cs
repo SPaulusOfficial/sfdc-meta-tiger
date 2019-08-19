@@ -20,14 +20,14 @@ namespace MetaTiger.Api.Metadata{
             packageTask.getAllPackage(Organization, response);
         }
 
-        public static void getAllPackageOfUserLastModifiedByName(Organization Organization,MetadataApiClientResponse response,List<string> nameuser){
+        public static void getAllPackageOfUserLastModifiedByName(Organization Organization,MetadataApiClientResponse response,List<string> nameuser,List<String> dates){
             MetadataApiGetAllPackageLastModifiedByName packageTask = new MetadataApiGetAllPackageLastModifiedByName();
-            packageTask.getAllPackage(Organization, response, nameuser);
+            packageTask.getAllPackage(Organization, response, nameuser,dates);
         }
 
-        public static void getAllPackageCreatedByName(Organization Organization,MetadataApiClientResponse response,List<string> nameuser){
+        public static void getAllPackageCreatedByName(Organization Organization,MetadataApiClientResponse response,List<string> nameuser,List<String> dates){
             MetadataApiGetAllPackageCreatedByName packageTask = new MetadataApiGetAllPackageCreatedByName();
-            packageTask.getAllPackage(Organization, response, nameuser);
+            packageTask.getAllPackage(Organization, response, nameuser,dates);
         }
 
      }

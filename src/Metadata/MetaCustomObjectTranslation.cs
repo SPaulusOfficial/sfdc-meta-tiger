@@ -5,15 +5,15 @@ using MetaTiger.ManageFile;
 
 namespace MetaTiger.Metadata
 {
-    class MetaAssignmentRules:MetaBase {        		
+    class MetaCustomObjectTranslation:MetaBase {        		
 
-		public MetaAssignmentRules(){
+		public MetaCustomObjectTranslation(){
 			this.m_list = new List<String>();
-			this.m_metaname = MetaConstants.AssignmentRules;
+			this.m_metaname = MetaConstants.CustomObjectTranslation;
 		} 
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".assignmentRules");											
+			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".objectTranslation");											
 		}
 
 		public override void doMerge(){}

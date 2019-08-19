@@ -10,13 +10,16 @@ namespace MetaTiger.Metadata
             
             switch (Metadata)
 			{
+				case MetaConstants.AppMenu: return new MetaAppMenu();
 				case MetaConstants.ApexClass: return new MetaApexClass();
 				case MetaConstants.ApexTrigger: return new MetaApexTrigger();
 				case MetaConstants.ApexComponent: return new MetaApexComponent();
 				case MetaConstants.ApexPage: return new MetaApexPage();
 				case MetaConstants.CustomMetadata: return new MetaCustomMetadata();
 				case MetaConstants.CustomObject: return new MetaCustomObject();
+				case MetaConstants.CustomLabels: return new MetaCustomLabels();
 				case MetaConstants.CustomField:return new MetaCustomField();
+				case MetaConstants.DelegateGroup:return new MetaDelegateGroup();
 				case MetaConstants.EmailTemplate: return new MetaEmailTemplate();
 				case MetaConstants.Layout: return new MetaLayout();
 				case MetaConstants.PermissionSet: return new MetaPermissionSet();
@@ -25,6 +28,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.RemoteSiteSetting: return new MetaRemoteSiteSetting();				
 				case MetaConstants.EntitlementProcess:  return new MetaEntitlementProcess();				
 				case MetaConstants.Flow: return new MetaFlow();			
+				case MetaConstants.CustomObjectTranslation: return new MetaCustomObjectTranslation();
 				case MetaConstants.FlowDefinition:  return new MetaFlowDefinition();					
 				case MetaConstants.Settings: return new MetaSettings();			
 				case MetaConstants.ListView: return new MetaListView();					
@@ -36,7 +40,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.WorkflowRule:return new MetaWorkflowRule();
 				case MetaConstants.StandardValueSet: return new MetaStandardValueSet();
 				case MetaConstants.CustomTab: return new MetaCustomTab();
-				case MetaConstants.AssignmentRules: return new metaAssignmentRules();
+				case MetaConstants.AssignmentRules: return new MetaAssignmentRules();
 				case MetaConstants.AuraDefinitionBundle: return new metaAuraDefinitionBundle();
 				case MetaConstants.CompactLayout: return new metaCompactLayout();
 				case MetaConstants.CustomApplication: return new metaCustomApplication();
@@ -44,6 +48,8 @@ namespace MetaTiger.Metadata
 				case MetaConstants.Territory2Type: return new metaTerritory2Type();
 				case MetaConstants.Territory2: return new metaTerritory2();
 				case MetaConstants.Territory2Model: return new metaTerritory2Model();
+				case MetaConstants.ContentAsset: return new metaContentAsset();
+				case MetaConstants.SharingRules: return new metaSharingRules();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
