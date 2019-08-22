@@ -12,7 +12,7 @@ namespace MetaTiger.Metadata{
 		}		
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
-			String pathComponent = String.Concat("\\",metaname); 
+			String pathComponent = String.Concat(@"\",metaname); 
 			directoryPath = String.Concat(directoryPath,pathComponent);
 			directoryTargetFilePath = String.Concat(directoryTargetFilePath,pathComponent);
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".auradoc"));

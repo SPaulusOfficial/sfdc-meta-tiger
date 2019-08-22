@@ -20,7 +20,7 @@ namespace MetaTiger.Metadata{
             ConsoleHelper.WriteQuestionLine(Constants.LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG);
             Config m_config = ManageXMLConfig.Deserialize();
             Dictionary<int,Organization> m_organizations = new Dictionary<int,Organization>();
-            if(m_config.PackageManifest.Count>0){
+            if(m_config.Organization.Count>0){
               String rowTitle = getRowForScreen(Constants.propertiesOrganization);
               ConsoleHelper.WriteDocLine(rowTitle);
               foreach (var item in m_config.Organization)

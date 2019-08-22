@@ -16,7 +16,7 @@ namespace MetaTiger.Metadata{
 			String subDirectoryTerritory2 = propertiesTerritory2[0];
 			metaname = propertiesTerritory2[1];
 			String territories = "territories";
-			String bar = "\\";
+			String bar = @"\";
 			
 			directoryPath = String.Concat(directoryPath,bar,subDirectoryTerritory2,bar,territories,bar);
 			directoryTargetFilePath = String.Concat(directoryTargetFilePath,bar,subDirectoryTerritory2,bar,territories,bar);

@@ -74,12 +74,12 @@ Create directory Config/config.xml file with code below:
 ```xml
 <?xml version="1.0"?>
 <Config>
-  <GeneralDirectoryTarget>C:\\package</GeneralDirectoryTarget>
+  <GeneralDirectoryTarget>C:\package</GeneralDirectoryTarget>
   <PackageManifest>
 	    <Id>1</Id>
-      <DirectoryTarget>C:\\package</DirectoryTarget>
-      <RepositorySource>C:\\CI</RepositorySource>
-      <PackageFile>C:\\CI\\package.xml</PackageFile>  
+      <DirectoryTarget>C:\package</DirectoryTarget>
+      <RepositorySource>C:\CI</RepositorySource>
+      <PackageFile>C:\CI\package.xml</PackageFile>  
   </PackageManifest>
   <VersionNumber>4.0</VersionNumber>
 </Config>

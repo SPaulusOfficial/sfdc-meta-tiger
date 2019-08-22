@@ -17,7 +17,7 @@ namespace MetaTiger.Metadata{
 
 		public void doCopy(String sourcePath,String targetPath){			
 			foreach(String metaname in m_list){
-				String directoryPath = String.Concat("\\",MetaDirectory.getDirectory(m_metaname));
+				String directoryPath = String.Concat(@"\",MetaDirectory.getDirectory(m_metaname));
 				String directoryFilePath = String.Concat(sourcePath,directoryPath);
 				String directoryTargetFilePath = String.Concat(targetPath,directoryPath);
 				this.buildCopy(metaname,directoryFilePath,directoryTargetFilePath);								

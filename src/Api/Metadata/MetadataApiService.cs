@@ -111,7 +111,7 @@ namespace MetaTiger.Api.Metadata{
             else if (isStatusSucceeded)
             {
                 printMessages(result, isHaveMessages);
-                String pathDirectory = Environment.CurrentDirectory + "\\package";
+                String pathDirectory = Environment.CurrentDirectory + @"\package";
                 createDirectoryPathPackage(pathDirectory);
                 generateZipFile(result, pathDirectory);
                 ConsoleHelper.WriteDoneLine("Finalize Success Retrieve!");
@@ -120,7 +120,7 @@ namespace MetaTiger.Api.Metadata{
 
         private static void generateZipFile(RetrieveResult result, string pathDirectory)
         {
-            String pathFile = pathDirectory + "\\package.zip";
+            String pathFile = pathDirectory + @"\package.zip";
             File.WriteAllBytes(pathFile, result.zipFile);
         }
 

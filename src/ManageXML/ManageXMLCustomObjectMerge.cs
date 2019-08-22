@@ -33,11 +33,11 @@ namespace MetaTiger.ManageFileXML
         }
 
         public void defaultParameters(string sourcePath){
-            String mergeDirectory = String.Concat(sourcePath,"\\",MetaDirectory.getDirectory(MetaConstants.CustomObject));
+            String mergeDirectory = String.Concat(sourcePath,@"\",MetaDirectory.getDirectory(MetaConstants.CustomObject));
             foreach(KeyValuePair<string, CustomObject> m_object in m_customObjects)
             {    
               String filename = String.Concat(m_object.Key,".object");
-              CustomObject customObject =  ManageXMLCustomObject.Deserialize(String.Concat(mergeDirectory,"\\",filename));
+              CustomObject customObject =  ManageXMLCustomObject.Deserialize(String.Concat(mergeDirectory,@"\",filename));
               m_object.Value.Label = customObject.Label;
               m_object.Value.PluralLabel = customObject.PluralLabel;
               m_object.Value.NameField = customObject.NameField;
@@ -54,12 +54,12 @@ namespace MetaTiger.ManageFileXML
             Boolean isHaveObjectInPackageXml = m_customObjects.Count>0;
             
             if(isHaveObjectInPackageXml){
-                String mergeDirectory = String.Concat(targetPath,"\\","_",MetaDirectory.getDirectory(MetaConstants.CustomObject));
+                String mergeDirectory = String.Concat(targetPath,@"\","_",MetaDirectory.getDirectory(MetaConstants.CustomObject));
                 ManageFileDirectory.createPackageDirectory(mergeDirectory);
                 foreach(KeyValuePair<string, CustomObject> m_object in m_customObjects)
                 {
                     String filename = String.Concat(m_object.Key,".object");
-                    ManageXMLCustomObject.doWrite(m_object.Value,String.Concat(mergeDirectory,"\\"),filename);
+                    ManageXMLCustomObject.doWrite(m_object.Value,String.Concat(mergeDirectory,@"\"),filename);
                 } 
             }
         }
