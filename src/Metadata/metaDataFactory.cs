@@ -50,6 +50,8 @@ namespace MetaTiger.Metadata
 				case MetaConstants.Territory2Model: return new metaTerritory2Model();
 				case MetaConstants.ContentAsset: return new metaContentAsset();
 				case MetaConstants.SharingRules: return new metaSharingRules();
+				case MetaConstants.BrandingSet: return new metaBrandingSet();
+				case MetaConstants.LightningExperienceTheme: return new metaLightningExperienceTheme();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
