@@ -31,6 +31,6 @@ public class Constants{
 
     public static readonly String LANG_PLEASEENTERTOKEN = ">>> Please enter ther token of organization or sandbox:"; 
    
-    public static readonly String LANG_PLEASEENTERPRODUCTION = ">>> Please enter ther type of organization or production/sandbox: (y/n)"; 
+    public static readonly String LANG_PLEASEENTERPRODUCTION = ">>> Is this environment production?: (y/n)"; 
 
 }

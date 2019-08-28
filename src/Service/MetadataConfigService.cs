@@ -17,10 +17,14 @@ namespace MetaTiger.Metadata{
         }
 
         public static Organization chooseCodeOrganization(){
-            ConsoleHelper.WriteQuestionLine(Constants.LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG);
+            
             Config m_config = ManageXMLConfig.Deserialize();
             Dictionary<int,Organization> m_organizations = new Dictionary<int,Organization>();
-            if(m_config.Organization.Count>0){
+            
+            bool isHaveOrganization = m_config.Organization!=null && m_config.Organization.Count>0;
+            
+            if(isHaveOrganization){
+              ConsoleHelper.WriteQuestionLine(Constants.LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG);
               String rowTitle = getRowForScreen(Constants.propertiesOrganization);
               ConsoleHelper.WriteDocLine(rowTitle);
               foreach (var item in m_config.Organization)
@@ -37,8 +41,13 @@ namespace MetaTiger.Metadata{
 
             try
             {
-               ConsoleHelper.WriteQuestionLine(">>> Code Organization:"); 
-               int id = Int32.Parse(Console.ReadLine());
+               int id;
+               if(isHaveOrganization){
+                  ConsoleHelper.WriteQuestionLine(">>> Code Organization:Please enter for new Environment:"); 
+                  id = Int32.Parse(Console.ReadLine());
+               }else{
+                   return generateOrganizationManifest();
+               }
 
                if(m_organizations.ContainsKey(id)){
                    return (m_organizations[id]);
@@ -81,7 +90,7 @@ namespace MetaTiger.Metadata{
             ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPATHREPOSITORY);
             String pathRepository = Console.ReadLine();
 
-            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPATHREPOSITORY);
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERTARGETPATH);
             String targetFiles = Console.ReadLine();
 
             Config m_config = getConfig();
