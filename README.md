@@ -1,5 +1,7 @@
 # Project Meta Tiger 
 
+<img src="https://github.com/brunoslribeiro/sfdc-package-repository-files/blob/master/assets/metatiger.png">
+
 Author: Bruno Smith Lopes Ribeiro
 
 This project is intended to make life easier for Salesforce developers by updating metadata that is changed or created in the sandbox's, and to help deploy to production environments by relating package.xml to the artifacts in the repository.
