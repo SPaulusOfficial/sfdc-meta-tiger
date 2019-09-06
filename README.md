@@ -1,48 +1,34 @@
 # Project Meta Tiger
 
-Creating a Salesforce file tree through the Repository using package.xml, 
-is working with this Metadata for now:
+This project is intended to make life easier for Salesforce developers by updating metadata that is changed or created in the sandbox's, and to help deploy to production environments by relating package.xml to the artifacts in the repository.
 
-<table>
-  <tr>
-    <td><strong>ApexClass</strong></td>
-    <td><strong>ApexTrigger</strong></td>
-    <td><strong>ApexPage</strong></td>
-    <td><strong>ApexComponent</strong></td>
-    <td><strong>CustomMetadata</strong></td>
-  </tr>
-  <tr>
-    <td><strong>CustomField</strong></td>
-    <td><strong>EmailTemplate</strong></td>
-    <td><strong>Layout</strong></td>
-    <td><strong>PermissionSet</strong></td>
-    <td><strong>Profile</strong></td>
-  </tr>
-  <tr>
-    <td><strong>ListView</strong></td>
-    <td><strong>Settings</strong></td>
-    <td><strong>ValidationRules</strong></td>
-    <td><strong>Workflow</strong></td>
-    <td><strong>WorkflowRules</strong></td>
-  </tr>
-  <tr>
-    <td><strong>RecordTypes</strong></td>
-    <td><strong>StandardValueSet</strong></td>
-    <td><strong>MilestoneType</strong></td>
-    <td><strong>RemoteSiteSetting</strong></td>
-    <td><strong>FlowDefinition</strong></td>
-  </tr>
-  <tr>
-    <td><strong>EntitlementProcess</strong></td>
-    <td><strong>AssignmentRules</strong></td>
-    <td><strong>CustomObject</strong></td>
-    <td><strong>Flow</strong></td>
-    <td><strong>Weblink</strong></td>
-  </tr> 
-  <tr>
-     <td><strong>CustomTab</strong></td>
-  </tr>
-</table>
+<h3>1 - Get All Package.xml</h3>                     
+
+his feature serves to get a list of all metadata in your organization. They will be added in a package.xml in the MetaTiger directory called package.
+
+<h3> 2 - Generate Package With Files of Repository </h3>   
+
+This feature is for taking the files that are stored in your repository and preparing for deployment.
+
+<h3> 3 - Retrieve Files in Package </h3>   
+
+This functionality serves to download the metadata mentioned in a package.xml just pass the organization and path that it will download in the package directory a zip file.
+
+List of supported metadata:
+
+&nbsp;<strong>AppMenu</strong> &nbsp;<strong>ApexClass</strong> &nbsp;<strong>ApexTrigger</strong> &nbsp;<strong>ApexComponent</strong> &nbsp;<strong>ApexPage</strong> &nbsp;<strong>CustomMetadata</strong> &nbsp;<strong>CustomObject</strong> &nbsp;<strong>CustomLabels</strong> &nbsp;<strong>CustomField</strong> &nbsp;<strong>DelegateGroup</strong> &nbsp;<strong>EmailTemplate</strong> &nbsp;<strong>Layout</strong> &nbsp;<strong>PermissionSet</strong> &nbsp;<strong>Profile</strong> &nbsp;<strong>StaticResource</strong> &nbsp;<strong>RemoteSiteSetting</strong> &nbsp;<strong>EntitlementProcess</strong> &nbsp;<strong>Flow</strong> &nbsp;<strong>CustomObjectTranslation</strong> &nbsp;<strong>FlowDefinition</strong> &nbsp;<strong>Settings</strong> &nbsp;<strong>ListView</strong> &nbsp;<strong>ValidationRule</strong> &nbsp;<strong>RecordType</strong> &nbsp;<strong>MilestoneType</strong> &nbsp;<strong>WebLink</strong> &nbsp;<strong>Workflow</strong> &nbsp;<strong>WorkflowRule</strong> &nbsp;<strong>StandardValueSet</strong> &nbsp;<strong>CustomTab</strong> &nbsp;<strong>AssignmentRules</strong> &nbsp;<strong>AuraDefinitionBundle</strong> &nbsp;<strong>CompactLayout</strong> &nbsp;<strong>CustomApplication</strong> &nbsp;<strong>FlexiPage</strong> &nbsp;<strong>Territory2Type</strong> &nbsp;<strong>Territory2</strong> &nbsp;<strong>Territory2Model</strong> &nbsp;<strong>ContentAsset</strong> &nbsp;<strong>SharingRules</strong> &nbsp;<strong>BrandingSet</strong> &nbsp;<strong>LightningExperienceTheme </strong>
+
+<h4> 4 - Get All Package.xml With User Last Modified </h4>
+
+This feature has a responsibility to take everything that has been changed by a user list in the sandbox or organization, adding a start and end date. A package.xml will be created in the MetaTiger root directory only with appropriate user changes.
+
+This feature also takes metadata creations that were made by users.
+
+<h4> 5 - Get All Package.xml With User Created </h4>  
+
+You have a responsibility to get the metadata that was only created by users at that reference period.
+
+<h3>Configuration Meta Tiger</h3>
 
 Install  Visual Studio Code.<br />
 Install SDK do .NET Core 2.2 <a href="https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.104-windows-x64-installer">Download</a> <br />
@@ -54,37 +40,10 @@ https://docs.microsoft.com/pt-br/dotnet/core/tutorials/with-visual-studio-code<b
 <img src="https://github.com/brunoslribeiro/sfdc-package-repository-files/blob/master/assets/SFDC-PackageManifest.PNG">
 
 In VisualCode using the terminal <br />
-<strong>"dotNet run"</strong> command The following question will appear:<br />
-<strong>"Please enter the path of the Package.xml path"</strong><br />
-Enter the directory where your package.xml is located | Example: C:\Documents\workspace\DEV05\package.xml<br />
-<strong>"Please enter the path of the repository where the files are:"</strong><br />
-Enter your directory path, where the files are located | C:\Documents\workspace\DEV05<br />
-<br />
-Result:<br />
-<img src="https://github.com/brunoslribeiro/sfdc-package-repository-files/blob/master/assets/Result.PNG">
-At the end it will copy the files that are needed in the package.xml, with the appropriate folders already addressed.<br />
-<br />
+
+Execute command --> dotNet run 
+
+Just select the options below and use the tool normally it will prompt you for the required information.
+
 I hope it's useful!<br />
 
-News:</br>
-<u>Add Config Xml for Path Package | DirectoryTarget | Repository</u>
-
-Create directory Config/config.xml file with code below:
-
-```xml
-<?xml version="1.0"?>
-<Config>
-  <GeneralDirectoryTarget>C:\package</GeneralDirectoryTarget>
-  <PackageManifest>
-	    <Id>1</Id>
-      <DirectoryTarget>C:\package</DirectoryTarget>
-      <RepositorySource>C:\CI</RepositorySource>
-      <PackageFile>C:\CI\package.xml</PackageFile>  
-  </PackageManifest>
-  <VersionNumber>4.0</VersionNumber>
-</Config>
-```
-
-Progress:</br>
-<u> More CustomLabel - Begin 23/02/2019 - Final:23/02/2019 </u></br>
-<u> Auto Merge for CustomObject - Begin 21/02/2019 - Final:??? </u></br>
