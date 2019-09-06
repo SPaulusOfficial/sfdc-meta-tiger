@@ -14,14 +14,13 @@ his feature serves to get a list of all metadata in your organization. They will
 
 This feature is for taking the files that are stored in your repository and preparing for deployment.
 
-<h3> 3 - Retrieve Files in Package </h3>   
-
-This functionality serves to download the metadata mentioned in a package.xml just pass the organization and path that it will download in the package directory a zip file.
-
 List of supported metadata:
 
 &nbsp;<strong>AppMenu</strong> &nbsp;<strong>ApexClass</strong> &nbsp;<strong>ApexTrigger</strong> &nbsp;<strong>ApexComponent</strong> &nbsp;<strong>ApexPage</strong> &nbsp;<strong>CustomMetadata</strong> &nbsp;<strong>CustomObject</strong> &nbsp;<strong>CustomLabels</strong> &nbsp;<strong>CustomField</strong> &nbsp;<strong>DelegateGroup</strong> &nbsp;<strong>EmailTemplate</strong> &nbsp;<strong>Layout</strong> &nbsp;<strong>PermissionSet</strong> &nbsp;<strong>Profile</strong> &nbsp;<strong>StaticResource</strong> &nbsp;<strong>RemoteSiteSetting</strong> &nbsp;<strong>EntitlementProcess</strong> &nbsp;<strong>Flow</strong> &nbsp;<strong>CustomObjectTranslation</strong> &nbsp;<strong>FlowDefinition</strong> &nbsp;<strong>Settings</strong> &nbsp;<strong>ListView</strong> &nbsp;<strong>ValidationRule</strong> &nbsp;<strong>RecordType</strong> &nbsp;<strong>MilestoneType</strong> &nbsp;<strong>WebLink</strong> &nbsp;<strong>Workflow</strong> &nbsp;<strong>WorkflowRule</strong> &nbsp;<strong>StandardValueSet</strong> &nbsp;<strong>CustomTab</strong> &nbsp;<strong>AssignmentRules</strong> &nbsp;<strong>AuraDefinitionBundle</strong> &nbsp;<strong>CompactLayout</strong> &nbsp;<strong>CustomApplication</strong> &nbsp;<strong>FlexiPage</strong> &nbsp;<strong>Territory2Type</strong> &nbsp;<strong>Territory2</strong> &nbsp;<strong>Territory2Model</strong> &nbsp;<strong>ContentAsset</strong> &nbsp;<strong>SharingRules</strong> &nbsp;<strong>BrandingSet</strong> &nbsp;<strong>LightningExperienceTheme </strong>
 
+<h3> 3 - Retrieve Files in Package </h3>   
+
+This functionality serves to download the metadata mentioned in a package.xml just pass the organization and path that it will download in the package directory a zip file.
 <h3> 4 - Get All Package.xml With User Last Modified </h3>
 
 This feature has a responsibility to take everything that has been changed by a user list in the sandbox or organization, adding a start and end date. A package.xml will be created in the MetaTiger root directory only with appropriate user changes.
