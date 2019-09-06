@@ -22,13 +22,13 @@ List of supported metadata:
 
 &nbsp;<strong>AppMenu</strong> &nbsp;<strong>ApexClass</strong> &nbsp;<strong>ApexTrigger</strong> &nbsp;<strong>ApexComponent</strong> &nbsp;<strong>ApexPage</strong> &nbsp;<strong>CustomMetadata</strong> &nbsp;<strong>CustomObject</strong> &nbsp;<strong>CustomLabels</strong> &nbsp;<strong>CustomField</strong> &nbsp;<strong>DelegateGroup</strong> &nbsp;<strong>EmailTemplate</strong> &nbsp;<strong>Layout</strong> &nbsp;<strong>PermissionSet</strong> &nbsp;<strong>Profile</strong> &nbsp;<strong>StaticResource</strong> &nbsp;<strong>RemoteSiteSetting</strong> &nbsp;<strong>EntitlementProcess</strong> &nbsp;<strong>Flow</strong> &nbsp;<strong>CustomObjectTranslation</strong> &nbsp;<strong>FlowDefinition</strong> &nbsp;<strong>Settings</strong> &nbsp;<strong>ListView</strong> &nbsp;<strong>ValidationRule</strong> &nbsp;<strong>RecordType</strong> &nbsp;<strong>MilestoneType</strong> &nbsp;<strong>WebLink</strong> &nbsp;<strong>Workflow</strong> &nbsp;<strong>WorkflowRule</strong> &nbsp;<strong>StandardValueSet</strong> &nbsp;<strong>CustomTab</strong> &nbsp;<strong>AssignmentRules</strong> &nbsp;<strong>AuraDefinitionBundle</strong> &nbsp;<strong>CompactLayout</strong> &nbsp;<strong>CustomApplication</strong> &nbsp;<strong>FlexiPage</strong> &nbsp;<strong>Territory2Type</strong> &nbsp;<strong>Territory2</strong> &nbsp;<strong>Territory2Model</strong> &nbsp;<strong>ContentAsset</strong> &nbsp;<strong>SharingRules</strong> &nbsp;<strong>BrandingSet</strong> &nbsp;<strong>LightningExperienceTheme </strong>
 
-<h4> 4 - Get All Package.xml With User Last Modified </h4>
+<h3> 4 - Get All Package.xml With User Last Modified </h3>
 
 This feature has a responsibility to take everything that has been changed by a user list in the sandbox or organization, adding a start and end date. A package.xml will be created in the MetaTiger root directory only with appropriate user changes.
 
 This feature also takes metadata creations that were made by users.
 
-<h4> 5 - Get All Package.xml With User Created </h4>  
+<h3> 5 - Get All Package.xml With User Created </h3>  
 
 You have a responsibility to get the metadata that was only created by users at that reference period.
 
