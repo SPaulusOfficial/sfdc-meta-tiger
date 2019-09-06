@@ -1,4 +1,6 @@
-# Project Meta Tiger
+# Project Meta Tiger 
+
+Author: Bruno Smith Lopes Ribeiro
 
 This project is intended to make life easier for Salesforce developers by updating metadata that is changed or created in the sandbox's, and to help deploy to production environments by relating package.xml to the artifacts in the repository.
 
@@ -41,7 +43,7 @@ https://docs.microsoft.com/pt-br/dotnet/core/tutorials/with-visual-studio-code<b
 
 In VisualCode using the terminal <br />
 
-Execute command --> dotNet run 
+<strong>Execute command --> dotNet run</strong>
 
 Just select the options below and use the tool normally it will prompt you for the required information.
 
