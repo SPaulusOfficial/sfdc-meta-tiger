@@ -35,7 +35,8 @@ namespace MetaTiger.Metadata{
                     String Password = viewBarInConsoleForScreen(item.Password); 
                     String SecurityToken = String.Concat(item.SecurityToken," ");
                     String production = String.Concat(item.Production," ");
-                    Console.WriteLine(String.Concat(nameOrganization,Username,Password,SecurityToken,production));
+                    String api = String.Concat(item.Api," ");
+                    Console.WriteLine(String.Concat(nameOrganization,Username,Password,SecurityToken,production,api));
                 }
             }
 
@@ -114,13 +115,16 @@ namespace MetaTiger.Metadata{
             ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERTOKEN);
             String token = Console.ReadLine();
 
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERAPI);
+            String api = Console.ReadLine();
+
             ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPRODUCTION);
             
             string production = (Console.ReadLine()=="y") ? "true" : "false";
 
             Config m_config = getConfig();
             
-            Organization vaOrganization = createOrganization(username, password,token,production, m_config);
+            Organization vaOrganization = createOrganization(username, password,token,production,api, m_config);
 
             m_config.Organization.Add(vaOrganization);
 
@@ -129,7 +133,7 @@ namespace MetaTiger.Metadata{
             return vaOrganization;
         }
 
-         private static Organization createOrganization(string userName, string password,string token,string production, Config m_config)
+         private static Organization createOrganization(string userName, string password,string token,string production,string api, Config m_config)
         {
             return new Organization()
             {
@@ -137,6 +141,7 @@ namespace MetaTiger.Metadata{
                 Password = password,
                 SecurityToken = token,
                 Production = production,
+                Api = api,
                 Id = m_config.Organization.Count + 1,
             };
         }

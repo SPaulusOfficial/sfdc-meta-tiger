@@ -51,6 +51,7 @@ namespace MetaTiger.Api.Metadata{
                 Username = Organization.Username,
                 Password = Organization.Password,
                 SecurityToken = Organization.SecurityToken,
+                Api = Organization.Api,
                 Production = (Organization.Production == "true") ? true : false
             };
             response = getMetadataClient(request);

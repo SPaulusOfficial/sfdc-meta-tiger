@@ -14,9 +14,10 @@ namespace MetaTiger.Xml.Config
 		public string Password { get; set; }
 		[XmlElement(ElementName="SecurityToken")]
 		public string SecurityToken { get; set; }
-
 		[XmlElement(ElementName="Production")]
 		public string Production { get; set; }
+		[XmlElement(ElementName="Api")]
+		public string Api { get; set; }
 	}
 
 }

@@ -8,7 +8,7 @@ public class Constants{
     (new List<String> {"Id","Package","RepositoryPath","DirectoryTarget" });
 
     public static readonly List<String> propertiesOrganization = new List<string>
-    (new List<String> {"Id","UserName","Password","SecurityToken","Production"});
+    (new List<String> {"Id","UserName","Password","SecurityToken","Production","Api"});
 
     public static readonly String separateColumnsInConsole = " | ";
 
@@ -24,7 +24,9 @@ public class Constants{
     public static readonly String LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG = ">>> Choose code package manifest save in Config:"; 
 
     public static readonly String LANG_CHOOSECODEORGANIZATIONSAVEINCONFIG = ">>> Choose code organization save in Config:";
-    
+
+    public static readonly String LANG_PLEASEENTERAPI = ">>> Please enter the Api version of the environment: Ex:45.0";
+     
     public static readonly String LANG_PLEASEENTERUSERNAME = ">>> Please enter ther username of organization or sandbox:"; 
 
     public static readonly String LANG_PLEASEENTERPASSWORD = ">>> Please enter ther password of organization or sandbox:"; 
