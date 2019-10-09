@@ -84,13 +84,13 @@ namespace MetaTiger.Metadata{
             string beginDate,endDate;
             bool isHaveBeginDate,isHaveEndDate;
 
-            ConsoleHelper.WriteQuestionLine(">> Enter begin date... (Required)");
+            ConsoleHelper.WriteQuestionLine(">> Enter begin date... (Required) DD/MM/YYYY");
             beginDate = Console.ReadLine(); 
             isHaveBeginDate = (beginDate!=null && beginDate!= "");
             if(isHaveBeginDate)
             dates.Add(beginDate);
 
-            ConsoleHelper.WriteQuestionLine(">> Enter end date... (Required)");
+            ConsoleHelper.WriteQuestionLine(">> Enter end date... (Required) DD/MM/YYYY");
             endDate = Console.ReadLine();  
             isHaveEndDate = (endDate!=null && endDate!= "");
             if(isHaveEndDate)
