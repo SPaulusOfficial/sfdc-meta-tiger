@@ -69,7 +69,7 @@ namespace MetaTiger.Metadata{
             bool isHaveName;
 
             do{
-               ConsoleHelper.WriteQuestionLine(">> Enter with name user...");
+               ConsoleHelper.WriteQuestionLine(">> Enter with name of user... (blank will go to the next step!)");
                nameuser = Console.ReadLine();  
                isHaveName = (nameuser!=null && nameuser!= "");
                if(isHaveName)
@@ -84,13 +84,13 @@ namespace MetaTiger.Metadata{
             string beginDate,endDate;
             bool isHaveBeginDate,isHaveEndDate;
 
-            ConsoleHelper.WriteQuestionLine(">> Enter begin date...");
+            ConsoleHelper.WriteQuestionLine(">> Enter begin date... (Required)");
             beginDate = Console.ReadLine(); 
             isHaveBeginDate = (beginDate!=null && beginDate!= "");
             if(isHaveBeginDate)
             dates.Add(beginDate);
 
-            ConsoleHelper.WriteQuestionLine(">> Enter end date...");
+            ConsoleHelper.WriteQuestionLine(">> Enter end date... (Required)");
             endDate = Console.ReadLine();  
             isHaveEndDate = (endDate!=null && endDate!= "");
             if(isHaveEndDate)
