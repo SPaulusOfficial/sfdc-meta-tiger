@@ -8,7 +8,7 @@ public class Constants{
     (new List<String> {"Id","Package","RepositoryPath","DirectoryTarget" });
 
     public static readonly List<String> propertiesOrganization = new List<string>
-    (new List<String> {"Id","UserName","Password","SecurityToken","Production","Api"});
+    (new List<String> {"Id","UserName","Password","SecurityToken","Environment","Api"});
 
     public static readonly String separateColumnsInConsole = " | ";
 

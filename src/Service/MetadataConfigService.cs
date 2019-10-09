@@ -1,4 +1,6 @@
 using System;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
@@ -32,9 +34,9 @@ namespace MetaTiger.Metadata{
                     m_organizations.Add(item.Id,item);
                     String nameOrganization = viewBarInConsoleForScreen(item.Id.ToString());
                     String Username = viewBarInConsoleForScreen(item.Username);
-                    String Password = viewBarInConsoleForScreen(item.Password); 
-                    String SecurityToken = String.Concat(item.SecurityToken," ");
-                    String production = String.Concat(item.Production," ");
+                    String Password = viewBarInConsoleForScreen(getRowPassword(item.Password,'*')); 
+                    String SecurityToken = String.Concat(getRowPassword(item.SecurityToken,'*')," ");
+                    String production = String.Concat(getEnvironment(item.Production)," ");
                     String api = String.Concat(item.Api," ");
                     Console.WriteLine(String.Concat(nameOrganization,Username,Password,SecurityToken,production,api));
                 }
@@ -222,6 +224,21 @@ namespace MetaTiger.Metadata{
             }
             String rowTitle = String.Concat(rowPropertiesTitle);
             return rowTitle;
+        }
+
+        private static string getEnvironment(string enviroment){
+            return (enviroment=="true") ? "Production" : "Sandbox";
+        }
+
+        private static string getRowPassword(string input, char target)
+        {
+            StringBuilder sb = new StringBuilder(input.Length);
+            for(int i = 0; i < input.Length; i++)
+            {
+                sb.Append(target);
+            }
+            
+            return sb.ToString();
         }
 
         private static string getRowLinePackageForScreen(PackageManifest item)
