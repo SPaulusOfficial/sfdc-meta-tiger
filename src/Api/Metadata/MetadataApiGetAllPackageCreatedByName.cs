@@ -36,10 +36,12 @@ namespace MetaTiger.Api.Metadata{
            
            DateTime beginDate =DateTime.ParseExact(dates[0], "dd/MM/yyyy", CultureInfo.InvariantCulture);
            DateTime endDate =DateTime.ParseExact(dates[1], "dd/MM/yyyy", CultureInfo.InvariantCulture);
-           //DateTime beginDate  = new DateTime(2019, 7, 31, 0, 00, 00);
-           //DateTime endDate = new DateTime(2019, 8, 1, 0, 00, 00);
-           
-           return myusers.Contains(f.createdByName) && f.createdDate!=dt1970 && (f.createdDate >= beginDate && f.createdDate >= endDate); 
+           bool isSelectedCreatedDate = (f.createdDate >= beginDate && f.createdDate <= endDate);
+           bool isMyUserCreatedByName = myusers.Contains(f.createdByName);
+           bool isSelected = (isSelectedCreatedDate && isMyUserCreatedByName);
+
+
+           return isSelected; 
         }
 
      }
