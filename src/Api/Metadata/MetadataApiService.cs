@@ -79,6 +79,46 @@ namespace MetaTiger.Api.Metadata{
             } 
         }
 
+        public static void deployMetadata(Organization Organization,MetadataApiDeployRequest request){
+            MetadataApiClientResponse response;
+            DeployResult result;
+            String asyncId;
+
+            response = generateClientResponse(Organization);
+            //package = ManageXMLPackage.DeserializePackageApi(pathPackage);
+            asyncId = MetadataApiDeployService.deploy(response.Metadataclient,request);
+    
+            try
+            {
+                result = checkResultsOfDeploy(response,asyncId);
+                //extractFile(result);
+            }
+            catch (Exception e)
+            {
+              ConsoleHelper.WriteErrorLine(e.Message);
+            } 
+        }
+
+        private static DeployResult checkResultsOfDeploy(MetadataApiClientResponse response, string asyncId)
+        {
+            DeployResult result;
+            checkDeployStatusResponse responseCheck;
+            do
+            {
+               try{
+                   responseCheck = MetadataApiCheckDeployService.checkDeployStatus(response.Metadataclient, asyncId);
+                   result = responseCheck.result;
+                   ConsoleHelper.WriteDocLine("We are check results, please wait!");
+               }catch(Exception e){
+                  result = new DeployResult();
+                  ConsoleHelper.WriteErrorLine(e.Message);
+               }
+               Thread.Sleep(2000);   
+            } while (!result.done);
+           
+            return result;
+        }
+
         private static RetrieveResult checkResultsOfRetrieve(MetadataApiClientResponse response, string asyncId)
         {
             RetrieveResult result;
