@@ -16,7 +16,7 @@ namespace MetaTiger
                 Console.WriteLine("");
                 ConsoleHelper.WriteDocLine("###################################################");
                 ConsoleHelper.WriteDocLine("#                META-TIGER                       #");
-                ConsoleHelper.WriteDocLine("#                Version 5.0                      #");
+                ConsoleHelper.WriteDocLine("#                Version 6.0                      #");
                 ConsoleHelper.WriteDocLine("#       Author:Bruno Smith Lopes Ribeiro          #");
                 ConsoleHelper.WriteDocLine("#       E-mail:bruno_smith10@hotmail.com          #");
                 ConsoleHelper.WriteDocLine("###################################################");
@@ -25,7 +25,8 @@ namespace MetaTiger
                 ConsoleHelper.WriteQuestionLine("3 - Retrieve Files in Package");
                 ConsoleHelper.WriteQuestionLine("4 - Get All Package.xml With User Last Modified");
                 ConsoleHelper.WriteQuestionLine("5 - Get All Package.xml With User Created");
-                ConsoleHelper.WriteQuestionLine("6 - Exit Metatiger");
+                ConsoleHelper.WriteQuestionLine("6 - Deploy Package in Salesforce");
+                ConsoleHelper.WriteQuestionLine("7 - Exit Metatiger");
                 ConsoleHelper.WriteQuestionLine("Please choose option:");
                 
                 try{
@@ -50,10 +51,13 @@ namespace MetaTiger
                         case 5: 
                                 MetadataPackageService.getAllPackageWithNameCreated();
                                 break;
+                        case 6: 
+                                MetadataDeployService.deployPackage();
+                                break;
                         default:
                                 break;
                 }
-            }while(action!=6);
+            }while(action!=7);
             
         }     
     }

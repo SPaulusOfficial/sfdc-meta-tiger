@@ -107,7 +107,7 @@ namespace MetaTiger.Metadata{
              ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
 
-         public static void generatePackageRepository(){
+        public static void generatePackageRepository(){
             Dictionary<string, List<string>> mapPackage = new Dictionary<string, List<string>>();
         
             PackageManifest packageManifest;
