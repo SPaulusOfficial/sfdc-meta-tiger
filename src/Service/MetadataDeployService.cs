@@ -15,15 +15,16 @@ namespace MetaTiger.Metadata{
         
         public static void deployPackage(){
              Organization m_organization = MetadataConfigService.chooseCodeOrganization();
-             MetadataApiDeployRequest request = generateDeployRequest();
+             MetadataApiDeployRequest request = generateDeployRequest(m_organization);
              //MetadataApiService.deployMetadata(m_organization, request);
              ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
 
-        public static MetadataApiDeployRequest generateDeployRequest(){
+        public static MetadataApiDeployRequest generateDeployRequest(Organization m_organization){
             MetadataApiDeployRequest request = new MetadataApiDeployRequest();
+            ConsoleHelper.WriteDocLine(">> Entry Debugging Header");
             request.DebuggingHeader = generateDebuggingHeader();
-            request.DeployOptions = generateDeployOptions();
+            request.DeployOptions = generateDeployOptions(m_organization);
             //request.ZipFile = getZipFile();
             return request;
         }
@@ -67,7 +68,7 @@ namespace MetaTiger.Metadata{
                 
                 info.category = category.Value;
 
-                ConsoleHelper.WriteQuestionLine("Choose a level for category: " + category.Key + " ? 0-NONE|1-ERROR|2-WARN|3-INFO|4-DEBUG|5-FINE|6-FINER|7-FINEST");
+                ConsoleHelper.WriteQuestionLine("Choose a level for category for Log: " + category.Key + " ? 0-NONE|1-ERROR|2-WARN|3-INFO|4-DEBUG|5-FINE|6-FINER|7-FINEST");
                 
                 int numberLevel = Convert.ToInt32(Console.ReadLine()); 
 
@@ -107,8 +108,86 @@ namespace MetaTiger.Metadata{
             return logInfoList;
         }
 
-        public static DeployOptions generateDeployOptions(){
+        public static TestLevel generateTestLevel(){
+            TestLevel testLevel;
+            Dictionary<string, TestLevel> typesTest = new Dictionary<string, TestLevel>();
+            
+            typesTest.Add("NoTestRun", TestLevel.NoTestRun);
+            typesTest.Add("RunSpecifiedTests", TestLevel.RunSpecifiedTests);
+            typesTest.Add("RunLocalTests", TestLevel.RunLocalTests);
+            typesTest.Add("RunAllTestsInOrg", TestLevel.RunAllTestsInOrg);
+            
+            ConsoleHelper.WriteQuestionLine("Choose a level for Test ? 0-NoTestRun|1-RunSpecifiedTests|2-RunLocalTests|3-RunAllTestsInOrg");
+                
+            int numberLevel = Convert.ToInt32(Console.ReadLine()); 
+
+                switch (numberLevel)
+                {
+                    case 0:
+                        testLevel = typesTest["NoTestRun"];
+                        break;
+                    case 1:
+                        testLevel = typesTest["RunSpecifiedTests"];
+                        break;
+                    case 2:
+                        testLevel = typesTest["RunLocalTests"];
+                        break;
+                    case 3:
+                        testLevel = typesTest["RunAllTestsInOrg"];
+                        break;
+                    default:
+                        testLevel = typesTest["RunLocalTests"];
+                        break;
+                }
+
+            return testLevel;
+        }
+
+        public static DeployOptions generateDeployOptions(Organization m_organization){
             DeployOptions deployOptions = new DeployOptions();
+            deployOptions.allowMissingFiles = false;
+            deployOptions.autoUpdatePackage = false;
+            deployOptions.checkOnly = false;
+            deployOptions.ignoreWarnings = false;
+            deployOptions.performRetrieve = false;
+            deployOptions.purgeOnDelete = false;
+            deployOptions.rollbackOnError = true;
+            deployOptions.testLevel = TestLevel.RunLocalTests;
+
+            if(m_organization.Production == "true"){
+                ConsoleHelper.WriteQuestionLine("Do you want to enable allowMissingFiles ?");
+                string allowMissingFiles = (Console.ReadLine()=="y") ? "true" : "false";
+                deployOptions.allowMissingFiles = (allowMissingFiles=="y") ? true : false;
+
+                ConsoleHelper.WriteQuestionLine("Do you want to enable autoUpdatePackage ?");
+                string autoUpdatePackage = (Console.ReadLine()=="y") ? "true" : "false";
+                deployOptions.autoUpdatePackage = (autoUpdatePackage=="y") ? true : false;
+            }
+           
+            ConsoleHelper.WriteQuestionLine("Do you want to enable checkOnly ?");
+            string checkOnly = (Console.ReadLine()=="y") ? "true" : "false";
+            deployOptions.checkOnly = (checkOnly=="y") ? true : false;
+
+            ConsoleHelper.WriteQuestionLine("Do you want to enable ignoreWarnings ?");
+            string ignoreWarnings = (Console.ReadLine()=="y") ? "true" : "false";
+            deployOptions.ignoreWarnings = (ignoreWarnings=="y") ? true : false;
+
+            //ConsoleHelper.WriteQuestionLine("Do you want to enable performRetrieve ?");
+            //string performRetrieve = (Console.ReadLine()=="y") ? "true" : "false";
+            //deployOptions.performRetrieve = (performRetrieve=="y") ? true : false;
+
+            ConsoleHelper.WriteQuestionLine("Do you want to enable purgeOnDelete ?");
+            string purgeOnDelete = (Console.ReadLine()=="y") ? "true" : "false";
+            deployOptions.purgeOnDelete = (purgeOnDelete=="y") ? true : false;
+
+            if(m_organization.Production == "true"){
+                ConsoleHelper.WriteQuestionLine("Do you want to enable rollbackOnError ?");
+                string rollbackOnError = (Console.ReadLine()=="y") ? "true" : "false";
+                deployOptions.rollbackOnError = (rollbackOnError=="y") ? true : false;
+            }
+             
+            deployOptions.testLevel = generateTestLevel();
+
             return deployOptions;
         }
 
