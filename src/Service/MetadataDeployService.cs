@@ -16,7 +16,7 @@ namespace MetaTiger.Metadata{
         public static void deployPackage(){
              Organization m_organization = MetadataConfigService.chooseCodeOrganization();
              MetadataApiDeployRequest request = generateDeployRequest(m_organization);
-             //MetadataApiService.deployMetadata(m_organization, request);
+             MetadataApiService.deployMetadata(m_organization, request);
              ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
 
@@ -25,7 +25,7 @@ namespace MetaTiger.Metadata{
             ConsoleHelper.WriteDocLine(">> Entry Debugging Header");
             request.DebuggingHeader = generateDebuggingHeader();
             request.DeployOptions = generateDeployOptions(m_organization);
-            //request.ZipFile = getZipFile();
+            request.ZipFile = getZipFile();
             return request;
         }
 
@@ -143,6 +143,22 @@ namespace MetaTiger.Metadata{
             return testLevel;
         }
 
+        public static String[] generateRunTests(){
+            List<string> classTests = new List<string>();
+            string className;
+            bool isHaveClass;
+
+            do{
+               ConsoleHelper.WriteQuestionLine(">> Enter with name of test class... (blank will go to the next step!)");
+               className = Console.ReadLine();  
+               isHaveClass = (className!=null && className!= "");
+               if(isHaveClass)
+               classTests.Add(className);
+             }while (isHaveClass);
+
+             return classTests.ToArray();
+        }
+
         public static DeployOptions generateDeployOptions(Organization m_organization){
             DeployOptions deployOptions = new DeployOptions();
             deployOptions.allowMissingFiles = false;
@@ -154,7 +170,7 @@ namespace MetaTiger.Metadata{
             deployOptions.rollbackOnError = true;
             deployOptions.testLevel = TestLevel.RunLocalTests;
 
-            if(m_organization.Production == "true"){
+            if(m_organization.Production != "true"){
                 ConsoleHelper.WriteQuestionLine("Do you want to enable allowMissingFiles ?");
                 string allowMissingFiles = (Console.ReadLine()=="y") ? "true" : "false";
                 deployOptions.allowMissingFiles = (allowMissingFiles=="y") ? true : false;
@@ -180,7 +196,7 @@ namespace MetaTiger.Metadata{
             string purgeOnDelete = (Console.ReadLine()=="y") ? "true" : "false";
             deployOptions.purgeOnDelete = (purgeOnDelete=="y") ? true : false;
 
-            if(m_organization.Production == "true"){
+            if(m_organization.Production != "true"){
                 ConsoleHelper.WriteQuestionLine("Do you want to enable rollbackOnError ?");
                 string rollbackOnError = (Console.ReadLine()=="y") ? "true" : "false";
                 deployOptions.rollbackOnError = (rollbackOnError=="y") ? true : false;
@@ -188,13 +204,23 @@ namespace MetaTiger.Metadata{
              
             deployOptions.testLevel = generateTestLevel();
 
+            if(deployOptions.testLevel == TestLevel.RunSpecifiedTests){
+              deployOptions.runTests = generateRunTests();
+            }
+
+            ConsoleHelper.WriteQuestionLine("Do you want to enable singlePackage ?");
+            string singlePackage = (Console.ReadLine()=="y") ? "true" : "false";
+            deployOptions.singlePackage = (singlePackage=="y") ? true : false;
+
             return deployOptions;
         }
 
-        /*public static byte[] getZipFile(){
-            byte[] zipFile = byte[];
+        public static byte[] getZipFile(){
+            ConsoleHelper.WriteQuestionLine("Please enter the path directory package:");
+            string path = Console.ReadLine();
+            byte[] zipFile = ManageFileZip.createZipFile(path);
             return zipFile;
-        }*/
+        }
 
     }
 
