@@ -10,6 +10,9 @@ public class Constants{
     public static readonly List<String> propertiesOrganization = new List<string>
     (new List<String> {"Id","UserName","Password","SecurityToken","Environment","Api"});
 
+    public static readonly List<String> propertiesDeployOrganization = new List<string>
+    (new List<String> {"Id","DeployNick"});
+
     public static readonly String separateColumnsInConsole = " | ";
 
     public static readonly String LANG_CODEPACKAGE = ">>> Code Package:";

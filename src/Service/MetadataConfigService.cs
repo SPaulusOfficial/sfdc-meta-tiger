@@ -63,11 +63,52 @@ namespace MetaTiger.Metadata{
             { 
                  ConsoleHelper.WriteErrorLine("Not Found Organization");
                 return generateOrganizationManifest();
-            }
-
-            
+            }            
         }
 
+         public static OrganizationDeploy chooseCodeOrganizationDeploy(Organization organization){
+            Dictionary<int,OrganizationDeploy> m_organizationsDeploy = new Dictionary<int,OrganizationDeploy>();
+            
+            bool isHaveOrganizationDeploy = organization.DeploySettings!=null && organization.DeploySettings.Count>0;
+            
+            if(isHaveOrganizationDeploy){
+              ConsoleHelper.WriteQuestionLine("Choose a deployment configuration for your organization:");
+              String rowTitle = getRowForScreen(Constants.propertiesDeployOrganization);
+              ConsoleHelper.WriteDocLine(rowTitle);
+              foreach (var item in organization.DeploySettings)
+                {
+                    m_organizationsDeploy.Add(item.Id,item);
+                    String nameOrganization = viewBarInConsoleForScreen(item.Id.ToString());
+                    String DeployNick = viewBarInConsoleForScreen(item.DeployNick);
+                    Console.WriteLine(String.Concat(nameOrganization,DeployNick));
+                }
+            }
+
+            try
+            {
+               int id;
+               if(isHaveOrganizationDeploy){
+                  ConsoleHelper.WriteQuestionLine(">>> Code Organization Deploy:Please enter for new Deploy Settings:"); 
+                  id = Int32.Parse(Console.ReadLine());
+               }else{
+                   return null;
+               }
+
+               if(m_organizationsDeploy.ContainsKey(id)){
+                   return (m_organizationsDeploy[id]);
+               }else{
+                   ConsoleHelper.WriteWarningLine("Not Found Deploy Settings");
+                   return null;
+               }
+            }
+            catch (System.Exception)
+            { 
+                ConsoleHelper.WriteErrorLine("Not Found Deploy Settings");
+                return null;
+            }            
+        }
+
+        
         public static PackageManifest chooseCodePackageManifest(){
             Dictionary<int, PackageManifest> m_packages;
 
@@ -135,6 +176,21 @@ namespace MetaTiger.Metadata{
             return vaOrganization;
         }
 
+        public static void addOrganizationDeploy(Organization organization){
+           Config m_config = getConfig(); 
+           Dictionary<int,Organization> m_organizations = new Dictionary<int,Organization>();
+           bool isHaveOrganization = m_config.Organization!=null && m_config.Organization.Count>0;
+
+           foreach (var item in m_config.Organization)
+           {
+                if(item.Id == organization.Id){
+                  item.DeploySettings = organization.DeploySettings; 
+                }
+           }
+
+           ManageXMLConfig.doWrite(m_config);
+        }
+
          private static Organization createOrganization(string userName, string password,string token,string production,string api, Config m_config)
         {
             return new Organization()
@@ -145,6 +201,7 @@ namespace MetaTiger.Metadata{
                 Production = production,
                 Api = api,
                 Id = m_config.Organization.Count + 1,
+                DeploySettings = new List<OrganizationDeploy>(),
             };
         }
 

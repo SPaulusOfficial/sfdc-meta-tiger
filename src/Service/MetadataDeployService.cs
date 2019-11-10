@@ -22,16 +22,46 @@ namespace MetaTiger.Metadata{
 
         public static MetadataApiDeployRequest generateDeployRequest(Organization m_organization){
             MetadataApiDeployRequest request = new MetadataApiDeployRequest();
-            ConsoleHelper.WriteDocLine(">> Entry Debugging Header");
-            request.DebuggingHeader = generateDebuggingHeader();
-            request.DeployOptions = generateDeployOptions(m_organization);
+            OrganizationDeploy organizationDeploy;
+            bool isHaveDeploySettings = m_organization.DeploySettings!=null && m_organization.DeploySettings.Count>0;
+
+            if(isHaveDeploySettings){
+             organizationDeploy = MetadataConfigService.chooseCodeOrganizationDeploy(m_organization); 
+             if(organizationDeploy==null){
+               organizationDeploy = createOrganizationDeploy(m_organization.DeploySettings.Count,m_organization);
+             }
+            }else{
+             organizationDeploy = createOrganizationDeploy(0,m_organization);
+            }
+
+            request.DebuggingHeader = organizationDeploy.DebuggingHeader;
+            request.DeployOptions = organizationDeploy.DeployOptions;
+
+            ConsoleHelper.WriteDocLine(">> Deployment Directory Entry");
             request.ZipFile = getZipFile();
             return request;
         }
 
+        public static OrganizationDeploy createOrganizationDeploy(int id,Organization m_organization){
+             OrganizationDeploy organizationDeploy = new OrganizationDeploy();
+             organizationDeploy.Id = id+1;
+             ConsoleHelper.WriteQuestionLine(">> Deploy Nick Entry ");
+             organizationDeploy.DeployNick = Console.ReadLine();
+             
+             ConsoleHelper.WriteDocLine(">> Debugging Header Entry ");
+             organizationDeploy.DebuggingHeader = generateDebuggingHeader();
+             
+             ConsoleHelper.WriteDocLine(">> Deploy Options Entry ");
+             organizationDeploy.DeployOptions = generateDeployOptions(m_organization);
+             
+             m_organization.DeploySettings.Add(organizationDeploy);
+             MetadataConfigService.addOrganizationDeploy(m_organization);
+
+             return organizationDeploy;
+        }
+
         public static DebuggingHeader generateDebuggingHeader(){
-            DebuggingHeader debugHeader = new DebuggingHeader();
-            //deprecated debugHeader.debugLevel = LogType.None;   
+            DebuggingHeader debugHeader = new DebuggingHeader();   
             List<LogInfo> logInfoList = generateLogInfo();
             debugHeader.categories = logInfoList.ToArray();         
             return debugHeader;
@@ -41,16 +71,23 @@ namespace MetaTiger.Metadata{
             List<LogInfo> logInfoList = new List<LogInfo>(); 
             Dictionary<string, LogCategory> categories = new Dictionary<string, LogCategory>();
             
-            categories.Add("Db", LogCategory.Db);
-            categories.Add("Workflow", LogCategory.Workflow);
-            categories.Add("Validation", LogCategory.Validation);
-            categories.Add("Callout", LogCategory.Callout);
-            categories.Add("Apex_code", LogCategory.Apex_code);
-            categories.Add("Apex_profiling", LogCategory.Apex_profiling);
-            categories.Add("Visualforce", LogCategory.Visualforce);
-            categories.Add("Wave", LogCategory.Wave);
-            categories.Add("Nba", LogCategory.Nba);
-            categories.Add("All", LogCategory.All);
+            ConsoleHelper.WriteQuestionLine("Do you want to choose a single level for all logs?");
+            string singleLevel = (Console.ReadLine()=="y") ? "true" : "false";
+            bool allChoice = (singleLevel=="y") ? true : false;
+            
+            if(allChoice){
+                categories.Add("All", LogCategory.All);    
+            }else{
+                categories.Add("Db", LogCategory.Db);
+                categories.Add("Workflow", LogCategory.Workflow);
+                categories.Add("Validation", LogCategory.Validation);
+                categories.Add("Callout", LogCategory.Callout);
+                categories.Add("Apex_code", LogCategory.Apex_code);
+                categories.Add("Apex_profiling", LogCategory.Apex_profiling);
+                categories.Add("Visualforce", LogCategory.Visualforce);
+                categories.Add("Wave", LogCategory.Wave);
+                categories.Add("Nba", LogCategory.Nba);   
+            }
 
             Dictionary<string, LogCategoryLevel> categoriesLevel = new Dictionary<string, LogCategoryLevel>();
             categoriesLevel.Add("None",LogCategoryLevel.None);
@@ -102,6 +139,7 @@ namespace MetaTiger.Metadata{
                         info.level = categoriesLevel["None"];
                         break;
                 }
+                logInfoList.Add(info);
             }
            
 
