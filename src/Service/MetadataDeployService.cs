@@ -73,7 +73,7 @@ namespace MetaTiger.Metadata{
             
             ConsoleHelper.WriteQuestionLine("Do you want to choose a single level for all logs?");
             string singleLevel = (Console.ReadLine()=="y") ? "true" : "false";
-            bool allChoice = (singleLevel=="y") ? true : false;
+            bool allChoice = (singleLevel=="true") ? true : false;
             
             if(allChoice){
                 categories.Add("All", LogCategory.All);    
