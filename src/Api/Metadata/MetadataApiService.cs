@@ -131,12 +131,19 @@ namespace MetaTiger.Api.Metadata{
         {
             RetrieveResult result;
             checkRetrieveStatusResponse responseCheck;
+
+            ConsoleHelper.WriteDocLine("Request for a deploy submitted successfully.");
+            ConsoleHelper.WriteDocLine("Request ID for the current deploy task: " + asyncId);
+            ConsoleHelper.WriteDocLine("Waiting for server to finish processing the request...");
+
             do
             {
                try{
                    responseCheck = MetadataApiCheckRetrieveService.checkRetrieveStatus(response.Metadataclient, asyncId);
                    result = responseCheck.result;
-                   ConsoleHelper.WriteDocLine("We are check results, please wait!");
+                   
+                   ConsoleHelper.WriteDocLine("Request Status: "+ result.status);
+                   
                }catch(Exception e){
                   result = new RetrieveResult();
                   ConsoleHelper.WriteErrorLine(e.Message);
