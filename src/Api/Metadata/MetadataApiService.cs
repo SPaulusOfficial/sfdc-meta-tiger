@@ -103,6 +103,7 @@ namespace MetaTiger.Api.Metadata{
         {
             DeployResult result;
             checkDeployStatusResponse responseCheck;
+            string debugLog = "";
                       
             ConsoleHelper.WriteDocLine("Request for a deploy submitted successfully.");
             ConsoleHelper.WriteDocLine("Request ID for the current deploy task: " + asyncId);
@@ -117,13 +118,25 @@ namespace MetaTiger.Api.Metadata{
                    if(result.stateDetail!=null){
                     ConsoleHelper.WriteDocLine(result.stateDetail);
                    }
+                   if(responseCheck.DebuggingInfo!=null){
+                     debugLog = responseCheck.DebuggingInfo.debugLog;
+                   }
+                   if(result.status==DeployStatus.Failed){
+                    for(int i = 0; i < result.details.componentFailures.Length; i++){
+                        DeployMessage message = result.details.componentFailures[i];
+                        ConsoleHelper.WriteErrorLine(message.componentType + " " + message.fullName + " " + message.problem);
+                    }
+                   }
                }catch(Exception e){
                   result = new DeployResult();
                   ConsoleHelper.WriteErrorLine(e.Message);
                }
                Thread.Sleep(2000);   
+               
             } while (!result.done);
            
+            ConsoleHelper.WriteDocLine(debugLog);
+
             return result;
         }
 
@@ -150,7 +163,7 @@ namespace MetaTiger.Api.Metadata{
                }
                Thread.Sleep(2000);   
             } while (!result.done);
-           
+            
             return result;
         }
 

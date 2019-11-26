@@ -20,6 +20,35 @@ namespace MetaTiger.Metadata{
              ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
 
+        public static void deployPackage(string organizationId,string organizationdeploytype,string directoryTarget){
+             Organization m_organization = MetadataConfigService.chooseCodeOrganization(organizationId);
+             MetadataApiDeployRequest request = generateDeployRequest(m_organization,organizationdeploytype,directoryTarget);
+             MetadataApiService.deployMetadata(m_organization, request);
+             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
+        }
+
+        public static MetadataApiDeployRequest generateDeployRequest(Organization m_organization,string organizationdeploytype,string directoryTarget){
+            MetadataApiDeployRequest request = new MetadataApiDeployRequest();
+            OrganizationDeploy organizationDeploy;
+            bool isHaveDeploySettings = m_organization.DeploySettings!=null && m_organization.DeploySettings.Count>0;
+
+            if(isHaveDeploySettings){
+             organizationDeploy = MetadataConfigService.chooseCodeOrganizationDeploy(m_organization,organizationdeploytype); 
+             if(organizationDeploy==null){
+               organizationDeploy = createOrganizationDeploy(m_organization.DeploySettings.Count,m_organization);
+             }
+            }else{
+             organizationDeploy = createOrganizationDeploy(0,m_organization);
+            }
+
+            request.DebuggingHeader = organizationDeploy.DebuggingHeader;
+            request.DeployOptions = organizationDeploy.DeployOptions;
+
+            ConsoleHelper.WriteDocLine(">> Deployment Directory Entry");
+            request.ZipFile = getZipFile(directoryTarget);
+            return request;
+        }
+
         public static MetadataApiDeployRequest generateDeployRequest(Organization m_organization){
             MetadataApiDeployRequest request = new MetadataApiDeployRequest();
             OrganizationDeploy organizationDeploy;
@@ -256,6 +285,14 @@ namespace MetaTiger.Metadata{
         public static byte[] getZipFile(){
             ConsoleHelper.WriteQuestionLine("Please enter the path directory package:");
             string path = Console.ReadLine();
+            byte[] zipFile = ManageFileZip.createZipFile(path);
+            return zipFile;
+        }
+
+         public static byte[] getZipFile(string directoryTarget){
+            ConsoleHelper.WriteQuestionLine("Please enter the path directory package:");
+            ConsoleHelper.WriteDocLine(directoryTarget);
+            string path = directoryTarget;
             byte[] zipFile = ManageFileZip.createZipFile(path);
             return zipFile;
         }

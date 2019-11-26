@@ -66,6 +66,54 @@ namespace MetaTiger.Metadata{
             }            
         }
 
+        public static Organization chooseCodeOrganization(string organizationId){
+            
+            Config m_config = ManageXMLConfig.Deserialize();
+            Dictionary<int,Organization> m_organizations = new Dictionary<int,Organization>();
+            
+            bool isHaveOrganization = m_config.Organization!=null && m_config.Organization.Count>0;
+            
+            if(isHaveOrganization){
+              ConsoleHelper.WriteQuestionLine(Constants.LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG);
+              String rowTitle = getRowForScreen(Constants.propertiesOrganization);
+              ConsoleHelper.WriteDocLine(rowTitle);
+              foreach (var item in m_config.Organization)
+                {
+                    m_organizations.Add(item.Id,item);
+                    String nameOrganization = viewBarInConsoleForScreen(item.Id.ToString());
+                    String Username = viewBarInConsoleForScreen(item.Username);
+                    String Password = viewBarInConsoleForScreen(getRowPassword(item.Password,'*')); 
+                    String SecurityToken = String.Concat(getRowPassword(item.SecurityToken,'*')," ");
+                    String production = String.Concat(getEnvironment(item.Production)," ");
+                    String api = String.Concat(item.Api," ");
+                    Console.WriteLine(String.Concat(nameOrganization,Username,Password,SecurityToken,production,api));
+                }
+            }
+
+            try
+            {
+               int id;
+               if(isHaveOrganization){
+                  ConsoleHelper.WriteQuestionLine(">>> Code Organization:Please enter for new Environment:"); 
+                  id = Int32.Parse(organizationId);
+               }else{
+                   return generateOrganizationManifest();
+               }
+
+               if(m_organizations.ContainsKey(id)){
+                   return (m_organizations[id]);
+               }else{
+                   ConsoleHelper.WriteWarningLine("Not Found Organization");
+                   return new Organization();
+               }
+            }
+            catch (System.Exception)
+            { 
+                 ConsoleHelper.WriteErrorLine("Not Found Organization");
+                return generateOrganizationManifest();
+            }            
+        }
+
          public static OrganizationDeploy chooseCodeOrganizationDeploy(Organization organization){
             Dictionary<int,OrganizationDeploy> m_organizationsDeploy = new Dictionary<int,OrganizationDeploy>();
             
@@ -108,6 +156,48 @@ namespace MetaTiger.Metadata{
             }            
         }
 
+        public static OrganizationDeploy chooseCodeOrganizationDeploy(Organization organization,string organizationDeployType){
+            Dictionary<int,OrganizationDeploy> m_organizationsDeploy = new Dictionary<int,OrganizationDeploy>();
+            
+            bool isHaveOrganizationDeploy = organization.DeploySettings!=null && organization.DeploySettings.Count>0;
+            
+            if(isHaveOrganizationDeploy){
+              ConsoleHelper.WriteQuestionLine("Choose a deployment configuration for your organization:");
+              String rowTitle = getRowForScreen(Constants.propertiesDeployOrganization);
+              ConsoleHelper.WriteDocLine(rowTitle);
+              foreach (var item in organization.DeploySettings)
+                {
+                    m_organizationsDeploy.Add(item.Id,item);
+                    String nameOrganization = viewBarInConsoleForScreen(item.Id.ToString());
+                    String DeployNick = viewBarInConsoleForScreen(item.DeployNick);
+                    Console.WriteLine(String.Concat(nameOrganization,DeployNick));
+                }
+            }
+
+            try
+            {
+               int id;
+               if(isHaveOrganizationDeploy){
+                  ConsoleHelper.WriteQuestionLine(">>> Code Organization Deploy:Please enter for new Deploy Settings:"); 
+                  id = Int32.Parse(organizationDeployType);
+               }else{
+                   return null;
+               }
+
+               if(m_organizationsDeploy.ContainsKey(id)){
+                   return (m_organizationsDeploy[id]);
+               }else{
+                   ConsoleHelper.WriteWarningLine("Not Found Deploy Settings");
+                   return null;
+               }
+            }
+            catch (System.Exception)
+            { 
+                ConsoleHelper.WriteErrorLine("Not Found Deploy Settings");
+                return null;
+            }            
+        }
+
         
         public static PackageManifest chooseCodePackageManifest(){
             Dictionary<int, PackageManifest> m_packages;
@@ -120,6 +210,24 @@ namespace MetaTiger.Metadata{
             try
             {
                 return selectedCodePackageManifest(m_packages,m_config);
+            }
+            catch (System.Exception)
+            {
+                return generatePackageManifest();
+            }
+        }
+
+        public static PackageManifest chooseCodePackageManifest(string indexPackageRepository){
+            Dictionary<int, PackageManifest> m_packages;
+
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG);
+
+            Config m_config = ReadConfig();
+            m_packages = viewPackageManifestInConfig(m_config);
+
+            try
+            {
+                return selectedCodePackageManifest(m_packages,m_config,indexPackageRepository);
             }
             catch (System.Exception)
             {
@@ -220,6 +328,22 @@ namespace MetaTiger.Metadata{
         {
             ConsoleHelper.WriteQuestionLine(Constants.LANG_CODEPACKAGE);
             int id = Int32.Parse(Console.ReadLine());
+
+            Boolean isHaveKey = m_packages.ContainsKey(id);
+
+            if (isHaveKey){
+                PackageManifest selectedManifest = m_packages[id];
+                selectedManifest.DirectoryTarget = selectedManifest.DirectoryTarget!=null ? selectedManifest.DirectoryTarget : m_config.GeneralDirectoryTarget;
+                return (selectedManifest);
+            }else{
+                ConsoleHelper.WriteWarningLine(Constants.LANG_NOTFOUNDPACKAGEMANIFEST);
+                throw new Exception();
+            }
+        }
+
+        private static PackageManifest selectedCodePackageManifest(Dictionary<int, PackageManifest> m_packages,Config m_config,string indexPackage)
+        { 
+            int id = Int32.Parse(indexPackage);
 
             Boolean isHaveKey = m_packages.ContainsKey(id);
 

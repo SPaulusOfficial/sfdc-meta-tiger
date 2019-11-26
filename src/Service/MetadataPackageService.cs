@@ -107,30 +107,6 @@ namespace MetaTiger.Metadata{
              ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
 
-        public static void generatePackageRepository(){
-            Dictionary<string, List<string>> mapPackage = new Dictionary<string, List<string>>();
-        
-            PackageManifest packageManifest;
-
-            Config m_config = MetadataConfigService.getConfig();
-
-            packageManifest = MetadataConfigService.chooseCodePackageManifest();
-
-            if (!ManageFileDirectory.validateDirectory(packageManifest.RepositorySource)){
-                ConsoleHelper.WriteErrorLine(">>> Path not found:" + packageManifest.RepositorySource);
-                return;
-            }
-
-            mapPackage = ManageXMLPackage.buildMap(packageManifest.PackageFile);    
-
-            List<IMetadata> MetaDatas = MetadataService.createDirectory(mapPackage, packageManifest.DirectoryTarget);
-            MetadataService.validate(mapPackage, MetaDatas);
-            MetadataService.copy(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
-            MetadataService.merge(packageManifest.RepositorySource,packageManifest.DirectoryTarget,MetaDatas);
-            MetadataService.copyPackage(packageManifest.PackageFile, packageManifest.DirectoryTarget);
-
-            ConsoleHelper.WriteDoneLine(">> Finalize the process...");
-        }
     }
 
 }
