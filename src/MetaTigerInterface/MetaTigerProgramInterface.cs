@@ -60,12 +60,22 @@ namespace MetaTiger.MetaTigerInterface
         }
 
         public static void run(string[] args){
-           string idRepository = args[0];
-           string idOrganization = args[1];
-           string idOrganizationTypeDeploy = args[2];
            
-           string directoryTarget = MetadataGeneratePackageRepository.generatePackageRepository(idRepository);
-           MetadataDeployService.deployPackage(idOrganization,idOrganizationTypeDeploy,directoryTarget);
+           string idOrganization = args[0];
+           if(idOrganization.Contains("__")){
+                string[] organizationBranchName = idOrganization.Split("__");
+                idOrganization = organizationBranchName[1]; 
+                
+                string branchName = args[0];
+                string pathRepository = args[1];
+                string idOrganizationTypeDeploy = args[2];
+                
+                string directoryTarget = MetadataGeneratePackageRepository.generatePackageRepository(branchName,pathRepository);
+                MetadataDeployService.deployPackage(idOrganization,idOrganizationTypeDeploy,directoryTarget);
+           }else{
+                   throw new Exception("Not found organization branch name incomplete!!");
+           }
+           
         }
         
 

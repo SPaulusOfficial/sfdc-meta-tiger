@@ -20,10 +20,10 @@ namespace MetaTiger.Metadata{
             run(packageManifest);
         }
 
-        public static String generatePackageRepository(string packageRepository){
+        public static String generatePackageRepository(String branchName, String pathRepository){
             PackageManifest packageManifest;
             Config m_config = MetadataConfigService.getConfig();
-            packageManifest = MetadataConfigService.chooseCodePackageManifest(packageRepository);
+            packageManifest = MetadataConfigService.chooseCodePackageManifest(branchName, pathRepository);
             System.IO.DirectoryInfo dInfo = new System.IO.DirectoryInfo(packageManifest.DirectoryTarget);
             DeletingFiles(dInfo);
             run(packageManifest);

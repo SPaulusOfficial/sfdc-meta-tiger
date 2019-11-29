@@ -8,6 +8,8 @@ namespace MetaTiger.Xml.Config
 	public class Organization {
 		[XmlElement(ElementName="Id")]
 		public int Id { get; set; }
+		[XmlElement(ElementName="Nick")]
+		public string Nick { get; set; }
 		[XmlElement(ElementName="Username")]
 		public string Username { get; set; }
 		[XmlElement(ElementName="Password")]
