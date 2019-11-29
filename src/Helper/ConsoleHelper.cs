@@ -15,6 +15,14 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
+            try
+            {
+               Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note 
+            }
+            catch (System.Exception)
+            {
+              Console.WriteLine(value); 
+            }
             //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
@@ -29,6 +37,14 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Yellow;
+            try
+            {
+               Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note 
+            }
+            catch (System.Exception)
+            {
+              Console.WriteLine(value); 
+            }
             //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
@@ -43,6 +59,14 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkRed;
+            try
+            {
+               Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note 
+            }
+            catch (System.Exception)
+            {
+              Console.WriteLine(value); 
+            }
             //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
@@ -57,6 +81,14 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkGreen;
+            try
+            {
+               Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note 
+            }
+            catch (System.Exception)
+            {
+              Console.WriteLine(value);  
+            }
             //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
@@ -71,6 +103,14 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkYellow;
+            try
+            {
+               Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note 
+            }
+            catch (System.Exception)
+            {
+              Console.WriteLine(value); 
+            }
             //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
