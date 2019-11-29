@@ -10,22 +10,35 @@ namespace MetaTiger.ManageFile
 {
     class ManageFileZip {
         
-		public static byte[] createZipFile(String path)
+		public static byte[] createZipFile(String path,Boolean IC)
         {
             byte[] filePackageZip = new byte[1];
             try 
             {  
-               String pathPackage = Environment.CurrentDirectory + @"\package";
-               String pathZip = pathPackage + @"\deploy.zip";
-               
-               ManageFileDirectory.createPackageDirectory(pathPackage);
+               String pathPackage = "";
 
-               if(File.Exists(pathZip)){
-                 System.IO.File.Delete(pathZip);
+               if(IC){
+                 pathPackage = path + @"\deploy";
+               }else{
+                 pathPackage = Environment.CurrentDirectory + @"\package";
                }
+
+               Guid g = Guid.NewGuid();
+               string GuidString = Convert.ToBase64String(g.ToByteArray());
+               GuidString = GuidString.Replace("=","");
+               GuidString = GuidString.Replace("+","");
                
+               String pathZipDirectory = Environment.CurrentDirectory + @"\package\deploy\";
+               String pathZip =pathZipDirectory + g +  ".zip";  
+
+               ManageFileDirectory.createPackageDirectory(pathZipDirectory);   
+
                ZipFile.CreateFromDirectory(path, pathZip, CompressionLevel.Fastest, true);
+
                filePackageZip = System.IO.File.ReadAllBytes(pathZip);
+
+               System.IO.File.Delete(pathZip);
+               
             }catch(Exception e){
                 String errorException = String.Format("The process failed: {0}",e.ToString());
                 ConsoleHelper.WriteErrorLine(errorException);

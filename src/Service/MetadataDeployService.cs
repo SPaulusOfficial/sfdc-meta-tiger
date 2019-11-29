@@ -285,7 +285,7 @@ namespace MetaTiger.Metadata{
         public static byte[] getZipFile(){
             ConsoleHelper.WriteQuestionLine("Please enter the path directory package:");
             string path = Console.ReadLine();
-            byte[] zipFile = ManageFileZip.createZipFile(path);
+            byte[] zipFile = ManageFileZip.createZipFile(path,false);
             return zipFile;
         }
 
@@ -293,7 +293,7 @@ namespace MetaTiger.Metadata{
             ConsoleHelper.WriteQuestionLine("Please enter the path directory package:");
             ConsoleHelper.WriteDocLine(directoryTarget);
             string path = directoryTarget;
-            byte[] zipFile = ManageFileZip.createZipFile(path);
+            byte[] zipFile = ManageFileZip.createZipFile(path,true);
             return zipFile;
         }
 

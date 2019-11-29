@@ -135,7 +135,7 @@ namespace MetaTiger.Api.Metadata{
                
             } while (!result.done);
            
-            ConsoleHelper.WriteDocLine(debugLog);
+            //.WriteDocLine(debugLog);
 
             return result;
         }
