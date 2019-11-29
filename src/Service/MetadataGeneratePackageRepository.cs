@@ -24,8 +24,8 @@ namespace MetaTiger.Metadata{
             PackageManifest packageManifest;
             Config m_config = MetadataConfigService.getConfig();
             packageManifest = MetadataConfigService.chooseCodePackageManifest(branchName, pathRepository);
-            System.IO.DirectoryInfo dInfo = new System.IO.DirectoryInfo(packageManifest.DirectoryTarget);
-            DeletingFiles(dInfo);
+            //System.IO.DirectoryInfo dInfo = new System.IO.DirectoryInfo(packageManifest.DirectoryTarget);
+            //DeletingFiles(dInfo);
             run(packageManifest);
             return packageManifest.DirectoryTarget;
         }

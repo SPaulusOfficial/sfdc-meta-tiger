@@ -126,16 +126,21 @@ namespace MetaTiger.Api.Metadata{
                         DeployMessage message = result.details.componentFailures[i];
                         ConsoleHelper.WriteErrorLine(message.componentType + " " + message.fullName + " " + message.problem);
                     }
-                    throw new Exception();
                    }
                }catch(Exception e){
                   result = new DeployResult();
                   ConsoleHelper.WriteErrorLine(e.Message);
                }
-               Thread.Sleep(2000);   
+               Thread.Sleep(2000); 
+
+               if(result.status==DeployStatus.Failed){
+                   throw new Exception();
+               }  
                
             } while (!result.done);
            
+              
+            
             //.WriteDocLine(debugLog);
 
             return result;
