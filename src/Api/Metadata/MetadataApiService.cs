@@ -126,6 +126,7 @@ namespace MetaTiger.Api.Metadata{
                         DeployMessage message = result.details.componentFailures[i];
                         ConsoleHelper.WriteErrorLine(message.componentType + " " + message.fullName + " " + message.problem);
                     }
+                    throw new Exception();
                    }
                }catch(Exception e){
                   result = new DeployResult();
