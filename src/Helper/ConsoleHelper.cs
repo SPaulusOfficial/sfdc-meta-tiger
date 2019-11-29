@@ -15,7 +15,7 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
+            //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
             //
@@ -29,7 +29,7 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
+            //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
             //
@@ -43,7 +43,7 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
+            //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
             //
@@ -57,7 +57,7 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
+            //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
             //
@@ -71,7 +71,7 @@ namespace MetaTiger.Helper
             //
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
+            //Console.WriteLine(value.PadRight(Console.WindowWidth - 1)); // <-- see note
             //
             // Reset the color.
             //
