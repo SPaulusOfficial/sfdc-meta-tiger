@@ -100,7 +100,6 @@ namespace MetaTiger.Metadata{
 
                 foreach(KeyValuePair<int, Organization> item in m_organizations)
                 {
-                  ConsoleHelper.WriteDocLine(organizationId);
                   if(item.Value.Nick == organizationId){
                      enviroment = item.Value;
                   }   
