@@ -9,18 +9,11 @@ using MetaTiger.Xml.Config;
 using MetaTiger.Api.Metadata;
 using MetaTiger.Helper;
 
-namespace MetaTiger.Metadata{
+namespace MetaTiger.Service{
     class MetadataPackageService {
         
-
-        public static void getAllPackage(){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
-             MetadataApiService.getAllPackage(m_organization);
-             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
-        }
-
         public static void getAllPackageWithNameLastModified(){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
+             Organization m_organization = ConfigService.chooseCodeOrganization();
              List<string> nameuserList,dates;
              
              nameuserList = getNamesForUsers();
@@ -34,7 +27,7 @@ namespace MetaTiger.Metadata{
         }
         
         public static void getAllPackageWithNameCreated(){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
+             Organization m_organization = ConfigService.chooseCodeOrganization();
              List<string> nameuserList;
              List<string> dates;
              
@@ -98,15 +91,6 @@ namespace MetaTiger.Metadata{
 
             return dates;
         }
-
-        public static void retrieveAllPackage(){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
-             ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPATHPACKAGE);
-             string pathPackage = Console.ReadLine();
-             MetadataApiService.retrieveMetadata(m_organization, pathPackage);
-             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
-        }
-
     }
 
 }

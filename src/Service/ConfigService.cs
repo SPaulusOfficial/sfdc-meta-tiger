@@ -12,7 +12,7 @@ using MetaTiger.Api.Metadata;
 using MetaTiger.Helper;
 
 namespace MetaTiger.Metadata{
-    class MetadataConfigService {
+    class ConfigService {
         
         public static Config getConfig(){
             return ReadConfig();

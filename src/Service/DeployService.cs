@@ -10,18 +10,18 @@ using MetaTiger.Api.Metadata;
 using MetaTiger.Helper;
 using SFDC.Metadata;
 
-namespace MetaTiger.Metadata{
-    class MetadataDeployService {
+namespace MetaTiger.Service{
+    class DeployService {
         
         public static void deployPackage(){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
+             Organization m_organization = ConfigService.chooseCodeOrganization();
              MetadataApiDeployRequest request = generateDeployRequest(m_organization);
              MetadataApiService.deployMetadata(m_organization, request);
              ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
 
         public static void deployPackage(string organizationId,string organizationdeploytype,string directoryTarget){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization(organizationId);
+             Organization m_organization = ConfigService.chooseCodeOrganization(organizationId);
              MetadataApiDeployRequest request = generateDeployRequest(m_organization,organizationdeploytype,directoryTarget);
              MetadataApiService.deployMetadata(m_organization, request);
              ConsoleHelper.WriteDoneLine(">> Finalize the process...");
@@ -33,7 +33,7 @@ namespace MetaTiger.Metadata{
             bool isHaveDeploySettings = m_organization.DeploySettings!=null && m_organization.DeploySettings.Count>0;
 
             if(isHaveDeploySettings){
-             organizationDeploy = MetadataConfigService.chooseCodeOrganizationDeploy(m_organization,organizationdeploytype); 
+             organizationDeploy = ConfigService.chooseCodeOrganizationDeploy(m_organization,organizationdeploytype); 
              if(organizationDeploy==null){
                organizationDeploy = createOrganizationDeploy(m_organization.DeploySettings.Count,m_organization);
              }
@@ -55,7 +55,7 @@ namespace MetaTiger.Metadata{
             bool isHaveDeploySettings = m_organization.DeploySettings!=null && m_organization.DeploySettings.Count>0;
 
             if(isHaveDeploySettings){
-             organizationDeploy = MetadataConfigService.chooseCodeOrganizationDeploy(m_organization); 
+             organizationDeploy = ConfigService.chooseCodeOrganizationDeploy(m_organization); 
              if(organizationDeploy==null){
                organizationDeploy = createOrganizationDeploy(m_organization.DeploySettings.Count,m_organization);
              }
@@ -84,7 +84,7 @@ namespace MetaTiger.Metadata{
              organizationDeploy.DeployOptions = generateDeployOptions(m_organization);
              
              m_organization.DeploySettings.Add(organizationDeploy);
-             MetadataConfigService.addOrganizationDeploy(m_organization);
+             ConfigService.addOrganizationDeploy(m_organization);
 
              return organizationDeploy;
         }

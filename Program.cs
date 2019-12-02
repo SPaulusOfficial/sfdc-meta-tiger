@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using MetaTiger.MetaTigerInterface;
+using MetaTiger.Service;
 
 namespace MetaTiger
 {
@@ -11,9 +11,9 @@ namespace MetaTiger
         static void Main(string[] args)
         {
            if(args == null || args.Length == 0){
-             MetaTigerProgramInterface.run();
+             ApresentationService.run();
            }else{
-             MetaTigerProgramInterface.run(args);
+             ApresentationService.run(args);
            }
         }     
     }

@@ -4,10 +4,10 @@ using System.IO;
 using MetaTiger.Metadata;
 using MetaTiger.Helper;
 
-namespace MetaTiger.MetaTigerInterface
+namespace MetaTiger.Service
 {
 
-    class MetaTigerProgramInterface {
+    class ApresentationService {
         
         public static void run(){
             int action;
@@ -37,21 +37,17 @@ namespace MetaTiger.MetaTigerInterface
                 
                 switch (action)
                 {
-                        case 1: 
-                                MetadataPackageService.getAllPackage();
+                        case 1: GetAllPackageService.getAllPackage();
                                 break;
-                        case 2: MetadataGeneratePackageRepository.generatePackageRepository();
+                        case 2: GeneratePackageRepository.generatePackageRepository();
                                 break;
-                        case 3: MetadataPackageService.retrieveAllPackage();
+                        case 3: RetrievePackageService.retrieveAllPackage();
                                 break;
-                        case 4: 
-                                MetadataPackageService.getAllPackageWithNameLastModified();
+                        case 4: MetadataPackageService.getAllPackageWithNameLastModified();
                                 break;
-                        case 5: 
-                                MetadataPackageService.getAllPackageWithNameCreated();
+                        case 5: MetadataPackageService.getAllPackageWithNameCreated();
                                 break;
-                        case 6: 
-                                MetadataDeployService.deployPackage();
+                        case 6: DeployService.deployPackage();
                                 break;
                         default:
                                 break;
@@ -70,14 +66,13 @@ namespace MetaTiger.MetaTigerInterface
                 string pathRepository = args[1];
                 string idOrganizationTypeDeploy = args[2];
                 
-                string directoryTarget = MetadataGeneratePackageRepository.generatePackageRepository(branchName,pathRepository);
-                MetadataDeployService.deployPackage(idOrganization,idOrganizationTypeDeploy,directoryTarget);
+                string directoryTarget = GeneratePackageRepository.generatePackageRepository(branchName,pathRepository);
+                DeployService.deployPackage(idOrganization,idOrganizationTypeDeploy,directoryTarget);
            }else{
                    throw new Exception("Not found organization branch name incomplete!!");
            }
            
         }
-        
 
     }
 
