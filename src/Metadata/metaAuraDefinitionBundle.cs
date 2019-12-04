@@ -19,6 +19,7 @@ namespace MetaTiger.Metadata{
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cmp"));
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cmp-meta.xml"));
 
+			
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".auradoc"),true);
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".css"),true);
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".design"),true);
