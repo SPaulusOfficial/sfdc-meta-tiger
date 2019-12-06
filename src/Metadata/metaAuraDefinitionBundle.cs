@@ -15,20 +15,16 @@ namespace MetaTiger.Metadata{
 			String pathComponent = String.Concat(@"\",metaname); 
 			directoryPath = String.Concat(directoryPath,pathComponent);
 			directoryTargetFilePath = String.Concat(directoryTargetFilePath,pathComponent);
-			
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cmp"));
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".cmp-meta.xml"));
 
+			List<String> components = new List<String>(){
+				".cmp",".cmp-meta.xml",".auradoc",".css",".design",".svg","Controller.js","Helper.js",
+				"Renderer.js",".evt",".evt-meta.xml"
+			};
+
+			foreach(String component in components){
+			  ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,component),true);	
+			}
 			
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".auradoc"),true);
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".css"),true);
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".design"),true);
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".svg"),true);
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,"Controller.js"),true);
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,"Helper.js"),true);
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,"Renderer.js"),true);
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".evt"),true);
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".evt-meta.xml"),true);
 		}	
 
 		public override void doMerge(){}
