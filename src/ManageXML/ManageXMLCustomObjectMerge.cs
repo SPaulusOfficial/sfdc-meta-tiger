@@ -52,14 +52,31 @@ namespace MetaTiger.ManageFileXML
 
         public void writeAllInstances(String targetPath){
             Boolean isHaveObjectInPackageXml = m_customObjects.Count>0;
-            
+            String mergeDirectory;
+            String directoryMain;
             if(isHaveObjectInPackageXml){
-                String mergeDirectory = String.Concat(targetPath,@"\","_",MetaDirectory.getDirectory(MetaConstants.CustomObject));
-                ManageFileDirectory.createPackageDirectory(mergeDirectory);
+
+                mergeDirectory = String.Concat(targetPath,@"\","_",MetaDirectory.getDirectory(MetaConstants.CustomObject));
+                directoryMain = String.Concat(targetPath,@"\",MetaDirectory.getDirectory(MetaConstants.CustomObject)); 
+
+               
                 foreach(KeyValuePair<string, CustomObject> m_object in m_customObjects)
                 {
+                    String directoryForObject = "";
+                    
+
                     String filename = String.Concat(m_object.Key,".object");
-                    ManageXMLCustomObject.doWrite(m_object.Value,String.Concat(mergeDirectory,@"\"),filename);
+
+                    if(ManageFileExists.verifyFileInDirectory(String.Concat(directoryMain,@"\",filename))){
+                      directoryForObject = mergeDirectory;
+                    }else{
+                      directoryForObject = directoryMain;  
+                    }
+
+                     ManageFileDirectory.createPackageDirectory(directoryForObject);
+
+
+                    ManageXMLCustomObject.doWrite(m_object.Value,String.Concat(directoryForObject,@"\"),filename);
                 } 
             }
         }

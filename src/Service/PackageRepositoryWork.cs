@@ -9,9 +9,27 @@ using MetaTiger.Xml.Config;
 using MetaTiger.Api.Metadata;
 using MetaTiger.Helper;
 
-namespace MetaTiger.Metadata{
-    class MetadataService {
-        public static void validate(Dictionary<string, List<string>> mapPackage, List<IMetadata> MetaDatas)
+namespace MetaTiger.Service{
+    class PackageRepositoryWork {
+        
+        PackageManifest packageManifest;
+        Dictionary<string, List<string>> mapPackage;
+
+        public PackageRepositoryWork(PackageManifest pm,Dictionary<string, List<string>> mp){
+            packageManifest = pm;
+            mapPackage = mp;
+        }
+
+        public void run()
+        {
+            List<IMetadata> MetaDatas = this.createDirectory(mapPackage, packageManifest.DirectoryTarget);
+            this.validate(mapPackage, MetaDatas);
+            this.copy(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
+            this.merge(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
+            this.copyPackage(packageManifest.PackageFile, packageManifest.DirectoryTarget);
+        }
+
+        private void validate(Dictionary<string, List<string>> mapPackage, List<IMetadata> MetaDatas)
         {
            ConsoleHelper.WriteDoneLine(">> Validating Metadata...");
 
@@ -27,7 +45,7 @@ namespace MetaTiger.Metadata{
             }
         }
         
-        public static void merge(string pathSource,string pathDir, List<IMetadata> MetaDatas)
+        private void merge(string pathSource,string pathDir, List<IMetadata> MetaDatas)
         {
             ConsoleHelper.WriteDoneLine(">> Merging Metadata...");
             foreach (IMetadata m_Metadata in MetaDatas)
@@ -39,13 +57,13 @@ namespace MetaTiger.Metadata{
             merge.writeAllInstances(pathDir);
         }
 
-        public static void copyPackage(string path, string pathDir)
+        private void copyPackage(string path, string pathDir)
         {
             ConsoleHelper.WriteDoneLine(">> Copying package...");   
             ManageFileCopy.doCopy(path.Replace("package.xml", ""), pathDir, "package.xml");            
         }
 
-        public static void copy(string pathFiles, string pathDir, List<IMetadata> MetaDatas)
+        private void copy(string pathFiles, string pathDir, List<IMetadata> MetaDatas)
         {
             ConsoleHelper.WriteDoneLine(">> Copying Metadata...");
             foreach (IMetadata m_Metadata in MetaDatas)
@@ -54,7 +72,7 @@ namespace MetaTiger.Metadata{
             }
         }
 
-        public static List<IMetadata> createDirectory(Dictionary<string, List<string>> mapPackage, string pathDir)
+        private List<IMetadata> createDirectory(Dictionary<string, List<string>> mapPackage, string pathDir)
         {
             ConsoleHelper.WriteDoneLine(">> Creating directories...");
             List<IMetadata> MetaDatas = ManageFileDirectory.buildDirectorys(mapPackage, pathDir);

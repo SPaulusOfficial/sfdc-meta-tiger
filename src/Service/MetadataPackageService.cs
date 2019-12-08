@@ -9,18 +9,11 @@ using MetaTiger.Xml.Config;
 using MetaTiger.Api.Metadata;
 using MetaTiger.Helper;
 
-namespace MetaTiger.Metadata{
+namespace MetaTiger.Service{
     class MetadataPackageService {
         
-
-        public static void getAllPackage(){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
-             MetadataApiService.getAllPackage(m_organization);
-             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
-        }
-
         public static void getAllPackageWithNameLastModified(){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
+             Organization m_organization = ConfigService.chooseCodeOrganization();
              List<string> nameuserList,dates;
              
              nameuserList = getNamesForUsers();
@@ -34,7 +27,7 @@ namespace MetaTiger.Metadata{
         }
         
         public static void getAllPackageWithNameCreated(){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
+             Organization m_organization = ConfigService.chooseCodeOrganization();
              List<string> nameuserList;
              List<string> dates;
              
@@ -97,39 +90,6 @@ namespace MetaTiger.Metadata{
             dates.Add(endDate);
 
             return dates;
-        }
-
-        public static void retrieveAllPackage(){
-             Organization m_organization = MetadataConfigService.chooseCodeOrganization();
-             ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERPATHPACKAGE);
-             string pathPackage = Console.ReadLine();
-             MetadataApiService.retrieveMetadata(m_organization, pathPackage);
-             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
-        }
-
-         public static void generatePackageRepository(){
-            Dictionary<string, List<string>> mapPackage = new Dictionary<string, List<string>>();
-        
-            PackageManifest packageManifest;
-
-            Config m_config = MetadataConfigService.getConfig();
-
-            packageManifest = MetadataConfigService.chooseCodePackageManifest();
-
-            if (!ManageFileDirectory.validateDirectory(packageManifest.RepositorySource)){
-                ConsoleHelper.WriteErrorLine(">>> Path not found:" + packageManifest.RepositorySource);
-                return;
-            }
-
-            mapPackage = ManageXMLPackage.buildMap(packageManifest.PackageFile);    
-
-            List<IMetadata> MetaDatas = MetadataService.createDirectory(mapPackage, packageManifest.DirectoryTarget);
-            MetadataService.validate(mapPackage, MetaDatas);
-            MetadataService.copy(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
-            MetadataService.merge(packageManifest.RepositorySource,packageManifest.DirectoryTarget,MetaDatas);
-            MetadataService.copyPackage(packageManifest.PackageFile, packageManifest.DirectoryTarget);
-
-            ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }
     }
 

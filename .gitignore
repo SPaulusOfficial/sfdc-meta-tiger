@@ -1,5 +1,5 @@
 /bin
 /obj
 /config/
-/Package/
+/Package/*
 .vscode

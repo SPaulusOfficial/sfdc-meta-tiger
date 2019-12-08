@@ -12,13 +12,62 @@ using MetaTiger.Api.Metadata;
 using MetaTiger.Helper;
 
 namespace MetaTiger.Metadata{
-    class MetadataConfigService {
+    class ConfigService {
         
         public static Config getConfig(){
             return ReadConfig();
         }
 
         public static Organization chooseCodeOrganization(){
+            
+            Config m_config = ManageXMLConfig.Deserialize();
+            Dictionary<int,Organization> m_organizations = new Dictionary<int,Organization>();
+            
+            bool isHaveOrganization = m_config.Organization!=null && m_config.Organization.Count>0;
+            
+            if(isHaveOrganization){
+              ConsoleHelper.WriteQuestionLine(Constants.LANG_CHOOSECODEPACKAGEMANIFESTINCONFIG);
+              String rowTitle = getRowForScreen(Constants.propertiesOrganization);
+              ConsoleHelper.WriteDocLine(rowTitle);
+              foreach (var item in m_config.Organization)
+                {
+                    m_organizations.Add(item.Id,item);
+                    String idOrganization = viewBarInConsoleForScreen(item.Id.ToString());
+                    String NickOrganization = viewBarInConsoleForScreen(item.Nick);
+                    String Username = viewBarInConsoleForScreen(item.Username);
+                    String Password = viewBarInConsoleForScreen(getRowPassword(item.Password,'*')); 
+                    String SecurityToken = String.Concat(getRowPassword(item.SecurityToken,'*')," ");
+                    String production = String.Concat(getEnvironment(item.Production)," ");
+                    String api = String.Concat(item.Api," ");
+                    Console.WriteLine(String.Concat(idOrganization,NickOrganization,Username,Password,SecurityToken,production,api));
+                }
+            }
+
+            try
+            {
+               int id;
+               if(isHaveOrganization){
+                  ConsoleHelper.WriteQuestionLine(">>> Code Organization:Please enter for new Environment:"); 
+                  id = Int32.Parse(Console.ReadLine());
+               }else{
+                   return generateOrganizationManifest();
+               }
+
+               if(m_organizations.ContainsKey(id)){
+                   return (m_organizations[id]);
+               }else{
+                   ConsoleHelper.WriteWarningLine("Not Found Organization");
+                   return new Organization();
+               }
+            }
+            catch (System.Exception)
+            { 
+                 ConsoleHelper.WriteErrorLine("Not Found Organization");
+                return generateOrganizationManifest();
+            }            
+        }
+
+        public static Organization chooseCodeOrganization(string organizationId){
             
             Config m_config = ManageXMLConfig.Deserialize();
             Dictionary<int,Organization> m_organizations = new Dictionary<int,Organization>();
@@ -44,16 +93,20 @@ namespace MetaTiger.Metadata{
 
             try
             {
-               int id;
-               if(isHaveOrganization){
-                  ConsoleHelper.WriteQuestionLine(">>> Code Organization:Please enter for new Environment:"); 
-                  id = Int32.Parse(Console.ReadLine());
-               }else{
-                   return generateOrganizationManifest();
-               }
+                ConsoleHelper.WriteQuestionLine(">>> Code Organization:Please enter for new Environment:"); 
+                ConsoleHelper.WriteDocLine(organizationId);
+               
+                Organization enviroment = new Organization();
 
-               if(m_organizations.ContainsKey(id)){
-                   return (m_organizations[id]);
+                foreach(KeyValuePair<int, Organization> item in m_organizations)
+                {
+                  if(item.Value.Nick == organizationId){
+                     enviroment = item.Value;
+                  }   
+                }
+
+               if(enviroment!=null && enviroment.Nick!=""){ 
+                 return enviroment;
                }else{
                    ConsoleHelper.WriteWarningLine("Not Found Organization");
                    return new Organization();
@@ -63,11 +116,94 @@ namespace MetaTiger.Metadata{
             { 
                  ConsoleHelper.WriteErrorLine("Not Found Organization");
                 return generateOrganizationManifest();
-            }
-
-            
+            }            
         }
 
+         public static OrganizationDeploy chooseCodeOrganizationDeploy(Organization organization){
+            Dictionary<int,OrganizationDeploy> m_organizationsDeploy = new Dictionary<int,OrganizationDeploy>();
+            
+            bool isHaveOrganizationDeploy = organization.DeploySettings!=null && organization.DeploySettings.Count>0;
+            
+            if(isHaveOrganizationDeploy){
+              ConsoleHelper.WriteQuestionLine("Choose a deployment configuration for your organization:");
+              String rowTitle = getRowForScreen(Constants.propertiesDeployOrganization);
+              ConsoleHelper.WriteDocLine(rowTitle);
+              foreach (var item in organization.DeploySettings)
+                {
+                    m_organizationsDeploy.Add(item.Id,item);
+                    String nameOrganization = viewBarInConsoleForScreen(item.Id.ToString());
+                    String DeployNick = viewBarInConsoleForScreen(item.DeployNick);
+                    Console.WriteLine(String.Concat(nameOrganization,DeployNick));
+                }
+            }
+
+            try
+            {
+               int id;
+               if(isHaveOrganizationDeploy){
+                  ConsoleHelper.WriteQuestionLine(">>> Code Organization Deploy:Please enter for new Deploy Settings:"); 
+                  id = Int32.Parse(Console.ReadLine());
+               }else{
+                   return null;
+               }
+
+               if(m_organizationsDeploy.ContainsKey(id)){
+                   return (m_organizationsDeploy[id]);
+               }else{
+                   ConsoleHelper.WriteWarningLine("Not Found Deploy Settings");
+                   return null;
+               }
+            }
+            catch (System.Exception)
+            { 
+                ConsoleHelper.WriteErrorLine("Not Found Deploy Settings");
+                return null;
+            }            
+        }
+
+        public static OrganizationDeploy chooseCodeOrganizationDeploy(Organization organization,string organizationDeployType){
+            Dictionary<int,OrganizationDeploy> m_organizationsDeploy = new Dictionary<int,OrganizationDeploy>();
+            
+            bool isHaveOrganizationDeploy = organization.DeploySettings!=null && organization.DeploySettings.Count>0;
+            
+            if(isHaveOrganizationDeploy){
+              ConsoleHelper.WriteQuestionLine("Choose a deployment configuration for your organization:");
+              String rowTitle = getRowForScreen(Constants.propertiesDeployOrganization);
+              ConsoleHelper.WriteDocLine(rowTitle);
+              foreach (var item in organization.DeploySettings)
+                {
+                    m_organizationsDeploy.Add(item.Id,item);
+                    String nameOrganization = viewBarInConsoleForScreen(item.Id.ToString());
+                    String DeployNick = viewBarInConsoleForScreen(item.DeployNick);
+                    Console.WriteLine(String.Concat(nameOrganization,DeployNick));
+                }
+            }
+
+            try
+            {
+               int id;
+               if(isHaveOrganizationDeploy){
+                  ConsoleHelper.WriteQuestionLine(">>> Code Organization Deploy:Please enter for new Deploy Settings:"); 
+                  id = Int32.Parse(organizationDeployType);
+               }else{
+                   return null;
+               }
+
+               if(m_organizationsDeploy.ContainsKey(id)){
+                   return (m_organizationsDeploy[id]);
+               }else{
+                   ConsoleHelper.WriteWarningLine("Not Found Deploy Settings");
+                   return null;
+               }
+            }
+            catch (System.Exception)
+            { 
+                ConsoleHelper.WriteErrorLine("Not Found Deploy Settings");
+                return null;
+            }            
+        }
+
+        
         public static PackageManifest chooseCodePackageManifest(){
             Dictionary<int, PackageManifest> m_packages;
 
@@ -84,6 +220,10 @@ namespace MetaTiger.Metadata{
             {
                 return generatePackageManifest();
             }
+        }
+
+        public static PackageManifest chooseCodePackageManifest(string branchName,string pathRepository){
+            return createPackageManifest(branchName, pathRepository);
         }
 
         private static PackageManifest generatePackageManifest(){
@@ -108,6 +248,9 @@ namespace MetaTiger.Metadata{
         }
 
         private static Organization generateOrganizationManifest(){
+            ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERNICK);
+            String nick = Console.ReadLine();
+
             ConsoleHelper.WriteQuestionLine(Constants.LANG_PLEASEENTERUSERNAME);
             String username = Console.ReadLine();
 
@@ -126,7 +269,7 @@ namespace MetaTiger.Metadata{
 
             Config m_config = getConfig();
             
-            Organization vaOrganization = createOrganization(username, password,token,production,api, m_config);
+            Organization vaOrganization = createOrganization(nick, username, password,token,production,api, m_config);
 
             m_config.Organization.Add(vaOrganization);
 
@@ -135,16 +278,33 @@ namespace MetaTiger.Metadata{
             return vaOrganization;
         }
 
-         private static Organization createOrganization(string userName, string password,string token,string production,string api, Config m_config)
+        public static void addOrganizationDeploy(Organization organization){
+           Config m_config = getConfig(); 
+           Dictionary<int,Organization> m_organizations = new Dictionary<int,Organization>();
+           bool isHaveOrganization = m_config.Organization!=null && m_config.Organization.Count>0;
+
+           foreach (var item in m_config.Organization)
+           {
+                if(item.Id == organization.Id){
+                  item.DeploySettings = organization.DeploySettings; 
+                }
+           }
+
+           ManageXMLConfig.doWrite(m_config);
+        }
+
+         private static Organization createOrganization(string nick, string userName, string password,string token,string production,string api, Config m_config)
         {
             return new Organization()
             {
                 Username = userName,
                 Password = password,
+                Nick = nick,
                 SecurityToken = token,
                 Production = production,
                 Api = api,
                 Id = m_config.Organization.Count + 1,
+                DeploySettings = new List<OrganizationDeploy>(),
             };
         }
 
@@ -156,6 +316,21 @@ namespace MetaTiger.Metadata{
                 RepositorySource = pathRepository,
                 Id = m_config.PackageManifest.Count + 1,
                 DirectoryTarget = (pathtarget != null) ? pathtarget : m_config.GeneralDirectoryTarget
+            };
+        }
+
+        public static PackageManifest createPackageManifest(string branchName, string pathRepository)
+        {
+            string pathPackage = pathRepository + @"\package.xml";  
+            
+            string pathtarget =  Environment.CurrentDirectory + @"\package\"+branchName;
+            ManageFileDirectory.createPackageDirectory(pathtarget);
+
+            return new PackageManifest()
+            {
+                PackageFile = pathPackage,
+                RepositorySource = pathRepository,
+                DirectoryTarget = pathtarget
             };
         }
 

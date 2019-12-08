@@ -79,23 +79,99 @@ namespace MetaTiger.Api.Metadata{
             } 
         }
 
+        public static void deployMetadata(Organization Organization,MetadataApiDeployRequest request){
+            MetadataApiClientResponse response;
+            DeployResult result;
+            String asyncId;
+
+            response = generateClientResponse(Organization);
+            //package = ManageXMLPackage.DeserializePackageApi(pathPackage);
+            asyncId = MetadataApiDeployService.deploy(response.Metadataclient,request);
+    
+            try
+            {
+                result = checkResultsOfDeploy(response,asyncId);
+                //extractFile(result);
+            }
+            catch (Exception e)
+            {
+              ConsoleHelper.WriteErrorLine(e.Message);
+            } 
+        }
+
+        private static DeployResult checkResultsOfDeploy(MetadataApiClientResponse response, string asyncId)
+        {
+            DeployResult result;
+            checkDeployStatusResponse responseCheck;
+            string debugLog = "";
+                      
+            ConsoleHelper.WriteDocLine("Request for a deploy submitted successfully.");
+            ConsoleHelper.WriteDocLine("Request ID for the current deploy task: " + asyncId);
+            ConsoleHelper.WriteDocLine("Waiting for server to finish processing the request...");
+
+            do
+            {
+               try{
+                   responseCheck = MetadataApiCheckDeployService.checkDeployStatus(response.Metadataclient, asyncId);
+                   result = responseCheck.result;
+                   ConsoleHelper.WriteDocLine("Request Status: "+ result.status);
+                   if(result.stateDetail!=null){
+                    ConsoleHelper.WriteDocLine(result.stateDetail);
+                   }
+                   if(responseCheck.DebuggingInfo!=null){
+                     debugLog = responseCheck.DebuggingInfo.debugLog;
+                   }
+                   if(result.status==DeployStatus.Failed){
+                    for(int i = 0; i < result.details.componentFailures.Length; i++){
+                        DeployMessage message = result.details.componentFailures[i];
+                        ConsoleHelper.WriteErrorLine(message.componentType + " " + message.fullName + " " + message.problem);
+                    }
+                   }
+               }catch(Exception e){
+                  result = new DeployResult();
+                  ConsoleHelper.WriteErrorLine(e.Message);
+               }
+               Thread.Sleep(2000); 
+
+               if(result.status==DeployStatus.Failed){
+                  Environment.Exit(1);
+                  //throw new Exception();
+                 
+               }  
+               
+            } while (!result.done);
+           
+              
+            
+            //.WriteDocLine(debugLog);
+
+            return result;
+        }
+
         private static RetrieveResult checkResultsOfRetrieve(MetadataApiClientResponse response, string asyncId)
         {
             RetrieveResult result;
             checkRetrieveStatusResponse responseCheck;
+
+            ConsoleHelper.WriteDocLine("Request for a deploy submitted successfully.");
+            ConsoleHelper.WriteDocLine("Request ID for the current deploy task: " + asyncId);
+            ConsoleHelper.WriteDocLine("Waiting for server to finish processing the request...");
+
             do
             {
                try{
                    responseCheck = MetadataApiCheckRetrieveService.checkRetrieveStatus(response.Metadataclient, asyncId);
                    result = responseCheck.result;
-                   ConsoleHelper.WriteDocLine("We are check results, please wait!");
+                   
+                   ConsoleHelper.WriteDocLine("Request Status: "+ result.status);
+                   
                }catch(Exception e){
                   result = new RetrieveResult();
                   ConsoleHelper.WriteErrorLine(e.Message);
                }
                Thread.Sleep(2000);   
             } while (!result.done);
-           
+            
             return result;
         }
 
