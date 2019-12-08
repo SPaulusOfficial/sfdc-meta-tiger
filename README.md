@@ -54,10 +54,6 @@ Just select the options below and use the tool normally it will prompt you for t
 
 I hope it's useful!<br />
 
-<h3>LIVE METATIGER - 🚨 CONHEÇA O META TIGER! ft. Bruno Ribeiro 🎥 | Canal Salesforce Brasil</h3>
+<h3>🚨 CONHEÇA O META TIGER! ft. Bruno Ribeiro 🎥 | Canal Salesforce Brasil - Live</h3>
 
 [![MetaTiger Live Brazil](https://img.youtube.com/vi/ys5mhpL2Ibg/0.jpg)](https://www.youtube.com/watch?v=ys5mhpL2Ibg)
-
-Don't miss the opportunity to meet Meta Tiger, an Open Source tool developed by Bruno Ribeiro who has been a Salesforce developer for over 4 years!
-
-The ravenous metadata tiger is designed to assist developers in their daily tasks involving metadata and can be used by you starting today!
