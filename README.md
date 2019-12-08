@@ -31,6 +31,10 @@ This feature also takes metadata creations that were made by users.
 
 You have a responsibility to get the metadata that was only created by users at that reference period.
 
+<h3>6 - Deploy Package in Salesforce</h3>  
+
+This feature has the responsibility of deploying to any Salesforce environment, it allows various types of deploy's.
+
 <h3>Configuration Meta Tiger</h3>
 
 Install  Visual Studio Code.<br />
