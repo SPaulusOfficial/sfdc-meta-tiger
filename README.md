@@ -35,6 +35,10 @@ You have a responsibility to get the metadata that was only created by users at 
 
 This feature has the responsibility of deploying to any Salesforce environment, it allows various types of deploy's.
 
+<h3>MetaTiger Live Brazil - Canal Salesforce Brasil</h3>
+
+[![MetaTiger Live Brazil](https://img.youtube.com/vi/ys5mhpL2Ibg/0.jpg)](https://www.youtube.com/watch?v=ys5mhpL2Ibg)
+
 <h3>Configuration Meta Tiger</h3>
 
 Install  Visual Studio Code.<br />
