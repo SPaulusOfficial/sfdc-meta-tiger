@@ -37,7 +37,7 @@ namespace MetaTiger.ManageFile
 
                filePackageZip = System.IO.File.ReadAllBytes(pathZip);
 
-               System.IO.File.Delete(pathZip);
+               //System.IO.File.Delete(pathZip);
                
             }catch(Exception e){
                 String errorException = String.Format("The process failed: {0}",e.ToString());
