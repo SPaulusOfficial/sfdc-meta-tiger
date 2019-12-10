@@ -31,6 +31,10 @@ This feature also takes metadata creations that were made by users.
 
 You have a responsibility to get the metadata that was only created by users at that reference period.
 
+<h3>6 - Deploy Package in Salesforce</h3>  
+
+This feature has the responsibility of deploying to any Salesforce environment, it allows various types of deploy's.
+
 <h3>Configuration Meta Tiger</h3>
 
 Install  Visual Studio Code.<br />
@@ -50,3 +54,8 @@ Just select the options below and use the tool normally it will prompt you for t
 
 I hope it's useful!<br />
 
+<h3>🚨 CONHEÇA O META TIGER! ft. Bruno Ribeiro 🎥 | Canal Salesforce Brasil - Live</h3>
+
+[![MetaTiger Live Brazil](https://img.youtube.com/vi/ys5mhpL2Ibg/0.jpg)](https://www.youtube.com/watch?v=ys5mhpL2Ibg)
+
+In this Live I showed a little of the potential of MetaTiger, I hope you enjoy. <br/>
