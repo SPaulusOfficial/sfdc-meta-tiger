@@ -20,7 +20,7 @@ public class ManageDeleteFile{
     public static void DeletingDirectory(System.IO.DirectoryInfo directory)
     {
         try {
-            directory.Delete();
+            directory.Delete(true);
         } catch (Exception) 
         {
             Console.WriteLine("The Delete operation failed as expected.");
