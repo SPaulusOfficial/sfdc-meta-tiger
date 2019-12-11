@@ -68,6 +68,10 @@ namespace MetaTiger.Service
                 
                 string directoryTarget = GeneratePackageRepository.generatePackageRepository(branchName,pathRepository);
                 DeployService.deployPackage(idOrganization,idOrganizationTypeDeploy,directoryTarget);
+                
+                DirectoryInfo di = new DirectoryInfo(directoryTarget);
+
+                ManageDeleteFile.DeletingFiles(di);
            }else{
                    throw new Exception("Not found organization branch name incomplete!!");
            }

@@ -23,10 +23,7 @@ namespace MetaTiger.ManageFile
                  pathPackage = Environment.CurrentDirectory + @"\package";
                }
 
-               Guid g = Guid.NewGuid();
-               string GuidString = Convert.ToBase64String(g.ToByteArray());
-               GuidString = GuidString.Replace("=","");
-               GuidString = GuidString.Replace("+","");
+               String g = GuidService.createGuid();
                
                String pathZipDirectory = Environment.CurrentDirectory + @"\package\deploy\";
                String pathZip =pathZipDirectory + g +  ".zip";  
