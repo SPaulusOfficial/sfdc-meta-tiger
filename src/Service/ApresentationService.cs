@@ -71,7 +71,7 @@ namespace MetaTiger.Service
                 
                 DirectoryInfo di = new DirectoryInfo(directoryTarget);
 
-                ManageDeleteFile.DeletingFiles(di);
+                ManageDeleteFile.DeletingDirectory(di);
            }else{
                    throw new Exception("Not found organization branch name incomplete!!");
            }

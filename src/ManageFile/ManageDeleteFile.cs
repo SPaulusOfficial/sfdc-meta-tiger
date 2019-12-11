@@ -15,5 +15,16 @@ public class ManageDeleteFile{
         foreach (System.IO.DirectoryInfo subDirectory in directory.GetDirectories())
             directory.Delete(true);
     }
+
+    
+    public static void DeletingDirectory(System.IO.DirectoryInfo directory)
+    {
+        try {
+            directory.Delete();
+        } catch (Exception) 
+        {
+            Console.WriteLine("The Delete operation failed as expected.");
+        } 
+    }
 }
 
