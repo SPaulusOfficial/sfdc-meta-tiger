@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using MetaTiger.Xml.CustomObject;
 using MetaTiger.ManageFileXML;
+using MetaTiger.Helper;
 
 namespace MetaTiger.Metadata{
     class MetaRecordType:MetaCustomObjectBase {
@@ -24,25 +25,44 @@ namespace MetaTiger.Metadata{
 		}
 
 		public void buildMap(String path,List<String> m_list,String metaname){         
-				CustomObject customObject = ManageXMLCustomObject.Deserialize(path);
+				try
+				{
+					CustomObject customObject = ManageXMLCustomObject.Deserialize(path);
+					Console.WriteLine(metaname);
+					foreach(String Metafile in m_list){                
+							String [] customMetaSplit = Metafile.Split("."); 
+							String m_nameObject = customMetaSplit[0];
+							String customInMeta = customMetaSplit[1];
 
-				foreach(String Metafile in m_list){                
-						String [] customMetaSplit = Metafile.Split("."); 
-						String m_nameObject = customMetaSplit[0];
-						String customInMeta = customMetaSplit[1];
-						foreach(RecordTypes Meta in customObject.RecordTypes){                                                                                             
-								if (!m_dictionaryObject.ContainsKey(m_nameObject)){                        
-										m_dictionaryObject.Add(m_nameObject, new List<RecordTypes>());
-								}           
-								if(Meta.FullName==customInMeta){
-									m_dictionaryObject[m_nameObject].Add(Meta);                                       
-								}                      
-						}
-				} 
+							Console.WriteLine(m_nameObject + " object");      
+							Console.WriteLine(customInMeta + " meta"); 
 
-				if(m_dictionaryObject.Count==0){
-						throw new Exception("Erro não foi encontrado nenhum valor");
+							if(!String.IsNullOrEmpty(m_nameObject)){
+								
+								if(!m_dictionaryObject.ContainsKey(m_nameObject)){
+									throw new Exception("Not found record types for " + m_nameObject);
+								}
+
+								foreach(RecordTypes Meta in customObject.RecordTypes){
+																														
+										if (!m_dictionaryObject.ContainsKey(m_nameObject)){                        
+												m_dictionaryObject.Add(m_nameObject, new List<RecordTypes>());
+										}           
+										if(Meta.FullName==customInMeta){
+											m_dictionaryObject[m_nameObject].Add(Meta);                                       
+										}                      
+								}
+							}
+					} 
+					
 				}
+				catch (System.Exception e)
+				{
+					ConsoleHelper.WriteErrorLine(e.Message);
+				}
+				
+
+				
 		}
 
 		public override void doMerge(){
