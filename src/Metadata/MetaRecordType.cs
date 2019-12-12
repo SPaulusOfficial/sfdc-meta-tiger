@@ -33,26 +33,17 @@ namespace MetaTiger.Metadata{
 							String [] customMetaSplit = Metafile.Split("."); 
 							String m_nameObject = customMetaSplit[0];
 							String customInMeta = customMetaSplit[1];
-
-							Console.WriteLine(m_nameObject + " object");      
-							Console.WriteLine(customInMeta + " meta"); 
-
-							if(!String.IsNullOrEmpty(m_nameObject)){
-								
-								if(!m_dictionaryObject.ContainsKey(m_nameObject)){
-									throw new Exception("Not found record types for " + m_nameObject);
-								}
-
-								foreach(RecordTypes Meta in customObject.RecordTypes){
-																														
-										if (!m_dictionaryObject.ContainsKey(m_nameObject)){                        
-												m_dictionaryObject.Add(m_nameObject, new List<RecordTypes>());
-										}           
-										if(Meta.FullName==customInMeta){
-											m_dictionaryObject[m_nameObject].Add(Meta);                                       
-										}                      
-								}
+							
+							foreach(RecordTypes Meta in customObject.RecordTypes){
+																													
+									if (!m_dictionaryObject.ContainsKey(m_nameObject)){                        
+											m_dictionaryObject.Add(m_nameObject, new List<RecordTypes>());
+									}           
+									if(Meta.FullName==customInMeta){
+										m_dictionaryObject[m_nameObject].Add(Meta);                                       
+									}                      
 							}
+							
 					} 
 					
 				}
