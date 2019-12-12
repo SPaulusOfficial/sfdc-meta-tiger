@@ -52,6 +52,7 @@ namespace MetaTiger
 				case MetaConstants.SharingRules: return "sharingRules";
 				case MetaConstants.BrandingSet: return "brandingSets";
 				case MetaConstants.LightningExperienceTheme: return "lightningExperienceThemes";
+				case MetaConstants.Group: return "groups";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}

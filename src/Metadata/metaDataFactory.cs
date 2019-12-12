@@ -52,6 +52,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.SharingRules: return new metaSharingRules();
 				case MetaConstants.BrandingSet: return new metaBrandingSet();
 				case MetaConstants.LightningExperienceTheme: return new metaLightningExperienceTheme();
+				case MetaConstants.Group:return new MetaGroup();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
