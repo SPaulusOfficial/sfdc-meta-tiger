@@ -25,35 +25,31 @@ namespace MetaTiger.Metadata{
 		}
 
 		public void buildMap(String path,List<String> m_list,String metaname){         
-				try
-				{
-					CustomObject customObject = ManageXMLCustomObject.Deserialize(path);
-					Console.WriteLine(metaname);
-					foreach(String Metafile in m_list){                
-							String [] customMetaSplit = Metafile.Split("."); 
-							String m_nameObject = customMetaSplit[0];
-							String customInMeta = customMetaSplit[1];
-							
-							foreach(RecordTypes Meta in customObject.RecordTypes){
-																													
-									if (!m_dictionaryObject.ContainsKey(m_nameObject)){                        
-											m_dictionaryObject.Add(m_nameObject, new List<RecordTypes>());
-									}           
-									if(Meta.FullName==customInMeta){
-										m_dictionaryObject[m_nameObject].Add(Meta);                                       
-									}                      
-							}
-							
-					} 
-					
-				}
-				catch (System.Exception e)
-				{
-					ConsoleHelper.WriteErrorLine(e.Message);
-				}
-				
+			try
+			{
+				CustomObject customObject = ManageXMLCustomObject.Deserialize(path);
+				foreach(String Metafile in m_list){                
+						String [] customMetaSplit = Metafile.Split("."); 
+						String m_nameObject = customMetaSplit[0];
+						String customInMeta = customMetaSplit[1];
 
+						foreach(RecordTypes Meta in customObject.RecordTypes){
+																												
+								if (!m_dictionaryObject.ContainsKey(m_nameObject)){                        
+										m_dictionaryObject.Add(m_nameObject, new List<RecordTypes>());
+								}           
+								if(Meta.FullName==customInMeta){
+									m_dictionaryObject[m_nameObject].Add(Meta);                                       
+								}                      
+						}
+						
+				} 
 				
+			}
+			catch (System.Exception e)
+			{
+				ConsoleHelper.WriteErrorLine(e.Message);
+			}
 		}
 
 		public override void doMerge(){
