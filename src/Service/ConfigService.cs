@@ -323,7 +323,7 @@ namespace MetaTiger.Metadata{
         {
             string pathPackage = pathRepository + @"/package.xml";  
             
-            string pathtarget =  Environment.CurrentDirectory + @"/package//"+branchName +@"/"+ GuidService.createGuid();
+            string pathtarget =  Environment.CurrentDirectory + @"/package/"+branchName +@"/"+ GuidService.createGuid();
             ManageFileDirectory.createPackageDirectory(pathtarget);
 
             return new PackageManifest()
