@@ -66,8 +66,8 @@ namespace MetaTiger.ManageFileXML
 
         public static void doWrite(Package myObject){			
 			
-            ManageFileDirectory.createPackageDirectory(Environment.CurrentDirectory+@"\Package");
-            String targetPath = Environment.CurrentDirectory+@"\Package\";
+            ManageFileDirectory.createPackageDirectory(Environment.CurrentDirectory+@"//Package");
+            String targetPath = Environment.CurrentDirectory+@"//Package//";
             String fileName = "Package.xml";
             
             try{

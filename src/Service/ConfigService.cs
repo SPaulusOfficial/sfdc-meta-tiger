@@ -321,9 +321,9 @@ namespace MetaTiger.Metadata{
 
         public static PackageManifest createPackageManifest(string branchName, string pathRepository)
         {
-            string pathPackage = pathRepository + @"\package.xml";  
+            string pathPackage = pathRepository + @"//package.xml";  
             
-            string pathtarget =  Environment.CurrentDirectory + @"\package\"+branchName +@"\"+ GuidService.createGuid();
+            string pathtarget =  Environment.CurrentDirectory + @"//package//"+branchName +@"//"+ GuidService.createGuid();
             ManageFileDirectory.createPackageDirectory(pathtarget);
 
             return new PackageManifest()
