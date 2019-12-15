@@ -18,10 +18,10 @@ namespace MetaTiger.Metadata{
 		} 
 		
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){			
-			this.buildMap(directoryPath+@"\"+metaname+".object",this.m_list,this.m_metaname);									
+			this.buildMap(directoryPath+@"/"+metaname+".object",this.m_list,this.m_metaname);									
 			CustomObject m_CustomObject_clean =  ManageXMLCustomObject.createNewObject();			
 			m_CustomObject_clean.RecordTypes = m_dictionaryObject[metaname];
-			ManageXMLCustomObject.doWrite(m_CustomObject_clean,directoryTargetFilePath+@"\",metaname+".object");													
+			ManageXMLCustomObject.doWrite(m_CustomObject_clean,directoryTargetFilePath+@"/",metaname+".object");													
 		}
 
 		public void buildMap(String path,List<String> m_list,String metaname){         

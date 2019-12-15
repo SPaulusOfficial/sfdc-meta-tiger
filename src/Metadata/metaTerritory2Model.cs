@@ -12,7 +12,7 @@ namespace MetaTiger.Metadata{
 		}		
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
-			String bar = @"\";
+			String bar = @"/";
 			directoryPath = String.Concat(directoryPath,bar,metaname,bar);
 			directoryTargetFilePath = String.Concat(directoryTargetFilePath,bar,metaname,bar);
 			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,String.Concat(metaname,".territory2Model"));

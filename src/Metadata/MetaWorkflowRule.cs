@@ -14,11 +14,11 @@ namespace MetaTiger.Metadata{
 		} 
 		
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){			
-			String pathDirectoryFileCustomObject = String.Concat(directoryPath,@"\",metaname,".workflow");
+			String pathDirectoryFileCustomObject = String.Concat(directoryPath,@"/",metaname,".workflow");
 			Dictionary<string, List<Rules>> dictionaryMeta = this.buildMap(pathDirectoryFileCustomObject,this.m_list,this.m_metaname);									
 			Workflow m_CustomObject_clean =  ManageXMLWorkflow.createNewObject();			
 			m_CustomObject_clean.Rules = dictionaryMeta[metaname];
-			ManageXMLWorkflow.doWrite(m_CustomObject_clean,String.Concat(directoryTargetFilePath,@"\"),String.Concat(metaname,".workflow"));													
+			ManageXMLWorkflow.doWrite(m_CustomObject_clean,String.Concat(directoryTargetFilePath,@"/"),String.Concat(metaname,".workflow"));													
 		}
 
 		public Dictionary<string, List<Rules>> buildMap(String path,List<String> m_list,String metaname){         
