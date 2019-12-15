@@ -39,7 +39,7 @@ namespace MetaTiger.ManageFile
             foreach (var type in mapPackage)
             {
                 try{
-                    String tempDirectory = String.Concat(pathDir,@"\", MetaDirectory.getDirectory(type.Key));
+                    String tempDirectory = String.Concat(pathDir,@"//", MetaDirectory.getDirectory(type.Key));
                     createPackageDirectory(tempDirectory);
                     IMetadata metadataWork = MetaDataFactory.getMetadata(type.Key);
                     metaDatas.Add(metadataWork);
