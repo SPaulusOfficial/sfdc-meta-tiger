@@ -18,14 +18,14 @@ namespace MetaTiger.ManageFile
                String pathPackage = "";
 
                if(IC){
-                 pathPackage = path + @"\deploy";
+                 pathPackage = path + @"//deploy";
                }else{
-                 pathPackage = Environment.CurrentDirectory + @"\package";
+                 pathPackage = Environment.CurrentDirectory + @"//package";
                }
 
                String g = GuidService.createGuid();
                
-               String pathZipDirectory = Environment.CurrentDirectory + @"\package\deploy\";
+               String pathZipDirectory = Environment.CurrentDirectory + @"//package//deploy//";
                String pathZip =pathZipDirectory + g +  ".zip";  
 
                ManageFileDirectory.createPackageDirectory(pathZipDirectory);   
