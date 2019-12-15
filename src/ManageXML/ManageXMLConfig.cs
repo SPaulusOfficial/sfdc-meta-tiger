@@ -17,11 +17,11 @@ namespace MetaTiger.ManageFileXML
 
         public static Config Deserialize()
         {
-            String path = Environment.CurrentDirectory+@"\config\config.xml";
+            String path = Environment.CurrentDirectory+@"/config/config.xml";
 
             Config m_config = new Config();
             m_config.PackageManifest = new List<PackageManifest>();
-            m_config.GeneralDirectoryTarget = @"C:\package";
+            m_config.GeneralDirectoryTarget = @"C:/package";
             
             XmlSerializer serializer = new XmlSerializer(typeof(Config));
             try
@@ -42,8 +42,8 @@ namespace MetaTiger.ManageFileXML
 
         public static void doWrite(Config myObject){			
 			
-            ManageFileDirectory.createPackageDirectory(Environment.CurrentDirectory+@"\config");
-            String targetPath = Environment.CurrentDirectory+@"\config\";
+            ManageFileDirectory.createPackageDirectory(Environment.CurrentDirectory+@"/config");
+            String targetPath = Environment.CurrentDirectory+@"/config/";
             String fileName = "config.xml";
             
             try{
