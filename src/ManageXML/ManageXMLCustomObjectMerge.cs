@@ -68,7 +68,7 @@ namespace MetaTiger.ManageFileXML
                     String filename = String.Concat(m_object.Key,".object");
 
                     if(ManageFileExists.verifyFileInDirectory(String.Concat(directoryMain,@"/",filename))){
-                      directoryForObject = mergeDirectory;
+                      directoryForObject = directoryMain;
                     }else{
                       directoryForObject = directoryMain;  
                     }
