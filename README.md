@@ -38,7 +38,7 @@ This feature has the responsibility of deploying to any Salesforce environment, 
 <h3>Configuration Meta Tiger</h3>
 
 Install  Visual Studio Code.<br />
-Install SDK do .NET Core 2.2 <a href="https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.104-windows-x64-installer">Download</a> <br />
+Install SDK do .NET Core 3.1 <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1">Download</a> <br />
 Install the C # extension for the Visual Studio Code. To learn more about installing extensions in Visual Studio Code, check out the VS Code Extension Marketplace.<br />
 
 You can have more information on this link, how to install the dependencies before running the program:
