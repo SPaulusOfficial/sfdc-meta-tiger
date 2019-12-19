@@ -115,18 +115,38 @@ namespace MetaTiger.Api.Metadata{
                    responseCheck = MetadataApiCheckDeployService.checkDeployStatus(response.Metadataclient, asyncId);
                    result = responseCheck.result;
                    ConsoleHelper.WriteDocLine("Request Status: "+ result.status);
+                   
                    if(result.stateDetail!=null){
                     ConsoleHelper.WriteDocLine(result.stateDetail);
                    }
+
                    if(responseCheck.DebuggingInfo!=null){
                      debugLog = responseCheck.DebuggingInfo.debugLog;
                    }
+
+                   
+                   
                    if(result.status==DeployStatus.Failed){
-                    for(int i = 0; i < result.details.componentFailures.Length; i++){
-                        DeployMessage message = result.details.componentFailures[i];
-                        ConsoleHelper.WriteErrorLine(message.componentType + " " + message.fullName + " " + message.problem);
+                     
+                    if(result.details!=null && result.details.componentFailures!=null){
+                        for(int i = 0; i < result.details.componentFailures.Length; i++){
+                            DeployMessage message = result.details.componentFailures[i];
+                            ConsoleHelper.WriteErrorLine(message.componentType + " " + message.fullName + " " + message.problem);
+                        }
                     }
+
+                    if(result.details!=null && result.details.runTestResult!=null){
+                      for(int i = 0; i < result.details.runTestResult.failures.Length; i++){
+                           RunTestFailure errorTest = result.details.runTestResult.failures[i];
+                           ConsoleHelper.WriteErrorLine(errorTest.message);
+                      }
+                    }
+
+                    ConsoleHelper.WriteErrorLine(debugLog);
+
                    }
+                   
+
                }catch(Exception e){
                   result = new DeployResult();
                   ConsoleHelper.WriteErrorLine(e.Message);
