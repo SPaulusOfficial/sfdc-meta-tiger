@@ -40,6 +40,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.WorkflowRule:return new MetaWorkflowRule();
 				case MetaConstants.WorkflowAlert:return new MetaWorkflowAlert();
 				case MetaConstants.WorkflowFieldUpdate:return new MetaWorkflowFieldUpdate();
+				case MetaConstants.WorkflowTask:return new MetaWorkflowTask();
 				case MetaConstants.StandardValueSet: return new MetaStandardValueSet();
 				case MetaConstants.CustomTab: return new MetaCustomTab();
 				case MetaConstants.AssignmentRules: return new MetaAssignmentRules();
