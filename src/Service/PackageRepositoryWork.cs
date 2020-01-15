@@ -52,8 +52,8 @@ namespace MetaTiger.Service{
             {
                 m_Metadata.doMerge();
             }
-            ManageXMLCustomObjectMerge mergeobject = ManageXMLCustomObjectMerge.getInstance();
-            mergeobject.defaultParameters(pathSource);
+            //ManageXMLCustomObjectMerge mergeobject = ManageXMLCustomObjectMerge.getInstance();
+            //mergeobject.defaultParameters(pathSource);
             //mergeobject.writeAllInstances(pathDir);
 
             ManageXMLWorkflowMerge mergeworkflow = ManageXMLWorkflowMerge.getInstance();
