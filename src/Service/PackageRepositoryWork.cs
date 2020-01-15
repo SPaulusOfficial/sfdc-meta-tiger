@@ -52,9 +52,13 @@ namespace MetaTiger.Service{
             {
                 m_Metadata.doMerge();
             }
-            ManageXMLCustomObjectMerge merge = ManageXMLCustomObjectMerge.getInstance();
-            merge.defaultParameters(pathSource);
-            merge.writeAllInstances(pathDir);
+            ManageXMLCustomObjectMerge mergeobject = ManageXMLCustomObjectMerge.getInstance();
+            mergeobject.defaultParameters(pathSource);
+            mergeobject.writeAllInstances(pathDir);
+
+            ManageXMLWorkflowMerge mergeworkflow = ManageXMLWorkflowMerge.getInstance();
+            mergeworkflow.defaultParameters(pathSource);
+            mergeworkflow.writeAllInstances(pathDir);
         }
 
         private void copyPackage(string path, string pathDir)

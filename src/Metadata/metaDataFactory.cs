@@ -38,6 +38,8 @@ namespace MetaTiger.Metadata
 				case MetaConstants.WebLink:  return new MetaWebLink();			
 				case MetaConstants.Workflow: return new MetaWorkflow();
 				case MetaConstants.WorkflowRule:return new MetaWorkflowRule();
+				case MetaConstants.WorkflowAlert:return new MetaWorkflowAlert();
+				case MetaConstants.WorkflowFieldUpdate:return new MetaWorkflowFieldUpdate();
 				case MetaConstants.StandardValueSet: return new MetaStandardValueSet();
 				case MetaConstants.CustomTab: return new MetaCustomTab();
 				case MetaConstants.AssignmentRules: return new MetaAssignmentRules();
@@ -53,6 +55,12 @@ namespace MetaTiger.Metadata
 				case MetaConstants.BrandingSet: return new metaBrandingSet();
 				case MetaConstants.LightningExperienceTheme: return new metaLightningExperienceTheme();
 				case MetaConstants.Group:return new MetaGroup();
+				case MetaConstants.DuplicateRule:return new metaDuplicateRule();
+				case MetaConstants.LeadConvertSettings:return new metaLeadConvertSettings();
+				case MetaConstants.MatchingRule:return new metaMatchingRule();
+				case MetaConstants.PathAssistant:return new metaPathAssistant();
+				case MetaConstants.QuickAction:return new metaQuickAction();
+				case MetaConstants.BusinessProcess:return new metaBusinessProcess();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}

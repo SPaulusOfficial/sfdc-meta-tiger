@@ -38,11 +38,15 @@ namespace MetaTiger
 				case MetaConstants.WebLink: return "weblinks";				
 				case MetaConstants.Workflow: return "workflows";
 				case MetaConstants.WorkflowRule: return "_workflowrule";
+				case MetaConstants.WorkflowAlert: return "_workflowAlert";
+				case MetaConstants.WorkflowFieldUpdate: return "_workflowfieldupdate";
+				case MetaConstants.WorkflowTask: return "_workflowtask";
 				case MetaConstants.StandardValueSet: return "standardValueSets";
 				case MetaConstants.CustomTab: return "tabs";
 				case MetaConstants.AssignmentRules: return "assignmentRules";
 				case MetaConstants.AuraDefinitionBundle: return "aura";
 				case MetaConstants.CompactLayout: return "_compactlayout";
+				case MetaConstants.BusinessProcess: return "_businessProcesses";
 				case MetaConstants.CustomApplication: return "applications";
 				case MetaConstants.FlexiPage: return "flexipages";
 				case MetaConstants.Territory2Type: return "territory2Types";
@@ -53,6 +57,11 @@ namespace MetaTiger
 				case MetaConstants.BrandingSet: return "brandingSets";
 				case MetaConstants.LightningExperienceTheme: return "lightningExperienceThemes";
 				case MetaConstants.Group: return "groups";
+				case MetaConstants.DuplicateRule: return "duplicateRules";
+				case MetaConstants.LeadConvertSettings: return "LeadConvertSettings";
+				case MetaConstants.MatchingRule: return "matchingRules";
+				case MetaConstants.PathAssistant: return "pathAssistants";
+				case MetaConstants.QuickAction: return "quickActions";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}

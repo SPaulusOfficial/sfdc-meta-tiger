@@ -6,9 +6,14 @@ namespace MetaTiger.Xml.CustomObject
 	[Serializable()]
 	[XmlRoot(ElementName="CustomObject", Namespace="http://soap.sforce.com/2006/04/metadata")]
 	public class CustomObject {
+		
+		[XmlElement(ElementName="businessProcesses", Namespace="http://soap.sforce.com/2006/04/metadata")]
+		public List<_BusinessProcess> BusinessProcesses { get; set; }
+		
 		[XmlElement(ElementName="actionOverrides", Namespace="http://soap.sforce.com/2006/04/metadata")]
 		public List<ActionOverrides> ActionOverrides { get; set; }
 		[XmlElement(ElementName="allowInChatterGroups", Namespace="http://soap.sforce.com/2006/04/metadata")]
+		
 		public string AllowInChatterGroups { get; set; }
 		[XmlElement(ElementName="compactLayoutAssignment", Namespace="http://soap.sforce.com/2006/04/metadata")]
 		public string CompactLayoutAssignment { get; set; }
