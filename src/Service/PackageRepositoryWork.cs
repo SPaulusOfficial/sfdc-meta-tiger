@@ -56,9 +56,9 @@ namespace MetaTiger.Service{
             //mergeobject.defaultParameters(pathSource);
             //mergeobject.writeAllInstances(pathDir);
 
-            ManageXMLWorkflowMerge mergeworkflow = ManageXMLWorkflowMerge.getInstance();
-            mergeworkflow.defaultParameters(pathSource);
-            mergeworkflow.writeAllInstances(pathDir);
+            //ManageXMLWorkflowMerge mergeworkflow = ManageXMLWorkflowMerge.getInstance();
+            //mergeworkflow.defaultParameters(pathSource);
+            //mergeworkflow.writeAllInstances(pathDir);
         }
 
         private void copyPackage(string path, string pathDir)
