@@ -129,7 +129,7 @@ namespace MetaTiger.Api.Metadata{
                     if(result.details!=null && result.details.componentFailures!=null){
                         for(int i = 0; i < result.details.componentFailures.Length; i++){
                             DeployMessage message = result.details.componentFailures[i];
-                            ConsoleHelper.WriteErrorLine(message.componentType + " " + message.fullName + " " + message.problem);
+                            ConsoleHelper.WriteErrorLine((i + 1) + ": " + message.componentType + " " + message.fullName + " line " + message.lineNumber + " - " + message.problem);
                         }
                     }
 
@@ -137,13 +137,13 @@ namespace MetaTiger.Api.Metadata{
                       if(result.details.runTestResult.failures != null){
                             for(int i = 0; i < result.details.runTestResult.failures.Length; i++){
                                 RunTestFailure errorTest = result.details.runTestResult.failures[i];
-                                ConsoleHelper.WriteErrorLine(errorTest.message);
+                                ConsoleHelper.WriteErrorLine((i + 1) + ": " + errorTest.name + " - " + errorTest.methodName + " - " + errorTest.message + " - " + errorTest.stackTrace);
                             }
                       }
                       if(result.details.runTestResult.codeCoverageWarnings != null){
                             for(int i = 0; i < result.details.runTestResult.codeCoverageWarnings.Length; i++){
                                 CodeCoverageWarning errorTest = result.details.runTestResult.codeCoverageWarnings[i];
-                                ConsoleHelper.WriteErrorLine(errorTest.message);
+                                ConsoleHelper.WriteErrorLine((i + 1) + ": " + errorTest.name + " - "  + errorTest.message);
                             }
                       }
                     }
