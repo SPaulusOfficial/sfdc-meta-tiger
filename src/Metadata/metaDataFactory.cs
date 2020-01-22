@@ -62,6 +62,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.PathAssistant:return new metaPathAssistant();
 				case MetaConstants.QuickAction:return new metaQuickAction();
 				case MetaConstants.BusinessProcess:return new metaBusinessProcess();
+				case MetaConstants.GlobalValueSet:return new metaGlobalValueSet();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
