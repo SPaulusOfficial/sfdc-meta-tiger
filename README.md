@@ -53,11 +53,3 @@ In VisualCode using the terminal <br />
 Just select the options below and use the tool normally it will prompt you for the required information.
 
 I hope it's useful!<br />
-
-<h3>🚨 CONHEÇA O META TIGER! ft. Bruno Ribeiro 🎥 | Canal Salesforce Brasil - Live</h3>
-
-[![MetaTiger Live Brazil](https://img.youtube.com/vi/ys5mhpL2Ibg/0.jpg)](https://www.youtube.com/watch?v=ys5mhpL2Ibg)
-
-In this Live I showed a little of the potential of MetaTiger, I hope you enjoy. <br/>
-
-#metadata #metadataapi #metatiger #brunoslribeiro #salesforce
