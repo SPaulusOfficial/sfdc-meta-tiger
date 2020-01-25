@@ -1,4 +1,4 @@
-# Project Meta Tiger - Application For Metadatas Salesforce
+# Project Meta Tiger - Application For Metadata Salesforce
 
 <img src="https://github.com/brunoslribeiro/sfdc-package-repository-files/blob/master/assets/metatiger.png">
 
