@@ -1,5 +1,7 @@
 /bin
 /obj
 /config/
+/node_modules/
 /Package/*
 .vscode
+nuget.config
