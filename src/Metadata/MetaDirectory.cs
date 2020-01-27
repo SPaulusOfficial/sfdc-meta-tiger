@@ -56,6 +56,7 @@ namespace MetaTiger
 				case MetaConstants.SharingRules: return "sharingRules";
 				case MetaConstants.BrandingSet: return "brandingSets";
 				case MetaConstants.LightningExperienceTheme: return "lightningExperienceThemes";
+				case MetaConstants.LightningComponentBundle: return "lwc";
 				case MetaConstants.Group: return "groups";
 				case MetaConstants.DuplicateRule: return "duplicateRules";
 				case MetaConstants.LeadConvertSettings: return "LeadConvertSettings";
