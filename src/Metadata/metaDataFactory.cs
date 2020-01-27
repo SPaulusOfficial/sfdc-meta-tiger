@@ -45,6 +45,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.CustomTab: return new MetaCustomTab();
 				case MetaConstants.AssignmentRules: return new MetaAssignmentRules();
 				case MetaConstants.AuraDefinitionBundle: return new metaAuraDefinitionBundle();
+				case MetaConstants.LightningComponentBundle: return new metaLightningComponentBundle();
 				case MetaConstants.CompactLayout: return new metaCompactLayout();
 				case MetaConstants.CustomApplication: return new metaCustomApplication();
 				case MetaConstants.FlexiPage: return new metaFlexiPage();
