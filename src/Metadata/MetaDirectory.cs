@@ -64,6 +64,7 @@ namespace MetaTiger
 				case MetaConstants.PathAssistant: return "pathAssistants";
 				case MetaConstants.QuickAction: return "quickActions";
 				case MetaConstants.GlobalValueSet: return "globalValueSets";
+				case MetaConstants.CustomNotificationType: return "notificationtypes";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}
