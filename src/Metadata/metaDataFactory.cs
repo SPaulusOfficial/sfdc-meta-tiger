@@ -65,6 +65,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.BusinessProcess:return new metaBusinessProcess();
 				case MetaConstants.GlobalValueSet:return new metaGlobalValueSet();
 				case MetaConstants.CustomNotificationType:return new metaCustomNotificationType();
+				case MetaConstants.Report:return new metaReport();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
