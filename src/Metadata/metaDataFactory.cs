@@ -44,6 +44,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.StandardValueSet: return new MetaStandardValueSet();
 				case MetaConstants.CustomTab: return new MetaCustomTab();
 				case MetaConstants.AssignmentRules: return new MetaAssignmentRules();
+				case MetaConstants.AssignmentRule: return new metaAssignmentRule();
 				case MetaConstants.AuraDefinitionBundle: return new metaAuraDefinitionBundle();
 				case MetaConstants.LightningComponentBundle: return new metaLightningComponentBundle();
 				case MetaConstants.CompactLayout: return new metaCompactLayout();

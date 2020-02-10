@@ -44,6 +44,7 @@ namespace MetaTiger
 				case MetaConstants.StandardValueSet: return "standardValueSets";
 				case MetaConstants.CustomTab: return "tabs";
 				case MetaConstants.AssignmentRules: return "assignmentRules";
+				case MetaConstants.AssignmentRule: return "assignmentRules";
 				case MetaConstants.AuraDefinitionBundle: return "aura";
 				case MetaConstants.CompactLayout: return "_compactlayout";
 				case MetaConstants.BusinessProcess: return "_businessProcesses";

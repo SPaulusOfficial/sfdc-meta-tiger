@@ -240,7 +240,6 @@ namespace MetaTiger
 			public const string WorkflowRule="WorkflowRule";
 			public const string WorkflowSend="WorkflowSend";
 			public const string WorkflowTask="WorkflowTask";
-
 			public const string Settings="Settings";
 
 
