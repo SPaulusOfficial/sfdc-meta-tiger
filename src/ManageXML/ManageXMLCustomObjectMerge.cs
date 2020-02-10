@@ -64,16 +64,15 @@ namespace MetaTiger.ManageFileXML
                 {
                     String directoryForObject = "";
                     
-
                     String filename = String.Concat(m_object.Key,".object");
 
-                    if(ManageFileExists.verifyFileInDirectory(String.Concat(directoryMain,@"/",filename))){
-                      directoryForObject = directoryMain;
+                    if(ManageFileExists.verifyFileInDirectory(String.Concat(mergeDirectory,@"/",filename))){
+                      directoryForObject = mergeDirectory;
                     }else{
-                      directoryForObject = directoryMain;  
+                      directoryForObject = mergeDirectory;  
                     }
 
-                     ManageFileDirectory.createPackageDirectory(directoryForObject);
+                    ManageFileDirectory.createPackageDirectory(directoryForObject);
 
 
                     ManageXMLCustomObject.doWrite(m_object.Value,String.Concat(directoryForObject,@"/"),filename);

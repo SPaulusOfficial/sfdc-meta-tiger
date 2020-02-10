@@ -73,7 +73,8 @@ namespace MetaTiger.Service
                 {
                   DeployService.deployPackage(idOrganization,idOrganizationTypeDeploy,directoryTarget);     
                 }
-                catch{
+                catch(Exception e){
+                  ConsoleHelper.WriteErrorLine(e.Message);      
                   exitCode = 1;  
                 }
                 finally

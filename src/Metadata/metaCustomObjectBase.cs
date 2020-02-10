@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using MetaTiger.Helper;
+using MetaTiger.ManageFile;
 
 namespace MetaTiger.Metadata
 {
@@ -32,11 +34,15 @@ namespace MetaTiger.Metadata
 			}
 
 			public new void doCopy(String sourcePath,String targetPath){
-				String directoryPath = String.Concat(@"/",MetaDirectory.getDirectory(m_MetaObject));
-				String directoryPathMetaField = String.Concat(@"/",MetaDirectory.getDirectory(m_metaname));
-				String directoryFilePath = String.Concat(sourcePath,directoryPath);
-				String directoryTargetFilePath = String.Concat(targetPath,directoryPathMetaField);				
+				String objectPath = String.Concat(@"\",MetaDirectory.getDirectory(m_MetaObject));
+				String directoryFilePath = String.Concat(sourcePath,objectPath);	
+				String directoryPathMetaField = String.Concat(@"\",MetaDirectory.getDirectory(m_metaname));
+
+				String directoryTargetObjectPath = String.Concat(targetPath,objectPath);
+				String directoryTargetFilePath = String.Concat(targetPath,directoryPathMetaField);
+				
 				foreach(KeyValuePair<string, string> m_object in m_mapMetaObject){
+					ManageFileCopy.doCopy(directoryFilePath,directoryTargetObjectPath,String.Concat(m_object.Key,".object"));
 					this.buildCopy(m_object.Key,directoryFilePath,directoryTargetFilePath);
 				}
 			}
