@@ -65,15 +65,25 @@ namespace MetaTiger.Service
                 string branchName = args[0];
                 string pathRepository = args[1];
                 string idOrganizationTypeDeploy = args[2];
-                
-                string directoryTarget = GeneratePackageRepository.generatePackageRepository(branchName,pathRepository);
-                DeployService.deployPackage(idOrganization,idOrganizationTypeDeploy,directoryTarget);
-                
-                DirectoryInfo di = new DirectoryInfo(directoryTarget);
 
-                ManageDeleteFile.DeletingDirectory(di);
+                string directoryTarget = GeneratePackageRepository.generatePackageRepository(branchName,pathRepository);
+                int exitCode = 0;
+
+                try
+                {
+                  DeployService.deployPackage(idOrganization,idOrganizationTypeDeploy,directoryTarget);     
+                }
+                catch{
+                  exitCode = 1;  
+                }
+                finally
+                {
+                   DirectoryInfo di = new DirectoryInfo(directoryTarget);   
+                   ManageDeleteFile.DeletingDirectory(di);
+                }
+                Environment.Exit(exitCode);   
            }else{
-                   throw new Exception("Not found organization branch name incomplete!!");
+                throw new Exception("Not found organization branch name incomplete!!");
            }
            
         }

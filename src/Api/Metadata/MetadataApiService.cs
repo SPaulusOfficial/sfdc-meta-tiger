@@ -166,8 +166,8 @@ namespace MetaTiger.Api.Metadata{
                Thread.Sleep(2000); 
 
                if(result.status==DeployStatus.Failed){
-                  Environment.Exit(1);
-                  //throw new Exception();
+                  
+                  throw new Exception();
                  
                }  
                
