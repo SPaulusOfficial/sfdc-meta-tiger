@@ -88,15 +88,15 @@ namespace MetaTiger.Api.Metadata{
             //package = ManageXMLPackage.DeserializePackageApi(pathPackage);
             asyncId = MetadataApiDeployService.deploy(response.Metadataclient,request);
     
-            try
-            {
+            //try
+            //{
                 result = checkResultsOfDeploy(response,asyncId);
                 //extractFile(result);
-            }
-            catch (Exception e)
-            {
-              ConsoleHelper.WriteErrorLine(e.Message);
-            } 
+            //}
+            //catch (Exception e)
+            //{
+            //  ConsoleHelper.WriteErrorLine(e.Message);
+            //} 
         }
 
         private static DeployResult checkResultsOfDeploy(MetadataApiClientResponse response, string asyncId)
