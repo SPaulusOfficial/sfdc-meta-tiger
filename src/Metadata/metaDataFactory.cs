@@ -68,6 +68,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.CustomNotificationType:return new metaCustomNotificationType();
 				case MetaConstants.Report:return new metaReport();
 				case MetaConstants.Queue:return new MetaQueue();
+				case MetaConstants.SharingCriteriaRule:return new metaSharingCriteriaRule();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
