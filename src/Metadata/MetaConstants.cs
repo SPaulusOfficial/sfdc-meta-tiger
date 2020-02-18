@@ -6,15 +6,15 @@ using System.Xml.Serialization;
 namespace MetaTiger
 {
     class MetaConstants {
-			public const string AccessControlPolicy="AccessControlPolicy";
-			public const string AccountRelationshipShareRule="AccountRelationshipShareRule";
-			public const string AccountSettings="AccountSettings";
-			public const string ActionLinkGroupTemplate="ActionLinkGroupTemplate";
-			public const string ActivitiesSettings="ActivitiesSettings";
-			public const string AddressSettings="AddressSettings";
-			public const string AnalyticSnapshot="AnalyticSnapshot";
+			public const string AccessControlPolicy="AccessControlPolicy"; //Ok
+			public const string AccountRelationshipShareRule="AccountRelationshipShareRule"; //Ok
+			public const string AccountSettings="AccountSettings"; //Ok
+			public const string ActionLinkGroupTemplate="ActionLinkGroupTemplate"; //Ok
+			public const string ActivitiesSettings="ActivitiesSettings"; //Ok
+			public const string AddressSettings="AddressSettings"; //Ok
+			public const string AnalyticSnapshot="AnalyticSnapshot"; //Ok
 			public const string ApexClass="ApexClass"; //Ok
-			public const string ApexComponent="ApexComponent";
+			public const string ApexComponent="ApexComponent"; //Ok
 			public const string ApexPage="ApexPage"; //Ok
 			public const string ApexTestSuite="ApexTestSuite";
 			public const string ApexTrigger="ApexTrigger"; //Ok
@@ -22,11 +22,11 @@ namespace MetaTiger
 			public const string ApprovalProcess="ApprovalProcess";
 			public const string AssignmentRule="AssignmentRule"; //Ok
 			public const string AssignmentRules="AssignmentRules"; //Ok
-			public const string Audience="Audience";
+			public const string Audience="Audience"; //Ok
 			public const string AuraDefinitionBundle="AuraDefinitionBundle"; //Ok
-			public const string AuthProvider="AuthProvider";
-			public const string AutoResponseRule="AutoResponseRule";
-			public const string AutoResponseRules="AutoResponseRules";
+			public const string AuthProvider="AuthProvider"; //Ok
+			public const string AutoResponseRule="AutoResponseRule"; //Ok
+			public const string AutoResponseRules="AutoResponseRules"; //Ok
 			public const string Bot="Bot";
 			public const string BotVersion="BotVersion";
 			public const string BrandingSet="BrandingSet"; //Ok

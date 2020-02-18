@@ -10,6 +10,11 @@ namespace MetaTiger
 			
 			switch (typeMetadata)
 			{
+				case MetaConstants.AccountRelationshipShareRule: return "accountRelationshipShareRules";
+				case MetaConstants.ActionLinkGroupTemplate: return "actionLinkGroupTemplates";
+				case MetaConstants.AnalyticSnapshot: return "analyticSnapshots";
+				case MetaConstants.Audience: return "audience";
+				case MetaConstants.AuthProvider: return "authproviders";
 				case MetaConstants.AppMenu: return "appMenus";
 				case MetaConstants.ApexClass: return "classes";
 				case MetaConstants.ApexTrigger: return "triggers";
@@ -45,6 +50,8 @@ namespace MetaTiger
 				case MetaConstants.CustomTab: return "tabs";
 				case MetaConstants.AssignmentRules: return "assignmentRules";
 				case MetaConstants.AssignmentRule: return "assignmentRules";
+				case MetaConstants.AutoResponseRule: return "autoResponseRules";
+				case MetaConstants.AutoResponseRules: return "autoResponseRules";
 				case MetaConstants.AuraDefinitionBundle: return "aura";
 				case MetaConstants.CompactLayout: return "_compactlayout";
 				case MetaConstants.BusinessProcess: return "_businessProcesses";

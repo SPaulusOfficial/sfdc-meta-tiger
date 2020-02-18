@@ -69,6 +69,13 @@ namespace MetaTiger.Metadata
 				case MetaConstants.Report:return new metaReport();
 				case MetaConstants.Queue:return new MetaQueue();
 				case MetaConstants.SharingCriteriaRule:return new metaSharingCriteriaRule();
+				case MetaConstants.AccountRelationshipShareRule:return new metaAccountRelationshipShareRule();
+				case MetaConstants.ActionLinkGroupTemplate:return new metaActionLinkGroupTemplate();
+				case MetaConstants.AnalyticSnapshot:return new metaAnalyticSnapshot();
+				case MetaConstants.Audience:return new metaAudience();
+				case MetaConstants.AuthProvider:return new metaAuthProvider();
+				case MetaConstants.AutoResponseRule:return new metaAutoResponseRule();
+				case MetaConstants.AutoResponseRules:return new metaAutoResponseRules();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
