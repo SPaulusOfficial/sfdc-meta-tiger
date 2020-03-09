@@ -32,13 +32,13 @@ namespace MetaTiger.Metadata
 					if(i + 1 < dashboard.Length){
 					  	ManageFileDirectory.createPackageDirectory(folderTarget+path);   
 					}
-					ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,dashboard[i]+"-meta.xml",true);
+					//ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,dashboard[i]+"-meta.xml",true);
 					ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,dashboard[i]+".dashboard",true);
 				}
 			  
 			}else{
 				ManageFileDirectory.createPackageDirectory(directoryTargetFilePath);   				
-				ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+"-meta.xml",true);	
+				//ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+"-meta.xml",true);	
 			}
 
 					
