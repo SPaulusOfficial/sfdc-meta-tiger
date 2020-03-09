@@ -77,6 +77,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.AutoResponseRule:return new metaAutoResponseRule();
 				case MetaConstants.AutoResponseRules:return new metaAutoResponseRules();
 				case MetaConstants.Dashboard:return new metaDashboard();
+				case MetaConstants.ApprovalProcess:return new MetaApprovalProcess();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
