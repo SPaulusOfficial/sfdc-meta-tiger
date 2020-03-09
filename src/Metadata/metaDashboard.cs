@@ -6,34 +6,34 @@ using MetaTiger.ManageFile;
 
 namespace MetaTiger.Metadata
 {
-    class metaReport:MetaBase {
+    class metaDashboard:MetaBase {
         
 
-		public metaReport(){
+		public metaDashboard(){
 			this.m_list = new List<String>();
-			this.m_metaname = MetaConstants.Report;			
+			this.m_metaname = MetaConstants.Dashboard;			
 		} 
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
-			String [] report = metaname.Split("/");
+			String [] dashboard = metaname.Split("/");
 
-			if(report.Length > 0){
+			if(dashboard.Length > 0){
 				
 				String folderTarget = directoryTargetFilePath+@"/";
 				String folderRepository = directoryPath+@"/";
 				String path = "";
 				String pathUp = "";
 
-				for (int i = 0; i < report.Length; i++)
+				for (int i = 0; i < dashboard.Length; i++)
 				{
 				    pathUp = path;
-					path = path +@"/"+ report[i];
+					path = path +@"/"+ dashboard[i];
 					
-					if(i + 1 < report.Length){
+					if(i + 1 < dashboard.Length){
 					  	ManageFileDirectory.createPackageDirectory(folderTarget+path);   
 					}
-					ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,report[i]+"-meta.xml",true);
-					ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,report[i]+".report",true);
+					ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,dashboard[i]+"-meta.xml",true);
+					ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,dashboard[i]+".dashboard",true);
 				}
 			  
 			}else{
