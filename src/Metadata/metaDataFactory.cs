@@ -79,6 +79,8 @@ namespace MetaTiger.Metadata
 				case MetaConstants.Dashboard:return new metaDashboard();
 				case MetaConstants.ApprovalProcess:return new MetaApprovalProcess();
 				case MetaConstants.ReportType:return new metaReportType();
+				case MetaConstants.Document:return new MetaDocument();
+				case MetaConstants.Letterhead:return new MetaLetterhead();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}

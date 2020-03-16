@@ -79,6 +79,8 @@ namespace MetaTiger
 				case MetaConstants.Dashboard: return "dashboards";
 				case MetaConstants.ApprovalProcess: return "approvalProcesses";
 				case MetaConstants.ReportType: return "reportTypes";
+				case MetaConstants.Document: return "documents";
+				case MetaConstants.Letterhead: return "letterhead";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}
