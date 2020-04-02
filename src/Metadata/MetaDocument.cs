@@ -15,10 +15,13 @@ namespace MetaTiger.Metadata{
 			String [] findFolder = metaname.Split("/");
 			String [] filename = metaname.Split(".");
 
+			// Se o item tiver extensão, p ex: .png, não acrescenta .document
+			String docExtension = (filename.Length > 1) ? "" : ".document";
+
 			ManageFileDirectory.createPackageDirectory(directoryTargetFilePath + @"/" + findFolder[0]);
 
-			ManageFileCopy.doCopy(directoryPath, directoryTargetFilePath, metaname+".document");
-			ManageFileCopy.doCopy(directoryPath, directoryTargetFilePath, metaname+".document-meta.xml");
+			ManageFileCopy.doCopy(directoryPath, directoryTargetFilePath, metaname + docExtension);
+			ManageFileCopy.doCopy(directoryPath, directoryTargetFilePath, metaname + docExtension + "-meta.xml");
 		}	
 
 		public override void doMerge(){}
