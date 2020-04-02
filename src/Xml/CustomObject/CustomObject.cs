@@ -69,6 +69,8 @@ namespace MetaTiger.Xml.CustomObject
 		public List<ValidationRules> ValidationRules { get; set; }
 		[XmlElement(ElementName="visibility", Namespace="http://soap.sforce.com/2006/04/metadata")]
 		public string Visibility { get; set; }
+		[XmlElement(ElementName="webLinks", Namespace="http://soap.sforce.com/2006/04/metadata")]
+		public List<WebLink> WebLinks { get; set; }
 		[XmlAttribute(AttributeName="xmlns")]
 		public string Xmlns { get; set; }
 	}
