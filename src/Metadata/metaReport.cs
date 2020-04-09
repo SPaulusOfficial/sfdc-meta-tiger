@@ -17,7 +17,7 @@ namespace MetaTiger.Metadata
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
 			String [] report = metaname.Split("/");
 
-			if(report.Length > 0){
+			if(report.Length > 1){
 				
 				String folderTarget = directoryTargetFilePath+@"/";
 				String folderRepository = directoryPath+@"/";
