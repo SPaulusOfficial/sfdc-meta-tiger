@@ -17,21 +17,23 @@ namespace MetaTiger.Metadata
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){
 			String [] report = metaname.Split("/");
 
-			if(report.Length > 1){
+			if(report.Length > 0){
 				
 				String folderTarget = directoryTargetFilePath+@"/";
 				String folderRepository = directoryPath+@"/";
 				String path = "";
+				String pathUp = "";
 
 				for (int i = 0; i < report.Length; i++)
 				{
-					if (i == report.Length - 1) { //Ultimo item - O arquivo
-						//ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,report[i]+"-meta.xml",true);
-						ManageFileCopy.doCopy(folderRepository+path, folderTarget+path, report[i]+".report", true);
-					} else {
-						path = path +@"/"+ report[i]; // Cria as pastas necessárias
+				    pathUp = path;
+					path = path +@"/"+ report[i];
+
+					if(i + 1 < report.Length){
 						ManageFileDirectory.createPackageDirectory(folderTarget+path);
 					}
+					ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,report[i]+"-meta.xml",true);
+					ManageFileCopy.doCopy(folderRepository+pathUp,folderTarget+pathUp,report[i]+".report",true);
 				}
 			  
 			}else{
