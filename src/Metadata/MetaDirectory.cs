@@ -40,7 +40,7 @@ namespace MetaTiger
 				case MetaConstants.ValidationRule: return "_validationrule";				
 				case MetaConstants.RecordType: return "_recordtype";				
 				case MetaConstants.MilestoneType: return "milestoneTypes";				
-				case MetaConstants.WebLink: return "weblinks";				
+				case MetaConstants.WebLink: return "_weblinks";				
 				case MetaConstants.Workflow: return "workflows";
 				case MetaConstants.WorkflowRule: return "_workflowrule";
 				case MetaConstants.WorkflowAlert: return "_workflowAlert";

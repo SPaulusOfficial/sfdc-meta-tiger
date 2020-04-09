@@ -35,7 +35,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.ValidationRule: return new MetaValidationRule();					
 				case MetaConstants.RecordType: return new MetaRecordType();			
 				case MetaConstants.MilestoneType: return new MetaMilestoneType();				
-				case MetaConstants.WebLink:  return new MetaWebLink();			
+				case MetaConstants.WebLink:  return new metaWebLink();			
 				case MetaConstants.Workflow: return new MetaWorkflow();
 				case MetaConstants.WorkflowRule:return new MetaWorkflowRule();
 				case MetaConstants.WorkflowAlert:return new MetaWorkflowAlert();
@@ -81,6 +81,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.ReportType:return new metaReportType();
 				case MetaConstants.Document:return new MetaDocument();
 				case MetaConstants.Letterhead:return new MetaLetterhead();
+				case MetaConstants.CustomPageWebLink :return new MetaCustomPageWebLink();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
