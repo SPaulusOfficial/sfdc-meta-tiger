@@ -55,38 +55,38 @@ namespace MetaTiger.Service
             }while(action!=7);
         }
 
-        public static void run(string[] args){
-           
-           string idOrganization = args[0];
-           if(idOrganization.Contains("__")){
-                string[] organizationBranchName = idOrganization.Split("__");
-                idOrganization = organizationBranchName[1]; 
-                
+        public static void run(string[] args) {
+
+                int exitCode = 0; // Exit OK
+
                 string branchName = args[0];
                 string pathRepository = args[1];
                 string idOrganizationTypeDeploy = args[2];
+                string directoryTarget = "";
 
-                string directoryTarget = GeneratePackageRepository.generatePackageRepository(branchName,pathRepository);
-                int exitCode = 0;
+                if (!branchName.Contains("__")) {
+                        ConsoleHelper.WriteErrorLine("Error: Organization branch name invalid!");
+                        exitCode = 1; // Error Code
 
-                try
-                {
-                  DeployService.deployPackage(idOrganization,idOrganizationTypeDeploy,directoryTarget);     
+                } else {
+                        try {
+                                directoryTarget = GeneratePackageRepository.generatePackageRepository(branchName, pathRepository);
+                                string idOrganization = branchName.Split("__")[1];
+                                DeployService.deployPackage(idOrganization, idOrganizationTypeDeploy, directoryTarget);
+
+                        } catch (Exception e) {
+                                ConsoleHelper.WriteErrorLine( "Error: " + (e.Message.Contains("XML") ? "package.xml - " + e.Message : e.Message) );
+                                exitCode = 1; // Error Code
+
+                        } finally {
+                                if (directoryTarget != "") {
+                                        DirectoryInfo di = new DirectoryInfo(directoryTarget);
+                                        ManageDeleteFile.DeletingDirectory(di);
+                                }
+                        }
                 }
-                catch(Exception e){
-                  ConsoleHelper.WriteErrorLine(e.Message);      
-                  exitCode = 1;  
-                }
-                finally
-                {
-                   DirectoryInfo di = new DirectoryInfo(directoryTarget);   
-                   ManageDeleteFile.DeletingDirectory(di);
-                }
-                Environment.Exit(exitCode);   
-           }else{
-                throw new Exception("Not found organization branch name incomplete!!");
-           }
-           
+
+                Environment.Exit(exitCode);
         }
 
     }
