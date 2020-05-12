@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace MetaTiger.Metadata{
-    abstract class MetaBase: IMetadata {
+abstract class MetaBase: IMetadata {
         
 		public List<String> m_list;    
 		
@@ -24,9 +24,20 @@ namespace MetaTiger.Metadata{
 			}			
 		}
 
+		public void doAddon(String sourcePath,String targetPath){			
+			foreach(String metaname in m_list){
+				String directoryPath = String.Concat(@"/",MetaDirectory.getDirectory(m_metaname));
+				String directoryFilePath = String.Concat(sourcePath,directoryPath);
+				String directoryTargetFilePath = String.Concat(targetPath,directoryPath);
+				this.runAddon(metaname,directoryFilePath,directoryTargetFilePath);								
+			}			
+		}
+
 		public abstract void buildCopy(String metaname,String directoryFilePath,String directoryTargetFilePath);
 
 		public abstract void doMerge();
+
+		public virtual void runAddon(String metaname,String directoryPath,String directoryTargetFilePath){}
 
     }
 		

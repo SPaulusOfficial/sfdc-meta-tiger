@@ -14,6 +14,10 @@ namespace MetaTiger.Metadata
 
 		void doMerge();
 		
+		void doAddon(String sourcePath,String targetPath);
+
+		void runAddon(String metaname,String directoryPath,String directoryTargetFilePath);
+		
 	}
 	
 }

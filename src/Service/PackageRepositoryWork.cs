@@ -27,6 +27,7 @@ namespace MetaTiger.Service{
             this.copy(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
             this.merge(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
             this.copyPackage(packageManifest.PackageFile, packageManifest.DirectoryTarget);
+            this.addons(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
         }
 
         private void validate(Dictionary<string, List<string>> mapPackage, List<IMetadata> MetaDatas)
@@ -74,6 +75,15 @@ namespace MetaTiger.Service{
             foreach (IMetadata m_Metadata in MetaDatas)
             {
                 m_Metadata.doCopy(pathFiles, pathDir);
+            }
+        }
+
+        private void addons(string pathFiles, string pathDir, List<IMetadata> MetaDatas)
+        {
+            ConsoleHelper.WriteDoneLine(">> Run Addons...");
+            foreach (IMetadata m_Metadata in MetaDatas)
+            {
+                m_Metadata.doAddon(pathFiles, pathDir);
             }
         }
 

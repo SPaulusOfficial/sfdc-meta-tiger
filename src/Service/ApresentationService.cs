@@ -15,7 +15,7 @@ namespace MetaTiger.Service
                 Console.WriteLine("");
                 ConsoleHelper.WriteDocLine("###################################################");
                 ConsoleHelper.WriteDocLine("#                META-TIGER                       #");
-                ConsoleHelper.WriteDocLine("#                Version 6.2                      #");
+                ConsoleHelper.WriteDocLine("#                Version 7.0                      #");
                 ConsoleHelper.WriteDocLine("#       Author:Bruno Smith Lopes Ribeiro          #");
                 ConsoleHelper.WriteDocLine("#       E-mail:bruno_smith10@hotmail.com          #");
                 ConsoleHelper.WriteDocLine("###################################################");
