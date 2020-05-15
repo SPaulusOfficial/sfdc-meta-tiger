@@ -18,6 +18,18 @@ namespace MetaTiger.Metadata{
             return ReadConfig();
         }
 
+
+        public static List<MetaTigerAddon> getAddons(String addonType){
+            List<MetaTigerAddon> addons = new List<MetaTigerAddon>();
+            Config mConfig = getConfig();
+            foreach(MetaTigerAddon addon in mConfig.Addon){
+			    if(addonType==addon.Metadata){
+                    addons.Add(addon);
+                }
+            }
+            return addons;
+        }
+
         public static Organization chooseCodeOrganization(){
             
             Config m_config = ManageXMLConfig.Deserialize();

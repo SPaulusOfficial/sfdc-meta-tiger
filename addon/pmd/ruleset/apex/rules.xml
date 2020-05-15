@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="quickstart"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+   <description>Quickstart configuration of PMD for Salesforce.com Apex. Includes the rules that are most likely to apply everywhere.</description>
+
+   <!-- COMPLEXITY -->
+   <rule ref="category/apex/design.xml/ExcessiveClassLength" message="ExcessiveClassLength - Evite classes realmente longas (linhas de codigo)">
+      <priority>3</priority>
+      <properties>
+         <property name="minimum" value="1000" />
+         
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="150" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/design.xml/ExcessiveParameterList" message="ExcessiveParameterList - Evite longas listas de parametros">
+      <priority>3</priority>
+      <properties>
+         <property name="minimum" value="4" />
+         
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="50" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/design.xml/ExcessivePublicCount" message="ExcessivePublicCount - Esta classe possui muitos metodos e atributos publicos">
+      <priority>3</priority>
+      <properties>
+         <property name="minimum" value="25" />
+         
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="150" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <!--<rule ref="category/apex/design.xml/NcssConstructorCount" message="The constructor has an NCSS line count of {0}">
+      <priority>3</priority>
+      <properties>
+         <property name="minimum" value="20" />
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="50" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>-->
+   <!--<rule ref="category/apex/design.xml/NcssMethodCount" message="The method {0}() has an NCSS line count of {1}">
+      <priority>3</priority>
+      <properties>
+         <property name="minimum" value="60" />
+          relevant for Code Climate output only
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="50" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>-->
+   <!--
+   <rule ref="category/apex/design.xml/NcssTypeCount" message="The type has an NCSS line count of {0}">
+      <priority>3</priority>
+      <properties>
+         <property name="minimum" value="700" />
+         
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="250" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>-->
+   <rule ref="category/apex/design.xml/StdCyclomaticComplexity" message="StdCyclomaticComplexity O {0} '' {1} '' tem uma Complexidade Ciclomatica Padrao de {2}.">
+      <priority>3</priority>
+      <properties>
+         <property name="reportLevel" value="10" />
+         
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="250" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule> 
+   <rule ref="category/apex/design.xml/TooManyFields" message="TooManyFields - Muitos campos definidos para uma unica classe">
+      <priority>3</priority>
+      <properties>
+         <property name="maxfields" value="20" />
+         
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="200" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/design.xml/AvoidDeeplyNestedIfStmts" message="AvoidDeeplyNestedIfStmts - Instrucoes if.else profundamente aninhadas sao dificeis de ler">
+      <priority>3</priority>
+      <properties>
+         <property name="problemDepth" value="4" />
+         
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="200" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/design.xml/CyclomaticComplexity">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Complexity" />
+         <property name="cc_remediation_points_multiplier" value="200" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <!-- <rule ref="category/apex/design.xml/CognitiveComplexity"/> -->
+
+   <!-- PERFORMANCE -->
+   <rule ref="category/apex/performance.xml/AvoidSoqlInLoops" message="AvoidSoqlInLoops - Evite consultas Soql dentro de loops">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Performance" />
+         <property name="cc_remediation_points_multiplier" value="150" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/performance.xml/AvoidSoslInLoops" message="AvoidSoslInLoops - Evite consultas Sosl dentro de loops">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Performance" />
+         <property name="cc_remediation_points_multiplier" value="150" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/performance.xml/AvoidDmlStatementsInLoops" message="AvoidDmlStatementsInLoops - Evite instruções DML dentro de loops">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Performance" />
+         <property name="cc_remediation_points_multiplier" value="150" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/errorprone.xml/AvoidDirectAccessTriggerMap" message="AvoidDirectAccessTriggerMap - Evite acessar diretamente Trigger.old e Trigger.new">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Performance" />
+         <property name="cc_remediation_points_multiplier" value="150" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/bestpractices.xml/AvoidLogicInTrigger" message="AvoidLogicInTrigger - Evite logica nos gatilhos">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="200" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/bestpractices.xml/AvoidGlobalModifier" message="AvoidGlobalModifier - Evite usar modificador global">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="100" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/errorprone.xml/AvoidNonExistentAnnotations">
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="100" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/errorprone.xml/AvoidHardcodingId" message="AvoidHardcodingId - Evite IDs codificados">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security"/>
+         <property name="cc_remediation_points_multiplier" value="20"/>
+         <property name="cc_block_highlighting" value="false"/>
+      </properties>
+   </rule>
+
+   <!-- NAMING -->
+   <rule ref="category/apex/codestyle.xml/ClassNamingConventions" message="ClassNamingConventions - Os nomes de classe devem comecar com um caractere maiusculo">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/codestyle.xml/MethodNamingConventions" message="MethodNamingConventions - O nome do metodo nao comeca com um caractere minusculo.">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="1" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/errorprone.xml/MethodWithSameNameAsEnclosingClass" message="MethodWithSameNameAsEnclosingClass - As classes nao devem ter metodos nao construtores com o mesmo nome que a classe">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="50" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+
+   <!-- NAMING -->
+   <rule ref="category/apex/codestyle.xml/FieldNamingConventions" message="FieldNamingConventions - Nao esta utilizando padrao Camel">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/codestyle.xml/FormalParameterNamingConventions" message="FormalParameterNamingConventions - Nao esta utilizando padrao Camel">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/codestyle.xml/LocalVariableNamingConventions" message="LocalVariableNamingConventions - Nao esta utilizando padrao Camel">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/codestyle.xml/PropertyNamingConventions" message="PropertyNamingConventions - Nao esta utilizando padrao Camel">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+
+   <!-- TESTS -->
+   <!--<rule ref="category/apex/bestpractices.xml/ApexUnitTestClassShouldHaveAsserts" message="Apex unit test classes should have at least one System.assert() or assertEquals() or AssertNotEquals() call">
+      <priority>3</priority>
+      <properties>
+         <property name="cc_categories" value="Bug Risk" />
+         <property name="cc_remediation_points_multiplier" value="100" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>-->
+   <rule ref="category/apex/bestpractices.xml/ApexUnitTestShouldNotUseSeeAllDataTrue" message="ApexUnitTestShouldNotUseSeeAllDataTrue - @isTest(seeAllData=true) nao deve ser usado em testes de unidade do Apex porque abre os dados do banco de dados existentes para modificacoes inesperadas pelos testes">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Bug Risk" />
+         <property name="cc_remediation_points_multiplier" value="100" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+<!--    <rule ref="category/apex/bestpractices.xml/ApexAssertionsShouldIncludeMessage"/> -->
+<!--    <rule ref="category/apex/bestpractices.xml/ApexUnitTestMethodShouldHaveIsTestAnnotation"/> -->
+<!--    <rule ref="category/apex/errorprone.xml/TestMethodsMustBeInTestClasses"/> -->
+
+   <!-- SECURITY -->
+   <rule ref="category/apex/security.xml/ApexSharingViolations" message="ApexSharingViolations - As classes Apex devem declarar um modelo de compartilhamento se DML ou SOQL for usado">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <!--<rule ref="category/apex/security.xml/ApexInsecureEndpoint" message="Apex callouts should use encrypted communication channels">
+      <priority>3</priority>
+      <properties>
+         <property name="cc_categories" value="Security" />
+         <property name="cc_remediation_points_multiplier" value="50" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   -->
+   <rule ref="category/apex/errorprone.xml/ApexCSRF">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security" />
+         <property name="cc_remediation_points_multiplier" value="100" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/security.xml/ApexOpenRedirect" message="ApexOpenRedirect - As classes do Apex devem ser redirecionadas com seguranca para um local conhecido">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security" />
+         <property name="cc_remediation_points_multiplier" value="50" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/security.xml/ApexSOQLInjection" message="ApexSOQLInjection - As classes Apex devem escapar das variaveis ​​mescladas na consulta DML">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security" />
+         <property name="cc_remediation_points_multiplier" value="20" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/security.xml/ApexXSSFromURLParam" message="ApexXSSFromURLParam - Classes Apex devem escapar de Strings obtidas de parametros de URL">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security" />
+         <property name="cc_remediation_points_multiplier" value="20" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/security.xml/ApexXSSFromEscapeFalse" message="ApexXSSFromEscapeFalse - Classes Apex devem escapar de strings addError">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security" />
+         <property name="cc_remediation_points_multiplier" value="20" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/security.xml/ApexBadCrypto" message="ApexBadCrypto - O Apex Crypto deve usar IV / chave aleatoria">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security" />
+         <property name="cc_remediation_points_multiplier" value="50" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/security.xml/ApexCRUDViolation" message="ApexCRUDViolation - Valide a permissao CRUD antes da operação SOQL / DML">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security"/>
+         <property name="cc_remediation_points_multiplier" value="150"/>
+         <property name="cc_block_highlighting" value="false"/>
+      </properties>
+   </rule>
+   <rule ref="category/apex/security.xml/ApexDangerousMethods" message="ApexDangerousMethods - Chamando metodo potencialmente perigoso">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security"/>
+         <property name="cc_remediation_points_multiplier" value="50"/>
+         <property name="cc_block_highlighting" value="false"/>
+      </properties>
+   </rule>
+   <rule ref="category/apex/security.xml/ApexSuggestUsingNamedCred" message="ApexSuggestUsingNamedCred - Considere usar credenciais nomeadas para chamadas externas autenticadas">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Security"/>
+         <property name="cc_remediation_points_multiplier" value="20"/>
+         <property name="cc_block_highlighting" value="false"/>
+      </properties>
+   </rule>
+
+   <!-- BRACES -->
+   <rule ref="category/apex/codestyle.xml/IfStmtsMustUseBraces" message="IfStmtsMustUseBraces - Evite usar declaracoes if sem chaves">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/codestyle.xml/WhileLoopsMustUseBraces" message="WhileLoopsMustUseBraces - Evite usar instrucoes 'while' sem chaves">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/codestyle.xml/IfElseStmtsMustUseBraces" message="IfElseStmtsMustUseBraces - Evite usar instrucoes 'if ... else' sem chaves">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+         </properties>
+   </rule>
+   <rule ref="category/apex/codestyle.xml/ForLoopsMustUseBraces" message="ForLoopsMustUseBraces - Evite usar instrucoes 'for' sem chaves">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+
+   <!-- EMPTY -->
+   <rule ref="category/apex/errorprone.xml/EmptyCatchBlock" message="EmptyCatchBlock - Evite blocos vazios de captura">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+         </properties>
+   </rule>
+   <rule ref="category/apex/errorprone.xml/EmptyIfStmt" message="EmptyIfStmt - Evite declaracoes 'if' vazias">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+         </properties>
+   </rule>
+   <rule ref="category/apex/errorprone.xml/EmptyWhileStmt" message="EmptyWhileStmt - Evite declaracoes 'while' vazias">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/errorprone.xml/EmptyTryOrFinallyBlock" message="EmptyTryOrFinallyBlock - Evite tentar vazio ou, finalmente, bloquear">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <rule ref="category/apex/errorprone.xml/EmptyStatementBlock" message="EmptyStatementBlock - Evite instrucoes de bloco vazio.">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+
+   <!-- STYLE -->
+   <rule ref="category/apex/codestyle.xml/OneDeclarationPerLine" >
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <!-- <rule ref="category/apex/codestyle.xml/FieldDeclarationsShouldBeAtStart"/> -->
+
+   <!-- DOCUMENTATION -->
+   <!--<rule ref="category/apex/documentation.xml/ApexDoc" message="Document classes, methods, and properties that are public or global.">
+      <priority>3</priority>
+      <properties>
+         <property name="cc_categories" value="Style" />
+         <property name="cc_remediation_points_multiplier" value="50" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>-->
+
+   <!-- CLARITY / BEST PRACTICES -->
+   <rule ref="category/apex/bestpractices.xml/DebugsShouldUseLoggingLevel" message="DebugsShouldUseLoggingLevel - As chamadas para System.debug devem especificar um nivel de log.">
+      <priority>3</priority>
+      <properties>
+         
+         <property name="cc_categories" value="Clarity" />
+         <property name="cc_remediation_points_multiplier" value="5" />
+         <property name="cc_block_highlighting" value="false" />
+      </properties>
+   </rule>
+   <!-- <rule ref="category/apex/bestpractices.xml/UnusedLocalVariable"/> -->
+
+</ruleset>
