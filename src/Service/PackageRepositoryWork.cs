@@ -14,10 +14,12 @@ namespace MetaTiger.Service{
         
         PackageManifest packageManifest;
         Dictionary<string, List<string>> mapPackage;
+        Organization enviroment;
 
-        public PackageRepositoryWork(PackageManifest pm,Dictionary<string, List<string>> mp){
+        public PackageRepositoryWork(PackageManifest pm,Dictionary<string, List<string>> mp,Organization organization){
             packageManifest = pm;
             mapPackage = mp;
+            enviroment = organization;
         }
 
         public void run()
@@ -27,7 +29,7 @@ namespace MetaTiger.Service{
             this.copy(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
             this.merge(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
             this.copyPackage(packageManifest.PackageFile, packageManifest.DirectoryTarget);
-            this.addons(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas);
+            this.addons(packageManifest.RepositorySource, packageManifest.DirectoryTarget, MetaDatas,enviroment);
         }
 
         private void validate(Dictionary<string, List<string>> mapPackage, List<IMetadata> MetaDatas)
@@ -78,12 +80,12 @@ namespace MetaTiger.Service{
             }
         }
 
-        private void addons(string pathFiles, string pathDir, List<IMetadata> MetaDatas)
+        private void addons(string pathFiles, string pathDir, List<IMetadata> MetaDatas,Organization organization)
         {
             ConsoleHelper.WriteDoneLine(">> Run Addons...");
             foreach (IMetadata m_Metadata in MetaDatas)
             {
-                m_Metadata.doAddon(pathFiles, pathDir);
+                m_Metadata.doAddon(pathFiles, pathDir,organization);
             }
         }
 

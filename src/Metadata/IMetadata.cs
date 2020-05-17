@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using MetaTiger.Xml.Config;
 
 namespace MetaTiger.Metadata
 {
@@ -14,9 +15,9 @@ namespace MetaTiger.Metadata
 
 		void doMerge();
 		
-		void doAddon(String sourcePath,String targetPath);
+		void doAddon(String sourcePath,String targetPath,Organization organization);
 
-		void runAddon(String metaname,String directoryPath,String directoryTargetFilePath);
+		void runAddon(String metaname,String directoryPath,String directoryTargetFilePath,Organization organization);
 		
 	}
 	

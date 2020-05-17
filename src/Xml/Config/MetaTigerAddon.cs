@@ -20,6 +20,9 @@ namespace MetaTiger.Xml.Config
 		
 		[XmlElement(ElementName="Metadata")]
 		public string Metadata { get; set; }
+
+		[XmlElement(ElementName="Enabled")]
+		public bool Enabled { get; set; }
 	}
 
 }

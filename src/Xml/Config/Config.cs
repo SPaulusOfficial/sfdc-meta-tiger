@@ -11,7 +11,6 @@ namespace MetaTiger.Xml.Config
 		public string GeneralDirectoryTarget { get; set; }
 		[XmlElement(ElementName="PackageManifest")]
 		public List<PackageManifest> PackageManifest { get; set; }
-
 		[XmlElement(ElementName="MetaTigerAddon")]
 		public List<MetaTigerAddon> Addon { get; set; }
 		[XmlElement(ElementName="Organization")]

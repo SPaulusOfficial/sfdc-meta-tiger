@@ -22,6 +22,8 @@ namespace MetaTiger.Xml.Config
 		public string Api { get; set; }
 		[XmlElement(ElementName="DeploySettings")]
 		public List<OrganizationDeploy> DeploySettings { get; set; }
+		[XmlElement(ElementName="MetaTigerAddon")]
+		public List<MetaTigerAddon> Addon { get; set; }
 	}
 
 }

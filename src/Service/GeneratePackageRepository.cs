@@ -13,6 +13,8 @@ namespace MetaTiger.Service{
 
     public class GeneratePackageRepository{
 
+        public static Organization enviroment = null; 
+
         public static void generatePackageRepository(){
             PackageManifest packageManifest;
             Config m_config = ConfigService.getConfig();
@@ -22,7 +24,7 @@ namespace MetaTiger.Service{
 
         public static String generatePackageRepository(String branchName, String pathRepository){
             PackageManifest packageManifest;
-            Config m_config = ConfigService.getConfig();
+            enviroment = ConfigService.getOrganization(branchName); 
             packageManifest = ConfigService.chooseCodePackageManifest(branchName, pathRepository);
             run(packageManifest);
             return packageManifest.DirectoryTarget;
@@ -40,7 +42,7 @@ namespace MetaTiger.Service{
 
             mapPackage = ManageXMLPackage.buildMap(packageManifest.PackageFile);
             
-            new PackageRepositoryWork(packageManifest, mapPackage).run();
+            new PackageRepositoryWork(packageManifest, mapPackage,enviroment).run();
         
             ConsoleHelper.WriteDoneLine(">> Finalize the process...");
         }

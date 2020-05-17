@@ -18,16 +18,42 @@ namespace MetaTiger.Metadata{
             return ReadConfig();
         }
 
-
-        public static List<MetaTigerAddon> getAddons(String addonType){
+        public static List<MetaTigerAddon> getAddons(String metadataType,List<MetaTigerAddon> Addons){
             List<MetaTigerAddon> addons = new List<MetaTigerAddon>();
-            Config mConfig = getConfig();
-            foreach(MetaTigerAddon addon in mConfig.Addon){
-			    if(addonType==addon.Metadata){
+            foreach(MetaTigerAddon addon in Addons){
+			    if(metadataType==addon.Metadata && addon.Enabled == true){
                     addons.Add(addon);
                 }
             }
             return addons;
+        }
+
+
+        public static List<MetaTigerAddon> getAddonsDefault(String addonType){
+            Config mConfig = getConfig();
+            return getAddons(addonType,mConfig.Addon);
+        }
+
+        public static List<MetaTigerAddon> getAddonsOrganization(String addonType,Organization organization){
+            return getAddons(addonType,organization.Addon);
+        }
+
+        public static Organization getOrganization(String organizationNick){
+            string[] organizationBranchName = organizationNick.Split("__");
+            organizationNick = organizationBranchName[1]; 
+            
+            Organization enviroment = null;
+            Config mConfig = getConfig();
+            if(mConfig.Organization != null){
+              foreach(Organization org in mConfig.Organization){
+                if(org.Nick==organizationNick){
+                    enviroment = org;
+                    break;
+                }
+              } 
+            }
+            
+            return enviroment;
         }
 
         public static Organization chooseCodeOrganization(){

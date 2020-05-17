@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using MetaTiger.Xml.Config;
 
 namespace MetaTiger.Metadata{
 abstract class MetaBase: IMetadata {
@@ -24,12 +25,12 @@ abstract class MetaBase: IMetadata {
 			}			
 		}
 
-		public void doAddon(String sourcePath,String targetPath){			
+		public void doAddon(String sourcePath,String targetPath,Organization organization){			
 			foreach(String metaname in m_list){
 				String directoryPath = String.Concat(@"/",MetaDirectory.getDirectory(m_metaname));
 				String directoryFilePath = String.Concat(sourcePath,directoryPath);
 				String directoryTargetFilePath = String.Concat(targetPath,directoryPath);
-				this.runAddon(metaname,directoryFilePath,directoryTargetFilePath);								
+				this.runAddon(metaname,directoryFilePath,directoryTargetFilePath,organization);								
 			}			
 		}
 
@@ -37,7 +38,7 @@ abstract class MetaBase: IMetadata {
 
 		public abstract void doMerge();
 
-		public virtual void runAddon(String metaname,String directoryPath,String directoryTargetFilePath){}
+		public virtual void runAddon(String metaname,String directoryPath,String directoryTargetFilePath,Organization organization){}
 
     }
 		
