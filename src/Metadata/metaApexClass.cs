@@ -53,6 +53,7 @@ namespace MetaTiger.Metadata{
 					string commandFile = action.Command.Replace("{filepath}", directoryTargetFilePath);
 					ConsoleHelper.WriteWarningLine(directoryTargetFilePath);
 					string response = ShellHelper.Bash(commandFile,addon.FilePathName);
+					response = response.Replace(directoryTargetFilePath,"");
 					string directoryTargetFilePathReply = directoryTargetFilePath.inverseBarLeft();
 					directoryTargetFilePathReply = directoryTargetFilePathReply.inverseBarRight();
 					response = response.Replace(directoryTargetFilePathReply,"");
