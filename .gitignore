@@ -1,6 +1,7 @@
 /bin
 /obj
 /config/
+/addon/
 /node_modules/
 /Package/*
 .vscode
