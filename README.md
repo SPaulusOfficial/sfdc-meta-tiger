@@ -39,6 +39,10 @@ You have a responsibility to get the metadata that was only created by users at 
 
 This feature has the responsibility of deploying to any Salesforce environment, it allows various types of deploy's.
 
+<h3>Continuous integration / Continuous delivery Command</h3>  
+
+This feature has the responsibility of deploying to any Salesforce environment, it allows various types of deploy's.
+
 <h3>Configuration Meta Tiger (For Dev's)</h3>
 
 Install  Visual Studio Code.<br />
