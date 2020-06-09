@@ -56,4 +56,7 @@ In VisualCode using the terminal <br />
 
 Just select the options below and use the tool normally it will prompt you for the required information.
 
+<h3>Check out our releases on the link below:</h3>
+
+
 I hope it's useful!<br />
