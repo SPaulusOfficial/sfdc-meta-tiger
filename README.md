@@ -39,7 +39,7 @@ You have a responsibility to get the metadata that was only created by users at 
 
 This feature has the responsibility of deploying to any Salesforce environment, it allows various types of deploy's.
 
-<h3>Jenkins CI/CD With MetaTiger</h3>  
+<h3>Feature Jenkins CI/CD With MetaTiger</h3>  
 
 <img src="http://missaodevops.com.br/img/warrior/m08-jenkins.png"/>
 
