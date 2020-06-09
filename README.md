@@ -39,7 +39,7 @@ You have a responsibility to get the metadata that was only created by users at 
 
 This feature has the responsibility of deploying to any Salesforce environment, it allows various types of deploy's.
 
-<h3>Configuration Meta Tiger</h3>
+<h3>Configuration Meta Tiger (For Dev's)</h3>
 
 Install  Visual Studio Code.<br />
 Install SDK do .NET Core 3.1 <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1">Download</a> <br />
