@@ -39,9 +39,11 @@ You have a responsibility to get the metadata that was only created by users at 
 
 This feature has the responsibility of deploying to any Salesforce environment, it allows various types of deploy's.
 
-<h3>Continuous integration / Continuous delivery Command</h3>  
+<h3>Jenkins CI/CD With MetaTiger</h3>  
 
-This feature has the responsibility of deploying to any Salesforce environment, it allows various types of deploy's.
+<img src="http://missaodevops.com.br/img/warrior/m08-jenkins.png"/>
+
+We added a feature in MetaTiger for deployments to be dynamically, using some commands in Jenkins. Check our library to find out how to set it up.
 
 <h3>Configuration Meta Tiger (For Dev's)</h3>
 
