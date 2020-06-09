@@ -58,5 +58,6 @@ Just select the options below and use the tool normally it will prompt you for t
 
 <h3>Check out our releases on the link below:</h3>
 
+<a href="https://github.com/brunoslribeiro/sfdc-meta-tiger/releases">Download</a>
 
 I hope it's useful!<br />
