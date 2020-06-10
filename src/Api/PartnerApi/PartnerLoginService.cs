@@ -21,7 +21,6 @@ namespace MetaTiger.PartnerApi{
             string typeEnviroment = request.Production ? "login" : "test";
             string Api = request.Api;
             string Url = request.Url;
-            ConsoleHelper.WriteWarningLine(Url + "Url");
             string endPointService = Url!=null ? String.Concat(Url,"/services/Soap/u/",Api) : String.Concat("https://",typeEnviroment,".salesforce.com/services/Soap/u/",Api);
             ConsoleHelper.WriteWarningLine(endPointService);
             EndpointAddress apiAddress = new EndpointAddress(endPointService);
