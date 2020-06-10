@@ -18,6 +18,8 @@ namespace MetaTiger.Xml.Config
 		public string SecurityToken { get; set; }
 		[XmlElement(ElementName="Production")]
 		public string Production { get; set; }
+		[XmlElement(ElementName="Url")]
+		public string Url { get; set; }
 		[XmlElement(ElementName="Api")]
 		public string Api { get; set; }
 		[XmlElement(ElementName="DeploySettings")]

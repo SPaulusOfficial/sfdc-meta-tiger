@@ -17,6 +17,7 @@ namespace MetaTiger.PartnerApi{
                 Password = request.Password,
                 SecurityToken = request.SecurityToken,
                 Production = request.Production,
+                Url = request.Url,
                 Api = request.Api
             };
         }
