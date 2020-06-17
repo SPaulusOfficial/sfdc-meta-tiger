@@ -81,6 +81,10 @@ namespace MetaTiger
 				case MetaConstants.ReportType: return "reportTypes";
 				case MetaConstants.Document: return "documents";
 				case MetaConstants.Letterhead: return "letterhead";
+				case MetaConstants.WaveApplication : return "wave";
+				case MetaConstants.WaveDashboard : return "wave";
+				case MetaConstants.WaveDataflow : return "wave";
+				case MetaConstants.WaveDataset : return "wave";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}
