@@ -45,23 +45,6 @@ This feature has the responsibility of deploying to any Salesforce environment, 
 
 We added a feature in MetaTiger for deployments to be dynamically, using some commands in Jenkins. Check our library to find out how to set it up.
 
-<h3>Configuration Meta Tiger (For Dev's)</h3>
-
-Install  Visual Studio Code.<br />
-Install SDK do .NET Core 3.1 <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1">Download</a> <br />
-Install the C # extension for the Visual Studio Code. To learn more about installing extensions in Visual Studio Code, check out the VS Code Extension Marketplace.<br />
-
-You can have more information on this link, how to install the dependencies before running the program:
-https://docs.microsoft.com/pt-br/dotnet/core/tutorials/with-visual-studio-code<br />
-
-<img src="https://github.com/brunoslribeiro/sfdc-package-repository-files/blob/master/assets/SFDC-PackageManifest.PNG">
-
-In VisualCode using the terminal <br />
-
-<strong>Execute command --> dotNet run</strong>
-
-Just select the options below and use the tool normally it will prompt you for the required information.
-
 <h3>Check out our releases on the link below:</h3>
 
 <a href="https://github.com/brunoslribeiro/sfdc-meta-tiger/releases/tag/MetaTigerv8.0.0">Download - MetaTiger - v8.0.0</a>
