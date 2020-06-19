@@ -86,6 +86,9 @@ namespace MetaTiger.Metadata
 				case MetaConstants.WaveDashboard :return new metaWaveDashboard();
 				case MetaConstants.WaveDataflow :return new metaWaveDataflow();
 				case MetaConstants.WaveDataset :return new metaWaveDataSet();
+				case MetaConstants.WaveLens :return new metaWaveLens();
+				case MetaConstants.WaveRecipe :return new metaWaveRecipe();
+				case MetaConstants.WaveXmd :return new metaWaveXmd();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
