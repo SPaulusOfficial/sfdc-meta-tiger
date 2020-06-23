@@ -89,6 +89,7 @@ namespace MetaTiger.Metadata
 				case MetaConstants.WaveLens :return new metaWaveLens();
 				case MetaConstants.WaveRecipe :return new metaWaveRecipe();
 				case MetaConstants.WaveXmd :return new metaWaveXmd();
+				case MetaConstants.WaveTemplateBundle :return new metaWaveTemplateBundle();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}

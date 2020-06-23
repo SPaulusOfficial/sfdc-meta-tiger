@@ -88,6 +88,7 @@ namespace MetaTiger
 				case MetaConstants.WaveLens : return "wave";
 				case MetaConstants.WaveRecipe : return "wave";
 				case MetaConstants.WaveXmd : return "wave";
+				case MetaConstants.WaveTemplateBundle : return "waveTemplates";
 				default: throw new System.ArgumentException("Directory not found for Metadata:", typeMetadata);
 			}
 		}

@@ -13,7 +13,8 @@ namespace MetaTiger.Metadata
 		} 
 
 		public override void buildCopy(String metaname,String directoryPath,String directoryTargetFilePath){		
-			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".wdf");		
+			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".wdf");
+			ManageFileCopy.doCopy(directoryPath,directoryTargetFilePath,metaname+".wdf-meta.xml");		
 		}	
 
 		public override void doMerge(){}
