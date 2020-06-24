@@ -82,8 +82,17 @@ namespace MetaTiger.Metadata
 				case MetaConstants.Document:return new MetaDocument();
 				case MetaConstants.Letterhead:return new MetaLetterhead();
 				case MetaConstants.CustomPageWebLink :return new MetaCustomPageWebLink();
+				case MetaConstants.WaveApplication :return new metaWaveApplication();
+				case MetaConstants.WaveDashboard :return new metaWaveDashboard();
+				case MetaConstants.WaveDataflow :return new metaWaveDataflow();
+				case MetaConstants.WaveDataset :return new metaWaveDataSet();
+				case MetaConstants.WaveLens :return new metaWaveLens();
+				case MetaConstants.WaveRecipe :return new metaWaveRecipe();
+				case MetaConstants.WaveXmd :return new metaWaveXmd();
+				case MetaConstants.WaveTemplateBundle :return new metaWaveTemplateBundle();
 				default: throw new System.ArgumentException("Metadata not found", Metadata);
 			}
 		}
 	}
 }
+ 
